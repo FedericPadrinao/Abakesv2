@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        
         public void OnGet()
         {
@@ -99,8 +99,8 @@ namespace abakes2.Pages
 
             if (!password.Equals(pass))
             {
-                TempData["FailMessage"] = "Invalid email or Password!";
-                errorMessage = "Invalid email or Password!";
+                TempData["FailMessage"] = "Invalid Credentials!";
+                errorMessage = "Invalid Credentials!";
                 return Page();
             }
             else
