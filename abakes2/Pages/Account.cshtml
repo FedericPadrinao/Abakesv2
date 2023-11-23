@@ -20,6 +20,25 @@
 
 <body>
     <!-- NAV BAR -->
+    @if(Model.customerInfo.ordermax == "true")
+    {
+         <script>
+            window.location.href = '/Customer_MaxOrder';
+         </script>
+    }
+     @if(Model.customerInfo.accstatus == "true")
+    {
+         <script>
+            window.location.href = '/Customer_Block';
+         </script>
+    }
+    @if(Model.customerInfo.status == "false")
+    {
+         <script>
+            window.location.href = '/Customer_FullCapacity_Prompt';
+         </script>
+    }
+    
     <div class="container">
         <div class="navbar">
             <div class="logo">
@@ -55,12 +74,7 @@
 
 
             </div>
-            @if (Model.userconfirm != null)
-            {
-                <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
-
-            }
+           
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
