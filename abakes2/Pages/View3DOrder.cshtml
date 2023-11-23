@@ -105,11 +105,6 @@
             </section>
 
 
-
-
-
-
-
             <div class="account-page">
                 <div class="container" style="padding-top: 55px;">
 
@@ -245,6 +240,17 @@
             <input type="hidden" name="color2" id="color2" value="@Model.order3d.Color2">
             <input type="hidden" name="color3" id="color3" value="@Model.order3d.Color3">
             <!-- <input type="hidden" name="color" id="color" value=""> --> 
+            @foreach(var item in Model.listAsset3D)
+            {
+            <input type="hidden" name="orderid" id="orderid" value="@item.OrderID" /> 
+            <input type="hidden" name="assetname" id="assetname" value="@item.AssetID" /> 
+            <input type="hidden" name="assetpath" id="assetpath"  value="@item.AssetPath"/> 
+            <input type="hidden" name="assetscale" id="assetscale" value="@item.AssetScale"/>
+            <input type="hidden" name="positionx" id="positionx" value="@item.PositionX"/>
+            <input type="hidden" name="positiony" id="positiony" value="@item.PositionY"/>
+            <input type="hidden" name="positionz" id="positionz" value="@item.PositionZ"/>
+            }
+           
             
                 
                
@@ -268,7 +274,9 @@
      
      var container, scene, camera, renderer, control, obj, obj2, light;
      var ambientLight, directionalLight, controls;
-   
+     var modelReady, modelGroup, modelDragBox, boxHelper;
+     var modelReady2, modelGroup2, modelDragBox2, boxHelper2;
+     var boxWidth, boxHeight, boxDepth;
      init();
      animate();
      function init()
@@ -313,9 +321,26 @@
             light = new THREE.HemisphereLight(0xffffff, 0x000000, 2);
             scene.add(light);
 
-
-
-     }
+          
+            var count = 0;
+            @foreach(var item in Model.listAsset3D){
+            <text>
+                count++;
+                eval(`
+                 var loader${count} = new GLTFLoader();
+                        loader${count}.load('@item.AssetPath', function (model${count}) {
+                       var obj${count} = model${count}.scene;
+                        scene.add(model${count}.scene);
+                        obj${count}.position.set(@item.PositionX, @item.PositionY, @item.PositionZ);
+                        obj${count}.scale.set(1,1,1);
+                        }, undefined, function (error) {
+                            console.error(error);
+                        });
+                `)
+             </text>
+            }
+      
+    }
             function resizeRendererToContainer() 
             {
             const width = container.clientWidth;
@@ -349,7 +374,6 @@
         var textureName2 = texture2.toString();
         var texture3 = document.getElementById('texture3').value;
         var textureName3 = texture3.toString();
-       
         var color1 = document.getElementById('color1').value;
         var color2 = document.getElementById('color2').value;
         var color3 = document.getElementById('color3').value;
@@ -357,6 +381,7 @@
        //GUI Color
          const guiContainer = document.getElementById('gui-container');
        
+         
         loader.load(ModelName, function (model1) {
             obj = model1.scene;
             scene.add(model1.scene);
@@ -365,7 +390,7 @@
             obj.getObjectByName(textureName2).material.color.setHex(color2);
             obj.getObjectByName(textureName3).material.color.setHex(color3);
            
-            obj.position.set(0, 0, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
+            obj.position.set(0, -30, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
             obj.scale.set(scale,scale,scale); // Size ng model dapat pantay siya or magiiba yung shape
         }, undefined, function (error) {
             console.error(error);
@@ -380,6 +405,5 @@
 
 
 </body>
-
  
 

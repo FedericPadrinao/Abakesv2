@@ -126,8 +126,16 @@
             <div class="custom-model-wrap">
                 <div class="pop-up-content-wrap">
                     <!--DITO IIBAHIN YUNG LAMAN-->
-                    <h2>Have a nice day!</h2>
-                    <p>This is message box popup that revealed on button click.</p>
+                    <h4>CAMERA CONTROLS:</h4>
+                    <p>ROTATING: Left click and drag to rotate the camera</p>
+                    <p>DRAGGING: Right click and drag to move the camera</p>
+                    <p>ZOOMING: Use scroll wheel to zoom in or zoom out</p>
+                    <h4>GETTING STARTED:</h4>
+                    <p>Step 1: Choose a preset or a base layer from single to triple and press activate! </p>
+                    <p>Pick a color using the controls located at the right side!</p>
+                    <p>Step 2: Choose a decoration from the left side and press display decoration! </p>
+                    <p>Add as many as you want! Choose wisely as you can't delete it once displayed</p>\
+                    <p>Step 3: Once you're decided, please press the "Save Cake" button </p>
                 </div>
             </div>
         </div>
@@ -170,29 +178,7 @@
                         <button class="assetbtn" onclick="window.loadAssets('@item.AssetName','@item.AssetPath','@item.AssetScale','@item.PositionX','@item.PositionY','@item.PositionZ');">@item.AssetName </button>
                     }
 
-                    <form id="insertCake" method="post">
-                        <input type="hidden" name="modelname" id="modelname" value="">
-                        <input type="hidden" name="scale" id="scale" value="">
-                        <input type="hidden" name="texture1" id="texture1" value="">
-                        <input type="hidden" name="texture2" id="texture2" value="">
-                        <input type="hidden" name="texture3" id="texture3" value="">
-                        <input type="hidden" name="totaltexture" id="totaltexture" value="">
-                        <input type="hidden" name="color1" id="color1" value="0xe1e1e1">
-                        <input type="hidden" name="color2" id="color2" value="0xe1e1e1">
-                        <input type="hidden" name="color3" id="color3" value="0xe1e1e1">
-                        <input type="hidden" name="collection" id="collection">  <!-- Dito mapupunta yung collection ng mga assets -->
-                        <input type="hidden" name="orderid" id="orderid" />
-                        <input type="hidden" name="assetname" id="assetname" />
-                        <input type="hidden" name="assetpath" id="assetpath" />
-                        <input type="hidden" name="assetscale" id="assetscale" />
-                        <input type="hidden" name="positionx" id="positionx" />
-                        <input type="hidden" name="positiony" id="positiony" />
-                        <input type="hidden" name="positionz" id="positionz" />
-
-                        <!-- <input type="hidden" name="color" id="color" value=""> -->
-
-     
-                    </form>
+                   
   
                 </div>
             </div>
@@ -215,7 +201,30 @@
                     <button class="Click-here">Help Me</button>
                     <button class="functionbtn" id="loadModel1Button" onclick="activateButton()">Activate</button>
                     <button class="functionbtn" id="DisplayDecoration">Display Decorations</button>
-                    <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
+                     <form id="insertCake" method="post">
+                        <input type="hidden" name="modelname" id="modelname" value="">
+                        <input type="hidden" name="scale" id="scale" value="">
+                        <input type="hidden" name="texture1" id="texture1" value="">
+                        <input type="hidden" name="texture2" id="texture2" value="">
+                        <input type="hidden" name="texture3" id="texture3" value="">
+                        <input type="hidden" name="totaltexture" id="totaltexture" value="">
+                        <input type="hidden" name="color1" id="color1" value="0xe1e1e1">
+                        <input type="hidden" name="color2" id="color2" value="0xe1e1e1">
+                        <input type="hidden" name="color3" id="color3" value="0xe1e1e1">
+                        <input type="hidden" name="collection" id="collection">  <!-- Dito mapupunta yung collection ng mga assets -->
+                        <input type="hidden" name="orderid" id="orderid" />
+                        <input type="hidden" name="assetname" id="assetname" />
+                        <input type="hidden" name="assetpath" id="assetpath" />
+                        <input type="hidden" name="assetscale" id="assetscale" />
+                        <input type="hidden" name="positionx" id="positionx" />
+                        <input type="hidden" name="positiony" id="positiony" />
+                        <input type="hidden" name="positionz" id="positionz" />
+
+                        <!-- <input type="hidden" name="color" id="color" value=""> -->
+
+                        <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
+                    </form>
+                    
             </div>
         </div>
     </div>
@@ -364,6 +373,8 @@
 
 
                             console.log("PositionX: " +   document.getElementById('positionx').value);
+                            console.log("PositionY: " +   document.getElementById('positionx').value);
+                            console.log("PositionZ: " +   document.getElementById('positionx').value);
 
 
                             `);
@@ -376,7 +387,7 @@
                 new THREE.PlaneGeometry(100, 100),
                 new THREE.MeshBasicMaterial({ color: "aqua" })
             );
-            plane1.position.set(0, -5, 0);
+            plane1.position.set(0, -30, 0);
             plane1.rotateX(-Math.PI / 2);
             scene.add(plane1);
             var value = document.getElementById('codeInput3').value;
@@ -524,7 +535,7 @@
                 }
 
                 // Set position and scale for model1
-                obj.position.set(0, 0, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
+                obj.position.set(0, -30, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
                 obj.scale.set(scale, scale, scale); // Size ng model dapat pantay siya or magiiba yung shape
 
                 // Additional customization if needed
