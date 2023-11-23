@@ -19,7 +19,7 @@ namespace abakes2.Pages
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
 
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void OnGet()
@@ -30,6 +30,7 @@ namespace abakes2.Pages
             notifCount = HttpContext.Session.GetInt32("NotificationCount") ?? 0;
             if (userconfirm == null)
             {
+                HttpContext.Session.SetString("ReturnUrl", Request.Path);
                 Response.Redirect("/Account");
             }
             else

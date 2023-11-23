@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        
         public void OnGet()
         {
@@ -125,6 +125,13 @@ namespace abakes2.Pages
                         HttpContext.Session.SetString("username", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
+                        // Check if there is a stored URL and redirect the user to that URL
+                        string returnUrl = HttpContext.Session.GetString("ReturnUrl");
+                        if (!string.IsNullOrEmpty(returnUrl))
+                        {
+                            HttpContext.Session.Remove("ReturnUrl"); // Remove the stored URL after using it
+                            return Redirect(returnUrl);
+                        }
 
                         return RedirectToPage("/Index");
                     }

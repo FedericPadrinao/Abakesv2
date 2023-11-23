@@ -15,7 +15,7 @@ namespace abakes2.Pages
     {
         public string successMessage = "";
         public string errorMessage = "";
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public NotificationInfo notifInfo = new NotificationInfo();
         public void OnGet()
         {

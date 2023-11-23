@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public String imgconfirm = "";
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
