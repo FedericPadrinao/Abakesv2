@@ -1,0 +1,199 @@
+﻿@page
+@model abakes2.Pages.ManageOrdersModel
+@{
+}
+
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
+    <title>Manage Orders</title>
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <!-- Banner -->
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="~/img/AdminDashboard/user.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/Admin_ManageCakes">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>Manage Cake</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageOrders" class="active">
+                        <i class="fas fa-receipt"></i>
+                        <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageFeedback">
+                        <i class="fas fa-comments"></i>
+                        <div>Manage Feedback</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Notif">
+                        <i class="fas fa-bell"></i>
+                        <div>Manage Notification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageQR">
+                        <i class="fas fa-qrcode"></i>
+                        <div>Manage QR Code</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageAcc">
+                        <i class="fas fa-user"></i>
+                        <div>Account Manager</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminDashboard">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Statistical Report</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ChangePassword">
+                        <i class="fas fa-lock"></i>
+                        <div>Change Password</div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/index" asp-page-handler="LogOut">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Banner End -->
+        <!--Main Window-->
+        <div class="main">
+            <!--Title Bar-->
+            <section class="page-heading" style="background-image: url('/img/contact/cover2.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-content">
+                                <h2>Manage Orders</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Title Bar End-->
+
+            <div class="admin-table">
+                <table>
+                    @if (TempData["Message"] != null)
+                        {
+                            <div class="alert alert-success" style="background-color: #00FF00; color: #000000;">@TempData["Message"]</div>
+                        }
+                    <a href="/Admin_ManageSimpleOrders2" class="btn" style="margin:1%;">View Approved Orders</a>
+                    <a href="/Admin_Manage3DOrders" class="btn" style="margin:1%;">View Pending 3D Orders</a>
+                    <button type="submit" class="btn" style="margin:1%;">Confirm Orders</button>
+                    
+                    <form method="post">
+                        <button asp-page-handler="PauseOrder" class="btn" style="margin:1%;">Pause Order Taking</button>
+                    </form>
+                    <form method="post" >
+                        <button asp-page-handler="ResumeOrder" class="btn" style="margin:1%;">Resume Order Taking</button>
+                    </form>
+
+
+                    <label>Notify customers (Currently at Full Capacity: Orders Unavailable)</label>
+                    <form method="get">
+                        <div class="search">
+                            <button type="submit" for="search"><i class="fas fa-search"></i></button>
+                            <input type="text" name="search" placeholder="Search for Order">
+
+                        </div>
+                    </form>
+                </table>
+                <table class="table" style="margin:1%; font-family:Poppins;">
+
+                    <thead>
+
+                        <tr>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Order Number</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Name</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Occasion</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Color</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Shapes</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Tier</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Flavor</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Sizes</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Dedication</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Instruction</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Delivery</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Preferred Date</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.orderSimpleInfo)
+                        {
+                            <tr>
+                                <td><p>@item.osID</p></td>
+                                <td><p>@item.osUsername</p></td>
+                                <td><p>@item.osOccasion</p></td>
+                                <td><p>@item.osColor</p></td>
+                                <td><p>@item.osShapes</p></td>
+                                <td><p>@item.osTier</p></td>
+                                <td><p>@item.osFlavors</p></td>
+                                <td><p>@item.osSizes</p></td>
+                                <td><p>@item.osDedication</p></td>
+                                <td><p>@item.osInstruction</p></td>
+                                <td><p>@item.osDelivery</p></td>
+                                <td><p>@item.osPreferredD</p></td>
+
+                                <td>
+                                    <a href='/Cart?id=@item.osID&handler=Reject' style="background:#FF696E;" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-times" style="font-size:30px;"></i><div>Reject</div>
+                                    </a>
+                                    <a href='/ViewSimpleOrder?id=@item.osID' style="background:#7685FF;" class="btn">
+                                        <i class="fas fa-dollar-sign" style="font-size:30px;"></i><div>Add</div>
+                                    </a>
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+
+         
+          
+</body>

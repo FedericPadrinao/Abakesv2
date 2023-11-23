@@ -1,0 +1,181 @@
+﻿@page
+@model abakes2.Pages.AdminDashboardModel
+@{
+}
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <title>Admin panel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="~/img/AdminDashboard/user.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/Admin_ManageCakes">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>Manage Cake</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageOrders">
+                        <i class="fas fa-receipt"></i>
+                        <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageFeedback">
+                        <i class="fas fa-comments"></i>
+                        <div>Manage Feedback</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Notif">
+                        <i class="fas fa-bell"></i>
+                        <div>Manage Notification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageQR">
+                        <i class="fas fa-qrcode"></i>
+                        <div>Manage QR Code</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageAcc">
+                        <i class="fas fa-user"></i>
+                        <div>Account Manager</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminDashboard">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Statistical Report</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ChangePassword">
+                        <i class="fas fa-lock"></i>
+                        <div>Change Password</div>
+                    </a>
+                </li>
+                 <li>
+                     <a asp-page="/index" asp-page-handler="LogOut">
+                            <i class="fas fa-sign-out-alt"></i>
+                        <div>Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.feedbackcount</div>
+                        <div class="card-name">Feedback</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">42</div>
+                        <div class="card-name">Sales</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">68</div>
+                        <div class="card-name">Average Rating</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">₱46,500</div>
+                        <div class="card-name">Earnings</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-peso-sign"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.usercount</div>
+                        <div class="card-name">Users</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.ordersimplecount</div>
+                        <div class="card-name">Approved Simple Orders</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-clipboard"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.simplepending</div>
+                        <div class="card-name">Pending Simple Orders</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-clipboard"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart">
+                    <h2>Earnings (past 12 months)</h2>
+                    <div>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h2>Cake Flavors</h2>
+                    <div>
+                        <canvas id="doughnut"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="~/js/AdminDashboardjs/chart1.js"></script>
+    <script src="~/js/AdminDashboardjs/chart2.js"></script>
+</body>
+
+</html>

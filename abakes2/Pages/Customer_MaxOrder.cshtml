@@ -1,0 +1,228 @@
+﻿@page
+@model abakes2.Pages.Customer_MaxOrderModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+    <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/ContactUs/damarota-blog.css " asp-append-version="true">
+    <link href="~/css/footer/layout.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+
+
+
+    <style>
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+            .image-container img, .image-container iframe {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+        .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+            .col-md-6 p {
+                margin-top: 65px;
+                margin-bottom: 20px;
+                line-height: 3.2;
+            }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/Index">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                            {
+                                <li><a href="/Customer_SimpleOrder" class="dropdown-item">Order Form</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="/AboutUs" class="active">About us</a></li>
+                    <li><a href="/ContactUs">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                            <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <div class="dropdown text-end">
+                <!-- ACCOUNT IMAGE-->
+                @if (Model.userconfirm == null)
+                {
+                    <a class="signin" href="/Account">Sign in</a>
+                }
+                else
+                {
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                    </ul>
+                }
+                <!-- ACCOUNT IMAGE-->
+
+            </div>
+            <a href="/Customer_Notif" class="icon-link"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="icon-link"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <section class="page-heading" style="background-image: url('/img/contact/cover3.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+                        <h2>One cake per order</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner -->
+    <!-- Message -->
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="tnc">
+                    <p style="text-align: left; font-size:25px; padding: 90px 50px; color:#000;">
+                        Dear customers,<br><br>
+                        Apologies, but orders are limited to one cake per customer. We appreciate your understanding and cooperation.  <i class="fa-solid fa-face-smile"></i><br><br>
+                        Best wishes,<br><br> 
+                        A's Bakes 🍰
+                    </p>
+                    <div style="padding:20px 20px">
+                        <a href="/Index" class="btn">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footerBottom" style="background-color: #f7fff8;">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
+                <!-- Division 1 -->
+                <div class="divisions col mb-3">
+                    <div>
+                        <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+                    </div>
+                    <p class="text-bottom" style="font-family: Poppins ExtraBold;">
+                        Serving you sweet treats made with love ❤️
+                        We accept customized cakes, cupcakes, & more! Order now!
+                    </p>
+                </div>
+
+                <!-- Division 2 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:A_Bakes@gmail.com">A_Bakes@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Division 3 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
+                    <ul class="socials-pics nav flex-row img-fluid">
+                        <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
+                        <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
+                    </ul>
+                </div>
+
+                <!-- Division 4 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
+                    <button class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
+                </div>
+            </footer>
+        </div>
+        <div></div>
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "300px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+    <!-- Toggle Form -->
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+        function register() {
+            RegForm.style.transform = "translatex(0px)";
+            LoginForm.style.transform = "translatex(0px)";
+            Indicator.style.transform = "translateX(100px)";
+
+        }
+        function login() {
+            RegForm.style.transform = "translatex(300px)";
+            LoginForm.style.transform = "translatex(300px)";
+            Indicator.style.transform = "translate(0px)";
+
+        }
+    </script>
+
+</body>

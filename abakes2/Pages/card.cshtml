@@ -1,0 +1,128 @@
+﻿@page
+@model abakes2.Pages.cardModel
+@{
+	ViewData["Title"] = "Card";
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="~/css/card/card.css" rel="stylesheet" asp-append-version="true">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@700&display=swap" rel="stylesheet">
+	<title>Thank You Card</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.0.0/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.3/pdfmake.min.js"></script>
+	
+
+
+
+
+
+
+
+</head>
+
+	<style>
+		@@media print {
+			.buttons-container {
+				display: none;
+			}
+		}
+
+	.code-container {
+		display: flex;
+		align-items: center; 
+		
+	}
+
+
+		.code-container h1 {
+			margin-right: 120px; 
+
+			margin-left: 40px;
+		}
+
+
+
+
+	</style>
+<body>
+	
+	<div class="container">
+		<div class="logo-container">
+			<div class="logo">
+				<img src="~/img/logo/Logo.png" alt="Logo">
+			</div>
+			<div class="social-icons">
+				<a>
+					<img src="~/img/logo/facebook.png" alt="Facebook">
+					<span class="social-text">a.bakesandsweets</span>
+				</a>
+				<a>
+					<img src="~/img/logo/instagram.png" alt="Instagram">
+					<span class="social-text">a_bakesandsweets</span>
+				</a>
+				<a>
+					<img src="~/img/logo/phone.png" alt="Instagram">
+					<span class="social-text">09164656894</span>
+				</a>
+			</div>
+		</div>
+		<div class="info">
+			<h2>Thank You</h2>
+			<h3>FOR YOUR ORDER!</h3>
+			<p>Your order made our day and we hope this brighten yours.</p>
+			<hr class="divider" />
+			<p >Love your cake? Leave a review on our website using the code below</p>
+
+			<div class="code-container">
+				<h1>CODE: @Model.code</h1>
+				@if (!string.IsNullOrEmpty(Model.QRCodeImage))
+				{
+					<img src="@Model.QRCodeImage" alt="QR Code" style="width: 100px; height: auto;" />
+				}
+			</div>
+		</div>
+	</div>
+			<br/>
+
+
+	<div class="buttons-container">
+
+		<a class='btn btn-secondary' href="/Admin_ManageQR">Go Back</a>
+		
+		
+		
+		<button class='btn btn-success' onclick="printPage()"> Print </button>
+	</div>
+	
+</body>
+</html>
+<script>
+    setInterval(function () {
+        $.ajax({
+            url: "/managecode?handler=Expiration",
+            type: "GET",
+            success: function (result) {
+                console.log(result);
+                // handle the response here
+            },
+            error: function (xhr, status, error) {
+                console.log("Error: " + error);
+            }
+        });
+    }, 1000);
+
+
+
+</script>
+
+
+<script>
+	function printPage() {
+		window.print();
+	}
+</script>

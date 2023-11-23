@@ -1,0 +1,862 @@
+﻿@page
+@model abakes2.Pages.Customer_Order3DFormModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="~/css/homepage/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/homepage/carousel.css" asp-append-version="true">
+    <link href="~/css/footer/layout.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/ContactUs/damarota-blog.css " asp-append-version="true">
+    <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/3DForm/body.css" rel="stylesheet" asp-append-version="true">
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+</head>
+
+<style>
+    .image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+        .image-container img, .image-container iframe {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+
+
+</style>
+
+
+<body>
+
+    <!-- NAV BAR -->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/Index">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active" data-bs-toggle="dropdown">Order</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                            {
+                                <li><a href="/Customer_Order3DForm" class="dropdown-item">Order Form</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="/AboutUs">About us</a></li>
+                    <li><a href="/ContactUs">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                            <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="dropdown text-end">
+                <!-- ACCOUNT IMAGE-->
+                @if (Model.userconfirm == null)
+                {
+                    <a class="signin" href="/Account">Sign in</a>
+                }
+                else
+                {
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                    </ul>
+                }
+
+            </div>
+            <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+
+    <!-- Banner -->
+    <section class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+
+                        <h2>Design your Cake</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner -->
+
+    <div class="custom-model-main">
+        <div class="custom-model-inner">
+            <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap">
+                    <!--DITO IIBAHIN YUNG LAMAN-->
+                    <h2>Have a nice day!</h2>
+                    <p>This is message box popup that revealed on button click.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-overlay"></div>
+    </div>
+
+
+    <!--BODY-->
+    <!--TOP BOX-->
+    <div class="container-fluid">
+    <div class="row">
+        <h2 style="margin-top:30px;">Preset / Base Layer</h2>
+        <div class="col-lg-12">
+            <div class="container-box-top">
+               
+                 
+                    @foreach (var item in Model.order3DList)
+                    {
+                        <button class="presetbtn" onclick="loadModel('@item.ModelName','@item.Scale','@item.TColor','@item.TColor2','@item.TColor3','@item.TotalTexture');">@item.ModelType</button>
+
+                    }
+
+                </div>
+        </div>
+    </div>
+</div>
+<!--TOP BOX-->
+
+
+
+         <div class="container-fluid">
+        <div class="row" >
+            <!-- Side Container Box - Left -->
+            <div class="col-md-3" >
+                <h2>Decoration</h2>
+                <div class="container-box" >
+
+                    @foreach (var item in Model.asset3DList)
+                    {
+                        <button class="assetbtn" onclick="window.loadAssets('@item.AssetName','@item.AssetPath','@item.AssetScale','@item.PositionX','@item.PositionY','@item.PositionZ');">@item.AssetName </button>
+                    }
+
+                    <form id="insertCake" method="post">
+                        <input type="hidden" name="modelname" id="modelname" value="">
+                        <input type="hidden" name="scale" id="scale" value="">
+                        <input type="hidden" name="texture1" id="texture1" value="">
+                        <input type="hidden" name="texture2" id="texture2" value="">
+                        <input type="hidden" name="texture3" id="texture3" value="">
+                        <input type="hidden" name="totaltexture" id="totaltexture" value="">
+                        <input type="hidden" name="color1" id="color1" value="0xe1e1e1">
+                        <input type="hidden" name="color2" id="color2" value="0xe1e1e1">
+                        <input type="hidden" name="color3" id="color3" value="0xe1e1e1">
+                        <input type="hidden" name="collection" id="collection">  <!-- Dito mapupunta yung collection ng mga assets -->
+                        <input type="hidden" name="orderid" id="orderid" />
+                        <input type="hidden" name="assetname" id="assetname" />
+                        <input type="hidden" name="assetpath" id="assetpath" />
+                        <input type="hidden" name="assetscale" id="assetscale" />
+                        <input type="hidden" name="positionx" id="positionx" />
+                        <input type="hidden" name="positiony" id="positiony" />
+                        <input type="hidden" name="positionz" id="positionz" />
+
+                        <!-- <input type="hidden" name="color" id="color" value=""> -->
+
+     
+                    </form>
+  
+                </div>
+            </div>
+
+
+
+            <!-- Main Container Box - Center -->
+            <div class="col-md-6">
+                <div id="container" class="container-box-3d">
+                </div>
+            </div>
+
+            <!-- Side Container Box - Right -->
+          
+            <div class="col-md-3">
+                <h2>Controls</h2>
+                <div class="container-box" id="gui-container">
+
+                    <!-- HELP BUTTON-->
+                    <button class="Click-here">Help Me</button>
+                    <button class="functionbtn" id="loadModel1Button" onclick="activateButton()">Activate</button>
+                    <button class="functionbtn" id="DisplayDecoration">Display Decorations</button>
+                    <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none;">
+        <textarea id="codeInput" rows="4" cols="50"></textarea>
+    </div>
+
+    <div style="display:none;">
+        <textarea id="codeInput1" rows="4" cols="50"></textarea>
+    </div>
+
+    <div style="display:none;">
+        <textarea id="codeInput2" rows="4" cols="50"></textarea>
+    </div>
+    <div style="display:none;">
+        <textarea id="codeInput3" rows="4" cols="50"></textarea>
+    </div>
+
+
+
+    <script type="importmap">
+        {
+            "imports":{
+                "three": "./js/three.module.js"
+            }
+        }
+    </script>
+    <script type="text/javascript" src="./js/dat.gui.min.js"></script>
+
+    <script type="module">
+
+        import * as THREE from 'three';
+        import { GLTFLoader } from "./js/GLTFLoader.js";
+        import { OrbitControls } from './js/OrbitControls.js';
+        import { DragControls } from './js/DragControls.js';
+        var container, scene, camera, renderer, control, obj, light;
+        var ambientLight, directionalLight, controls;
+        var decoration1 = 'models/sprinkles.json';
+        var decoration2 = 'models/fruits.json';
+        var loadVariables;
+        var globalVariables = {};
+        var varCounter = 0;
+        var indexCount = 0;
+
+
+
+        var boxWidth, boxHeight, boxDepth;
+        var assetName = document.getElementById('assetname').value;
+        var assetPath = document.getElementById('assetpath').value;
+        var assetScale = document.getElementById('assetscale').value;
+        var positionX = document.getElementById('positionx').value;
+        var positionY = document.getElementById('positiony').value;
+        var positionZ = document.getElementById('positionz').value;
+
+        init();
+        animate();
+        function init() {
+            //SCENE
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xF1DBC4);
+
+            //CAMERA
+            camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.01,
+                1000
+            );
+            camera.position.set(10, 10, 100); //Start positiong ng camera
+
+            //SCENE RENDERER
+            renderer = new THREE.WebGLRenderer();
+            renderer.setClearColor(0x000000, 1);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container = document.getElementById('container');
+            container.appendChild(renderer.domElement);
+
+
+            //CAMERA CONTROL
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.addEventListener('change', () => { renderer.render(scene, camera) });
+            controls.target.set(0, 0, 0);
+            controls.update();
+
+            //LIGHTING
+            ambientLight = new THREE.AmbientLight(0xffffff);
+            scene.add(ambientLight);
+
+            //DIRECTIONAL LIGHT PARA KUMINTAB YUNG MODEL
+            directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+            scene.add(directionalLight);
+            obj;
+
+            //Additional lighting lang
+            light = new THREE.HemisphereLight(0xffffff, 0x000000, 2);
+            scene.add(light);
+
+            //DRAG AND DROP
+            const sceneMeshes = [];
+
+            const dControls = new DragControls(sceneMeshes, camera, renderer.domElement);
+            dControls.deactivate();
+            dControls.activate();
+
+            dControls.addEventListener("hoveron", function (event) {
+                console.log(event.object);
+
+
+                controls.enabled = false;
+            })
+
+            dControls.addEventListener("hoveroff", function (event) {
+                console.log(event.object);
+
+
+                controls.enabled = true;
+            })
+
+            dControls.addEventListener("dragstart", function (event) {
+                console.log(event.object.material);
+
+
+
+                controls.enabled = false;
+            })
+
+            dControls.addEventListener("dragend", function (event) {
+                document.getElementById('positionx').value = "";
+                document.getElementById('positiony').value = "";
+                document.getElementById('positionz').value = "";
+                positionY = "";
+                positionZ = "";
+                for (var i = 0; i < indexCount; i++) {
+                    eval(`
+                               var positionX${i + 1};
+                                var positionY${i + 1};
+                                var positionZ${i + 1};
+                                positionX${i + 1} =  globalVariables[${i}].modelDragBox${i + 1}.position.x;
+                                positionY${i + 1} =  globalVariables[${i}].modelDragBox${i + 1}.position.y;
+                                positionZ${i + 1} =  globalVariables[${i}].modelDragBox${i + 1}.position.z;
+
+                               document.getElementById('positionx').value += positionX${i + 1} + ",";
+                               document.getElementById('positiony').value += positionY${i + 1}+ ",";
+                               document.getElementById('positionz').value += positionZ${i + 1} + ",";
+
+
+                            console.log("PositionX: " +   document.getElementById('positionx').value);
+
+
+                            `);
+
+                }
+                controls.enabled = true;
+            })
+
+            const plane1 = new THREE.Mesh(
+                new THREE.PlaneGeometry(100, 100),
+                new THREE.MeshBasicMaterial({ color: "aqua" })
+            );
+            plane1.position.set(0, -5, 0);
+            plane1.rotateX(-Math.PI / 2);
+            scene.add(plane1);
+            var value = document.getElementById('codeInput3').value;
+            eval(value);
+
+            var gltfLoader = new GLTFLoader();
+            var assetNameArray = assetName.split(',');
+            var assetPathArray = assetPath.split(',');
+            var assetScaleArray = assetScale.split(',');
+            var positionXArray = positionX.split(',');
+            var positionYArray = positionY.split(',');
+            var positionZArray = positionZ.split(',');
+
+
+
+
+            document.getElementById('DisplayDecoration').addEventListener('click', function () {
+
+                var codeExecute = document.getElementById('codeInput').value;
+
+
+
+                eval(codeExecute);
+
+
+
+
+                //console.log("Var1: "+globalVariables[0].modelDragBox1.position.x);
+                //console.log("Var2: "+globalVariables[1].modelDragBox2.position.x);
+            });
+
+
+
+        }
+
+
+
+
+        function resizeRendererToContainer() {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        }
+
+        // Call the function once to initialize the renderer dimensions
+        resizeRendererToContainer();
+
+        // Add an event listener to resize the renderer when the window size changes
+        window.addEventListener('resize', resizeRendererToContainer);
+        function animate() {
+
+
+            var codeValues = document.getElementById('codeInput1').value;
+
+
+            requestAnimationFrame(animate);
+            var posX = "";
+            for (var i = 0; i < indexCount; i++) {
+                eval(`
+                              if (globalVariables[${i}].modelReady${i + 1}){
+                               globalVariables[${i}].modelGroup${i + 1}.position.copy(globalVariables[${i}].modelDragBox${i + 1}.position);
+
+                               globalVariables[${i}].boxHelper${i + 1}.update();
+
+
+
+
+
+                             }
+
+
+                             `);
+
+
+
+
+
+            }
+
+
+            renderer.render(scene, camera);
+
+        }
+
+
+        //GUI Color
+        const guiContainer = document.getElementById('gui-container');
+        const gui = new dat.GUI();
+        guiContainer.appendChild(gui.domElement);
+        //LOAD NG MODEL USE .JSON FOR C# DI GUMAGANA .GTLF
+        //Model and Texture loader
+        var fileUrl = new URL('', import.meta.url); //Declaration ng model
+        document.getElementById('loadModel1Button').addEventListener('click', function () {
+            var ModelName = document.getElementById('modelname').value;
+            var scale = document.getElementById('scale').value;
+            var texture1 = document.getElementById('texture1').value;
+            var textureName1 = texture1.toString();
+            var texture2 = document.getElementById('texture2').value;
+            var textureName2 = texture2.toString();
+            var texture3 = document.getElementById('texture3').value;
+            var textureName3 = texture3.toString();
+            var totaltexture = document.getElementById('totaltexture').value;
+            var color1 = document.getElementById('color1').value;
+            var color2 = document.getElementById('color2').value;
+            var color3 = document.getElementById('color3').value;
+            var loader = new GLTFLoader();
+            loader.load(ModelName, function (model1) {
+                const options = {
+                    'Base Layer': 0xe1e1e1,
+                    'Base Layer 2': 0xe1e1e1,
+                    'Base Layer 3': 0xe1e1e1
+                }
+                obj = model1.scene;
+                scene.add(model1.scene);
+                console.log(obj.getObjectByName(textureName1));
+                console.log(obj.getObjectByName(textureName2));
+                console.log(obj.getObjectByName(textureName3));
+
+                //CHECK THE CORRECT MATERIAL IN THE THREE.JS EDITOR
+                gui.addColor(options, 'Base Layer').onChange(function (color1) {
+
+                    obj.getObjectByName(textureName1).material.color.setHex(color1);
+                    document.getElementById('color1').value = color1;
+
+                });
+                if (totaltexture == 2) {
+                    gui.addColor(options, 'Base Layer 2').onChange(function (color2) {
+
+                        obj.getObjectByName(textureName2).material.color.setHex(color2);
+                        document.getElementById('color2').value = color2;
+                    });
+                }
+                if (totaltexture == 3) {
+                    gui.addColor(options, 'Base Layer 2').onChange(function (color2) {
+                        obj.getObjectByName(textureName2).material.color.setHex(color2);
+                        document.getElementById('color2').value = color2;
+                    });
+                    gui.addColor(options, 'Base Layer 3').onChange(function (color3) {
+                        obj.getObjectByName(textureName3).material.color.setHex(color3);
+                        document.getElementById('color3').value = color3;
+                    });
+
+                }
+
+                // Set position and scale for model1
+                obj.position.set(0, 0, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
+                obj.scale.set(scale, scale, scale); // Size ng model dapat pantay siya or magiiba yung shape
+
+                // Additional customization if needed
+
+                /* obj.material.color.setHex(0x00F00); */ // Doesn't work
+            }, undefined, function (error) {
+                console.error(error);
+            });
+        });
+
+        function saveAssets(assetName, assetPath, assetScale, positionX, positionY, positionZ) {
+
+            var assetName = document.getElementById('assetname').value += assetName + ",";
+            var assetPath = document.getElementById('assetpath').value += assetPath + ",";
+            var assetScale = document.getElementById('assetscale').value += assetScale + ",";
+            var positionX = document.getElementById('positionx').value += positionX + ",";
+            var positionY = document.getElementById('positiony').value += positionY + ",";
+            var positionZ = document.getElementById('positionz').value += positionZ + ",";
+
+            var asset = {
+                assetname: assetName,
+                assetpath: assetPath,
+                assetscale: assetScale,
+                positionx: positionX,
+                positiony: positionY,
+                positionz: positionZ
+            }
+            console.log('assetName: ' + assetName + "\n" + assetPath + "\n" + assetScale + "\n" + positionX + "\n" + positionY + "\n" + positionZ);
+
+            list.push(asset);
+
+            /*list.forEach(function(asset) {
+                assetName.value += asset.assetname + ",";
+                assetPath.value += asset.assetpath + ",";
+                assetScale.value += asset.assetpath + ",";
+                positionX.value += asset.positionx + ",";
+                positionY.value += asset.positiony + ",";
+                positionZ.value += asset.positionz + ",";
+            }); */
+
+        }
+
+
+
+        function loadAssets(assetName, assetPath, assetScale, positionX, positionY, positionZ) {
+            varCounter++;
+
+            var existingCode = document.getElementById('codeInput').value;
+            existingCode = "";
+
+            // loadVariable();
+            var newCode = `
+
+                    gltfLoader.load('${assetPath}', function(gltf${varCounter}) {
+                        gltf${varCounter}.scene.traverse(function (child) {
+                            if (child instanceof THREE.Group) {
+                                globalVariables[${indexCount}].modelGroup${varCounter} = child;
+                            }
+                            if (child.isMesh) {
+                                child.castShadow = true;
+                                child.frustumCulled = false;
+                                child.geometry.computeVertexNormals();
+                            }
+                        });
+
+                        var model1 = gltf${varCounter}.scene;
+                        var handle = 10 * model1.scale.x;
+                        globalVariables[${indexCount}].modelDragBox${varCounter} = new THREE.Mesh(
+                            new THREE.BoxGeometry(handle, handle, handle),
+                            new THREE.MeshBasicMaterial({ transparent: true, opacity: 0 })
+                        )
+
+                        globalVariables[${indexCount}].modelDragBox${varCounter}.geometry.translate(0, 3, 0);
+                        scene.add(globalVariables[${indexCount}].modelDragBox${varCounter});
+                        sceneMeshes.push(globalVariables[${indexCount}].modelDragBox${varCounter});
+                        globalVariables[${indexCount}].boxHelper${varCounter} = new THREE.BoxHelper(globalVariables[${indexCount}].modelDragBox${varCounter}, 0xffff00);
+                        globalVariables[${indexCount}].boxHelper${varCounter}.visible = false;
+                        scene.add(globalVariables[${indexCount}].boxHelper${varCounter})
+                        scene.add(gltf${varCounter}.scene);
+                        globalVariables[${indexCount}].modelReady${varCounter} = true;
+                    },
+                    (xhr) => {
+                        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+                    },
+                    (error) => {
+                        console.log(error)
+                    });
+
+
+                `;
+
+
+
+
+            // Generate variable names with the current counter value
+            var modelReadyName = 'modelReady' + varCounter;
+            var modelGroupName = 'modelGroup' + varCounter;
+            var modelDragBoxName = 'modelDragBox' + varCounter;
+            var boxHelperName = 'boxHelper' + varCounter;
+
+            // Declare variables dynamically and store them in the object
+            globalVariables[modelReadyName] = undefined;
+            globalVariables[modelGroupName] = undefined;
+            globalVariables[modelDragBoxName] = undefined;
+            globalVariables[boxHelperName] = undefined;
+
+            // Store the dynamically created variables in the global object
+            globalVariables[indexCount] = globalVariables;
+
+
+
+
+
+
+            //concatenate the exisiting code
+
+            var updatedCode = existingCode + "\n" + newCode;
+
+            document.getElementById('codeInput').value = updatedCode;
+
+            console.log(existingCode);
+
+            loadPosition();
+
+            indexCount++;
+
+
+            saveAssets(assetName, assetPath, assetScale, positionX, positionY, positionZ);
+
+        }
+
+        function loadPosition() {
+
+            var existingCode = document.getElementById('codeInput1').value;
+
+            var newCode = `
+                       if (globalVariables[${indexCount}].modelReady${varCounter}){
+                        globalVariables[${indexCount}].moduleGroup${varCounter}.position.copy(globalVariables[${indexCount}].modelDragBox${varCounter}.position);
+                        globalVariables[${indexCount}].boxHelper${varCounter}.update();
+                        }
+                `;
+
+
+
+            var coder = document.getElementById('codeInput3').value;
+
+            var newCode = `globalVariables[${indexCount}].modelReady${varCounter} = false;`;
+            coder += coder + "\n" + newCode;
+
+            document.getElementById('codeInput3').value = coder;
+
+            //concatenate the exisiting code
+
+            var updatedCode = existingCode + "\n" + newCode;
+
+            document.getElementById('codeInput1').value = updatedCode;
+
+            console.log(existingCode);
+
+
+        }
+
+        window.loadAssets = loadAssets;
+
+
+    </script>
+
+    <script>
+        var varCounter = 0;
+        var list = [];
+
+        function savePos() {
+            `var positionX = globalVariables[${i}].modelDragBox${i}.position.x;
+                                        var positionY = globalVariables[${i}].modelDragBox${i}.position.y;
+                                        var positionZ = globalVariables[${i}].modelDragBox${i}.position.z;`
+
+        }
+        function loadModel(name, scale, texture1, texture2, texture3, totaltexture) {
+            if (list.length > 0) {
+                alert('Only one base model can be added.');
+                return;
+            }
+            var modelName = document.getElementById('modelname').value = name;
+            var scale = document.getElementById('scale').value = scale;
+            var texture1 = document.getElementById('texture1').value = texture1;
+            var texture2 = document.getElementById('texture2').value = texture2;
+            var texture3 = document.getElementById('texture3').value = texture3;
+            var totaltexture = document.getElementById('totaltexture').value = totaltexture;
+
+            var model = {
+                modelname: modelName,
+                scale: scale,
+                texture1: texture1,
+                texture2: texture2,
+                texture3: texture3,
+                totaltexture: totaltexture
+            };
+
+            list.push(model);
+            // var sprinkles = sprinkles1
+            // var candle = candle 2
+
+        }
+
+
+        function activateButton() {
+            // Get the button element
+            var button = document.getElementById('loadModel1Button');
+
+            // Check if the button exists
+            if (button) {
+                // Set the display property to 'none' to hide the button
+                button.style.display = 'none';
+            }
+        }
+
+
+
+
+
+
+        function loadVariable() {
+
+            //        var modelReadyName = 'modelReady' + varCounter;
+            // var modelGroupName = 'modelGroup' + varCounter;
+            // var modelDragBoxName = 'modelDragBox' + varCounter;
+            // var boxHelperName = 'boxHelper' + varCounter;
+
+            // // Declare variables dynamically
+
+
+            // // Store values in globalVariables
+            // window.globalVariables[modelReadyName] = "";
+            // window.globalVariables[modelGroupName] = "";
+            // window.globalVariables[modelDragBoxName] = "";
+            // window.globalVariables[boxHelperName] = "";
+
+            var existingCode = document.getElementById('codeInput3').value;
+
+            // Update values dynamically
+            var newCode = `
+                   var modelReady${window.varCounter}, modelGroup${window.varCounter}, modelDragBox${window.varCounter}, boxHelper${window.varCounter};
+                `;
+
+            var updatedCode = existingCode + "\n\n" + newCode;
+
+            document.getElementById('codeInput3').value = updatedCode;
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <div id="footerBottom" style="background-color: #f7fff8;">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
+                <!-- Division 1 -->
+                <div class="divisions col mb-3">
+                    <div>
+                        <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+                    </div>
+                    <p class="text-bottom" style="font-family: Poppins ExtraBold;">
+                        Serving you sweet treats made with love ❤️
+                        We accept customized cakes, cupcakes, & more! Order now!
+                    </p>
+                </div>
+
+                <!-- Division 2 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:A_Bakes@gmail.com">A_Bakes@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Division 3 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
+                    <ul class="socials-pics nav flex-row img-fluid">
+                        <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
+                        <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
+                    </ul>
+                </div>
+
+                <!-- Division 4 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
+                    <button class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
+                </div>
+            </footer>
+        </div>
+        <div></div>
+    </div>
+
+
+</body>
+
+<!-- jQuery FOR HELP BUTTON -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script>
+    $(".Click-here").on('click', function () {
+        $(".custom-model-main").addClass('model-open');
+    });
+    $(".close-btn, .bg-overlay").click(function () {
+        $(".custom-model-main").removeClass('model-open');
+    });
+</script>
+
+
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "300px"
+        }
+        else {
+            MenuItems.style.maxHeight = "0px"
+        }
+    }
+    src = "~/js/bootstrap.bundle.min.js"
+
+</script>

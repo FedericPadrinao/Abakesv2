@@ -1,0 +1,200 @@
+﻿@page
+@model abakes2.Pages.Admin_ManageArchiveFeedbacksModel
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <title>Manage Feedback</title>
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <!-- Banner -->
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="~/img/AdminDashboard/user.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/Admin_ManageCakes">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>Manage Cake</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageOrders">
+                        <i class="fas fa-receipt"></i>
+                        <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageFeedback" class="active">
+                        <i class="fas fa-comments"></i>
+                        <div>Manage Feedback</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Notif">
+                        <i class="fas fa-bell"></i>
+                        <div>Manage Notification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageQR">
+                        <i class="fas fa-qrcode"></i>
+                        <div>Manage QR Code</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageAcc">
+                        <i class="fas fa-user"></i>
+                        <div>Account Manager</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminDashboard">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Statistical Report</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ChangePassword">
+                        <i class="fas fa-lock"></i>
+                        <div>Change Password</div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/index" asp-page-handler="LogOut">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Banner End -->
+        <!--Main Window-->
+        <div class="main">
+            <!--Title Bar-->
+            <section class="page-heading" style="background-image: url('/img/contact/cover2.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-content">
+                                <h2>Manage Feedback</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Title Bar End-->
+
+            <div class="admin-table">
+                <button type="submit" class="btn" style="margin:1%;">Back</button>
+                <a href="/Admin_ManageFeedback" type="submit" class="btn" style="margin:1%;">For display</a>
+                <div class="search">
+                    <label for="search"><i class="fas fa-search"></i></label>
+                    <input type="text" name="search" placeholder="Search for Feedbacks">
+                </div>
+
+                <table class="table" style="margin:1%;">
+                    <thead>
+
+                        <tr>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">ID</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Name</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Rating</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:60%;">Message</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Status</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Image</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.listFeedback)
+                        {
+                            <tr>
+                                <td>@item.fbID</td>
+                                <td>@item.fbName</td>
+                                <td>@item.fbRating</td>
+                                <td>@item.fbMessage</td>
+                                <td>@item.status</td>
+
+                                <td>
+                                    <img src="@item.fbImg" alt="logo" class="product-thumbnail;" style="max-width: 50%;">
+                                </td>
+
+                                <td>
+
+                                    <a class='btn' href='/ViewFeedback?id=@item.fbID' style="background:#FFCA6D; color:black;">
+                                        <i class="fas fa-eye" style="font-size:30px;"></i> <div>View</div>
+                                    </a>
+                                    <a class='btn' asp-page-handler="Remove" asp-route-id=@item.fbID style="background:#9a0009;">
+                                        <i class="fas fa-trash" style="font-size:30px;"></i> <div>Delete</div>
+                                    </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
+                                    <a class='btn' asp-page-handler="Approval" asp-route-id=@item.fbID style="background:#7685FF; ">
+                                        Approve
+                                    </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
+
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!--Main Window End-->
+            <!-- javascript -->
+
+            <script>
+                var MenuItems = document.getElementById("MenuItems");
+                MenuItems.style.maxHeight = "0px";
+                function menutoggle() {
+                    if (MenuItems.style.maxHeight == "0px") {
+                        MenuItems.style.maxHeight = "300px"
+                    }
+                    else {
+                        MenuItems.style.maxHeight = "0px"
+                    }
+                }
+            </script>
+
+            <!-- Toggle Form -->
+            <script>
+                var LoginForm = document.getElementById("LoginForm");
+                var RegForm = document.getElementById("RegForm");
+                var Indicator = document.getElementById("Indicator");
+                function register() {
+                    RegForm.style.transform = "translatex(0px)";
+                    LoginForm.style.transform = "translatex(0px)";
+                    Indicator.style.transform = "translateX(100px)";
+
+                }
+                function login() {
+                    RegForm.style.transform = "translatex(300px)";
+                    LoginForm.style.transform = "translatex(300px)";
+                    Indicator.style.transform = "translate(0px)";
+
+                }
+            </script>
+
+</body>

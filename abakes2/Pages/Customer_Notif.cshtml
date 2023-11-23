@@ -1,0 +1,249 @@
+﻿@page
+@model abakes2.Pages.Customer_NotifModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+    <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/Account/PageHeading.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/ContactUs/damarota-blog.css " asp-append-version="true">
+    <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link href="~/css/footer/layout.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/Notification/styles.css" rel="stylesheet" asp-append-version="true">
+        <link href="~/css/Account/PageHeading.css" rel="stylesheet" asp-append-version="true">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.11/push.min.js"></script>
+
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/Index">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                            {
+                                <li><a href="/Customer_SimpleOrder" class="dropdown-item">Order Form</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="">Gallery</a></li>
+                    <li><a href="/AboutUs">About us</a></li>
+                    <li><a href="/ContactUs">Contact</a></li>
+                                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                            <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <div class="dropdown text-end">
+                <!-- ACCOUNT IMAGE-->
+                @if (Model.userconfirm == null)
+                {
+                        <a class="signin" href="/Account">Sign in</a>
+                }
+                else
+                {
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                            <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                            <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                        </ul>
+                }
+                <!-- ACCOUNT IMAGE-->
+
+            </div>
+            <a href="/Customer_Notif" class="badge" data-badge="@Model.NotificationCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <section class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+
+                        <h2>Notification</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Banner -->
+<div class="container notifications-container shadow">
+    <div class="row header">
+        <div class="col-7">
+            <p class="title">
+                Notifications
+                <span class="unread-notifications-number">@Model.NotificationCount</span>
+            </p>
+        </div>
+        <div class="col-5 mark-as-read text-end">
+            <a href="#" id="markAllAsRead" class="mark-as-read-button align-middle">Mark all as read</a>
+        </div>
+    </div>
+
+    @foreach (var item in Model.listNotifications)
+    {
+        <div class="row notifications">
+            <div class="col-12">
+                <div class="row single-notification-box unread">
+                    <div class="col-11 notification-text">
+                        <p>
+                            <a href="#" class="link name">@item.NotifTitle</a>
+                            <span class="unread-symbol">•</span>
+                        </p>
+                        <p class="time">5 days ago</p>
+                                            <div class="col-1 profile-picture clickable-image">
+                        <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
+                    </div>
+                        <div class="private-message">
+                            @item.NotifText
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    @foreach (var item in Model.listPrivateNotifInfo)
+    {
+        <div class="row notifications">
+            <div class="col-12">
+                <div class="row single-notification-box unread">
+                    <div class="col-11 notification-text">
+                        <p>
+                            <a href="#" class="link name">@item.NotifTitle</a>
+                            <span class="unread-symbol">•</span>
+                        </p>
+                        <p class="time">5 days ago</p>
+                                            <div class="col-1 profile-picture clickable-image">
+                        <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
+                    </div>
+                        <div class="private-message">
+                            @item.NotifText
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+        <!-- FOOTER -->
+<div id="footerBottom" style="background-color: #f7fff8;">
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
+            <!-- Division 1 -->
+            <div class="divisions col mb-3">
+                <div>
+                    <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+                </div>
+                <p class="text-bottom" style="font-family: Poppins ExtraBold;">
+                    Serving you sweet treats made with love ❤️
+                    We accept customized cakes, cupcakes, & more! Order now!
+                </p>
+            </div>
+
+            <!-- Division 2 -->
+            <div class="divisions col mb-4">
+                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
+                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:A_Bakes@gmail.com">A_Bakes@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <!-- Division 3 -->
+            <div class="divisions col mb-4">
+                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
+                <ul class="socials-pics nav flex-row img-fluid">
+                    <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
+                    <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
+                </ul>
+            </div>
+
+            <!-- Division 4 -->
+            <div class="divisions col mb-4">
+                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
+                <button class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
+            </div>
+        </footer>
+    </div>
+    <div></div>
+</div>
+
+
+
+
+    <!-- javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="~/js/Notification/script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (MenuItems.style.maxHeight === "0px") {
+                MenuItems.style.maxHeight = "300px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+
+        // Additional JavaScript code can be added here.
+    });
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

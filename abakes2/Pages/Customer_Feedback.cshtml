@@ -1,0 +1,367 @@
+﻿@page
+@model abakes2.Pages.Customer_FeedbackModel
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <title>Gallery</title>
+    <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/ContactUs/damarota-blog.css " asp-append-version="true">
+    <link href="~/css/footer/layout.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+
+</head>
+
+
+
+     <!-- NAV BAR -->
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="/Index">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                                @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                                {
+                                    <li><a href="/Customer_SimpleOrder" class="dropdown-item">Order Form</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                                }
+                            </ul>
+                        </li>
+                        <li><a href="">Gallery</a></li>
+                        <li><a href="/AboutUs" >About us</a></li>
+                        <li><a href="/ContactUs" class="active">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                                <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                            </ul>
+                        </li>
+                    
+                    </ul>
+                </nav>
+                <div class="dropdown text-end">
+                    <!-- ACCOUNT IMAGE-->
+                    @if (Model.userconfirm == null)
+                    {
+                        <a class="signin" href="/Account">Sign in</a>
+                    }
+                    else
+                    {
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                            <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                            <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                        </ul>
+                    }
+                    <!-- ACCOUNT IMAGE-->
+                </div>
+                @if (Model.userconfirm != null)
+                {
+                    <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+                    <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+
+                }
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+
+        <!-- Banner -->
+            <section class="page-heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-content">
+                      
+                                <h2>Feedbacks</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+       
+
+        <!-- Banner -->
+    <div class="site-section">
+          <div class="container">
+
+            <div class="row mb-5">
+              <div class="col-md-9 order-2 mx-auto">
+
+                <div class="row">
+                  <div class="col-md-12 mb-5">
+                                    
+                                    <a class="btn btn-btn-dark btn-sm" href="/ManageFeedback" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4;"> Add Feedback</a>
+                                    <form method="get">
+                                    <div class="form-group">
+                                        <label for="searchInput" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Search:</label>
+                                        <input type="text" class="form-control" name="search" placeholder="Enter product name">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;">Search</button>
+                                
+                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Name" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Name Desc</a> 
+                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Name2" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Name Asc</a> 
+                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Rating" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Price Desc</a> 
+                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Rating2" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Price Asc</a> 
+
+
+                                    </form>
+                    <div class="d-flex">
+                 
+                
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-5 ">
+                    @foreach (var item in Model.listFeedback)
+                 {
+                  <div class="col-sm-6 col-lg-4 mb-4" >
+                    <div class="block-4 text-center border">
+                      <figure class="block-4-image">
+                        <a href="/Customer_ViewFeedback?id=@item.fbID"><img src="@item.fbImg" alt="Image placeholder" class="img-fluid" style="max-width: 100%"></a>
+                      </figure>
+                      <div class="block-4-text p-4">
+                                                <h3><a href="/Customer_ViewFeedback?id=@item.fbID" style="font-family:Poppins ExtraBold; color: rgb(252,188,180);">@item.fbName</a></h3>
+                        <div class="container">
+                            <span id="rateMe2"  class="empty-stars"></span>
+                        </div>
+                        <div class = "rate" id ="star" style="margin-left:25px;" >
+
+
+
+                        <fieldset class="rating">
+
+                    @if(item.fbRating.Equals("5")){
+                        <input type ="radio" id ="star5" name="" value="5" checked/> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  disabled/> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" disabled/> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5" disabled/> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3" disabled/> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" disabled/> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5"  disabled/> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" disabled/> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" disabled/> <label for="star0.5" class="half"></label>
+                   }
+
+                   @if(item.fbRating.Equals("4.5")){
+                        <input type ="radio" id ="star5" value="5" disabled/> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5" checked /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" disabled/> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5" /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3" /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label>
+                                                            <input type="radio" id="star0.5" value="0.5" disabled />
+                                                            <label for="star0.5" class="half"></label>
+                   }
+
+                     @if(item.fbRating.Equals("4")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" checked/> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5" /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3" /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+                   @if(item.fbRating.Equals("3.5")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5" checked /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3" /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+                   @if(item.fbRating.Equals("3")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5"  /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3" checked /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+
+                   @if(item.fbRating.Equals("2.5")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5"  /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3"  /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5"checked /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+                    @if(item.fbRating.Equals("2")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5"  /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3"  /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" checked/> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+                   @if(item.fbRating.Equals("1.5")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5"  /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3"  /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5" checked /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+                   @if(item.fbRating.Equals("1")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5"  /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3"  /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5"  /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1" checked /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" /> <label for="star0.5" class="half"></label>
+                   }
+
+                   @if(item.fbRating.Equals("0.5")){
+                        <input type ="radio" id ="star5" value="5" /> <label for="star5" class="full"></label> 
+                        <input type ="radio" id ="star4.5" value="4.5"  /> <label for="star4.5" class="half"></label> 
+                        <input type ="radio" id ="star4" value="4" /> <label for="star4" class="full"></label> 
+                        <input type ="radio" id ="star3.5"value="3.5"  /> <label for="star3.5" class="half"></label> 
+                        <input type ="radio" id ="star3" value="3"  /> <label for="star3" class="full"></label> 
+                        <input type ="radio" id ="star2.5" value="2.5" /> <label for="star2.5" class="half"></label> 
+                        <input type ="radio" id ="star2" value="2" /> <label for="star2" class="full"></label> 
+                        <input type ="radio" id ="star1.5" value="1.5"  /> <label for="star1.5" class="half"></label> 
+                        <input type ="radio" id ="star1" value="1"  /> <label for="star1" class="full"></label> 
+                        <input type ="radio" id ="star0.5"  value="0.5" checked /> <label for="star0.5" class="half"></label>
+                   }
+
+
+
+
+
+                        </fieldset>
+                    
+                        </div>
+                        <div class="container">
+                            <br> <br>
+                          <h3 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">@item.fbMessage</h3>
+                        </div>
+                              <a class='btn btn-btn-dark btn-sm' href='/Customer_ViewFeedback?id=@item.fbID' style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4; margin-top:20px;"> View</a>
+                   </div>
+                    </div>
+                  </div>
+                }
+               </div>
+
+               <!-- PAGINATION BUTTONS-->
+                        <div style="align-content: center; color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"">
+                        @{
+                            double pages = (Model.totalItems / Model.totals);
+                            if (pages % 1 == 0)
+                            {
+
+                            }
+                            else
+                            {
+                                pages += 1;
+                            }
+                            int totalPage = (int)pages;
+                            int counts = 0;
+
+
+                            int counter = 1;
+                            double totales = (totalPage - Model.pagecurrent);
+
+
+
+                        }
+
+                        @if ((Model.pagecurrent) == 1) { }else{
+                                <a href="/Customer_Gallery?page=@(Model.pagecurrent-1)" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Previous</a>
+                        }
+
+                        @while(counts <= totales){
+                            @if(counter <=5){
+                                    <a href="/Customer_Gallery?page=@Model.pagecurrent" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"> @Model.pagecurrent</a>
+                            }else{
+
+                            }
+
+                            counts++;
+                            Model.pagecurrent++;
+                            counter++;
+                        }
+
+                        @if((Model.pagecurrent) == totales){}else{
+
+                            @if (Model.pagecurrent == 1)
+                            {
+                                    <a href="/ProductCustomer?page=@Model.pagecurrent" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Last</a>
+                            }else{
+                                    <a href="/ProductCustomer?page=@(Model.pagecurrent-1)" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Last</a>
+                            }
+
+                        }
+                        </div>
+
+                         <!-- PAGINATION BUTTONS-->
+      
+              </div>
+              </div>
+            </div>
+
+            </main>
+        
+        
+          </div>
+        
+

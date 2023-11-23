@@ -1,0 +1,180 @@
+﻿@page
+@model abakes2.Pages.AdminNotifModel
+@{
+}
+
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <title>Manage Notification</title>
+</head>
+
+<body>
+    <!--NAV BAR-->
+
+    <!-- Banner -->
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="~/img/AdminDashboard/user.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/Admin_ManageCakes">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>Manage Cake</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageOrders">
+                        <i class="fas fa-receipt"></i>
+                        <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageFeedback">
+                        <i class="fas fa-comments"></i>
+                        <div>Manage Feedback</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Notif" class="active">
+                        <i class="fas fa-bell"></i>
+                        <div>Manage Notification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageQR">
+                        <i class="fas fa-qrcode"></i>
+                        <div>Manage QR Code</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageAcc">
+                        <i class="fas fa-user"></i>
+                        <div>Account Manager</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminDashboard">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Statistical Report</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ChangePassword">
+                        <i class="fas fa-lock"></i>
+                        <div>Change Password</div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/index" asp-page-handler="LogOut">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <section class="page-heading" style="background-image: url('/img/contact/cover2.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-content">
+                                <h2>Manage Notification</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <a href="/Admin_ManageNotif" type="submit" class="btn" style="margin:1%;">Manage Notifications</a>
+            <div class="col-2">
+                <div class="account-page" style="padding-left: 55px; padding-top:10px;">
+                    <div class="container">
+                        <div class="adminbox" style="height:900px; width:550px; padding:45px; border-radius:5%;">
+                            <form id="GlobalNotifForm" method="post" enctype="multipart/form-data">
+                                <h2>Global Notification</h2>
+                                <h3>Notification Title</h3>
+                                <input type="text" placeholder="Notification Title" name="title">
+                                <h3>Notification Text</h3>
+                                <textarea id="message" name="textmessage" rows="10" cols="80" minlength="25" maxlength="200" required></textarea>
+                                <!-- <input style="height:400px;" type="text"> -->
+                                <h3>Notification Image</h3>
+                                <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
+                                <button type="submit" class="btn">Post Notification</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- javascript -->
+
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+            MenuItems.style.maxHeight = "0px";
+            function menutoggle() {
+                if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "300px"
+                }
+                else {
+                    MenuItems.style.maxHeight = "0px"
+                }
+            }
+        </script>
+
+        <!-- Toggle Form -->
+        <script>
+            var LoginForm = document.getElementById("LoginForm");
+            var RegForm = document.getElementById("RegForm");
+            var Indicator = document.getElementById("Indicator");
+            function register() {
+                RegForm.style.transform = "translatex(0px)";
+                LoginForm.style.transform = "translatex(0px)";
+                Indicator.style.transform = "translateX(100px)";
+
+            }
+            function login() {
+                RegForm.style.transform = "translatex(300px)";
+                LoginForm.style.transform = "translatex(300px)";
+                Indicator.style.transform = "translate(0px)";
+
+            }
+        </script>
+        <script>
+            function previewImage() {
+                var fileInput = document.getElementById('fileInput');
+                var imgPreview = document.getElementById('imgPreview');
+
+                if (fileInput.files && fileInput.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        imgPreview.src = e.target.result;
+                    }
+
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            }
+        </script>
+</body>

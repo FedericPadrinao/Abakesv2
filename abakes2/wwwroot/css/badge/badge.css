@@ -1,0 +1,21 @@
+.badge{
+	font-size: 1.4rem;
+	font-weight: 500;
+	color: #2F3869;
+	position: relative;
+	padding: 10px;
+	border-radius: 5px;
+
+}
+
+.badge::before {
+	content: attr(data-badge);
+	font-size:14px;
+	position: absolute;
+	left:55%;
+	bottom:60%;
+	background: #5C4E4E;
+	padding: 4px 5px;
+	color: #fff;
+	border-radius: 50%;
+}

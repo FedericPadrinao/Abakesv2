@@ -1,0 +1,325 @@
+﻿@page
+@model abakes2.Pages.Admin_ViewPaymentModel
+@{
+}
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/css/AdminDashboard/dropdown.css" rel="stylesheet" asp-append-version="true">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
+
+    <title>View Payment</title>
+</head>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+     
+    }
+
+    .adminbox {
+        height: 900px;
+        width: 45%;
+        padding: 45px;
+        border-radius: 5%;
+        box-sizing: border-box;
+    }
+
+        .adminbox h2 {
+            text-align: center;
+        }
+
+    .receiptimg{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+    <!--NAV BAR-->
+    <!-- Banner -->
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="~/img/AdminDashboard/user.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/Admin_ManageCakes">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>Manage Cake</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageOrders" class="active">
+                        <i class="fas fa-receipt"></i>
+                        <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageFeedback">
+                        <i class="fas fa-comments"></i>
+                        <div>Manage Feedback</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Notif">
+                        <i class="fas fa-bell"></i>
+                        <div>Manage Notification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageQR">
+                        <i class="fas fa-qrcode"></i>
+                        <div>Manage QR Code</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageAcc">
+                        <i class="fas fa-user"></i>
+                        <div>Account Manager</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminDashboard">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Statistical Report</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ChangePassword">
+                        <i class="fas fa-lock"></i>
+                        <div>Change Password</div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/index" asp-page-handler="LogOut">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>Log out</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Banner End -->
+        <!--Main Window-->
+        <div class="main">
+            <!--Title Bar-->
+            <section class="page-heading" style="background-image: url('/img/contact/cover2.png'); margin-bottom: 70px; ">
+                <div class="container" style="display: inline;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-content">
+                                <h2>View Orders</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Title Bar End-->
+
+
+            <!-- First Account Page -->
+            <div class="container" >
+                <div class="adminbox">
+                    <form id="NotifPreview">
+                        <h2>2D</h2>
+
+                        <input type="hidden" name="id" value="@Model.orderSimple.osID" />
+                        <div class="p-5 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <h3 style="text-align:center;">Customer Details</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-5 p-lg-5 border">
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="c_hadd" class="text-black"><b>Customer:</b> </label>
+                                        <label for="c_hadd" class="text-black">@Model.orderSimple.osUsername</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="c_hadd" class="text-black"><b>Occasion:</b>  </label>
+                                        <label for="c_hadd" class="text-black">@Model.orderSimple.osOccasion</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Shapes:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osShapes</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Tier:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osTier</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Flabors:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osFlavors</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Sizes:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osSizes</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Instruction:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osInstruction</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Delivery:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osDelivery</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="dropdown">
+                            <button class="dropbtn" style="width: 100%; font-size: 15px; padding: 14px 18px;">Order Status <i class='far fa-caret-square-down' style='font-size:16px'></i></button>
+                            <div class="dropdown-content">
+                                <a href="#">Design Your Cake</a>
+                                <a href="#">Review and Quotation</a>
+                                <a href="#">50% Downpayment</a>
+                                <a href="#">Baking</a>
+                                <a href="#">Order Confirmation</a>
+                                <a href="#">Full Payment</a>
+                                <a href="#">Delivery/Pickup</a>
+                                <a href="#">Order Arrived</a>
+                            </div>
+                        </div>
+                        <div class="receiptimg">
+                        <img src="~/img/receipt/receiptexample.png" alt="Girl in a jacket" width="500" height="600">
+                        </div>
+
+
+
+                          <div class="buton3d">
+                        <button type="submit" class="btn" style="margin:1%;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Second Account Page -->
+                <div class="adminbox">
+                    <form id="SecondAccountPageForm">
+                        <h2>3D</h2>
+                        <input type="hidden" name="id" value="@Model.orderSimple.osID" />
+                        <div class="p-5 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <h3 style="text-align:center;">Customer Details</h3>
+                                </div>
+                            </div>
+
+                            <div class="p-5 p-lg-5 border">
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="c_hadd" class="text-black"><b>Customer:</b> </label>
+                                        <label for="c_hadd" class="text-black">@Model.customerInfo.username</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="c_hadd" class="text-black"><b>First Name</b>  </label>
+                                        <label for="c_hadd" class="text-black">@Model.customerInfo.fname</label>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Last Name:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.customerInfo.lname</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>City:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.customerInfo.city</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Address</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.customerInfo.address</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Barangay:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.customerInfo.barangay</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Email Address:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.customerInfo.email</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Phone:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.customerInfo.phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropbtn" style="width: 100%; font-size: 15px; padding: 14px 18px;">Order Status <i class='far fa-caret-square-down' style='font-size:16px'></i></button>
+                            <div class="dropdown-content">
+                                <a href="#">Design Your Cake</a>
+                                <a href="#">Review and Quotation</a>
+                                <a href="#">50% Downpayment</a>
+                                <a href="#">Baking</a>
+                                <a href="#">Order Confirmation</a>
+                                <a href="#">Full Payment</a>
+                                <a href="#">Delivery/Pickup</a>
+                                <a href="#">Order Arrived</a>
+                            </div>
+                        </div>
+                        <div class="receiptimg">
+                            <img src="~/img/receipt/receiptexample.png" alt="Girl in a jacket" width="500" height="600">
+                        </div>
+
+                        <div class="button2d">
+                        <button type="submit" class="btn" style="margin:1%;">View 3D</button>
+                        <button type="submit" class="btn" style="margin:1%;">Submit</button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+            </div>
+                  </div>
+
+
+</body>

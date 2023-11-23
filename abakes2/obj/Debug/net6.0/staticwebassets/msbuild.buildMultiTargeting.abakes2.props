@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\abakes2.props" />
+</Project>

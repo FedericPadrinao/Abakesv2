@@ -1,0 +1,31 @@
+.page-heading2 {
+	width: auto;
+	height: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('/img/contact/cover3.png');
+}
+
+	.page-heading2 .text-content h4 {
+		color: #fbe494;
+		font-size: 39px;
+		text-transform: uppercase;
+		font-weight: 900;
+		letter-spacing: 0.5px;
+		margin-bottom: 15px;
+	}
+
+	.page-heading2 .text-content h2 {
+		font-family: 'Amsterdam';
+		color: black;
+		font-size: 180px;
+		font-weight: 550;
+		letter-spacing: 0.5px;
+		text-align: center;
+	}
+/* Custom active color for dropdown items */
+.dropdown-item.active, .dropdown-item:active {
+	background-color: #fcc3b8; /* Replace with your desired active color */
+}
+

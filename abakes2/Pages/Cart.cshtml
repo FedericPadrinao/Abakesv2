@@ -1,0 +1,258 @@
+﻿@page
+@model abakes2.Pages.CartModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+    <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/ContactUs/damarota-blog.css " asp-append-version="true">
+    <link href="~/css/Account/PageHeading.css" rel="stylesheet" asp-append-version="true">
+
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <link href="~/css/footer/layout.css" rel="stylesheet" asp-append-version="true">
+        <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
+
+
+
+    <style>
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+            .image-container img, .image-container iframe {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+        .col-md-6 {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+            .col-md-6 p {
+                margin-top: 65px;
+                margin-bottom: 20px;
+                line-height: 3.2;
+            }
+
+        .x-button {
+            padding: 2px 10px; 
+            width: -20px; 
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/Index">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                            {
+                                <li><a href="/Customer_SimpleOrder" class="dropdown-item">Order Form</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                            }
+                        </ul>
+                    </li>
+                    <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
+                    <li><a href="/AboutUs">About us</a></li>
+                    <li><a href="/ContactUs">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                            <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <div class="dropdown text-end">
+                <!-- ACCOUNT IMAGE-->
+                @if (Model.userconfirm == null)
+                {
+                    <a class="signin" href="/Account">Sign in</a>
+                }
+                else
+                {
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                    </ul>
+                }
+                <!-- ACCOUNT IMAGE-->
+
+            </div>
+            <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <section class="page-heading2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+
+                        <h2>Cart</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner -->
+
+
+    <!-- TABLE -->
+    <div class="small-container cart-page">
+        <form method="post">
+            <table>
+                <tr>
+                    <th>Action</th>
+                    <th>Cake Details</th>
+                    <th>Instruction</th>
+                    <th>Delivery</th>
+                    <th>Price</th>
+                </tr>
+                @foreach (var item in Model.listOrderSimple)
+                {             
+                    <tr>
+                        <td><a href='/Cart?id=@item.osID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">X</a></td>
+
+                        <td>
+
+                            <div class="cart-info">
+
+                                <div>
+                                    <p>Occasion: @item.osOccasion</p>
+                                    <p>Shapes: @item.osShapes</p>
+                                    <p>Tier: @item.osTier</p>
+                                    <p>Flavors: @item.osFlavors</p>
+                                    <p>Sizes: @item.osSizes</p>
+                                </div>
+                            </div>
+                    
+                        </td>
+
+                        <td><p>@item.osInstruction</p></td>
+                        <td><p>@item.osDelivery</p></td>
+                        <td><p>@item.osPrice</p></td>
+                    </tr>
+                }
+            </table>
+        </form>
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Total</td>
+                <td>P @Model.TotalCart</td>
+            </tr>
+        </table>
+    </div>
+        <div class="total-price">
+            <a href='/Checkout' class="btn btn-primary btn-lg py-3 btn-block">Proceed To Checkout</a>
+        </div>
+    </div>
+    
+              
+            <!-- FOOTER -->
+<div id="footerBottom" style="background-color: #f7fff8;">
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
+            <!-- Division 1 -->
+            <div class="divisions col mb-3">
+                <div>
+                    <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+                </div>
+                <p class="text-bottom" style="font-family: Poppins ExtraBold;">
+                    Serving you sweet treats made with love ❤️
+                    We accept customized cakes, cupcakes, & more! Order now!
+                </p>
+            </div>
+
+            <!-- Division 2 -->
+            <div class="divisions col mb-4">
+                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
+                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:A_Bakes@gmail.com">A_Bakes@gmail.com</a></li>
+                </ul>
+            </div>
+
+            <!-- Division 3 -->
+            <div class="divisions col mb-4">
+                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
+                <ul class="socials-pics nav flex-row img-fluid">
+                    <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
+                    <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
+                </ul>
+            </div>
+
+            <!-- Division 4 -->
+            <div class="divisions col mb-4">
+                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
+                <button class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
+            </div>
+        </footer>
+    </div>
+    <div></div>
+</div>
+
+
+
+
+    <!-- javascript -->
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

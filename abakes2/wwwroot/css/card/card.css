@@ -1,0 +1,111 @@
+﻿
+@font-face {
+    font-family: 'Lobster-Regular';
+    src: url("/fonts/Lobster-Regular.ttf") format("truetype");
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("/img/card/card_background.png");
+    background-repeat: no-repeat !important;
+    background-size: auto;
+    padding: 20px;
+    margin-top: -15px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .logo img {
+        max-width: 110%;
+        height: auto;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+.social-icons {
+    align-items: center;
+}
+
+    .social-icons a {
+        display: inline-block;
+        margin-right: 10px;
+        align-items: center;
+        display: flex;
+    }
+
+    .social-icons img {
+        max-width: 25%;
+        height: auto;
+        margin-bottom: 10%
+    }
+
+.social-text {
+    display: flex;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info {
+    flex: 3;
+    padding: 0 40px;
+    text-align: center;
+    
+
+}
+
+    .info h2 {
+        font-size: 100px;
+        color: #B4D3A7;
+        margin-bottom: 35px;
+        font-family: 'Lobster-Regular';
+    }
+
+    .info h3 {
+        font-size: 20px;
+        color: #B4D3A7;
+        font-family: 'Poppins';
+        margin-top: -30px;
+    }
+
+    .info h1 {
+        margin-top: 30px;
+        margin-right: 370px;
+        font-size: 25px;
+        font-family: Poppins Extrabold;
+    }
+
+    .info p {
+        margin-top: 20px;
+        font-family: 'Pacifico';
+    }
+
+.code p {
+    margin-bottom: 30px;
+}
+
+.divider {
+    border: 1px solid #9d856d;
+    margin: 20px 0;
+}

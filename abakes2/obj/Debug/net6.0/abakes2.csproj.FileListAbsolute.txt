@@ -1,0 +1,665 @@
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\rovic\source\repos\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\source\repos\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\Federic\Documents\UST\CAPSTONE\Version 2\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\Federic\Documents\UST\CAPSTONE\Version3\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\Desktop\Version5_NONPOLISHED\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Version5.1_POLISHED ROVIC\Version5.1_POLISHED ROVIC\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\rovic\Desktop\Abakes - Version7\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.abakes2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.build.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes - Version9\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\Ver8\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.abakes2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.build.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Documents\Pasukan\Capstone\Ver10\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\libman.json
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\PlatForm.QRCoder.dll
+C:\Users\rovic\Desktop\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\libman.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\PlatForm.QRCoder.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.abakes2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.build.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic\Ver10\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\libman.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\PlatForm.QRCoder.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.abakes2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.build.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.abakes2.props
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+D:\Library\Documents\Pasukan\Capstone\Files\Abakes Rovic V11\Ver11\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\libman.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\PlatForm.QRCoder.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+C:\Users\rovic\Desktop\Ver12\Ver12\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\libman.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\PlatForm.QRCoder.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.abakes2.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.build.abakes2.props
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.abakes2.props
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.abakes2.props
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+D:\Library\Desktop\version 13\version 13\abakes2\abakes2\bin\Debug\net6.0\BCrypt.Net-Core.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\appsettings.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\libman.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\abakes2.staticwebassets.runtime.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\abakes2.exe
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\abakes2.deps.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\abakes2.runtimeconfig.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\BCrypt.Net-Core.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\MailKit.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\MimeKit.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\PlatForm.QRCoder.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\UnityEngine.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\QRCoder.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\SixLabors.ImageSharp.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\zxing.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\scopedcss\bundle\abakes2.styles.css
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\scopedcss\projectbundle\abakes2.bundle.scp.css
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.csproj.CopyComplete
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.pdb
+C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
