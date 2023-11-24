@@ -57,6 +57,8 @@ namespace abakes2.Pages
                                 notificationInfo.NotifTitle = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationTitle"));
                                 notificationInfo.NotifText = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationText"));
                                 notificationInfo.NotifImg = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationImage"));
+                                notificationInfo.DateCreated = reader.GetFieldValue<string>(reader.GetOrdinal("DateCreated"));
+
                                 listNotifications.Add(notificationInfo);
                                 NotificationCount = listNotifications.Count;
 
@@ -85,6 +87,7 @@ namespace abakes2.Pages
                                 pni.NotifTitle = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationTitle"));
                                 pni.NotifText = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationText"));
                                 pni.NotifImg = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationImage"));
+                                pni.DateCreated = reader.GetFieldValue<string>(reader.GetOrdinal("DateCreated"));
                                 listPrivateNotifInfo.Add(pni);
 
                                 NotificationCount = listNotifications.Count + listPrivateNotifInfo.Count;

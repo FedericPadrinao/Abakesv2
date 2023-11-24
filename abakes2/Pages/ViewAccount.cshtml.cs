@@ -89,7 +89,7 @@ namespace abakes2.Pages
             OnGet();
             string NotifTitle = Request.Form["title"];
             string NotifText = Request.Form["textmessage"];
-
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
             try
             {
                 if (file != null && file.Length > 0)
@@ -106,13 +106,14 @@ namespace abakes2.Pages
 
                         connection.Open();
 
-                        string sql = "Insert into PrivateNotification (NotificationTitle,username,NotificationText,NotificationImage,status) values (@NotifTitle,@username,@NotifText,@NotifImage,'true')";
+                        string sql = "Insert into PrivateNotification (NotificationTitle,username,NotificationText,NotificationImage,status,DateCreated) values (@NotifTitle,@username,@NotifText,@NotifImage,'true',@DateCreated)";
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
                             command.Parameters.AddWithValue("@NotifText", NotifText);
                             command.Parameters.AddWithValue("@username", customerInfo.username);
                             command.Parameters.AddWithValue("@NotifImage", "/img/Notification/" + fileName);
+                            command.Parameters.AddWithValue("@DateCreated", currentDate);
 
                             command.ExecuteNonQuery();
 

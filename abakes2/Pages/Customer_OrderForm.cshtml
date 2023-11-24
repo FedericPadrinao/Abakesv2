@@ -49,6 +49,26 @@
 </head>
 
 <body>
+    @if(Model.customerInfo.ordermax == "true" || Model.invoiceInfo.orderStatus != null)
+    {
+         <script>
+            window.location.href = '/Customer_MaxOrder';
+         </script>
+    }
+     @if(Model.customerInfo.accstatus == "false")
+    {
+         <script>
+            window.location.href = '/Customer_Block';
+         </script>
+    }
+    @if(Model.customerInfo.status == "false")
+    {
+         <script>
+            window.location.href = '/Customer_FullCapacity_Prompt';
+         </script>
+    }
+    
+
     <!--NAV BAR-->
     <div class="container">
         <div class="navbar">
@@ -61,15 +81,17 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            <li><a href="/DisplayTest" class="dropdown-item">Customize 3D</a></li>
                             @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
                             {
-                                <li><a href="/Customer_SimpleOrder" class="dropdown-item">Order Form</a></li>
+                                <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
                             }
+                            
                             else
                             {
                                 <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
                             }
+
                         </ul>
                     </li>
                     <li><a href="">Gallery</a></li>
@@ -79,7 +101,7 @@
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
                         <ul class="dropdown-menu">
                             <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                            <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                            <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
                     
@@ -89,7 +111,7 @@
                 <!-- ACCOUNT IMAGE-->
                 @if (Model.userconfirm == null)
                 {
-                    <a class="signin" href="/Account">Sign in</a>
+                    <a href="/Account">Sign in</a>
                 }
                 else
                 {
@@ -199,7 +221,7 @@
                     <!--Delivery Type-->
                     <h3>Delivery Type:</h3>
                     <label class="form-check-label" for="standdelivery">‌‌ ‌ ‌ Standard Delivery</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="For Delivery" name="delivery" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="Delivery" name="delivery" />
                     <label class="form-check-label" for="pickup">Pick up</label>
                     <input class="form-check-input" style="height:21px" type="radio" value="Pickup" name="delivery" />
                     <label class="form-check-label" for="pickup">Preferred Delivery/Pickup</label>

@@ -54,10 +54,10 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            <li><a href="/DisplayTest" class="dropdown-item">Customize 3D</a></li>
                             @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
                             {
-                                <li><a href="/Customer_SimpleOrder" class="dropdown-item">Order Form</a></li>
+                                <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
                             }
                             else
                             {
@@ -72,7 +72,7 @@
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
                         <ul class="dropdown-menu">
                             <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                            <li><a href="/Customer_SimpleOrder" class="dropdown-item">View Feedback</a></li>
+                            <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
 
@@ -82,7 +82,7 @@
                 <!-- ACCOUNT IMAGE-->
                 @if (Model.userconfirm == null)
                 {
-                    <a class="signin" href="/Account">Sign in</a>
+                    <a href="/Account">Sign in</a>
                 }
                 else
                 {
@@ -102,8 +102,8 @@
             </div>
             @if (Model.userconfirm != null)
             {
-                <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
+                <a href="/Customer_Notif" class="badge" data-badge=""><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+                <a href="/Cart" class="badge" data-badge=""><img src="images/cart.png" width="30px" height="30px"></a>
 
             }
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
@@ -129,73 +129,143 @@
     <div class="main">
 
         <div class="head">
-            <p class="head_1">Order #<span></span></p>
-            <p class="head_2">Expected Arrival: </p>
+            <p class="head_1">Order #@Model.invoiceInfo.invoiceID<span></span></p>
+            <p class="head_2">Expected Arrival: @Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT </p>
         </div>
 
         <ul>
+            <!-- 1 Bar-->
             <li>
                 <i class="fa-regular fa-eye icon"></i>
-                <div class="progres one">
+                <div class="progres one active">
                     <p>1</p>
                     <i class="uil uil-check"></i>
                 </div>
                 <p class="text">Design Your Cake</p>
             </li>
+            <!-- 2 Bar-->
             <li>
                 <i class="fa-solid fa-magnifying-glass icon"></i>
+                @if (Model.orderInfo.status == "true" || Model.invoiceInfo.status == "true")
+                {
+                <div class="progres two active">
+                <p>2</p>
+                <i class="uil uil-check"></i>
+                    </div>
+                }
+                else
+                {
                 <div class="progres two">
-                    <p>2</p>
-                    <i class="uil uil-check"></i>
-                </div>
+                <p>2</p>
+                <i class="uil uil-check"></i>
+                </div>  
+                }
+                
                 <p class="text">Review & Quotation</p>
             </li>
+            <!-- 3 Bar-->
             <li>
                 <i class="fa-solid fa-hand-holding-dollar icon"></i>
+                @if (Model.invoiceInfo.orderStatus == "50% Downpayment" || Model.invoiceInfo.orderStatus == "Baking" || Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived")
+                {
+                <div class="progres three active">
+                <p>3</p>
+                <i class="uil uil-check"></i>
+                    </div>
+                }
+                else
+                {
                 <div class="progres three">
-                    <p>3</p>
-                    <i class="uil uil-check"></i>
+                <p>3</p>
+                <i class="uil uil-check"></i>
                 </div>
+                }
+               
                 <p class="text">50% Downpayment</p>
             </li>
+            <!-- 4 Bar-->
             <li>
                 <i class="fa-solid fa-cake-candles icon"></i>
-                <div class="progres four">
-                    <p>4</p>
-                    <i class="uil uil-check"></i>
+                @if (Model.invoiceInfo.orderStatus == "Baking" || Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                <div class="progres four active">
+                <p>4</p>
+                <i class="uil uil-check"></i>
                 </div>
+                }
+                else{
+                <div class="progres four">
+                <p>4</p>
+                <i class="uil uil-check"></i>
+                </div>
+                }
                 <p class="text">Baking</p>
             </li>
+            <!-- 5 Bar-->
             <li>
                 <i class="fa-solid fa-clipboard-check icon"></i>
-                <div class="progres five">
-                    <p>5</p>
-                    <i class="uil uil-check"></i>
+                @if (Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                <div class="progres five active">
+                <p>5</p>
+                <i class="uil uil-check"></i>
                 </div>
+                }
+                else{
+                <div class="progres five">
+                <p>5</p>
+                <i class="uil uil-check"></i>
+                </div>
+                }
                 <p class="text">Order Confirmation</p>
             </li>
+            <!-- 6 Bar-->
             <li>
                 <i class="fa-solid fa-money-bill icon"></i>
-                <div class="progres six">
+                @if (Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                <div class="progres six active">
                     <p>6</p>
                     <i class="uil uil-check"></i>
                 </div>
+                }
+                else{
+                <div class="progres six">
+                <p>6</p>
+                <i class="uil uil-check"></i>
+                </div>
+                }
                 <p class="text">Full Payment</p>
             </li>
+            <!-- 7 Bar-->
             <li>
                 <i class="fa-solid fa-truck icon"></i>
+                @if (Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                <div class="progres seven active">
+                    <p>7</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                }
+                else{
                 <div class="progres seven">
                     <p>7</p>
                     <i class="uil uil-check"></i>
                 </div>
+                }
                 <p class="text">Delivery/Pickup</p>
             </li>
+            <!-- 8 Bar-->
             <li>
                 <i class="fa-solid fa-location-dot icon"></i>
+                @if (Model.invoiceInfo.orderStatus == "Order Arrived"){
+                <div class="progres eight active">
+                    <p>8</p>
+                    <i class="uil uil-check"></i>
+                </div>
+                }
+                else{
                 <div class="progres eight">
                     <p>8</p>
                     <i class="uil uil-check"></i>
                 </div>
+                }
                 <p class="text">Order Arrived</p>
             </li>
         </ul>
