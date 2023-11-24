@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wa2+KADyRB84hmyhVQ1Tt7WpntXNrW2QLtnjHdcPKg4=",
+  "Hash": "DZtK6cdXkvjtCkoWGd+94tu42tlKpQpIxmHLl2GkH8M=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -1955,6 +1955,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Account\\frog.png"
     },
     {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Gcash TGR Jersey.jpg",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Account/Gcash TGR Jersey.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\Gcash TGR Jersey.jpg"
+    },
+    {
       "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ghostring.jpg",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -3551,6 +3568,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Notification\\MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\whalea.png",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Notification/whalea.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Notification\\whalea.png"
     },
     {
       "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\QRCODE.jpg",
