@@ -22,7 +22,7 @@ namespace abakes2.Pages
         public int cartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetModels()
         {
@@ -126,7 +126,7 @@ namespace abakes2.Pages
             string posX = Request.Form["positionx"];
             string posY = Request.Form["positiony"];
             string posZ = Request.Form["positionz"];
-
+            string instructions = Request.Form["special_instructions"];
             string[] assetNameList = assetNameStr.Split(",");
             string[] assetPathList = assetPathStr.Split(",");
             string[] assetScaleList = assetScaleStr.Split(",");
@@ -140,9 +140,9 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     string sql3 = "INSERT INTO Order3DForm " +
-                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3) " +
+                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions) " +
                          "VALUES " +
-                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3); SELECT SCOPE_IDENTITY(); ";
+                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions); SELECT SCOPE_IDENTITY(); ";
 
                     using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
                     {
@@ -155,6 +155,7 @@ namespace abakes2.Pages
                         insertcommand.Parameters.AddWithValue("@Color1", order3DForm.Color);
                         insertcommand.Parameters.AddWithValue("@Color2", order3DForm.Color2);
                         insertcommand.Parameters.AddWithValue("@Color3", order3DForm.Color3);
+                        insertcommand.Parameters.AddWithValue("@instructions", instructions);
 
 
                         insertedPrimaryKey = Convert.ToInt32(insertcommand.ExecuteScalar());

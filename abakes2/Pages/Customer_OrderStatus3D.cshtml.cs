@@ -10,12 +10,13 @@ namespace abakes2.Pages
         public String imgconfirm = "";
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public UserInfo userInfo = new UserInfo();
         public OrderSimpleInfo orderSimple = new OrderSimpleInfo();
         public CustomerInfo customerInfo = new CustomerInfo();
+        public InvoiceInfo invoiceInfo = new InvoiceInfo();
         public Order3DForm order3d = new Order3DForm();
         public List<Asset3DForm> listAsset3D = new List<Asset3DForm>();
         public String errorMessage = "";
@@ -95,6 +96,29 @@ namespace abakes2.Pages
 
                 }
 
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+
+                    string selectsql = "SELECT * FROM Invoice WHERE username = @username";
+                    using (SqlCommand command = new SqlCommand(selectsql, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", userconfirm);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                invoiceInfo.invoiceID = reader.GetInt32(0);
+                                invoiceInfo.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
+                                invoiceInfo.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
+                                invoiceInfo.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
+                                invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+                            }
+                        }
+                    }
+                }
+
                 //CUSTOMER
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
@@ -131,38 +155,6 @@ namespace abakes2.Pages
                 errorMessage = ex.Message;
             }
         }
-        public void OnPost()
-        {
-            string price = Request.Form["price"];
-            string ship = Request.Form["ship"];
-            string id = Request.Form["id"];
-            string ExpectedDelivery = Request.Form["expectedD"];
-            string ExpectedTime = Request.Form["expectedT"];
-            int ids = int.Parse(id);
-
-            double productPrice = double.Parse(price);
-            double downpayment = productPrice * 0.5;
-            try
-            {
-
-                using (SqlConnection connection = new SqlConnection(connectionProvider))
-                {
-                    connection.Open();
-                    String sql = "UPDATE OrderSimple SET OrderPrice='" + price + "', status='true', ShippingPrice='" + ship + "', Downpayment='" + downpayment + "', ExpectedDelivery='" + ExpectedDelivery + "', ExpectedTime='" + ExpectedTime + "' WHERE OrderID='" + ids + "'";
-
-
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                errorMessage = ex.Message;
-                return;
-            }
-            Response.Redirect("/Admin_ManageSimpleOrders2");
-        }
+      
     }
 }
