@@ -240,6 +240,7 @@ namespace abakes2.Pages
         public string invoiceDateCreated = "";
         public string orderStatus = "";
         public string receipt = "";
+        public string paymentMethod = "";
     }
     public class Feedbacks
     {
@@ -277,6 +278,8 @@ namespace abakes2.Pages
         public String NotifText = "";
         public String NotifImg = "";
         public String status = "";
+        public String DateCreated = "";
+  
     }
 
     public class PrivateNotifInfo
@@ -287,5 +290,7 @@ namespace abakes2.Pages
         public String NotifText = "";
         public String NotifImg = "";
         public String status = "";
+        public String DateCreated = "";
+      
     }
 }

@@ -1,8 +1,5 @@
 ﻿@page
-@model abakes2.Pages.ManageAccModel
-@{
-}
-
+@model abakes2.Pages.ManagePaymentsModel
 @{
     Layout = null;
 }
@@ -48,6 +45,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="/ManagePayments" class="active">
+                        <i class="fas fa-money-check"></i>
+                        <div>Manage Payments</div>
+                    </a>
+                </li>
+                <li>
                     <a href="/Admin_ManageFeedback">
                         <i class="fas fa-comments"></i>
                         <div>Manage Feedback</div>
@@ -66,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Admin_ManageAcc" class="active">
+                    <a href="/Admin_ManageAcc" >
                         <i class="fas fa-user"></i>
                         <div>Account Manager</div>
                     </a>
@@ -109,7 +112,7 @@
             <!--Title Bar End-->
 
             <div class="admin-table">
-                <a href="/Admin_ManageBlockedAcc" type="submit" class="btn" style="margin:1%; background:#ff0700;">Blocked</a>
+                
                 <form method="get">
                     <div class="search">
                         <button type="submit" for="search"><i class="fas fa-search"></i></button>
@@ -122,49 +125,33 @@
                     <thead>
 
                         <tr>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">ID</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Type</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Username</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">First Name</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Last Name</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:20%;">Email Address</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Phone Number</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Address</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Order Status</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Picture</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:13%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.customerInfo)
+                        @foreach (var item in Model.invoiceList)
                         {
 
 
+
                             <tr>
-                                <td><p>@item.id</p></td>
-                                <td><p>@item.username</p></td>
-                                <td><p>@item.fname</p></td>
-                                <td><p>@item.lname</p></td>
-                                <td><p>@item.email</p></td>
-                                <td><p>@item.phone</p></td>
+                                <td><p>Simple Order</p></td>
+                                <td><p>@item.invoiceUsername</p></td>   
                                 <td>
-                                    <p>@item.address</p>
-                                    <p>@item.city</p>
-                                    <p>@item.barangay</p>
+                                    <p>@item.orderStatus</p>
                                 </td>
                                 <td>
-                                    <img src="@item.img">
+                                    <img src="@item.receipt">
                                 </td>
 
-                                <td style="align-content:center;">
-                                    <a href='/ViewAccount?id=@item.id' class="btn" style="background: #ffffb9; color: black;">
-                                        <i class="fas fa-bell" style="font-size:30px;"></i> <div>Send</div>
-                                    </a>
-
-                                    <a class='btn' style="background: #ff5e5b;" asp-page-handler="Block" asp-route-id=@item.id>
-                                        <i class="fas fa-ban" style="font-size:30px;"></i><div>Block</div>
-                                    </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
-                                    <a class='btn' style="background: #9a0009;" asp-page-handler="Remove" asp-route-id=@item.id>
-                                        <i class="fas fa-trash" style="font-size:30px;"></i> <div>Delete</div>
-                                    </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
+                                <td style="align-content:center;">          
+                                    <a href='/Admin_ViewPayment?user=@item.invoiceUsername' class="btn" style="background: #ffffb9; color: black;">
+                                        <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
+                                    </a>                        
                                 </td>
                             </tr>
                         }

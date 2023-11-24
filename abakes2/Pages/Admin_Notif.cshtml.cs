@@ -24,7 +24,9 @@ namespace abakes2.Pages
         {
             string NotifTitle = Request.Form["title"];
             string NotifText = Request.Form["textmessage"];
-
+           
+            DateTime currentDateTime = DateTime.Now;
+            string currentDate = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
             try
             {
@@ -45,12 +47,13 @@ namespace abakes2.Pages
                         // string sql = "insert into LoginCustomer (picture) values (@image)";
                         connection.Open();
 
-                        string sql = "Insert into Notification (NotificationTitle,NotificationText,NotificationImage,status) values (@NotifTitle,@NotifText,@NotifImage,'true')";
+                        string sql = "Insert into Notification (NotificationTitle,NotificationText,NotificationImage,status,DateCreated) values (@NotifTitle,@NotifText,@NotifImage,'true',@DateCreated)";
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
                             command.Parameters.AddWithValue("@NotifText", NotifText);
                             command.Parameters.AddWithValue("@NotifImage", "/img/Notification/" + fileName);
+                            command.Parameters.AddWithValue("@DateCreated", currentDate);
 
                             command.ExecuteNonQuery();
 

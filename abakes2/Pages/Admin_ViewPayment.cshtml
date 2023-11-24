@@ -9,11 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crinvoicesorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
     <link href="~/css/AdminDashboard/dropdown.css" rel="stylesheet" asp-append-version="true">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crinvoicesorigin='anonymous'></script>
 
     <link href="vendor/bootstrap/css/homepage/bootstrap.min.css" rel="stylesheet">
 
@@ -71,9 +71,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Admin_ManageOrders" class="active">
+                    <a href="/Admin_ManageOrders">
                         <i class="fas fa-receipt"></i>
                         <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/ManagePayments" class="active">
+                        <i class="fas fa-money-check"></i>
+                        <div>Manage Payments</div>
                     </a>
                 </li>
                 <li>
@@ -95,7 +101,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Admin_ManageAcc">
+                    <a href="/Admin_ManageAcc" >
                         <i class="fas fa-user"></i>
                         <div>Account Manager</div>
                     </a>
@@ -129,7 +135,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-content">
-                                <h2>View Orders</h2>
+                                <h2>View Payment</h2>
                             </div>
                         </div>
                     </div>
@@ -141,85 +147,128 @@
             <!-- First Account Page -->
             <div class="container" >
                 <div class="adminbox">
-                    <form id="NotifPreview">
-                        <h2>2D</h2>
+                    <form id="NotifPreview" method="post">
+                        <h2>Cake Details</h2>
 
-                        <input type="hidden" name="id" value="@Model.orderSimple.osID" />
+                        <input type="hidden" name="id" value="@Model.invoiceInfo.invoiceID" />
                         <div class="p-5 p-lg-5 border">
                             <div class="form-group row">
-                                <div class="col-md-12">
-                                    <h3 style="text-align:center;">Customer Details</h3>
-                                </div>
+                               
                             </div>
 
-                            <div class="p-5 p-lg-5 border">
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <label for="c_hadd" class="text-black"><b>Customer:</b> </label>
-                                        <label for="c_hadd" class="text-black">@Model.orderSimple.osUsername</label>
-                                    </div>
-                                </div>
+                            <div class="p-5 p-lg-5 border">     
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <label for="c_hadd" class="text-black"><b>Occasion:</b>  </label>
-                                        <label for="c_hadd" class="text-black">@Model.orderSimple.osOccasion</label>
+                                        <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceOccasion</label>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Shapes:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osShapes</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceShapes</label>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Color:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceColor</label>
+                                        </div>
+                                    </div>
+                                    <div clas
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Tier:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osTier</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceTier</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
-                                            <label for="c_hadd" class="text-black"><b>Flabors:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osFlavors</label>
+                                            <label for="c_hadd" class="text-black"><b>Flavors:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceFlavors</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Sizes:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osSizes</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceSizes</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Instruction:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osInstruction</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceInstruction</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Dedication:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDedication</label>
+                                        </div>
+                                    </div> 
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Delivery:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.orderSimple.osDelivery</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDelivery</label>
                                         </div>
                                     </div>
-
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Expected Delivery:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT</label>
+                                        </div>
+                                    </div>
+                                    <h2>Invoice Details</h2>
+                                     <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Date Created:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDateCreated</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Product Price:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoicePrice</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Downpayment:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDP</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Shipping:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceShip</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Order Status:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.orderStatus</label>
+                                        </div>
+                                    </div>
+                                     <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Payment Method:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.paymentMethod</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                                                <div class="dropdown">
-                            <button class="dropbtn" style="width: 100%; font-size: 15px; padding: 14px 18px;">Order Status <i class='far fa-caret-square-down' style='font-size:16px'></i></button>
-                            <div class="dropdown-content">
-                                <a href="#">Design Your Cake</a>
-                                <a href="#">Review and Quotation</a>
-                                <a href="#">50% Downpayment</a>
-                                <a href="#">Baking</a>
-                                <a href="#">Order Confirmation</a>
-                                <a href="#">Full Payment</a>
-                                <a href="#">Delivery/Pickup</a>
-                                <a href="#">Order Arrived</a>
-                            </div>
-                        </div>
-                        <div class="receiptimg">
-                        <img src="~/img/receipt/receiptexample.png" alt="Girl in a jacket" width="500" height="600">
-                        </div>
+                        <div class="dropdown">
+                        <label for="status"><h3>Order Status:</h3></label>
+                        <select name="orderstatus" id="status" required >
+                            <option value="50% Downpayment">50% Downpayment</option>
+                            <option value="Baking">Baking</option>
+                            <option value="Order Confirmation">Order Confirmation</option>
+                            <option value="Full Payment">Full Payment</option>
+                            <option value="Delivery/Pickup">Delivery/Pickup</option>
+                            <option value="Order Arrived">Order Arrived</option>
+                        </select>
+                         </div>
+                        
 
 
 
@@ -231,20 +280,16 @@
 
                 <!-- Second Account Page -->
                 <div class="adminbox">
-                    <form id="SecondAccountPageForm">
-                        <h2>3D</h2>
-                        <input type="hidden" name="id" value="@Model.orderSimple.osID" />
+                    
+                        <h2>Customer Details</h2>
+                        <input type="hidden" name="id" value="@Model.invoiceInfo.invoiceID" />
                         <div class="p-5 p-lg-5 border">
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <h3 style="text-align:center;">Customer Details</h3>
-                                </div>
-                            </div>
+                          
 
                             <div class="p-5 p-lg-5 border">
                                 <div class="form-group row">
                                     <div class="col-md-12">
-                                        <label for="c_hadd" class="text-black"><b>Customer:</b> </label>
+                                        <label for="c_hadd" class="text-black"><b>Username:</b> </label>
                                         <label for="c_hadd" class="text-black">@Model.customerInfo.username</label>
                                     </div>
                                 </div>
@@ -289,34 +334,14 @@
                                             <label for="c_hadd" class="text-black">@Model.customerInfo.phone</label>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="dropdown">
-                            <button class="dropbtn" style="width: 100%; font-size: 15px; padding: 14px 18px;">Order Status <i class='far fa-caret-square-down' style='font-size:16px'></i></button>
-                            <div class="dropdown-content">
-                                <a href="#">Design Your Cake</a>
-                                <a href="#">Review and Quotation</a>
-                                <a href="#">50% Downpayment</a>
-                                <a href="#">Baking</a>
-                                <a href="#">Order Confirmation</a>
-                                <a href="#">Full Payment</a>
-                                <a href="#">Delivery/Pickup</a>
-                                <a href="#">Order Arrived</a>
-                            </div>
-                        </div>
+                       
                         <div class="receiptimg">
-                            <img src="~/img/receipt/receiptexample.png" alt="Girl in a jacket" width="500" height="600">
+                            <img src="@Model.invoiceInfo.receipt" width="800" height="800">
                         </div>
-
-                        <div class="button2d">
-                        <button type="submit" class="btn" style="margin:1%;">View 3D</button>
-                        <button type="submit" class="btn" style="margin:1%;">Submit</button>
-                        </div>
-
-
-
-                    </form>
                 </div>
             </div>
                   </div>

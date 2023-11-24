@@ -1,22 +1,129 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
     public class Customer_OrderStatusModel : PageModel
     {
-        public String userconfirm = "";
-        public String imgconfirm = "";
+        public string username { get; set; }
+        public string password { get; set; }
+        public int TotalCart = 0;
+        public int TotalDP = 0;
+        public int ShippingPrice = 0;
+        public int cartcount = 0;
+        public int TotalCost = 0;
+        public string userconfirm = "";
+        public String errorMessage = "";
+        public String successMessage = "";
+        public CustomerInfo customerInfo = new CustomerInfo();
+        public InvoiceInfo invoiceInfo = new InvoiceInfo();
+        public OrderSimpleInfo orderInfo = new OrderSimpleInfo();
+        public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public String statusconfirm = "";
-
+        public string imgconfirm = "";
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+
+
         public void OnGet()
         {
+
             userconfirm = HttpContext.Session.GetString("username");
             imgconfirm = HttpContext.Session.GetString("userimage");
             statusconfirm = HttpContext.Session.GetString("userstatus");
+            if (userconfirm != null)
+            {
 
 
+            }
+            else
+            {
+                Response.Redirect("/Index");
+            }
+
+            String user = Request.Query["user"];
+
+            try
+            {
+                //CUSTOMER
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM LoginCustomer WHERE username= '" + userconfirm + "'";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                customerInfo.username = reader.GetString(1);
+                                customerInfo.lname = reader.GetString(2);
+                                customerInfo.fname = reader.GetString(3);
+                                customerInfo.email = reader.GetString(5);
+                                customerInfo.address = reader.GetString(6);
+                                customerInfo.phone = reader.GetString(7);
+                                customerInfo.city = reader.GetString(9);
+                                customerInfo.barangay = reader.GetString(10);
+
+
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+
+                    string selectsql = "SELECT * FROM Invoice WHERE username = @username";
+                    using (SqlCommand command = new SqlCommand(selectsql, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", userconfirm);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                invoiceInfo.invoiceID = reader.GetInt32(0);
+                                invoiceInfo.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
+                                invoiceInfo.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
+                                invoiceInfo.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
+                                invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
+                {
+                    connection.Open();
+                    string sql = "select * from OrderSimple where username = @username"; //getting the data based from the pdid variable
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", userconfirm);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                orderInfo.osID = reader.GetInt32(0);
+                                orderInfo.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
+
+
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.ToString());
+            }
         }
     }
 }

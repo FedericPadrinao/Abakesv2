@@ -6,6 +6,7 @@ namespace abakes2.Pages
     public class OrdFormPModel : PageModel
     {
         public CustomerInfo customerInfo = new CustomerInfo();
+        public InvoiceInfo invoiceInfo = new InvoiceInfo(); 
         public List<OrderSimpleInfo> orderSimpleInfo = new List<OrderSimpleInfo>();
         public String userconfirm = "";
         public String errorMessage = "";
@@ -54,6 +55,47 @@ namespace abakes2.Pages
                             }
 
 
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM LoginCustomer WHERE username= '" + userconfirm + "'";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                customerInfo.username = reader.GetString(1);
+                                customerInfo.ordermax = reader.GetString(13);
+                                customerInfo.accstatus = reader.GetString(12);
+
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM Invoice WHERE username= '" + userconfirm + "'";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                invoiceInfo.orderStatus = reader.GetString(20);
+
+                            }
                         }
                     }
                 }
@@ -143,8 +185,24 @@ namespace abakes2.Pages
                             command.Parameters.AddWithValue("@dedication", Dedication);
                             command.ExecuteNonQuery();
 
+
+                        }
+                    }
+                    using (SqlConnection connection = new SqlConnection(connectionProvider))
+                    {
+                        connection.Open();
+                        String sql = "UPDATE LoginCustomer SET ordermax = 'true' WHERE username = @user";
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+
+                            command.Parameters.AddWithValue("@user", userconfirm);
+                            command.ExecuteNonQuery();
+
+
+
                             // Redirect to the success page after successful form submission
                             return RedirectToPage("/Customer_OrderSuccess_Prompt");
+
                         }
                     }
                 }

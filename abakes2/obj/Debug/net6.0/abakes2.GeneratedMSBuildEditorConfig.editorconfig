@@ -191,10 +191,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfUE5vdGlmLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_SimpleOrder.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfU2ltcGxlT3JkZXIuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_TermsandCondition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfVGVybXNhbmRDb25kaXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -217,6 +213,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/ManagePayments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlUGF5bWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Privacy.cshtml]
