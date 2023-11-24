@@ -14,7 +14,7 @@ namespace abakes2.Pages
 
 
         public UserInfo userInfo = new UserInfo();
-        public OrderSimpleInfo orderSimple = new OrderSimpleInfo();
+        public OrderSimpleInfo orderInfo = new OrderSimpleInfo();
         public CustomerInfo customerInfo = new CustomerInfo();
         public InvoiceInfo invoiceInfo = new InvoiceInfo();
         public Order3DForm order3d = new Order3DForm();
