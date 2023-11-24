@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XqwTVKUt2O1Qw0e7Sonks8wnZo9o1Xr0vBscOmWaIYHXi/rujc317no6U892juoaGG9wkWtGY8qPJb7+qIEwYQ==",
+  "dgSpecHash": "1rA6nwUjO63/a5F0DBbp67RSg8RvQCbNSSTAzt2fHwuV4DM++9NzV3lg2HX3DkUrRNZ10ASfpjlINdCJPhTGtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rovic\\Desktop\\abakes githubv2\\Abakesv2\\abakes2\\abakes2.csproj",
+  "projectFilePath": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\abakes2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rovic\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\rovic\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",

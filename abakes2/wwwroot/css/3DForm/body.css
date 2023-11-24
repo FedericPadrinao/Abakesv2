@@ -19,7 +19,7 @@
     background-color: #8B4513; /* Background color */
     border: 1px solid #ddd; /* Border color */
     padding: 15px; /* Optional: Adjust padding as needed */
-    height: 100vh;
+    max-height: 100vh;
     border-radius: 10px;
 
  
@@ -32,16 +32,16 @@
     margin-top: 10px;
     margin-bottom: 10px;
     overflow-y: auto;
-    height: 70px;
+    max-height: 70px;
 }
 .container-box-3d {
     padding: 0px; /* Adjust padding as needed */
     border-radius: 20px;
-    margin-top: 70px;
+
     margin-bottom: 10px;
-    margin-right: 20px;
-    height:700px;
-    width: 920px;
+    max-height: 700px;
+    max-width: 900px;
+    margin: 70px auto;
 }
 .container-box-top {
     background-color: #C68E6F;
@@ -55,11 +55,10 @@
     height: 90px;
 }
 
-
-    .container-box-top::-webkit-scrollbar {
-        width: 8px; /* Width of the entire scrollbar */
-        height: 10px;
-    }
+.container-box-top::-webkit-scrollbar {
+    width: 8px; /* Width of the entire scrollbar */
+    height: 10px;
+}
 
     .container-box-top::-webkit-scrollbar-track {
         background: #f1f1f1; /* Color of the tracking area */
@@ -205,6 +204,7 @@
     z-index: -1;
     overflow-x: hidden;
     overflow-y: auto;
+
 }
 
 .model-open {

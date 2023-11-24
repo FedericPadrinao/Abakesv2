@@ -37,6 +37,14 @@
 
 
 
+    .bg-color {
+        background-color: #f4b9cf; /* Replace with your preferred background color */
+        margin: 5px 10px;
+        padding: 10px 10px;
+        border-radius: 10px; /* Optional: Add rounded corners */
+      
+    }
+
 </style>
 
 
@@ -188,19 +196,30 @@
             <!-- Main Container Box - Center -->
             <div class="col-md-6">
                 <div id="container" class="container-box-3d">
+                      <div class="guicontrol" id="gui-container">
                 </div>
             </div>
-
+            </div>
             <!-- Side Container Box - Right -->
           
             <div class="col-md-3">
                 <h2>Controls</h2>
-                <div class="container-box" id="gui-container">
+                <div class="container-box">
+
+
+                    <h4 style="text-align:center; color:black;">Instructions</h4>
+                    <div class="text-center bg-color">
+                        <p class="lh-1" style="color:black;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                          </div>
+                        
+
+
 
                     <!-- HELP BUTTON-->
                     <button class="Click-here">Help Me</button>
                     <button class="functionbtn" id="loadModel1Button" onclick="activateButton()">Activate</button>
                     <button class="functionbtn" id="DisplayDecoration">Display Decorations</button>
+
                      <form id="insertCake" method="post">
                         <input type="hidden" name="modelname" id="modelname" value="">
                         <input type="hidden" name="scale" id="scale" value="">
@@ -224,7 +243,12 @@
 
                         <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
                     </form>
-                    
+
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -478,7 +502,14 @@
         //GUI Color
         const guiContainer = document.getElementById('gui-container');
         const gui = new dat.GUI();
+
+
         guiContainer.appendChild(gui.domElement);
+
+        guiContainer.style.position = 'absolute';
+        guiContainer.style.top = 'auto';
+        guiContainer.style.bottom = '1';
+
         //LOAD NG MODEL USE .JSON FOR C# DI GUMAGANA .GTLF
         //Model and Texture loader
         var fileUrl = new URL('', import.meta.url); //Declaration ng model
