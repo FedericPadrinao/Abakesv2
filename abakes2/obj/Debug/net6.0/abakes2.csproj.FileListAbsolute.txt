@@ -717,3 +717,14 @@ C:\Users\rovic\Desktop\Abakes github\Abakesv2\abakes2\obj\Debug\net6.0\refint\ab
 C:\Users\rovic\Desktop\Abakes github\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.pdb
 C:\Users\rovic\Desktop\Abakes github\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.genruntimeconfig.cache
 C:\Users\rovic\Desktop\Abakes github\Abakesv2\abakes2\obj\Debug\net6.0\ref\abakes2.dll
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.csproj.AssemblyReference.cache
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfoInputs.cache
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.AssemblyInfo.cs
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.csproj.CoreCompileInputs.cache
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cache
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.RazorAssemblyInfo.cs
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.dll
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\refint\abakes2.dll
+C:\Users\rovic\Desktop\abakes githubv2\Abakesv2\abakes2\obj\Debug\net6.0\abakes2.pdb
