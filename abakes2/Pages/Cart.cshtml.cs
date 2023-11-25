@@ -8,6 +8,8 @@ namespace abakes2.Pages
     {
         public List<CustomerInfo> listCustomer = new List<CustomerInfo>();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
+        public OrderSimpleInfo os = new OrderSimpleInfo();
+        public Order3DForm order3D = new Order3DForm();
         public String userconfirm = "";
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
@@ -54,7 +56,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                OrderSimpleInfo os = new OrderSimpleInfo();
+                                
 
 
                                 os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
@@ -68,7 +70,32 @@ namespace abakes2.Pages
                                 os.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
                                 os.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
                                 os.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-                                listOrderSimple.Add(os);
+                               
+
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
+                {
+                    connection.Open();
+                    string sql = "select * from Order3DForm where username='" + userconfirm + "' AND status ='true'"; //get all the data from the shopping cart based on the user.
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+
+
+                                order3D.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
+                                order3D.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
+                                order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
+                                order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+
 
 
                             }

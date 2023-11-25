@@ -145,50 +145,65 @@
         <form method="post">
             <table>
                 <tr>
-                    <th>Action</th>
+                    <th>Order ID</th>
+                    <th>Type</th>
                     <th>Cake Details</th>
                     <th>Instruction</th>
                     <th>Delivery</th>
                     <th>Price</th>
+                    <th>Action</th>
                 </tr>
-                @foreach (var item in Model.listOrderSimple)
-                {             
+              <!-- SIMPLE ORDER ROW-->
                     <tr>
-                        <td><a href='/Cart?id=@item.osID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">X</a></td>
+                        <td>@Model.os.osID</td>
+                        <td>Simple Order</td>
 
                         <td>
 
                             <div class="cart-info">
 
                                 <div>
-                                    <p>Occasion: @item.osOccasion</p>
-                                    <p>Shapes: @item.osShapes</p>
-                                    <p>Tier: @item.osTier</p>
-                                    <p>Flavors: @item.osFlavors</p>
-                                    <p>Sizes: @item.osSizes</p>
+                                    <p>Tier: @Model.os.osOccasion</p>
+                                    <p>Shapes: @Model.os.osShapes</p>
+                                    <p>Flavors: @Model.os.osFlavors</p>
+                                    <p>Sizes: @Model.os.osSizes</p>
                                 </div>
                             </div>
                     
                         </td>
 
-                        <td><p>@item.osInstruction</p></td>
-                        <td><p>@item.osDelivery</p></td>
-                        <td><p>@item.osPrice</p></td>
+                        <td><p>@Model.os.osInstruction</p></td>
+                        <td><p>@Model.os.osDelivery</p></td>
+                        <td><p>@Model.os.osPrice</p></td>
+                        <td><a href='/Checkout?id=@Model.os.osID' class="btn btn-primary btn-sm x-button">Checkout</a>
+                             <a href='/Cart?id=@Model.os.osID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">Remove</a></td>
+                       
                     </tr>
-                }
+                    <!--3D ORDER ROW-->
+                    <tr>
+                        <td>@Model.order3D.ModelID</td>
+                        <td>3D Order</td>
+
+                        <td>
+
+                            <div class="cart-info">
+
+                                <div>
+                                    <p>@Model.order3D.ModelType</p>
+                                </div>
+                            </div>
+                    
+                        </td>
+
+                        <td><p>@Model.order3D.instructions</p></td>
+                        <td><p>@Model.order3D.order3DDelivery</p></td>
+                        <td><p>@Model.order3D.order3DPrice</p></td>
+                        <td><a href='/Checkout3D?id=@Model.order3D.ModelID' class="btn btn-primary btn-sm x-button">Checkout</a></td>
+                    </tr>
+                
             </table>
         </form>
-    <div class="total-price">
-        <table>
-            <tr>
-                <td>Total</td>
-                <td>P @Model.TotalCart</td>
-            </tr>
-        </table>
-    </div>
-        <div class="total-price">
-            <a href='/Checkout' class="btn btn-primary btn-lg py-3 btn-block">Proceed To Checkout</a>
-        </div>
+    
     </div>
     
               

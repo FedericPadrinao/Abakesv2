@@ -194,6 +194,8 @@ namespace abakes2.Pages
         public string Color3 = "";
         public string ModelType = "";
         public string status = "";
+        public string order3DDelivery = "";
+        public string instructions = "";
         public int order3DPrice = 0;
         public int order3DQuantity = 0;
         public int order3DShip = 0;
@@ -204,6 +206,7 @@ namespace abakes2.Pages
         public string order3Dstatus = "";
         public string receipt = "";
         public string paymentMethod = "";
+
     }
 
     public class OrderSimpleInfo

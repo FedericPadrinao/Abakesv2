@@ -128,7 +128,7 @@
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Type</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Username</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Order Status</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Picture</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Receipt</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:13%;">Action</th>
                         </tr>
                     </thead>
@@ -150,6 +150,28 @@
 
                                 <td style="align-content:center;">                              
                                     <a href='/Admin_ViewPayment?user=@item.invoiceUsername' class="btn" style="background: #ffffb9; color: black;">
+                                        <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
+                                    </a>                        
+                                </td>
+                            </tr>
+                        }
+                        @foreach (var item in Model.order3DList)
+                        {
+
+
+
+                            <tr>
+                                <td><p>3D Order</p></td>
+                                <td><p>@item.username</p></td>   
+                                <td>
+                                    <p>@item.order3Dstatus</p>
+                                </td>
+                                <td>
+                                    <img src="@item.receipt">
+                                </td>
+
+                                <td style="align-content:center;">                              
+                                    <a href='/Admin_ViewPayment?user=@item.username' class="btn" style="background: #ffffb9; color: black;">
                                         <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
                                     </a>                        
                                 </td>

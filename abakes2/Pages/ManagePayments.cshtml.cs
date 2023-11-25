@@ -8,6 +8,7 @@ namespace abakes2.Pages
     {
         public List<CustomerInfo> customerInfo = new List<CustomerInfo>();
         public List<InvoiceInfo> invoiceList = new List<InvoiceInfo>();
+        public List<Order3DForm> order3DList = new List<Order3DForm>();
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
@@ -22,16 +23,19 @@ namespace abakes2.Pages
                     connection.Open();
                     //getting the data based from the pdid variable
                     string sql = "SELECT * FROM Invoice WHERE OrderStatus != @orderStatus";
+                    string sql3d = "SELECT * FROM Order3DForm WHERE OrderStatus != 'Complete Order'";
                     string search = Request.Query["search"];
                     if (!String.IsNullOrEmpty(search))
                     {
                         // Use parameterized query to avoid SQL injection
                         sql = "SELECT * FROM Invoice WHERE username LIKE @username AND OrderStatus != @orderStatus";
+                        sql3d = "SELECT * FROM Order3DForm WHERE username LIKE @username AND OrderStatus != @orderStatus";
                     }
                     else
                     {
                         // Use parameterized query to avoid SQL injection
                         sql = "SELECT * FROM Invoice WHERE OrderStatus != @orderStatus";
+                        sql3d = "SELECT * FROM Order3DForm WHERE OrderStatus != 'Complete Order'";
                     }
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -50,15 +54,14 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
                                 invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
                                 invoiceInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
-
-                                invoiceList.Add(invoiceInfo);
-
-
-
-
-
-
-
+                                Order3DForm order3DInfo = new Order3DForm();
+                                order3DInfo.ModelID = reader.GetInt32(0);
+                                order3DInfo.username = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
+                              
+                                order3DInfo.order3Dstatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+                                order3DInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                invoiceList.Add(invoiceInfo);                         
+                                order3DList.Add(order3DInfo);
                             }
                         }
                     }
@@ -78,6 +81,24 @@ namespace abakes2.Pages
                             {
                                 
                                 
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string selectsql = "SELECT * FROM Order3DForm WHERE username = @username AND OrderStatus != 'Complete Order'";
+                    using (SqlCommand command = new SqlCommand(selectsql, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", userconfirm);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+
                             }
                         }
                     }

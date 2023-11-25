@@ -164,7 +164,8 @@
             <!-- 2 Bar-->
             <li>
                 <i class="fa-solid fa-magnifying-glass icon"></i>
-                @if (Model.order3D.order3Dstatus == "Review & Quotation")
+                @if (Model.order3D.order3Dstatus == "Review & Quotation"|| Model.order3D.order3Dstatus == "50% Downpayment" || Model.order3D.order3Dstatus == "Baking" || Model.order3D.order3Dstatus == "Order Confirmation" || Model.order3D.order3Dstatus == "Full Payment" || Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived")
+                
                 {
                 <div class="progres two active">
                 <p>2</p>

@@ -143,9 +143,9 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     string sql3 = "INSERT INTO Order3DForm " +
-                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod) " +
+                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery) " +
                          "VALUES " +
-                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, 'N/A', 'N/A', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod); SELECT SCOPE_IDENTITY(); ";
+                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, 'N/A', 'N/A', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery); SELECT SCOPE_IDENTITY(); ";
 
                     using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
                     {
