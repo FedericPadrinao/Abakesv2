@@ -20,17 +20,21 @@ namespace abakes2.Pages
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
 
-        
+
+        public string code = "";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
             imgconfirm = HttpContext.Session.GetString("userimage");
             statusconfirm = HttpContext.Session.GetString("userstatus");
             notifCount = HttpContext.Session.GetInt32("NotificationCount") ?? 0;
+
+            
             if (userconfirm == null)
             {
                 HttpContext.Session.SetString("ReturnUrl", Request.Path);
                 Response.Redirect("/Account");
+
             }
             else
             {
