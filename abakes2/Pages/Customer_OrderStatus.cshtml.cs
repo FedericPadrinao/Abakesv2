@@ -108,10 +108,21 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-
-                                orderInfo.osID = reader.GetInt32(0);
+                                orderInfo.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
+                                orderInfo.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
+                                orderInfo.osOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
+                                orderInfo.osShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
+                                orderInfo.osTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
+                                orderInfo.osFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
+                                orderInfo.osSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
+                                orderInfo.osInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                orderInfo.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
                                 orderInfo.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-
+                                orderInfo.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                                orderInfo.osShip = reader.GetFieldValue<int>(reader.GetOrdinal("ShippingPrice"));
+                                orderInfo.osDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
+                                orderInfo.osColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
+                                orderInfo.osDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
 
 
                             }

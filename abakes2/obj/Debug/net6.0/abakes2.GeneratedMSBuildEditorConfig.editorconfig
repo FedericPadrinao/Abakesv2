@@ -63,6 +63,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RPcmRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DOrders2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RPcmRlcnMyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageAcc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQWNjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -189,6 +193,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderStatus3D.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdGF0dXMzRC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderSuccess3D_Prompt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdWNjZXNzM0RfUHJvbXB0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderSuccess_Prompt.cshtml]

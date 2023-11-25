@@ -179,7 +179,7 @@
                         <div class="row">
                             <div class="adminbox" style="height: 50%; width: 550px; padding: 45px; border-radius: 5%; text-align:left;">
                                 <form method="post">
-                                    <input type="hidden" name="id" value="@Model.orderSimple.osID" />
+                                    <input type="hidden" name="id" value="@Model.order3d.ModelID" />
                                     <div class="p-5 p-lg-5 border">
                                         <div class="form-group row">
                                             <div class="col-md-12">
@@ -190,24 +190,24 @@
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Product Price:</b> </label>
-                                            <input type="text" class="form-control" id="price" name="price" required value="@Model.orderSimple.osPrice">
+                                            <input type="text" class="form-control" id="price" name="price" required value="@Model.order3d.order3DPrice">
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="col-md-12">
                                                 <label for="c_hadd" class="text-black"><b>Shipping Price:</b> </label>
-                                                <input type="text" class="form-control" id="ship" name="ship" required value="@Model.orderSimple.osShip">
+                                                <input type="text" class="form-control" id="ship" name="ship" required value="@Model.order3d.order3DShip">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="col-md-12">
                                                 <label for="c_hadd" class="text-black"><b>Expected Delivery:</b> </label>
-                                                <input style="height:21px" type="date" name="expectedD" value="@Model.orderSimple.osExpectedD" />
+                                                <input style="height:21px" type="date" name="expectedD" value="@Model.order3d.order3DExpectedD" />
                                             </div>
                                             <div class="col-md-12">
                                                 <label for="c_hadd" class="text-black"><b>Expected Time:</b> </label>
-                                                <input style="height:21px" type="time" name="expectedT" value="@Model.orderSimple.osExpectedT" />
+                                                <input style="height:21px" type="time" name="expectedT" value="@Model.order3d.order3DExpectedT" />
                                             </div>
                                         </div>
                                         <div class="form-group row">

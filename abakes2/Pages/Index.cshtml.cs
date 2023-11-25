@@ -173,6 +173,7 @@ namespace abakes2.Pages
         public string Color3 = "";
         public int TotalTexture = 0;
         public string ModelType = "";
+       
     }
 
     public class Order3DForm
@@ -191,6 +192,18 @@ namespace abakes2.Pages
         public string Color = "";
         public string Color2 = "";
         public string Color3 = "";
+        public string ModelType = "";
+        public string status = "";
+        public int order3DPrice = 0;
+        public int order3DQuantity = 0;
+        public int order3DShip = 0;
+        public int order3DDP = 0;
+        public string order3DPreferredD = "";
+        public string order3DExpectedD = "";
+        public string order3DExpectedT = "";
+        public string order3Dstatus = "";
+        public string receipt = "";
+        public string paymentMethod = "";
     }
 
     public class OrderSimpleInfo

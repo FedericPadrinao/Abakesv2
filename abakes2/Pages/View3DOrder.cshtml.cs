@@ -139,7 +139,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "UPDATE OrderSimple SET OrderPrice='" + price + "', status='true', ShippingPrice='" + ship + "', Downpayment='" + downpayment + "', ExpectedDelivery='" + ExpectedDelivery + "', ExpectedTime='" + ExpectedTime + "' WHERE OrderID='" + ids + "'";
+                    String sql = "UPDATE Order3DForm SET OrderPrice='" + price + "', status='true', ShippingPrice='" + ship + "', Downpayment='" + downpayment + "', ExpectedDelivery='" + ExpectedDelivery + "', ExpectedTime='" + ExpectedTime + "', orderstatus='Review & Quotation' WHERE OrderID='" + ids + "'";
 
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -153,7 +153,7 @@ namespace abakes2.Pages
                 errorMessage = ex.Message;
                 return;
             }
-            Response.Redirect("/Admin_ManageSimpleOrders2");
+            Response.Redirect("/Admin_Manage3DOrders");
         }
     }
 }

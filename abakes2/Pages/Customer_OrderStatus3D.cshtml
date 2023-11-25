@@ -62,7 +62,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            <li><a href="/Customer_order3DForm" class="dropdown-item">Customize 3D</a></li>
                             @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
                             {
                                 <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
@@ -137,30 +137,39 @@
     <div class="main">
 
         <div class="head">
-           
-            <p class="head_1">Invoice #@Model.invoiceInfo.invoiceID<span></span></p>
-            <p class="head_2">Expected Arrival: @Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT </p>
+            <p class="head_1">Order #@Model.order3D.ModelID<span></span></p>
+            <p class="head_2">Expected Arrival: @Model.order3D.order3DExpectedD @Model.order3D.order3DExpectedT </p>
         </div>
 
         <ul>
             <!-- 1 Bar-->
             <li>
                 <i class="fa-regular fa-eye icon"></i>
-                <div class="progres one active">
-                    <p>1</p>
-                    <i class="uil uil-check"></i>
-                </div>
+                @if (Model.orderInfo.status != null || Model.order3D.order3Dstatus == "Review & Quotation" || Model.order3D.order3Dstatus == "50% Downpayment" || Model.order3D.order3Dstatus == "Baking" || Model.order3D.order3Dstatus == "Order Confirmation" || Model.order3D.order3Dstatus == "Full Payment" || Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived")
+                {
+                    <div class="progres one active">
+                        <p>1</p>
+                        <i class="uil uil-check"></i>
+                    </div>
+                }
+                else
+                {
+                    <div class="progres one">
+                        <p>1</p>
+                        <i class="uil uil-check"></i>
+                    </div>
+                }
                 <p class="text">Design Your Cake</p>
             </li>
             <!-- 2 Bar-->
             <li>
                 <i class="fa-solid fa-magnifying-glass icon"></i>
-                @if (Model.orderInfo.status == "true" || Model.invoiceInfo.status == "true")
+                @if (Model.order3D.order3Dstatus == "Review & Quotation")
                 {
                 <div class="progres two active">
                 <p>2</p>
                 <i class="uil uil-check"></i>
-                    </div>
+                </div>
                 }
                 else
                 {
@@ -175,7 +184,7 @@
             <!-- 3 Bar-->
             <li>
                 <i class="fa-solid fa-hand-holding-dollar icon"></i>
-                @if (Model.invoiceInfo.orderStatus == "50% Downpayment" || Model.invoiceInfo.orderStatus == "Baking" || Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived")
+                @if (Model.order3D.order3Dstatus == "50% Downpayment" || Model.order3D.order3Dstatus == "Baking" || Model.order3D.order3Dstatus == "Order Confirmation" || Model.order3D.order3Dstatus == "Full Payment" || Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived")
                 {
                 <div class="progres three active">
                 <p>3</p>
@@ -195,7 +204,7 @@
             <!-- 4 Bar-->
             <li>
                 <i class="fa-solid fa-cake-candles icon"></i>
-                @if (Model.invoiceInfo.orderStatus == "Baking" || Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                @if (Model.order3D.order3Dstatus == "Baking" || Model.order3D.order3Dstatus == "Order Confirmation" || Model.order3D.order3Dstatus == "Full Payment" || Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived"){
                 <div class="progres four active">
                 <p>4</p>
                 <i class="uil uil-check"></i>
@@ -212,7 +221,7 @@
             <!-- 5 Bar-->
             <li>
                 <i class="fa-solid fa-clipboard-check icon"></i>
-                @if (Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                @if (Model.order3D.order3Dstatus == "Order Confirmation" || Model.order3D.order3Dstatus == "Full Payment" || Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived"){
                 <div class="progres five active">
                 <p>5</p>
                 <i class="uil uil-check"></i>
@@ -229,7 +238,7 @@
             <!-- 6 Bar-->
             <li>
                 <i class="fa-solid fa-money-bill icon"></i>
-                @if (Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                @if (Model.order3D.order3Dstatus == "Full Payment" || Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived"){
                 <div class="progres six active">
                     <p>6</p>
                     <i class="uil uil-check"></i>
@@ -246,7 +255,7 @@
             <!-- 7 Bar-->
             <li>
                 <i class="fa-solid fa-truck icon"></i>
-                @if (Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived"){
+                @if (Model.order3D.order3Dstatus == "Delivery/Pickup" || Model.order3D.order3Dstatus == "Order Arrived"){
                 <div class="progres seven active">
                     <p>7</p>
                     <i class="uil uil-check"></i>
@@ -263,7 +272,7 @@
             <!-- 8 Bar-->
             <li>
                 <i class="fa-solid fa-location-dot icon"></i>
-                @if (Model.invoiceInfo.orderStatus == "Order Arrived"){
+                @if (Model.order3D.order3Dstatus == "Order Arrived"){
                 <div class="progres eight active">
                     <p>8</p>
                     <i class="uil uil-check"></i>
@@ -294,14 +303,14 @@
 
 
 
-            <input type="hidden" name="modelname" id="modelname" value="@Model.order3d.ModelName1">
-            <input type="hidden" name="scale" id="scale" value="@Model.order3d.Scale1">
-            <input type="hidden" name="texture" id="texture" value="@Model.order3d.Texture1">
-            <input type="hidden" name="texture2" id="texture2" value="@Model.order3d.Texture2">
-            <input type="hidden" name="texture3" id="texture3" value="@Model.order3d.Texture3">
-            <input type="hidden" name="color1" id="color1" value="@Model.order3d.Color">
-            <input type="hidden" name="color2" id="color2" value="@Model.order3d.Color2">
-            <input type="hidden" name="color3" id="color3" value="@Model.order3d.Color3">
+            <input type="hidden" name="modelname" id="modelname" value="@Model.order3D.ModelName1">
+            <input type="hidden" name="scale" id="scale" value="@Model.order3D.Scale1">
+            <input type="hidden" name="texture" id="texture" value="@Model.order3D.Texture1">
+            <input type="hidden" name="texture2" id="texture2" value="@Model.order3D.Texture2">
+            <input type="hidden" name="texture3" id="texture3" value="@Model.order3D.Texture3">
+            <input type="hidden" name="color1" id="color1" value="@Model.order3D.Color">
+            <input type="hidden" name="color2" id="color2" value="@Model.order3D.Color2">
+            <input type="hidden" name="color3" id="color3" value="@Model.order3D.Color3">
             <!-- <input type="hidden" name="color" id="color" value=""> --> 
             @foreach(var item in Model.listAsset3D)
             {

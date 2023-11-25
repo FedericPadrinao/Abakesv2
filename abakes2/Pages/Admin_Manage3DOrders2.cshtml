@@ -1,5 +1,5 @@
 ﻿@page
-@model abakes2.Pages.Admin_Manage3DOrdersModel
+@model abakes2.Pages.Admin_Manage3DOrders2Model
 @{
     Layout = null;
 }
@@ -114,7 +114,7 @@
             <div class="admin-table">
                 <table>
                     <a href="/Admin_ManageSimpleOrders2" class="btn" style="margin:1%;">View Approved Orders</a>
-                    <a href="/Admin_Manage3DOrders2" class="btn" style="margin:1%;">View Approved 3D Orders</a>
+                    <a href="/Admin_Manage3DOrders" class="btn" style="margin:1%;">View Pending 3D Orders</a>
                     <button type="submit" class="btn" style="margin:1%;">Confirm Orders</button>
                     <form method="post" asp-page-handler="PauseOrder">
                         <button class="btn" style="margin:1%;">Pause Order Taking</button>

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
-    public class Admin_Manage3DOrdersModel : PageModel
+    public class Admin_Manage3DOrders2Model : PageModel
     {
         public CustomerInfo customerInfo = new CustomerInfo();
         public UserInfo userInfo = new UserInfo();
@@ -24,7 +24,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Order3DForm WHERE status ='false'"; //getting the data based from the odid variable
+                    string sql = "select * from Order3DForm WHERE status ='true'"; //getting the data based from the odid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -36,7 +36,7 @@ namespace abakes2.Pages
 
                                 order3DList.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderId"));
                                 order3DList.username = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-                               
+
                                 orderSimpleInfo.Add(os);
                                 order3DInfo.Add(order3DList);
 
@@ -144,3 +144,4 @@ namespace abakes2.Pages
         }
     }
 }
+

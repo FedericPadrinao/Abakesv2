@@ -298,7 +298,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
-                <h2>Cake Design</h2>
+                <h2>Cake Details</h2>
             </div>
         </div>
     </div>
@@ -316,63 +316,53 @@
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <label for="c_hadd" class="text-black"><b>Occasion:</b>  </label>
-                                <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceOccasion</label>
+                                <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceOccasion @Model.orderInfo.osOccasion</label>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="c_hadd" class="text-black"><b>Shapes:</b>  </label>
-                                    <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceShapes</label>
+                                    <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceShapes @Model.orderInfo.osShapes</label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="c_hadd" class="text-black"><b>Color:</b>  </label>
-                                    <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceColor</label>
+                                    <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceColor @Model.orderInfo.osColor</label>
                                 </div>
                             </div>
                            
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Tier:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceTier</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceTier @Model.orderInfo.osTier</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Flavors:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceFlavors</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceFlavors @Model.orderInfo.osFlavors</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Sizes:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceSizes</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceSizes @Model.orderInfo.osSizes</label>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <label for="c_hadd" class="text-black"><b>Instruction:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceInstruction</label>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Dedication:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDedication</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDedication @Model.orderInfo.osDedication</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Delivery:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDelivery</label>
+                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDelivery @Model.orderInfo.osDelivery</label>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <label for="c_hadd" class="text-black"><b>Expected Delivery:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT</label>
-                    </div>
-                </div>
+                                    
             </div>
         </div>
     </div>

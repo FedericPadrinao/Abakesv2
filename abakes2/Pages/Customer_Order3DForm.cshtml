@@ -53,6 +53,25 @@
 
 
 <body>
+    @if(Model.customerInfo.ordermax3D == "true")
+    {
+         <script>
+            window.location.href = '/Customer_MaxOrder';
+         </script>
+    }
+     @if(Model.customerInfo.accstatus == "false")
+    {
+         <script>
+            window.location.href = '/Customer_Block';
+         </script>
+    }
+    @if(Model.customerInfo.status == "false")
+    {
+         <script>
+            window.location.href = '/Customer_FullCapacity_Prompt';
+         </script>
+    }
+    
 
     <!-- NAV BAR -->
     <div class="container">
@@ -166,7 +185,7 @@
                  
                     @foreach (var item in Model.order3DList)
                     {
-                        <button class="presetbtn" onclick="loadModel('@item.ModelName','@item.Scale','@item.TColor','@item.TColor2','@item.TColor3','@item.TotalTexture');">@item.ModelType</button>
+                        <button class="presetbtn" onclick="loadModel('@item.ModelName','@item.ModelType','@item.Scale','@item.TColor','@item.TColor2','@item.TColor3','@item.TotalTexture');">@item.ModelType</button>
 
                     }
 
@@ -221,7 +240,15 @@
                     <button class="functionbtn" id="DisplayDecoration">Display Decorations</button>
 
                      <form id="insertCake" method="post">
+                    <h3>Delivery Type:</h3>
+                    <label class="form-check-label" for="standdelivery">‌‌ ‌ ‌ Standard Delivery</label>
+                    <input class="form-check-input"  type="radio" value="Delivery" name="delivery" />
+                    <label class="form-check-label" for="pickup">Pick up</label>
+                    <input class="form-check-input"  type="radio" value="Pickup" name="delivery" />
+                    <label class="form-check-label" for="pickup">Preferred Delivery/Pickup <br /> </label>
+                    <input style="height:21px" type="date" name="preferred" />
                         <input type="hidden" name="modelname" id="modelname" value="">
+                        <input type="hidden" name="modeltype" id="modeltype" value="">
                         <input type="hidden" name="scale" id="scale" value="">
                         <input type="hidden" name="texture1" id="texture1" value="">
                         <input type="hidden" name="texture2" id="texture2" value="">
@@ -239,14 +266,18 @@
                         <input type="hidden" name="positiony" id="positiony" />
                         <input type="hidden" name="positionz" id="positionz" />
 
+
                     
                         
                         <div class="specialsavecake">
+
                         <h4 style="text-align:center; color:black;">Special Instructions</h4>
                                 <div class="col-md-12">
 
                             <textarea name="special_instructions" class="form-control specialinstructions" rows="4" placeholder="Additional instructions (Dietary Restrictions, Type of icing, Allergies, Less sugar, etc.)" required></textarea>
                             </div>
+                            <!--Delivery Type-->
+                    
 
                </div>
                         <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
@@ -753,12 +784,13 @@
                                         var positionZ = globalVariables[${i}].modelDragBox${i}.position.z;`
 
         }
-        function loadModel(name, scale, texture1, texture2, texture3, totaltexture) {
+        function loadModel(name, modeltype, scale, texture1, texture2, texture3, totaltexture) {
             if (list.length > 0) {
                 alert('Only one base model can be added.');
                 return;
             }
             var modelName = document.getElementById('modelname').value = name;
+            var modelType = document.getElementById('modeltype').value = modeltype;
             var scale = document.getElementById('scale').value = scale;
             var texture1 = document.getElementById('texture1').value = texture1;
             var texture2 = document.getElementById('texture2').value = texture2;
@@ -767,6 +799,7 @@
 
             var model = {
                 modelname: modelName,
+                modelname: modelType,
                 scale: scale,
                 texture1: texture1,
                 texture2: texture2,

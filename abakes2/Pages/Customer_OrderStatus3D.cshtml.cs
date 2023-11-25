@@ -17,7 +17,7 @@ namespace abakes2.Pages
         public OrderSimpleInfo orderInfo = new OrderSimpleInfo();
         public CustomerInfo customerInfo = new CustomerInfo();
         public InvoiceInfo invoiceInfo = new InvoiceInfo();
-        public Order3DForm order3d = new Order3DForm();
+        public Order3DForm order3D = new Order3DForm();
         public List<Asset3DForm> listAsset3D = new List<Asset3DForm>();
         public String errorMessage = "";
         public String successMessage = "";
@@ -27,7 +27,7 @@ namespace abakes2.Pages
             imgconfirm = HttpContext.Session.GetString("userimage");
             statusconfirm = HttpContext.Session.GetString("userstatus");
 
-            String id = Request.Query["Id"];
+            String user = Request.Query["user"];
 
             try
             {
@@ -35,26 +35,34 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Order3DForm WHERE OrderID=@id ";
+                    String sql = "SELECT * FROM Order3DForm WHERE username=@user ";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("user", userconfirm);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                order3d.ModelID = reader.GetInt32(0);
-                                order3d.username = reader.GetString(1);
-                                order3d.ModelName1 = reader.GetString(2);
-                                order3d.Scale1 = reader.GetInt32(3);
-                                order3d.Texture1 = reader.GetString(4);
-                                order3d.Texture2 = reader.GetString(5);
-                                order3d.Texture3 = reader.GetString(6);
-                                order3d.Color = reader.GetString(7);
-                                order3d.Color2 = reader.GetString(8);
-                                order3d.Color3 = reader.GetString(9);
-
+                                order3D.ModelID = reader.GetInt32(0);
+                                order3D.username = reader.GetString(1);
+                                order3D.ModelName1 = reader.GetString(2);
+                                order3D.Scale1 = reader.GetInt32(3);
+                                order3D.Texture1 = reader.GetString(4);
+                                order3D.Texture2 = reader.GetString(5);
+                                order3D.Texture3 = reader.GetString(6);
+                                order3D.Color = reader.GetString(7);
+                                order3D.Color2 = reader.GetString(8);
+                                order3D.Color3 = reader.GetString(9);
+                                order3D.status = reader.GetString(11);
+                                order3D.order3DPrice = reader.GetInt32(12);
+                                order3D.order3DQuantity = reader.GetInt32(13);
+                                order3D.order3DShip = reader.GetInt32(14);
+                                order3D.order3DDP = reader.GetInt32(15);
+                                order3D.order3DPreferredD = reader.GetString(16);
+                                order3D.order3DExpectedD = reader.GetString(17);
+                                order3D.order3DExpectedT = reader.GetString(18);
+                                order3D.order3Dstatus = reader.GetString(21);
 
                             }
                         }
@@ -66,11 +74,11 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Asset3DForm WHERE OrderID=@id ";
+                    String sql = "SELECT * FROM Asset3DForm WHERE username=@user ";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@user", userconfirm);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -96,34 +104,13 @@ namespace abakes2.Pages
 
                 }
 
-                using (SqlConnection connection = new SqlConnection(connectionProvider))
-                {
-                    connection.Open();
-
-                    string selectsql = "SELECT * FROM Invoice WHERE username = @username";
-                    using (SqlCommand command = new SqlCommand(selectsql, connection))
-                    {
-                        command.Parameters.AddWithValue("@username", userconfirm);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-                                invoiceInfo.invoiceID = reader.GetInt32(0);
-                                invoiceInfo.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-                                invoiceInfo.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
-                                invoiceInfo.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
-                                invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
-                            }
-                        }
-                    }
-                }
+              
 
                 //CUSTOMER
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM LoginCustomer WHERE username= '" + order3d.username + "'";
+                    String sql = "SELECT * FROM LoginCustomer WHERE username= '" + order3D.username + "'";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {

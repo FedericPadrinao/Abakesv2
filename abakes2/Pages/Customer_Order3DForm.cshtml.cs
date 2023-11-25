@@ -10,6 +10,7 @@ namespace abakes2.Pages
         public List<UserInfo> userInfo = new List<UserInfo>();
         public List<Order3DInfo> order3DList = new List<Order3DInfo>();
         public Order3DForm order3DForm = new Order3DForm();
+        public CustomerInfo customerInfo = new CustomerInfo();
         public List<Asset3DInfo> asset3DList = new List<Asset3DInfo>();
         public Asset3DForm asset3DForm = new Asset3DForm();
         public Boolean check = false;
@@ -119,7 +120,7 @@ namespace abakes2.Pages
             order3DForm.Color = Request.Form["color1"];
             order3DForm.Color2 = Request.Form["color2"];
             order3DForm.Color3 = Request.Form["color3"];
-
+            order3DForm.ModelType = Request.Form["ModelType"];
             string assetNameStr = Request.Form["assetname"];
             string assetPathStr = Request.Form["assetpath"];
             string assetScaleStr = Request.Form["assetscale"];
@@ -127,6 +128,8 @@ namespace abakes2.Pages
             string posY = Request.Form["positiony"];
             string posZ = Request.Form["positionz"];
             string instructions = Request.Form["special_instructions"];
+            string Delivery = Request.Form["delivery"];
+            string Preferred = Request.Form["preferred"];
             string[] assetNameList = assetNameStr.Split(",");
             string[] assetPathList = assetPathStr.Split(",");
             string[] assetScaleList = assetScaleStr.Split(",");
@@ -140,9 +143,9 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     string sql3 = "INSERT INTO Order3DForm " +
-                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions) " +
+                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod) " +
                          "VALUES " +
-                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions); SELECT SCOPE_IDENTITY(); ";
+                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, 'N/A', 'N/A', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod); SELECT SCOPE_IDENTITY(); ";
 
                     using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
                     {
@@ -156,6 +159,13 @@ namespace abakes2.Pages
                         insertcommand.Parameters.AddWithValue("@Color2", order3DForm.Color2);
                         insertcommand.Parameters.AddWithValue("@Color3", order3DForm.Color3);
                         insertcommand.Parameters.AddWithValue("@instructions", instructions);
+                        insertcommand.Parameters.AddWithValue("@delivery", Delivery);
+                        insertcommand.Parameters.AddWithValue("@preferred", Preferred);
+                        insertcommand.Parameters.AddWithValue("@modeltype", order3DForm.ModelType);
+                        insertcommand.Parameters.AddWithValue("@dateCreated", "N/A");
+                        insertcommand.Parameters.AddWithValue("@orderstatus", "Design Your Cake");
+                        insertcommand.Parameters.AddWithValue("@receipt", "N/A");
+                        insertcommand.Parameters.AddWithValue("@paymentMethod", "N/A");
 
 
                         insertedPrimaryKey = Convert.ToInt32(insertcommand.ExecuteScalar());
@@ -197,6 +207,23 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "UPDATE LoginCustomer SET ordermax3D = 'true' WHERE username = @user";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@user", userconfirm);
+                        command.ExecuteNonQuery();
+
+
+
+                        // Redirect to the success page after successful form submission
+                        return RedirectToPage("/Customer_OrderSuccess3D_Prompt");
+
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -205,7 +232,7 @@ namespace abakes2.Pages
             }
 
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Customer_OrderSuccess3D_Prompt");
         }
 
 
@@ -245,6 +272,28 @@ namespace abakes2.Pages
                             }
 
 
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM LoginCustomer WHERE username= '" + userconfirm + "'";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                customerInfo.username = reader.GetString(1);
+                                customerInfo.ordermax = reader.GetString(13);
+                                customerInfo.accstatus = reader.GetString(12);
+
+                            }
                         }
                     }
                 }
