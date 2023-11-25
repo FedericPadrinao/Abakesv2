@@ -308,6 +308,21 @@
 
 
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the QR code content from the session
+            const qrCodeContent = "@HttpContext.Session.GetString("QRCode")";
+
+            // Extract the code parameter from the QR code content
+            const urlParams = new URLSearchParams(new URL(qrCodeContent).search);
+            const codeValue = urlParams.get('code');
+
+            // Update the text box with the code value
+            document.getElementById('seccode').value = codeValue;
+        });
+    </script>
+    }
     <script>
         function previewImage() {
             var fileInput = document.getElementById('fileInput');
