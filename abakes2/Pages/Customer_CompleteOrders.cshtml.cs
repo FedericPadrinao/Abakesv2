@@ -4,15 +4,16 @@ using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
-    public class Customer_CakesForApprovalModel : PageModel
+    public class Customer_CompleteOrdersModel : PageModel
     {
         public List<CustomerInfo> listCustomer = new List<CustomerInfo>();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
+        public List<InvoiceInfo> listInvoice = new List<InvoiceInfo>();
         public String userconfirm = "";
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
-   
+
         public String imgconfirm = "";
         public String statusconfirm = "";
 
@@ -25,11 +26,11 @@ namespace abakes2.Pages
         {   //will load getProducts everytime you launch the website
             string pdID = Request.Query["id"];
             try
-            {            
+            {
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
                 {
                     connection.Open();
-                    string sql = "select * from OrderSimple where username='" + userconfirm + "' AND status ='false'"; //get all the data from the shopping cart based on the user.
+                    string sql = "select * from Invoice where username='" + userconfirm + "' AND orderstatus ='Complete Order'"; //get all the data from the shopping cart based on the user.
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -37,20 +38,17 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 OrderSimpleInfo os = new OrderSimpleInfo();
+                                InvoiceInfo invoice = new InvoiceInfo();
 
-
-                                os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
-                                os.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-                                os.osOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
-                                os.osShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
-                                os.osTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
-                                os.osFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
-                                os.osSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
-                                os.osInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
-                                os.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
-                                os.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-                                os.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-                                listOrderSimple.Add(os);
+                                invoice.invoiceID = reader.GetFieldValue<int>(reader.GetOrdinal("InvoiceID"));
+                                invoice.invoiceOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
+                                invoice.invoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                                invoice.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
+                                invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
+                                invoice.invoiceDateCreated = reader.GetFieldValue<string>(reader.GetOrdinal("DateCreated"));
+                                invoice.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                
+                                listInvoice.Add(invoice);
 
 
                             }
@@ -65,7 +63,7 @@ namespace abakes2.Pages
             }
 
         }
-        
+
 
         public IActionResult OnGetRemoveOrder()
         {
@@ -116,6 +114,7 @@ namespace abakes2.Pages
             {
 
             }
+            GetOrders();
             //NAV COUNT
             try
             {

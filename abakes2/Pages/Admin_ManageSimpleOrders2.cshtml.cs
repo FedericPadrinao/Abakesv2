@@ -12,7 +12,7 @@ namespace abakes2.Pages
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetOrders(string sortOrder)
         {
@@ -109,7 +109,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "delete from OrderSimple where OrderID='" + osid + "' and username='" + userconfirm + "'"; //getting the data based from the pdid variable
+                    string sql = "delete from OrderSimple where OrderID='" + osid + "'"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.ExecuteNonQuery();
@@ -122,7 +122,7 @@ namespace abakes2.Pages
 
             }
 
-            return Redirect("/Index");
+            return Page();
         }
        
     }
