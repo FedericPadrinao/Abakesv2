@@ -20,16 +20,25 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Invoice where status ='true' "; //getting the data based from the pdid variable
-
+                    //getting the data based from the pdid variable
+                    string sql = "SELECT * FROM Invoice WHERE OrderStatus != @orderStatus";
                     string search = Request.Query["search"];
                     if (!String.IsNullOrEmpty(search))
                     {
-                        sql = "SELECT * FROM Invoice WHERE username LIKE '%" + search + "%'";
+                        // Use parameterized query to avoid SQL injection
+                        sql = "SELECT * FROM Invoice WHERE username LIKE @username AND OrderStatus != @orderStatus";
                     }
-                   
+                    else
+                    {
+                        // Use parameterized query to avoid SQL injection
+                        sql = "SELECT * FROM Invoice WHERE OrderStatus != @orderStatus";
+                    }
+
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                        command.Parameters.AddWithValue("@username", "%" + search + "%"); // Use parameterized values
+                        command.Parameters.AddWithValue("@orderStatus", "Complete Order"); // Adjust as needed
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -59,7 +68,7 @@ namespace abakes2.Pages
                 {
                     connection.Open();
 
-                    string selectsql = "SELECT * FROM Invoice WHERE username = @username";
+                    string selectsql = "SELECT * FROM Invoice WHERE username = @username AND OrderStatus != 'Complete Order'";
                     using (SqlCommand command = new SqlCommand(selectsql, connection))
                     {
                         command.Parameters.AddWithValue("@username", userconfirm);
@@ -86,5 +95,7 @@ namespace abakes2.Pages
         {
             GetUsers(sortUser);
         }
+
+
     }
 }

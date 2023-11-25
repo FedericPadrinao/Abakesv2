@@ -1,5 +1,5 @@
 ﻿@page
-@model abakes2.Pages.ManagePaymentsModel
+@model abakes2.Pages.ManagePayments2Model
 @{
     Layout = null;
 }
@@ -103,7 +103,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-content">
-                                <h2>Manage Payments</h2>
+                                <h2>Manage Complete Payment</h2>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
             <!--Title Bar End-->
 
             <div class="admin-table">
-                <a href="/ManagePayments2" class="btn" style="margin:1%;">View Completed Orders</a>
+                <a href="/ManagePayments" class="btn" style="margin:1%;">View Incomplete Orders</a>
                 <form method="get">
                     <div class="search">
                         <button type="submit" for="search"><i class="fas fa-search"></i></button>
@@ -148,7 +148,16 @@
                                     <img src="@item.receipt">
                                 </td>
 
-                                <td style="align-content:center;">                              
+                                <td style="align-content:center;">
+                                    @if (Model.customer.ordermax == "true"){
+                                        <a class='btn' style="background: #178a00;" asp-page-handler="Complete" asp-route-user=@item.invoiceUsername>
+                                        <i class="fas fa-cart-plus" style="font-size:30px;"></i><div>Allow user to order again</div> </a>
+                                    }
+                                    else{
+                                       <a class='btn' style="background: #ff5e5b;" asp-page-handler="Pause" asp-route-user=@item.invoiceUsername>
+                                        <i class="fas fa-cart-arrow-down" style="font-size:30px;"></i><div>Limit customer to one order</div> </a>
+                                    }
+                                        
                                     <a href='/Admin_ViewPayment?user=@item.invoiceUsername' class="btn" style="background: #ffffb9; color: black;">
                                         <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
                                     </a>                        

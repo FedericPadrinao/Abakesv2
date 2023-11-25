@@ -78,7 +78,7 @@ namespace abakes2.Pages
                 {
                     connection.Open();
 
-                    string selectsql = "SELECT * FROM Invoice WHERE username = @username";
+                    string selectsql = "SELECT * FROM Invoice WHERE username = @username AND OrderStatus != 'Complete Order'";
                     using (SqlCommand command = new SqlCommand(selectsql, connection))
                     {
                         command.Parameters.AddWithValue("@username", userconfirm);

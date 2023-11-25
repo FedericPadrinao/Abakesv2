@@ -129,7 +129,8 @@
     <div class="main">
 
         <div class="head">
-            <p class="head_1">Order #@Model.invoiceInfo.invoiceID<span></span></p>
+            <p class="head_1">Order #@Model.orderInfo.osID<span></span></p>
+            <p class="head_1">Invoice #@Model.invoiceInfo.invoiceID<span></span></p>
             <p class="head_2">Expected Arrival: @Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT </p>
         </div>
 
@@ -137,10 +138,20 @@
             <!-- 1 Bar-->
             <li>
                 <i class="fa-regular fa-eye icon"></i>
-                <div class="progres one active">
-                    <p>1</p>
-                    <i class="uil uil-check"></i>
-                </div>
+                @if (Model.orderInfo.status != null || Model.invoiceInfo.orderStatus == "50% Downpayment" || Model.invoiceInfo.orderStatus == "Baking" || Model.invoiceInfo.orderStatus == "Order Confirmation" || Model.invoiceInfo.orderStatus == "Full Payment" || Model.invoiceInfo.orderStatus == "Delivery/Pickup" || Model.invoiceInfo.orderStatus == "Order Arrived")
+                {
+                    <div class="progres one active">
+                        <p>1</p>
+                        <i class="uil uil-check"></i>
+                    </div>
+                }
+                else
+                {
+                    <div class="progres one">
+                        <p>1</p>
+                        <i class="uil uil-check"></i>
+                    </div>
+                }
                 <p class="text">Design Your Cake</p>
             </li>
             <!-- 2 Bar-->
