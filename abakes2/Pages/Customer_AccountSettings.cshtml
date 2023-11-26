@@ -1,7 +1,7 @@
 ﻿@page
 @model abakes2.Pages.ChangeProfilePicModel
 @{
-    
+
 }
 <head>
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
@@ -26,11 +26,10 @@
         background-color: #fa9083; /* Replace with your desired color code or name */
     }
 
-
 </style>
 
 <body>
-   
+
     <!--NAV BAR-->
     <div class="container">
         <div class="navbar">
@@ -64,30 +63,31 @@
                             <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
-                  
+
                 </ul>
             </nav>
-           <div class="dropdown text-end">
+            <div class="dropdown text-end">
                 @if (Model.userconfirm == null)
                 {
-                       <script>
-                            window.location.href = '/Index';
-                        </script>
+                    <script>
+                        window.location.href = '/Index';
+                    </script>
                 }
-                else{
-      
+                else
+                {
+
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="@Model.customerInfo.img" alt="mdo" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small">
+                        <img src="@Model.customerInfo.img" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="/Customer_CakesForApproval">My Orders</a></li>
-                    <li><a class="dropdown-item" href="/Customer_AccountSettings">Account Settings</a></li>
-                    <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
-                </ul>
+                        <li><a class="dropdown-item" href="/Customer_AccountSettings">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                    </ul>
                 }
-                
+
             </div>
             <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
             <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
@@ -109,128 +109,120 @@
             </div>
         </div>
     </section>
-     <!-- MESSAGE PROMPT-->
+    <!-- MESSAGE PROMPT-->
+    @if (TempData["SuccessMessageProfile"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessageProfile"]</div>
+    }
+    @if (TempData["ErrorMessageProfile"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessageProfile"]</div>
+    }
 
-     @if (TempData["SuccessMessageProfile"] != null)
-        {
-            <div class="alert alert-success">@TempData["SuccessMessageProfile"]</div>
-        }
-        @if (TempData["ErrorMessageProfile"] != null)
-        {
-            <div class="alert alert-danger">@TempData["ErrorMessageProfile"]</div>
-        }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
 
-     @if (TempData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
-
-}   
+    }
     @if (TempData["FailMessage"] != null)
     {
         <div class="alert alert-danger">@TempData["FailMessage"]</div>
 
-    }   
+    }
 
 
 
     <div class="centered-card-container">
         <!-- Center the cards horizontally -->
-
-
-
-
-
-
-
-    <!-- CHANGE PASSWORD -->
-    <div class="centered-card">
-        <div class="card text-center custom-card">
+        <!-- CHANGE PASSWORD -->
+        <div class="centered-card">
+            <div class="card text-center custom-card">
                 <div class="card-header h5 text-white" style="background-color: #FCBCB4;">Change Password</div>
-            <div class="card-body px-4">
-                <form method="post" asp-page-handler="ChangePassword">
-                    <div class="form-group">
-                        <label for="currentPassword">Current Password</label>
-                        <input type="password" id="currentPassword" name="currentPassword" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="newPassword">New Password</label>
-                        <input type="password" id="newPassword" name="newPassword" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100 custom-button" >Confirm</button>
-                </form>
+                <div class="card-body px-4">
+                    <form method="post" asp-page-handler="ChangePassword">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" name="currentPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" name="newPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 custom-button">Confirm</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- PROFILE PICTURE -->
-   <div class="centered-card">
-        <div class="card text-center custom-card">
+        <!-- PROFILE PICTURE -->
+        <div class="centered-card">
+            <div class="card text-center custom-card">
                 <div class="card-header h5 text-white" style="background-color: #FCBCB4;">Change Profile Picture</div>
-            <div class="card-body px-4">
-              <form method="post" enctype="multipart/form-data" >
+                <div class="card-body px-4">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="profile-pic-div">
                             <img src="@Model.customerInfo.img" id="photo">
                             <input type="file" id="file" name="file" onchange="loadFile(event)">
-                            <label for="file" id="uploadBtn">Choose Photo</label>    
-                        <script src="~/js/ProfilePicture.js"></script>
+                            <label for="file" id="uploadBtn">Choose Photo</label>
+                            <script src="~/js/ProfilePicture.js"></script>
                         </div>
-                            <button type="submit" class="btn btn-primary w-100 custom-button">Confirm</button>
-               </form>
-                    </div>
+                        <button type="submit" class="btn btn-primary w-100 custom-button">Confirm</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>  
-
-  
-
-
-
-        <!-- FOOTER -->
-<div id="footerBottom" style="background-color: #f7fff8;">
-    <div class="container">
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
-            <!-- Division 1 -->
-            <div class="divisions col mb-3">
-                <div>
-                    <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
-                </div>
-                <p class="text-bottom" style="font-family: Poppins ExtraBold;">
-                    Serving you sweet treats made with love ❤️
-                    We accept customized cakes, cupcakes, & more! Order now!
-                </p>
-            </div>
-
-            <!-- Division 2 -->
-            <div class="divisions col mb-4">
-                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
-                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:A_Bakes@gmail.com">A_Bakes@gmail.com</a></li>
-                </ul>
-            </div>
-
-            <!-- Division 3 -->
-            <div class="divisions col mb-4">
-                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
-                <ul class="socials-pics nav flex-row img-fluid">
-                    <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
-                    <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
-                </ul>
-            </div>
-
-            <!-- Division 4 -->
-            <div class="divisions col mb-4">
-                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
-                <button class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
-            </div>
-        </footer>
     </div>
-    <div></div>
-</div>
+
+
+
+
+
+    <!-- FOOTER -->
+    <div id="footerBottom" style="background-color: #f7fff8;">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
+                <!-- Division 1 -->
+                <div class="divisions col mb-3">
+                    <div>
+                        <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+                    </div>
+                    <p class="text-bottom" style="font-family: Poppins ExtraBold;">
+                        Serving you sweet treats made with love ❤️
+                        We accept customized cakes, cupcakes, & more! Order now!
+                    </p>
+                </div>
+
+                <!-- Division 2 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:A_Bakes@gmail.com">A_Bakes@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Division 3 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
+                    <ul class="socials-pics nav flex-row img-fluid">
+                        <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
+                        <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
+                    </ul>
+                </div>
+
+                <!-- Division 4 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
+                    <button class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
+                </div>
+            </footer>
+        </div>
+        <div></div>
+    </div>
 
 
 
@@ -238,7 +230,7 @@
 </body>
 
 
-    <script src="~/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/bootstrap.bundle.min.js"></script>
 
 
 <script>
@@ -254,24 +246,24 @@
     }
     src = "~/js/bootstrap.bundle.min.js"
 
-  
+
 
 </script>
 
-<script> 
+<script>
     var loadFile = function (event) {
-    var fileInput = document.getElementById("file");
-    var image = document.getElementById('photo');
+        var fileInput = document.getElementById("file");
+        var image = document.getElementById('photo');
 
-    if (fileInput.files && fileInput.files[0]) {
-        var reader = new FileReader();
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
 
-        reader.onload = function (e) {
-            image.src = e.target.result;
+            reader.onload = function (e) {
+                image.src = e.target.result;
+            }
+
+            reader.readAsDataURL(fileInput.files[0]);
         }
-
-        reader.readAsDataURL(fileInput.files[0]);
-    }
-};
-    </script>
+    };
+</script>
 

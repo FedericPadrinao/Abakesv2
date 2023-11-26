@@ -13,7 +13,7 @@ namespace abakes2.Pages
         public String statusconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
 
 
@@ -157,12 +157,13 @@ namespace abakes2.Pages
                         command.Parameters.AddWithValue("@user", userconfirm);
                         string storedPassword = (string)command.ExecuteScalar();
 
-                        if (storedPassword != null && storedPassword == currentPassword && newPassword == confirmPassword)
+
+                        if (!string.IsNullOrEmpty(storedPassword) && BCrypt.Net.BCrypt.Verify(currentPassword, storedPassword) && newPassword == confirmPassword)
                         {
                             sql = "UPDATE LoginCustomer SET password = @newPassword WHERE username = @user";
                             command.Parameters.Clear();
                             command.CommandText = sql;
-                            command.Parameters.AddWithValue("@newPassword", newPassword);
+                            command.Parameters.AddWithValue("@newPassword", BCrypt.Net.BCrypt.HashPassword(newPassword));
                             command.Parameters.AddWithValue("@user", userconfirm);
                             command.ExecuteNonQuery();
                             TempData["SuccessMessage"] = "Password Changed!";

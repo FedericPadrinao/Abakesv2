@@ -11,7 +11,7 @@ namespace abakes2.Pages
     public class Account_Resend_VerifModel : PageModel
     {
         public string Email { get; set; }
-        public string ConnectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string ConnectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {

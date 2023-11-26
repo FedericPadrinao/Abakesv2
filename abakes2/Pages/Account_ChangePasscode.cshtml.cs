@@ -7,7 +7,7 @@ namespace abakes2.Pages
     public class Account_ChangePasscodeModel : PageModel
     {
         // ... (existing properties and methods)
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
@@ -66,7 +66,7 @@ namespace abakes2.Pages
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@newPassword", newPassword);
+                    command.Parameters.AddWithValue("@newPassword", BCrypt.Net.BCrypt.HashPassword(newPassword));
                     command.ExecuteNonQuery();
                 }
             }

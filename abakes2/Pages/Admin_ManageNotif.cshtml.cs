@@ -11,7 +11,7 @@ namespace abakes2.Pages
         public List<UserInfo> userInfo = new List<UserInfo>();
         public string userconfirm = "";
 
-        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetNotifications()
         {
