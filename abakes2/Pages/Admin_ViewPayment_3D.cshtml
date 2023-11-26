@@ -17,19 +17,16 @@
 
     <title>View Payment</title>
 </head>
-
 <style>
     .container {
         display: flex;
         justify-content: space-between;
     }
-
     .adminbox-container {
         width: 35%; 
         box-sizing: border-box;
         margin: 40px auto;
     }
-
     .adminbox {
         height: 800px;
         width: 100%;
@@ -38,25 +35,22 @@
         box-sizing: border-box;
         display: inline-block; 
     }
-
     .adminbox h2 {
         text-align: center;
     }
-
     .receiptimg {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-
     .container3d {
-        max-height: 250px;
+        max-height: 350px;
         max-width: 250px;
         margin: 20px auto;
     }
 </style>
-
 <body>
     <!--NAV BAR-->
+    <!-- Banner -->
     <!-- Banner -->
     <div class="container">
         <div class="topbar">
@@ -84,13 +78,6 @@
                     <a href="/Admin_ManageOrders">
                         <i class="fas fa-receipt"></i>
                         <div>Manage Orders</div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/ManagePayments" class="active">
-                        <i class="fas fa-money-check"></i>
-                        <div>Manage Payments</div>
                     </a>
                 </li>
                 <li>
@@ -135,9 +122,11 @@
                         <div>Log out</div>
                     </a>
                 </li>
+
             </ul>
         </div>
-        <!-- Banner End -->
+
+  <!-- Banner End -->
         <!--Main Window-->
         <div class="main">
             <!--Title Bar-->
@@ -154,24 +143,25 @@
             </section>
             <!--Title Bar End-->
             <!-- First Account Page -->
-            
-            
-            
-            <div class="container">
-                        <div class="adminbox-container">
+      
 
+             <div class="container">
+                        <div class="adminbox-container">
                 <div class="adminbox" >
                       <h2>Cake Details</h2>
-                    <div  id="container"  class="container3d">
+
+ <!-- 3D PORTION -->
+
+    <div  id="container"  class="container3d">
               
-                                <input type="hidden" name="modelname" id="modelname" value="@Model.order3D.ModelName1">
-            <input type="hidden" name="scale" id="scale" value="@Model.order3D.Scale1">
-            <input type="hidden" name="texture" id="texture" value="@Model.order3D.Texture1">
-            <input type="hidden" name="texture2" id="texture2" value="@Model.order3D.Texture2">
-            <input type="hidden" name="texture3" id="texture3" value="@Model.order3D.Texture3">
-            <input type="hidden" name="color1" id="color1" value="@Model.order3D.Color">
-            <input type="hidden" name="color2" id="color2" value="@Model.order3D.Color2">
-            <input type="hidden" name="color3" id="color3" value="@Model.order3D.Color3">
+            <input type="hidden" name="modelname" id="modelname" value="@Model.order3d.ModelName1">
+            <input type="hidden" name="scale" id="scale" value="@Model.order3d.Scale1">
+            <input type="hidden" name="texture" id="texture" value="@Model.order3d.Texture1">
+            <input type="hidden" name="texture2" id="texture2" value="@Model.order3d.Texture2">
+            <input type="hidden" name="texture3" id="texture3" value="@Model.order3d.Texture3">
+            <input type="hidden" name="color1" id="color1" value="@Model.order3d.Color">
+            <input type="hidden" name="color2" id="color2" value="@Model.order3d.Color2">
+            <input type="hidden" name="color3" id="color3" value="@Model.order3d.Color3">
             <!-- <input type="hidden" name="color" id="color" value=""> --> 
             @foreach(var item in Model.listAsset3D)
             {
@@ -188,6 +178,10 @@
         
               
             </div>
+                
+               
+              
+        
      
 <script type="importmap">
 {
@@ -219,7 +213,7 @@
 
              //CAMERA
               camera = new THREE.PerspectiveCamera(
-                35,
+                50,
                 window.innerWidth/window.innerHeight,
                 0.01,
                 1000
@@ -335,36 +329,44 @@
   
     </script>
 
-
-                   <form id="NotifPreview" method="post">
+    <form id="NotifPreview" method="post">
                       
-
-                        <input type="hidden" name="id" value="@Model.invoiceInfo.invoiceID" />
+                        <input type="hidden" name="id" value="@Model.order3d.ModelID" />
                         <div class="p-5 p-lg-5 border">
                             <div class="form-group row">
                             </div>
-
                             <div class="p-5 p-lg-5 border">
                                 <div class="form-group row">
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Instruction:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceInstruction</label>
+                                            <label for="c_hadd" class="text-black">@Model.order3d.instructions</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Delivery:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceDelivery</label>
+                                            <label for="c_hadd" class="text-black">@Model.order3d.order3DDelivery</label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Expected Delivery:</b>  </label>
-                                            <label for="c_hadd" class="text-black">@Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT</label>
+                                            <label for="c_hadd" class="text-black">@Model.order3d.order3DExpectedD @Model.order3d.order3DExpectedT</label>
                                         </div>
                                     </div>
-
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Order Status:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.order3d.order3Dstatus</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Payment Method:</b>  </label>
+                                            <label for="c_hadd" class="text-black">@Model.order3d.paymentMethod</label>
+                                        </div>
+                                    </div>
                                    
                                 </div>
                                 </div>
@@ -381,10 +383,6 @@
                                     <option value="Complete Order">Complete Order</option>
                                 </select>
                             </div>
-
-
-
-
                             <div class="buton3d">
                                 <button type="submit" class="btn" style="margin:1%;">Submit</button>
                             </div>
@@ -394,14 +392,10 @@
          
                 <!-- Second Account Page -->
                         <div class="adminbox-container">
-
                 <div class="adminbox">
-
                     <h2>Customer Details</h2>
-                    <input type="hidden" name="id" value="@Model.invoiceInfo.invoiceID" />
+                    <input type="hidden" name="id" value="@Model.order3d.ModelID" />
                     <div class="p-5 p-lg-5 border">
-
-
                         <div class="p-5 p-lg-5 border">
                             <div class="form-group row">
                                 <div class="col-md-12">
@@ -450,13 +444,36 @@
                                         <label for="c_hadd" class="text-black">@Model.customerInfo.phone</label>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
+                    <h2>Invoice Details</h2>
+                    <input type="hidden" name="id" value="@Model.order3d.ModelID" />
+                    <div class="p-5 p-lg-5 border">
+                        <div class="p-5 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_hadd" class="text-black"><b>Product Price:</b> </label>
+                                    <label for="c_hadd" class="text-black">@Model.order3d.order3DPrice</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_hadd" class="text-black"><b>Downpayment</b>  </label>
+                                    <label for="c_hadd" class="text-black">@Model.order3d.order3DDP</label>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for="c_hadd" class="text-black"><b>Shipping Fee:</b>  </label>
+                                        <label for="c_hadd" class="text-black">@Model.order3d.order3DShip</label>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
                     <div class="receiptimg">
-                        <img src="@Model.invoiceInfo.receipt" width="800" height="800">
+                        <img src="@Model.order3d.receipt" width="800" height="800">
                     </div>
                 </div>
             </div>
@@ -464,3 +481,4 @@
 
 
 </body>
+ 

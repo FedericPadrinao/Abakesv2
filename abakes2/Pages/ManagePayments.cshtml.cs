@@ -12,7 +12,7 @@ namespace abakes2.Pages
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetUsers(string sortUser)
         {
@@ -54,55 +54,38 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
                                 invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
                                 invoiceInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                              
+                                
+                                
+                                invoiceList.Add(invoiceInfo);                         
+                               
+                            }
+                        }
+                    }
+                    using (SqlCommand command = new SqlCommand(sql3d, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", "%" + search + "%"); // Use parameterized values
+                        command.Parameters.AddWithValue("@orderStatus", "Complete Order"); // Adjust as needed
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CustomerInfo customer = new CustomerInfo();
                                 Order3DForm order3DInfo = new Order3DForm();
                                 order3DInfo.ModelID = reader.GetInt32(0);
-                                order3DInfo.username = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-                              
-                                order3DInfo.order3Dstatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+                                order3DInfo.username = reader.GetString(1);
+
+                                order3DInfo.order3Dstatus = reader.GetString(21);
                                 order3DInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
-                                invoiceList.Add(invoiceInfo);                         
                                 order3DList.Add(order3DInfo);
                             }
                         }
                     }
 
                 }
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    string selectsql = "SELECT * FROM Invoice WHERE username = @username AND OrderStatus != 'Complete Order'";
-                    using (SqlCommand command = new SqlCommand(selectsql, connection))
-                    {
-                        command.Parameters.AddWithValue("@username", userconfirm);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                
-                                
-                            }
-                        }
-                    }
-                }
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    string selectsql = "SELECT * FROM Order3DForm WHERE username = @username AND OrderStatus != 'Complete Order'";
-                    using (SqlCommand command = new SqlCommand(selectsql, connection))
-                    {
-                        command.Parameters.AddWithValue("@username", userconfirm);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-
-                            }
-                        }
-                    }
-                }
+                
+                
 
             }
             catch (Exception e)
