@@ -37,6 +37,7 @@ namespace abakes2.Pages
 
             // Set a success message and stay on the same page
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
+            TempData["Email"] = email;
             return RedirectToPage("/Account_ChangePasscode");
         }
 
