@@ -11,7 +11,7 @@ namespace abakes2.Pages
     public class Account_Forgot_PassModel : PageModel
     {
         public string Email { get; set; }
-        public string ConnectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string ConnectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
@@ -37,6 +37,7 @@ namespace abakes2.Pages
 
             // Set a success message and stay on the same page
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
+            TempData["Email"] = email;
             return RedirectToPage("/Account_ChangePasscode");
         }
 

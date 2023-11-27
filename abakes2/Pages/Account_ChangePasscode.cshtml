@@ -70,16 +70,15 @@
                     }
 
                     <form id="ForgotChange" method="post" style="top:120px; padding:40px 20px;">
-                        <input type="text" placeholder="Email" name="email" id="emailInput">
-                        <input type="text" placeholder="Verification Code" name="passcode" id="passcodeInput">
-                        <input type="password" placeholder="New Password" name="newPassword" id="newPasswordInput">
-                        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPasswordInput">
+                        <input type="text" placeholder="Email" name="email" id="emailInput" value="@TempData["Email"]" required>
+                        <input type="text" placeholder="Verification Code" name="passcode" id="passcodeInput" required>
+                        <input type="password" placeholder="New Password" name="newPassword" id="newPasswordInput" required>
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPasswordInput" required>
                         <button type="submit" class="btn btn-primary">Change Password</button>
-                        <a asp-page="/Account">Go Back</a>
+                        <a asp-page="/index">Go Back</a>
                     </form>
 
                 </div>
-
             </div>
         </div>
     </div>
