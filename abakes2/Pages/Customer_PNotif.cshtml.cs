@@ -15,7 +15,7 @@ namespace abakes2.Pages
         public String statusconfirm = "";
         public String successMessage = "";
         public String imageconfirm = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
 
         public void OnGet()
         {

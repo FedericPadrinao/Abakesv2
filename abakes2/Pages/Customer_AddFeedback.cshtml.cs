@@ -6,7 +6,7 @@ namespace abakes2.Pages
     public class Customer_AddFeedbackModel : PageModel
     {
         public string userconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
         public string errorMessage = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
