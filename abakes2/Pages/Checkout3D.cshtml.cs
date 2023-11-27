@@ -14,6 +14,8 @@ namespace abakes2.Pages
         public int cartcount = 0;
         public int TotalCost = 0;
         public string userconfirm = "";
+        public string imgconfirm = "";
+
         public String errorMessage = "";
         public String successMessage = "";
         public CustomerInfo customerInfo = new CustomerInfo();
@@ -21,7 +23,7 @@ namespace abakes2.Pages
         public Order3DForm order3D = new Order3DForm();
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void GetProducts()
@@ -147,6 +149,7 @@ namespace abakes2.Pages
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
             string successMessageProfile = "";
             string errorMessageProfile = "";
+
             string paymentMethod = Request.Form["paymentMethod"];
             try
             {
@@ -262,6 +265,7 @@ namespace abakes2.Pages
         public void OnGet()
         {
             statusconfirm = HttpContext.Session.GetString("userstatus");
+            imgconfirm = HttpContext.Session.GetString("userimage");
 
             userconfirm = HttpContext.Session.GetString("username");
             GetProducts();

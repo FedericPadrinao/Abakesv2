@@ -44,10 +44,24 @@
     }
 
     .specialsavecake{
-        margin-top:130px;
+        margin-top:10px;
+    }
+
+    .form-group {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .form-check{
+                margin-left: 20px;  /* Adjust as needed */
+        margin-right: 20px; /* Adjust as needed */
     }
 
 
+     .custom-radio {
+        margin-left: 20px;  /* Adjust as needed */
+        margin-right: 20px; /* Adjust as needed */
+    }
   
 </style>
 
@@ -85,7 +99,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle active" data-bs-toggle="dropdown">Order</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                            <li><a href="/Customer_Order3DForm" class="dropdown-item active">Customize 3D</a></li>
                             @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
                             {
                                 <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
@@ -96,14 +110,14 @@
                             }
                         </ul>
                     </li>
-                    <li><a href="">Gallery</a></li>
+                    <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
                     <li><a href="/AboutUs">About us</a></li>
                     <li><a href="/ContactUs">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
                         <ul class="dropdown-menu">
                             <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                            <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
+                            <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -120,7 +134,9 @@
                         <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -240,13 +256,22 @@
                     <button class="functionbtn" id="DisplayDecoration">Display Decorations</button>
 
                      <form id="insertCake" method="post">
-                    <h3>Delivery Type:</h3>
-                    <label class="form-check-label" for="standdelivery">‌‌ ‌ ‌ Standard Delivery</label>
-                    <input class="form-check-input"  type="radio" value="Delivery" name="delivery" />
-                    <label class="form-check-label" for="pickup">Pick up</label>
-                    <input class="form-check-input"  type="radio" value="Pickup" name="delivery" />
-                    <label class="form-check-label" for="pickup">Preferred Delivery/Pickup <br /> </label>
-                    <input style="height:21px" type="date" name="preferred" />
+                        <h3 style="text-align:center; color:black;">Delivery Type:</h3>
+
+                        <div class="form-check">
+                            <input class="form-check-input custom-radio" type="radio" value="Delivery" name="delivery" id="standdelivery">
+                            <label class="form-check-label" for="standdelivery">Standard Delivery</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input custom-radio" type="radio" value="Pickup" name="delivery" id="pickup">
+                            <label class="form-check-label" for="pickup">Pick up</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-check-label" for="preferred">Preferred Delivery/Pickup</label>
+                            <input style="height: 21px;" type="date" class="form-control" name="preferred" id="preferred">
+                        </div>
                         <input type="hidden" name="modelname" id="modelname" value="">
                         <input type="hidden" name="modeltype" id="modeltype" value="">
                         <input type="hidden" name="scale" id="scale" value="">

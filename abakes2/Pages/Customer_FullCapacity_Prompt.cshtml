@@ -67,7 +67,7 @@
                         <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
                         @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
                         {
-                            <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
+                                <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
                         }
                         else
                         {
@@ -82,7 +82,7 @@
                     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
                     <ul class="dropdown-menu">
                         <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                        <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
+                        <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                     </ul>
                 </li>
 
@@ -100,8 +100,10 @@
                     <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small">
-                    <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
-                    <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
                     <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>

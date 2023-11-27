@@ -65,40 +65,42 @@
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
                         <ul class="dropdown-menu">
                             <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                            <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
+                            <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
                                 <li><a href="/Account">Account</a></li>
                             </ul>
-                        </nav>
-                        <div class="dropdown text-end">
-                            @if (Model.userconfirm == null)
-                            {
-                                <script>
-                                    window.location.href = '/Index';
-                                </script>
-                            }
-                            else
-                            {
-                            
-                                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="~/img/Account/seulgi.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
-                                </a>
-                                <ul class="dropdown-menu text-small">
-                                    <li><a class="dropdown-item" href="#">My Orders</a></li>
-                                    <li><a class="dropdown-item" href="/Customer_AccountSettings">Account Settings</a></li>
-                                    <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                                </ul>
-                            }
+            </nav>
+            <div class="dropdown text-end">
+                @if (Model.userconfirm == null)
+                {
+                    <script>
+                        window.location.href = '/Index';
+                    </script>
+                }
+                else
+                {
 
-                        </div>
-                        <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                        <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
-                        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-                    </div>
-                </div>
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="@Model.customerInfo.img" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
+                        <li><a class="dropdown-item active" href="/Customer_AccountSettings">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                    </ul>
+                }
+
+            </div>
+            <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
 
 
         <!-- Banner -->
@@ -171,7 +173,7 @@
                         
                             <div class="input-group">
                                 <div class="input-group-append">
-                                   <img src="~/img/QRCODE.jpg" class="img-fluid" alt="QR Code" style="height: 683px;">
+                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 683px;">
                                 </div>
                             </div>
                         </div>

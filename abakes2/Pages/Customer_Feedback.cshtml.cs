@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public List<Feedbacks> listFeedback = new List<Feedbacks>();
         public List<UserInfo> userInfo = new List<UserInfo>();
         public int fbID = 0;
-        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
@@ -195,7 +195,7 @@ namespace abakes2.Pages
             pagecurrent = int.Parse(spageid);
 
             int varId = 0;
-            userconfirm = HttpContext.Session.GetString("user");
+        
             GetFeedbacks(pageid, totals, sortOrder);
         }
     }

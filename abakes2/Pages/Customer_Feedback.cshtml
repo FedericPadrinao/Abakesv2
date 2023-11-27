@@ -19,74 +19,77 @@
 
 
 
-     <!-- NAV BAR -->
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
-                </div>
-                <nav>
-                    <ul id="MenuItems">
-                        <li><a href="/Index">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
-                                @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
-                                {
-                                    <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
-                                }
-                                else
-                                {
-                                    <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
-                                }
-                            </ul>
-                        </li>
-                        <li><a href="">Gallery</a></li>
-                        <li><a href="/AboutUs" >About us</a></li>
-                        <li><a href="/ContactUs" class="active">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                                <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
-                            </ul>
-                        </li>
-                    
-                    </ul>
-                </nav>
-                <div class="dropdown text-end">
-                    <!-- ACCOUNT IMAGE-->
-                    @if (Model.userconfirm == null)
-                    {
-                        <a class="signin" href="/Account">Sign in</a>
-                    }
-                    else
-                    {
-                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu text-small">
-                            <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
-                            <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
-                            <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
-                        </ul>
-                    }
-                    <!-- ACCOUNT IMAGE-->
-                </div>
-                @if (Model.userconfirm != null)
-                {
-                    <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                    <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
-
-                }
-                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-            </div>
+<!-- NAV BAR -->
+<div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="75px"></a>
         </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="/Index">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                        @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                        {
+                                <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                        }
+                    </ul>
+                </li>
+                <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
+                <li><a href="/AboutUs">About us</a></li>
+                <li><a href="/ContactUs">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle active" data-bs-toggle="dropdown">Feedback</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                        <li><a href="/Customer_Feedback?page=1" class="dropdown-item active">View Feedback</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="dropdown text-end">
+            <!-- ACCOUNT IMAGE-->
+            @if (Model.userconfirm == null)
+            {
+                <a class="signin" href="/Account">Sign in</a>
+            }
+            else
+            {
+                <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small">
+                    <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                    <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                    <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
+                    <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                    <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                </ul>
+            }
 
-        <!-- Banner -->
+        </div>
+            @if (Model.userconfirm != null)
+            {
+                <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+                <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+
+            }
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+ 
+
+
+<!-- Banner -->
             <section class="page-heading">
                 <div class="container">
                     <div class="row">
@@ -111,21 +114,7 @@
                 <div class="row">
                   <div class="col-md-12 mb-5">
                                     
-                                    <a class="btn btn-btn-dark btn-sm" href="/ManageFeedback" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4;"> Add Feedback</a>
-                                    <form method="get">
-                                    <div class="form-group">
-                                        <label for="searchInput" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Search:</label>
-                                        <input type="text" class="form-control" name="search" placeholder="Enter product name">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;">Search</button>
-                                
-                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Name" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Name Desc</a> 
-                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Name2" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Name Asc</a> 
-                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Rating" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Price Desc</a> 
-                                    <a asp-page="/Customer_Feedback?page=@Model.pagecurrent" asp-route-sortOrder="Sort Rating2" class="btn btn-primary" style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; margin-top:20px;margin-bottom:20px;"> Sort Price Asc</a> 
 
-
-                                    </form>
                     <div class="d-flex">
                  
                 

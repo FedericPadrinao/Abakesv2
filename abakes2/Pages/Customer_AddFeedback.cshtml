@@ -46,7 +46,10 @@
                 line-height: 3.2;
             }
 
-
+        .sidebar-heading h4{
+            margin-top: 10px;
+            margin-bottom: 22px;
+        }
 
     </style>
 
@@ -77,14 +80,14 @@
                             }
                         </ul>
                     </li>
-                    <li><a href="">Gallery</a></li>
+                    <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
                     <li><a href="/AboutUs">About us</a></li>
                     <li><a href="/ContactUs">Contact</a></li>
                                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle active" data-bs-toggle="dropdown">Feedback</a>
                         <ul class="dropdown-menu">
                             <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
-                            <li><a href="/Customer_OrderForm" class="dropdown-item">View Feedback</a></li>
+                            <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -101,7 +104,9 @@
                         <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="Customer_CakesForApproval?user=@Model.userconfirm">My Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -135,31 +140,27 @@
     <section class="contact-us">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-12">
                     <form method="post" enctype="multipart/form-data">
-                    <div class="down-contact">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="sidebar-item contact-information">
-                                    <div class="sidebar-heading">
-                                            <h4 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"><label for="fname" >Name:</label></h4>
-                                            <h4 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"><label for="star">Star:</label></h4>
-                                            <h4 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"><label for="cakeimage">Image:</label></h4>
-                                            <h4 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"><label for="seccode">Security Code:</label></h4>
-                                        
-                                    </div>
-                                    <div class="content">
-
+                        <div class="down-contact">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="sidebar-item contact-information">
+                                        <div class="sidebar-heading">
+                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="fname">Name:</label></h4>
+                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="star">Star:</label></h4>
+                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="cakeimage">Image:</label></h4>
+                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="seccode">Security Code:</label></h4>
+                                        </div>
+                                        <div class="content">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-lg-5">
-                                <div class="sidebar-item contact-information">
-                                    <div class="sidebar-heading">
-                                        <input type="text" id="fname" name="name"  required /><br />
-                                         <div class="rate" id="star">
+                                <div class="col-lg-5">
+                                    <div class="sidebar-item contact-information">
+                                        <div class="sidebar-heading">
+                                            <input type="text" id="fname" name="name" required /><br />
+                                            <div class="rate" id="star">
                                           <fieldset class="rating">
                                         <input type ="radio" id ="star5"name ="rating" value="5" required/> <label for="star5" class="full"></label> 
                                         <input type ="radio" id ="star4.5"name ="rating" value="4.5" required/> <label for="star4.5" class="half"></label> 
@@ -189,33 +190,29 @@
                                             <button class='btn btn-btn-dark btn-sm btn-blue' style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4; " type="submit"> Create </button>
                                        <br/>
                                         <span style="color: red;">@Model.errorMessage</span>
-                                    </div>
-                                    <div class="content">
+                                        </div>
+                                        <div class="content">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="sidebar-item contact-information">
-                                    <div class="sidebar-heading">
+                                <div class="col-lg-4">
+                                    <div class="sidebar-item contact-information">
+                                        <div class="sidebar-heading">
                                             <h4 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"><label for="custMessage">Message:</label></h4>
-                                        <div class="content">
-                                                <textarea id="message" name="textmessage" rows="10" cols="80" minlength="25" maxlength="200" required>
-</textarea>
-                                    </div>
+                                            <div class="content">
+                                                <textarea id="message" name="textmessage" rows="10" cols="80" minlength="25" maxlength="200" required></textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </form>
-
-                    
                 </div>
             </div>
+        </div>
     </section>
-
-    <hr style="margin-bottom: 0" ; class="featurette-divider">
+    <hr style="margin-bottom: 0" class="featurette-divider">
 
     <!--STARS -->
     @*<div class="container">
