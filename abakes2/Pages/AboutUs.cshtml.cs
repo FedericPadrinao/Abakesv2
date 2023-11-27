@@ -14,7 +14,7 @@ namespace abakes2.Pages
         public int cartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
-        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");

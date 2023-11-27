@@ -198,7 +198,8 @@
                         <td><p>@Model.order3D.instructions</p></td>
                         <td><p>@Model.order3D.order3DDelivery</p></td>
                         <td><p>@Model.order3D.order3DPrice</p></td>
-                        <td><a href='/Checkout3D?id=@Model.order3D.ModelID' class="btn btn-primary btn-sm x-button">Checkout</a></td>
+                        <td><a href='/Checkout3D?id=@Model.order3D.ModelID' class="btn btn-primary btn-sm x-button">Checkout</a>
+                             <a href='/Cart?id=@Model.order3D.ModelID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">Remove</a></td>
                     </tr>
                 
             </table>

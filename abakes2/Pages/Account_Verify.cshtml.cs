@@ -8,7 +8,7 @@ namespace abakes2.Pages
     {
         public string email { get; set; }
         public string verification_code { get; set; }
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {

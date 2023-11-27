@@ -11,7 +11,7 @@ namespace abakes2.Pages
         public OrderSimpleInfo os = new OrderSimpleInfo();
         public Order3DForm order3D = new Order3DForm();
         public String userconfirm = "";
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
         public int TotalCart = 0;
@@ -30,22 +30,7 @@ namespace abakes2.Pages
             string pdID = Request.Query["id"];
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
-                {
-                    connection.Open();
-                    string sql = "select sum(OrderPrice) from OrderSimple where username='" + userconfirm + "' AND status ='true'"; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                TotalCart = reader.GetInt32(0);
-
-                            }
-                        }
-                    }
-                }
+              
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
                 {
                     connection.Open();
@@ -77,31 +62,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
-                {
-                    connection.Open();
-                    string sql = "select * from Order3DForm where username='" + userconfirm + "' AND status ='true'"; //get all the data from the shopping cart based on the user.
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-
-
-                                order3D.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
-                                order3D.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
-                                order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
-                                order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
-                                order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-
-
-
-                            }
-                        }
-                    }
-                }
+                
             }
             catch (Exception e)
             {
@@ -187,183 +148,45 @@ namespace abakes2.Pages
 
             }
 
-            return Redirect("/index");
+            return Redirect("/Cart");
         }
 
-     
-
-        public IActionResult OnGetIncrease()
+        public IActionResult OnGetRemove3D()
         {
             OnGet();
             if (userconfirm == null)
-            {
-                return RedirectToPage("/Login");
+            { //If not logged in, it will be redirected to login page
+                return RedirectToPage("/Account");
             }
             else
             {
 
             }
-            string pdID = Request.Query["id"];
-            int quantity = 1;
-            int total = 0; //quantity*price
-            int price = 0;
+            string osid = Request.Query["id"]; //name from the front end "?id=
 
             try
             {
+
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
                 {
                     connection.Open();
-                    string sql = "select * from OrderSimple where orderID='" + pdID + "'"; //getting the data based from the pdid variable from the Product Class(line 299)
+                    string sql = "delete from Order3DForm where OrderID='" + osid + "' and username='" + userconfirm + "'"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-                                price = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-
-                            }
-                        }
+                        command.ExecuteNonQuery();
                     }
                 }
+
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-            }
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //dynamic
-                {
-                    connection.Open();
-                    string sql = "select * from ShoppingCart where username='" + userconfirm + "' and ProductID='" + pdID + "'"; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
 
-                                quantity = reader.GetFieldValue<int>(reader.GetOrdinal("Quantity"));
-                                quantity = quantity + 1;
-                                total = (price * quantity);
-
-
-                            }
-                        }
-                    }
-                }
-
-
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //dynamic because total and quantity only changes.
-                {
-                    connection.Open();
-                    string sql = "update ShoppingCart set Quantity='" + quantity + "',TotalPrice='" + total + "' where username='" + userconfirm + "' and productID='" + pdID + "'"; ; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-
-
-                        command.ExecuteNonQuery();
-
-                    }
-                }
             }
 
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception cart: " + ex.Message);
-            }
             return Redirect("/Cart");
-
         }
 
-        public IActionResult OnGetDecrease()
-        {
-            OnGet();
 
-            if (userconfirm == null)
-            {
-                return RedirectToPage("/Login");
-            }
-            else
-            {
-
-            }
-            string pdID = Request.Query["id"];
-            int quantity = 1;
-            int total = 0; //quantity*price
-            int price = 0;
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
-                {
-                    connection.Open();
-                    string sql = "select * from OrderSimple where OrderID='" + pdID + "'"; //getting the data based from the pdid variable from the Product Class(line 299)
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-                                price = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //dynamic
-                {
-                    connection.Open();
-                    string sql = "select * from ShoppingCart where username='" + userconfirm + "' and ProductID='" + pdID + "'"; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-
-                                quantity = reader.GetFieldValue<int>(reader.GetOrdinal("Quantity"));
-                                quantity = quantity - 1;
-                                total = (price * quantity);
-
-
-                            }
-                        }
-                    }
-                }
-
-
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //dynamic because total and quantity only changes.
-                {
-                    connection.Open();
-                    string sql = "update ShoppingCart set Quantity='" + quantity + "',TotalPrice='" + total + "' where username='" + userconfirm + "' and productID='" + pdID + "'"; ; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-
-
-                        command.ExecuteNonQuery();
-
-                    }
-                }
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception cart: " + ex.Message);
-            }
-            return Redirect("/Cart");
-
-        }
 
 
         public void OnGet()
@@ -466,6 +289,32 @@ namespace abakes2.Pages
                     }
                 }
                 totalnotifCount = notifCount + pnotifCount;
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
+                {
+                    connection.Open();
+                    string sql = "select * from Order3DForm where username='" + userconfirm + "' AND status ='true'"; //get all the data from the shopping cart based on the user.
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+
+
+                                order3D.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
+                                order3D.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
+                                order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
+                                order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+
+
+
+                            }
+                        }
+                    }
+                }
             }
 
             catch (Exception ex)

@@ -21,7 +21,7 @@ namespace abakes2.Pages
         public Order3DForm order3D = new Order3DForm();
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void GetProducts()
@@ -119,7 +119,8 @@ namespace abakes2.Pages
                                 order3D.order3DPreferredD = reader.GetString(16);
                                 order3D.order3DExpectedD = reader.GetString(17);
                                 order3D.order3DExpectedT = reader.GetString(18);
-                                order3D.order3Dstatus = reader.GetString(21);
+                                order3D.order3Dstatus = reader.GetString(11);
+                                order3D.ModelType = reader.GetString(19);
                                 TotalCost = TotalCart + ShippingPrice;
                             }
                         }
