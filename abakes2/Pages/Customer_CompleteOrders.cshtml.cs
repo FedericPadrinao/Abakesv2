@@ -10,7 +10,7 @@ namespace abakes2.Pages
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public List<InvoiceInfo> listInvoice = new List<InvoiceInfo>();
         public String userconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
         public String errorMessage = "";
         public String successMessage = "";
 
