@@ -80,16 +80,17 @@
                             }
                         </ul>
                     </li>
-                    <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
-                    <li><a href="/AboutUs">About us</a></li>
-                    <li><a href="/ContactUs">Contact</a></li>
-                                        <li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle active" data-bs-toggle="dropdown">Feedback</a>
                         <ul class="dropdown-menu">
                             <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
                             <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                         </ul>
                     </li>
+                    <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
+                    <li><a href="/AboutUs">About us</a></li>
+                    <li><a href="/ContactUs">Contact</a></li>
+
                 </ul>
             </nav>
             <div class="dropdown text-end">
@@ -147,10 +148,10 @@
                                 <div class="col-lg-3">
                                     <div class="sidebar-item contact-information">
                                         <div class="sidebar-heading">
-                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="fname">Name:</label></h4>
-                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="star">Star:</label></h4>
-                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="cakeimage">Image:</label></h4>
-                                            <h4 style="color: rgb(159, 167, 189); font-family: Poppins ExtraBold;"><label for="seccode">Security Code:</label></h4>
+                                            <h4>Name:</h4>
+                                            <h4>Star:</h4>
+                                            <h4>Image:</h4>
+                                            <h4>Security Code:</h4>
                                         </div>
                                         <div class="content">
                                         </div>
@@ -159,8 +160,9 @@
                                 <div class="col-lg-5">
                                     <div class="sidebar-item contact-information">
                                         <div class="sidebar-heading">
-                                            <input type="text" id="fname" name="name" required /><br />
+                                            <input type="text" id="fname" name="name" required class="form-control" /><br />
                                             <div class="rate" id="star">
+
                                           <fieldset class="rating">
                                         <input type ="radio" id ="star5"name ="rating" value="5" required/> <label for="star5" class="full"></label> 
                                         <input type ="radio" id ="star4.5"name ="rating" value="4.5" required/> <label for="star4.5" class="half"></label> 
@@ -174,22 +176,16 @@
                                         <input type ="radio" id ="star0.5"name ="rating" value="0.5" required/> <label for="star0.5" class="half"></label> 
 
                                         </fieldset>
-                                        </div>
-                                        <br/> <br/>
-                                     
-                                        
-                                        <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
-                                            
-                                            
-                                        <input type="text" id="seccode" name="securitycode"  required/>
-                                        <br/>
-
-                                       
-                                        <br/>
-                                            <a class='btn btn-btn-dark btn-sm btn-blue' style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4;" href="/FeedbackCustomer"> Back </a>
-                                            <button class='btn btn-btn-dark btn-sm btn-blue' style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4; " type="submit"> Create </button>
-                                       <br/>
-                                        <span style="color: red;">@Model.errorMessage</span>
+                                            </div>
+                                            <br /> <br />
+                                            <input type="file" id="fileInput" name="file" required onchange="previewImage()" class="form-control" />
+                                            <input type="text" id="seccode" name="securitycode" required class="form-control" />
+                                            <br />
+                                            <br />
+                                            <a class='btn btn-dark btn-sm btn-blue' href="/FeedbackCustomer"> Back </a>
+                                            <button class='btn btn-dark btn-sm btn-blue' type="submit"> Create </button>
+                                            <br />
+                                            <span style="color: red;">@Model.errorMessage</span>
                                         </div>
                                         <div class="content">
                                         </div>
@@ -198,9 +194,9 @@
                                 <div class="col-lg-4">
                                     <div class="sidebar-item contact-information">
                                         <div class="sidebar-heading">
-                                            <h4 style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"><label for="custMessage">Message:</label></h4>
+                                            <h4>Message:</h4>
                                             <div class="content">
-                                                <textarea id="message" name="textmessage" rows="10" cols="80" minlength="25" maxlength="200" required></textarea>
+                                                <textarea id="message" name="textmessage" rows="5" minlength="25" maxlength="200" required class="form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>

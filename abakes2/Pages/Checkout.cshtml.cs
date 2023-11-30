@@ -12,6 +12,7 @@ namespace abakes2.Pages
         public int TotalDP = 0;
         public int ShippingPrice = 0;
         public int cartcount = 0;
+        public string imgconfirm = "";
         public int TotalCost = 0;
         public string userconfirm = "";
         public String errorMessage = "";
@@ -19,7 +20,7 @@ namespace abakes2.Pages
         public CustomerInfo customerInfo = new CustomerInfo();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public String statusconfirm = "";
-        public string imgconfirm = "";
+    
 
         public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        

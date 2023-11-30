@@ -92,4 +92,9 @@ for details on configuring this project to bundle and minify static web assets. 
         left: 100px;
        
     }
+    .text-bottom {
+
+        text-align: center;
+    }
+
 }

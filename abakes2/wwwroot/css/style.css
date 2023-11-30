@@ -53,6 +53,8 @@ a.active {
     background-color: #fcc3b8; /* Replace with your desired active color */
 }
 
+
+
 p {
     color: #555;
 }
@@ -644,6 +646,7 @@ form a {
             margin-right: 50px;
             margin-top: 10px;
             margin-bottom: 10px;
+            
         }
 
             nav ul li a {

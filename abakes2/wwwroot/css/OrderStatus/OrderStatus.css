@@ -168,7 +168,7 @@ ul li .active .uil {
 @media (max-width:600px) {
     .head .head_1 {
         font-size: 24px;
-        margin-top: 350px;
+        margin-top: 550px;
     }
 
     .head .head_2 {
@@ -178,7 +178,7 @@ ul li .active .uil {
     }
 
     .main {
-        margin-bottom: 350px;
+        margin-bottom: 550px;
     }
 
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ync8RuEE3rVGs4Wf8yJB4HymTUTIlmyxQshCTp4SXQ4=",
+  "Hash": "QKswONuk0gi568TS49vKvJrY0rRSeVKi1TFp/C1hwgA=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -1513,6 +1513,40 @@
       "OriginalItemSpec": "wwwroot\\img\\Account\\26a47d3d0bd5ccb4d8168bcf5cc232c0.jpg"
     },
     {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\2X2.jpg",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Account/2X2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\2X2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\301422207_1106715286601987_3706881604186559122_n.jpg",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Account/301422207_1106715286601987_3706881604186559122_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\301422207_1106715286601987_3706881604186559122_n.jpg"
+    },
+    {
       "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\303570666_5360183047431616_6838423367577067799_n.jpg",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -2106,6 +2140,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Account\\poring3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Screenshot_20231129_205821.jpg",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Account/Screenshot_20231129_205821.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\Screenshot_20231129_205821.jpg"
     },
     {
       "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi.jpg",

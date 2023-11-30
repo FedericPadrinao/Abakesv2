@@ -57,9 +57,6 @@
             <nav>
                 <ul id="MenuItems">
                     <li><a href="/Index">Home</a></li>
-                    <li><a href="">Order</a></li>
-                    <li><a href="/AboutUs">About us</a></li>
-                    <li><a href="/ContactUs">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
                         <ul class="dropdown-menu">
@@ -74,9 +71,41 @@
                             }
                         </ul>
                     </li>
-                    <li><a href="/Account" class="active">Account</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Customer_AddFeedback" class="dropdown-item">Add Feedback</a></li>
+                            <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/AboutUs">About us</a></li>
+                    <li><a href="/ContactUs">Contact</a></li>
+
+               
                 </ul>
             </nav>
+            <div class="dropdown text-end">
+                <!-- ACCOUNT IMAGE-->
+                @if (Model.userconfirm == null)
+                {
+                    <a class="signin" href="/Account">Sign in</a>
+                }
+                else
+                {
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                                                <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                        <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                        <li><a class="dropdown-item active" href="/Customer_CompleteOrders">Completed Orders</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                    </ul>
+                }
+            </div>
             <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
             <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
