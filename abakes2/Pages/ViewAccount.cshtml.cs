@@ -96,8 +96,8 @@ namespace abakes2.Pages
                 {
                     using (SqlConnection connection = new SqlConnection(connectionProvider))
                     {
-                        string fileName = Path.GetFileName(file.FileName);
-                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Notification", fileName);
+                        string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Notification", uniqueFileName);
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         {
@@ -112,7 +112,7 @@ namespace abakes2.Pages
                             command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
                             command.Parameters.AddWithValue("@NotifText", NotifText);
                             command.Parameters.AddWithValue("@username", customerInfo.username);
-                            command.Parameters.AddWithValue("@NotifImage", "/img/Notification/" + fileName);
+                            command.Parameters.AddWithValue("@NotifImage", "/img/Notification/" + uniqueFileName);
                             command.Parameters.AddWithValue("@DateCreated", currentDate);
 
                             command.ExecuteNonQuery();
@@ -165,3 +165,4 @@ namespace abakes2.Pages
         }
     }
 }
+

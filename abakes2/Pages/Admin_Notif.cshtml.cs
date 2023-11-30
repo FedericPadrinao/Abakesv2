@@ -24,7 +24,7 @@ namespace abakes2.Pages
         {
             string NotifTitle = Request.Form["title"];
             string NotifText = Request.Form["textmessage"];
-           
+
             DateTime currentDateTime = DateTime.Now;
             string currentDate = currentDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -33,11 +33,11 @@ namespace abakes2.Pages
                 //image upload
                 if (file != null && file.Length > 0)
                 {
-
                     using (SqlConnection connection = new SqlConnection(connectionProvider))
                     {
-                        string fileName = Path.GetFileName(file.FileName);
-                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Notification", fileName);
+                        // Generate a unique filename for the image
+                        string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                        string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Notification", uniqueFileName);
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
                         {
@@ -52,7 +52,7 @@ namespace abakes2.Pages
                         {
                             command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
                             command.Parameters.AddWithValue("@NotifText", NotifText);
-                            command.Parameters.AddWithValue("@NotifImage", "/img/Notification/" + fileName);
+                            command.Parameters.AddWithValue("@NotifImage", "/img/Notification/" + uniqueFileName);
                             command.Parameters.AddWithValue("@DateCreated", currentDate);
 
                             command.ExecuteNonQuery();
