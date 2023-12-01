@@ -82,7 +82,7 @@
                         <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                     </ul>
                 </li>
-                <li><a href="">Gallery</a></li>
+                <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
                 <li><a href="/AboutUs" class="active">About us</a></li>
                 <li><a href="/ContactUs">Contact</a></li>
 
@@ -113,9 +113,13 @@
             <!-- ACCOUNT IMAGE-->
 
         </div>
-        <a href="/Customer_Notif" class="icon-link"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-        <a href="/Cart" class="icon-link"><img src="images/cart.png" width="30px" height="30px"></a>
-        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            @if (Model.userconfirm != null)
+            {
+                <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+                <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+
+            }
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
     </div>
 </div>
 

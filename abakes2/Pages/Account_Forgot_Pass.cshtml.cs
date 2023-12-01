@@ -10,40 +10,47 @@ namespace abakes2.Pages
 {
     public class Account_Forgot_PassModel : PageModel
     {
+        public String userconfirm = "";
         public string Email { get; set; }
-        public string ConnectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public string ConnectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+
+        public void OnGet() {
+            userconfirm = HttpContext.Session.GetString("username");
+
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
+        }
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
 
-            // Check if the email exists in the LoginCustomer table
             if (!IsEmailExists(email))
             {
                 TempData["FailMessage"] = "Email does not exist!";
                 return Page();
             }
 
-            // Generate a new passcode
             string newPasscode = GeneratePasscode();
 
-            // Update the passcode in the database
             UpdatePasscode(email, newPasscode);
 
-            // Get the first name associated with the email
             string firstName = GetFirstName(email);
 
-            // Send the new passcode to the user
             SendPasscodeByEmail(email, firstName, newPasscode);
 
-            // Set a success message and stay on the same page
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
             TempData["Email"] = email;
             return RedirectToPage("/Account_ChangePasscode");
         }
 
-        // ... (existing code)
 
-        // Method to update passcode
         private void UpdatePasscode(string email, string passcode)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))

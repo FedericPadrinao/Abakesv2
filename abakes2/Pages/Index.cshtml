@@ -58,7 +58,6 @@
                 <!-- ACCOUNT IMAGE-->
                 @if (Model.userconfirm == null)
                 {
-
                     <a class="signin" href="/Account">Sign in</a>
                 }
                 else
@@ -82,7 +81,6 @@
             {
                 <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
                 <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
-
             }       
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>

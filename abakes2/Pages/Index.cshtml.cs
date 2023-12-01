@@ -16,9 +16,10 @@ namespace abakes2.Pages
         public String statusconfirm = "";
         public int notifCount = 0;
         public int pnotifCount = 0;
+        public int pubnotifCount = 0;
         public int cartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionString = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public int NotificationCount { get; set; } // Property to store notification count
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -57,7 +58,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND username = '" + userconfirm + "'";
+                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND isRead = 'false'  AND username = '" + userconfirm + "'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -65,6 +66,22 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 pnotifCount = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(NotificationID) from ReadPublicNotif where username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pubnotifCount = reader.GetInt32(0);
                             }
                         }
                     }
@@ -85,7 +102,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                totalnotifCount = notifCount + pnotifCount;
+                totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
 
@@ -307,6 +324,7 @@ namespace abakes2.Pages
         public String NotifImg = "";
         public String status = "";
         public String DateCreated = "";
-      
+        public bool IsRead;
     }
+
 }

@@ -63,7 +63,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="">Gallery</a></li>
+                    <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
                     <li><a href="/AboutUs">About us</a></li>
                     <li><a href="/ContactUs">Contact</a></li>
 
@@ -127,51 +127,73 @@
         </div>
     </div>
 
-    @foreach (var item in Model.listNotifications)
-    {
-        <div class="row notifications">
-            <div class="col-12">
-                <div class="row single-notification-box unread">
-                    <div class="col-11 notification-text">
-                        <p>
-                            <a href="#" class="link name">@item.NotifTitle</a>
-                            <span class="unread-symbol">•</span>
-                        </p>
-                        <p class="time">@item.DateCreated</p>
-                                            <div class="col-1 profile-picture clickable-image">
-                        <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
-                    </div>
-                        <div class="private-message">
-                            @item.NotifText
+    <!-- PUBLIC NOTIFICATION -->
+        @foreach (var item in Model.listNotifications)
+        {
+            <div class="row notifications">
+                <div class="col-12">
+                    <div class="row single-notification-box @(Model.IsNotificationRead(item.NotifID, item.NotifTitle, Model.userconfirm) ? "read" : "unread")">
+                        <div class="col-11 notification-text">
+                            <p>
+                                <a href="#" class="link name">@item.NotifTitle</a>
+                                @if (!Model.IsNotificationRead(item.NotifID, item.NotifTitle, Model.userconfirm))
+                                {
+                                    <span class="unread-symbol">•</span>
+                                }
+                            </p>
+                            <p class="time">@item.DateCreated</p>
+                            @if (!Model.IsNotificationRead(item.NotifID, item.NotifTitle, Model.userconfirm))
+                            {
+                                <form method="post" asp-page-handler="MarkPubAsRead">
+                                    <input type="hidden" name="notificationId" value="@item.NotifID" />
+                                    <button class="btn mark-as-read-button" style="display:inline; padding: 5px 20px; max-width:30%" type="submit">Mark as Read</button>
+                                </form>
+                            }
+                            <div class="col-1 profile-picture clickable-image">
+                                <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
+                            </div>
+                            <div class="private-message">
+                                @item.NotifText
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    }
+        }
 
-    @foreach (var item in Model.listPrivateNotifInfo)
-    {
-        <div class="row notifications">
-            <div class="col-12">
-                <div class="row single-notification-box unread">
-                    <div class="col-11 notification-text">
-                        <p>
-                            <a href="#" class="link name">@item.NotifTitle</a>
-                            <span class="unread-symbol">•</span>
-                        </p>
-                        <p class="time">@item.DateCreated</p>
-                                            <div class="col-1 profile-picture clickable-image">
-                        <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
-                    </div>
-                        <div class="private-message">
-                            @item.NotifText
+        <!-- PRIVATE NOTIFICATION -->
+        @foreach (var item in Model.listPrivateNotifInfo)
+        {
+            <div class="row notifications">
+                <div class="col-12">
+                    <div class="row single-notification-box @(item.IsRead ? "read" : "unread")">
+                        <div class="col-11 notification-text">
+                            <p>
+                                <a href="#" class="link name">@item.NotifTitle</a>
+                                
+                            </p>
+                            <p class="time">@item.DateCreated</p>
+                            @if (!item.IsRead)
+                            {
+                                <span class="unread-symbol">•</span>
+                                <form method="post" asp-page-handler="MarkAsRead">
+                                    <input type="hidden" name="notificationId" value="@item.NotifID" />
+                                    <button class="btn" style="display:inline; padding: 5px 20px; max-width:30%" type="submit" class="mark-as-read-button">Mark as Read</button>
+                                </form>
+                            }
+                            <div class="col-1 profile-picture clickable-image">
+                                <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
+                            </div>
+                            <div class="private-message">
+                                @item.NotifText
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+
+
 </div>
 
 
@@ -240,12 +262,23 @@
 
         // Additional JavaScript code can be added here.
     });
-
-
-
-
-
 </script>
+    <script>
+        function markAsRead(notificationId) {
+            // Use AJAX to call the server-side method to mark the notification as read
+            $.post({
+                url: '/Customer_Notif?handler=MarkAsRead',
+                data: { notificationId: notificationId },
+                success: function () {
+                    // Reload the page or update the UI as needed
+                    location.reload();
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
 
 
 </body>

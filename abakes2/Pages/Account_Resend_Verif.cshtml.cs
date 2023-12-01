@@ -11,11 +11,21 @@ namespace abakes2.Pages
     public class Account_Resend_VerifModel : PageModel
     {
         public string Email { get; set; }
-        public string ConnectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public String userconfirm = "";
+        public string ConnectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
-            // Handle GET requests if needed
+            userconfirm = HttpContext.Session.GetString("username");
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
         }
         public IActionResult OnPost()
         {

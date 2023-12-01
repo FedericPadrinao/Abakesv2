@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
@@ -97,17 +97,17 @@ namespace abakes2.Pages
                 Console.WriteLine("Error : " + e.ToString());
             }
 
-            if (!password.Equals(pass))
-            {
-                TempData["FailMessage"] = "Invalid Credentials!";
-                errorMessage = "Invalid Credentials!";
-                return Page();
-            }
-            else
+            try
             {
                 if (x > 0)
                 {
-                    // Admin account, no need for verification
+                    if (!password.Equals(pass))
+                    {
+                        TempData["FailMessage"] = "Invalid Credentials!";
+                        errorMessage = "Invalid Credentials!";
+                        return Page();
+                    }
+
                     HttpContext.Session.SetString("username", username);
                     HttpContext.Session.SetString("userimage", userimage);
                     HttpContext.Session.SetString("userstatus", userstatus);
@@ -116,16 +116,20 @@ namespace abakes2.Pages
                 }
                 else
                 {
-                    // Customer account, check if verified
                     bool isVerified = IsUserVerified(username);
 
-                    if (isVerified)
+                    if (!BCrypt.Net.BCrypt.Verify(password, pass))
                     {
-                        // User is verified, proceed with login
+                        TempData["FailMessage"] = "Invalid Credentials!";
+                        errorMessage = "Invalid Credentials!";
+                        return Page();
+                    }
+                    else if (isVerified)
+                    {
                         HttpContext.Session.SetString("username", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
-                        // Check if there is a stored URL and redirect the user to that URL
+
                         string returnUrl = HttpContext.Session.GetString("ReturnUrl");
                         if (!string.IsNullOrEmpty(returnUrl))
                         {
@@ -143,9 +147,16 @@ namespace abakes2.Pages
                     }
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.ToString());
+
+                // Redirect the user to the account page with an error message
+                TempData["FailMessage"] = "Invalid Credentials";
+                return RedirectToPage("/Account");
+            }
         }
 
-        // Method to check if the user is verified
         bool IsUserVerified(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -157,14 +168,12 @@ namespace abakes2.Pages
                     command.Parameters.AddWithValue("@username", username);
                     object result = command.ExecuteScalar();
 
-                    // If the result is not null, convert it to boolean
                     if (result != null && result != DBNull.Value)
                     {
                         return Convert.ToBoolean(result);
                     }
                 }
             }
-            // Default to false if there's an issue
             return false;
         }
 
@@ -182,17 +191,14 @@ namespace abakes2.Pages
 
             try
             {
-                // Check if email or username already exists
                 if (IsEmailOrUsernameExists(customerInfo.email, customerInfo.username))
                 {
                     TempData["FailMessage"] = "Email or username already exists!";
                     return Page();
                 }
 
-                // Generate a verification code
                 string verificationCode = GenerateVerificationCode();
 
-                // MailSEND
                 var email = new MimeMessage();
 
                 email.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
@@ -207,10 +213,7 @@ namespace abakes2.Pages
                 using (var smtp = new SmtpClient())
                 {
                     smtp.Connect("smtp.gmail.com", 465, true);
-
-                    // Note: only needed if the SMTP server requires authentication
                     smtp.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz");
-
                     smtp.Send(email);
                     smtp.Disconnect(true);
                 }
@@ -228,7 +231,7 @@ namespace abakes2.Pages
                         command.Parameters.AddWithValue("@username", customerInfo.username);
                         command.Parameters.AddWithValue("@lname", customerInfo.lname);
                         command.Parameters.AddWithValue("@fname", customerInfo.fname);
-                        command.Parameters.AddWithValue("@password", customerInfo.password);
+                        command.Parameters.AddWithValue("@password", BCrypt.Net.BCrypt.HashPassword(customerInfo.password));
                         command.Parameters.AddWithValue("@verificationCode", verificationCode);
 
                         command.ExecuteNonQuery();

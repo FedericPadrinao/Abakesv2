@@ -6,8 +6,16 @@ namespace abakes2.Pages
 {
     public class Account_ChangePasscodeModel : PageModel
     {
-        // ... (existing properties and methods)
-        public string connectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public String userconfirm = "";
+        public String imgconfirm = "";
+        public String statusconfirm = "";
+
+        public int notifCount = 0;
+        public int pnotifCount = 0;
+        public int cartCount = 0;
+        public int totalnotifCount = 0;
+        public int NotificationCount { get; set; }
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
@@ -71,6 +79,20 @@ namespace abakes2.Pages
                 }
             }
         }
+        public void OnGet()
+        {
+            userconfirm = HttpContext.Session.GetString("username");
 
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
+
+        }
     }
 }
