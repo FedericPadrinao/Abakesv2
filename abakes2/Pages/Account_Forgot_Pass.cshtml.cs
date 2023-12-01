@@ -81,19 +81,19 @@ namespace abakes2.Pages
         private void SendPasscodeByEmail(string email, string firstName, string passcode)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); // Change to your information
+            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); 
             message.To.Add(new MailboxAddress(firstName, email));
-            message.Subject = "New Passcode";
+            message.Subject = "Password Change Verification Code";
 
             var builder = new BodyBuilder();
-            builder.TextBody = $"Hello {firstName},\n\nPassword Code is: {passcode}\n\nThank you,\nThe Abakes Team";
+            builder.TextBody = $"Hello {firstName},\n\nYour verification code for changing your passord is: {passcode}\n\nThank you,\nThe Abakes Team";
 
             message.Body = builder.ToMessageBody();
 
             using (var client = new SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
-                client.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz"); // Replace with your Mailtrap credentials
+                client.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz");
 
                 client.Send(message);
                 client.Disconnect(true);

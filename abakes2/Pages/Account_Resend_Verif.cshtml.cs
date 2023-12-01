@@ -130,7 +130,7 @@ namespace abakes2.Pages
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); // Change to your information
             message.To.Add(new MailboxAddress(firstName, email));
-            message.Subject = "Verification Code Resent";
+            message.Subject = "New Verification Code";
 
             var builder = new BodyBuilder();
             builder.TextBody = $"Hello {firstName},\n\nYour new verification code is: {verificationCode}\n\nThank you,\nThe Abakes Team";
