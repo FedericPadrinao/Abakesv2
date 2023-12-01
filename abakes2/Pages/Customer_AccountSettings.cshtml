@@ -29,7 +29,6 @@
 </style>
 
 <body>
-
     <!--NAV BAR-->
     <div class="container">
         <div class="navbar">
@@ -70,9 +69,7 @@
             <div class="dropdown text-end">
                 @if (Model.userconfirm == null)
                 {
-                    <script>
-                        window.location.href = '/Index';
-                    </script>
+                    <a class="signin" href="/Account">Sign in</a>
                 }
                 else
                 {
@@ -92,8 +89,12 @@
                 }
 
             </div>
-            <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-            <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
+            @if (Model.userconfirm != null)
+            {
+                <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+                <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+
+            }
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>

@@ -205,6 +205,7 @@ header {
 .rating {
 	border: none;
 	float: left;
+	letter-spacing: 1.112rem;
 }
 
 	.rating > input {

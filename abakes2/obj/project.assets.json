@@ -3300,6 +3300,12 @@
   },
   "logs": [
     {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,

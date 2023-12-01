@@ -10,40 +10,47 @@ namespace abakes2.Pages
 {
     public class Account_Forgot_PassModel : PageModel
     {
+        public String userconfirm = "";
         public string Email { get; set; }
-        public string ConnectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string ConnectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+
+        public void OnGet() {
+            userconfirm = HttpContext.Session.GetString("username");
+
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
+        }
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
 
-            // Check if the email exists in the LoginCustomer table
             if (!IsEmailExists(email))
             {
                 TempData["FailMessage"] = "Email does not exist!";
                 return Page();
             }
 
-            // Generate a new passcode
             string newPasscode = GeneratePasscode();
 
-            // Update the passcode in the database
             UpdatePasscode(email, newPasscode);
 
-            // Get the first name associated with the email
             string firstName = GetFirstName(email);
 
-            // Send the new passcode to the user
             SendPasscodeByEmail(email, firstName, newPasscode);
 
-            // Set a success message and stay on the same page
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
             TempData["Email"] = email;
             return RedirectToPage("/Account_ChangePasscode");
         }
 
-        // ... (existing code)
 
-        // Method to update passcode
         private void UpdatePasscode(string email, string passcode)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
@@ -74,19 +81,19 @@ namespace abakes2.Pages
         private void SendPasscodeByEmail(string email, string firstName, string passcode)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); // Change to your information
+            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); 
             message.To.Add(new MailboxAddress(firstName, email));
-            message.Subject = "New Passcode";
+            message.Subject = "Password Change Verification Code";
 
             var builder = new BodyBuilder();
-            builder.TextBody = $"Hello {firstName},\n\nPassword Code is: {passcode}\n\nThank you,\nThe Abakes Team";
+            builder.TextBody = $"Hello {firstName},\n\nYour verification code for changing your passord is: {passcode}\n\nThank you,\nThe Abakes Team";
 
             message.Body = builder.ToMessageBody();
 
             using (var client = new SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
-                client.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz"); // Replace with your Mailtrap credentials
+                client.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz");
 
                 client.Send(message);
                 client.Disconnect(true);
