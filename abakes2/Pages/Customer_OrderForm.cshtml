@@ -43,6 +43,17 @@
                 margin-bottom: 20px;
                 line-height: 3.2;
             }
+                #specinst {
+        width: 100%;
+        height: 5vw; 
+    }
+
+
+    @@media only screen and (max-width: 600px) {
+        #specinst {
+            height: 35vw; 
+        }
+    }
 
     </style>
 
@@ -152,8 +163,9 @@
     <!-- Message -->
     <div class="account-page">
         <div class="container">
-            <div class="tnc" style="height:100%; padding:20px; border-radius:3%;">
-                <form method="post" id="order-form" style="text-align:left;"asp-page-handler="OnPost">
+            <div class="row">
+                <div class="tnc" style="height: 950px; ">
+                <form method="post" id="order-form" style="text-align:left; margin:20px 25px; " asp-page-handler="OnPost">
 
                     <!--Occasion-->
                     <label for="occasion"><h3>Occasion‌: ‌ ‌ </h3></label>
@@ -232,12 +244,12 @@
                     <input type="text" name="dedication" />
                     <!--Special Instructions-->
                     <h3>Special Instructions:</h3>
-                    <textarea name="special_instructions" id="specinst" rows="5" cols="117"></textarea>
-                    <div style="padding:30px 20px; margin:1px;">
-                        <button type="submit" class="btn">Confirm</button>
+                    <textarea name="special_instructions" id="specinst" ></textarea>
+                    <div style="padding:30px 20px; margin:2px;">
+                        <button type="submit" class="btn" >Confirm</button>
                     </div>
                 </form>
-
+                </div>
             </div>
         </div>
     </div>

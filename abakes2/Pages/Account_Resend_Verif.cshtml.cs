@@ -12,7 +12,7 @@ namespace abakes2.Pages
     {
         public string Email { get; set; }
         public String userconfirm = "";
-        public string ConnectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string ConnectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {

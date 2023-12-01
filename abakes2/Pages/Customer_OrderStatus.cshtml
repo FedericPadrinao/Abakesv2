@@ -43,7 +43,7 @@
 
             @@media (max-width: 768px) {
             .nav-item {
-              margin-left:80px;
+              margin-left:px;
             }
             }
             
@@ -101,7 +101,7 @@
                         <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item active" style="place-items:left;" href="/Customer_OrderStatus">My Simple Order</a></li>
+                        <li><a class="dropdown-item active" href="/Customer_OrderStatus">My Simple Order</a></li>
                         <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
                         <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
@@ -139,6 +139,8 @@
     </section>
     <!-- Banner -->
     <!-- progres Bar-->
+    <div class="container">
+
     <div class="main">
 
         <div class="head">
@@ -146,8 +148,8 @@
             <p class="head_2">Invoice #@Model.invoiceInfo.invoiceID<span></span></p>
             <p class="head_2">Expected Arrival: @Model.invoiceInfo.invoiceExpectedD @Model.invoiceInfo.invoiceExpectedT </p>
         </div>
-
-        <ul>
+        </div>
+        <ul style="margin-bottom:70px">
             <!-- 1 Bar-->
             <li>
                 <i class="fa-regular fa-eye icon"></i>

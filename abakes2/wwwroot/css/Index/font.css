@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Poppins-ExtraBold';
+    src: url("/fonts/Poppins-Extrabold.ttf") format("truetype");
+}
+
+.fw-normal{
+	font-family:Poppins-ExtraBold;
+	color: rgb(252,188,180);
+	margin-top:10px;
+	
+}

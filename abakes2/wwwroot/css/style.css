@@ -523,6 +523,7 @@ th:last-child {
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border-radius: 20px;
 }
 
 .tnc-form {

@@ -18,7 +18,7 @@ namespace abakes2.Pages
         public int pubnotifCount = 0;
         public int cartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");

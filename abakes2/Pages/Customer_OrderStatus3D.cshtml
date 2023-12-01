@@ -32,6 +32,7 @@
 
 
 <style>
+
     @@media (max-width: 768px) {
         .nav-item {
             margin-left: 80px;
@@ -41,10 +42,13 @@
     .container-box-3d{
     max-height: 500px; 
     max-width: 500px;
-    margin: 40px auto;
-  
+    margin: 60px auto;
+    }
+  .container h2{
+      margin-top: 20px;
+  }
 
-}
+
 
 </style>
 
@@ -99,7 +103,7 @@
                     </a>
                     <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
-                        <li><a class="dropdown-item active"  style="place-items:left;" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                        <li><a class="dropdown-item active" href="/Customer_OrderStatus3D">My 3D Order</a></li>
                         <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
                         <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
@@ -136,14 +140,16 @@
     </section>
     <!-- Banner -->
     <!-- progres Bar-->
+        <div class="container">
+
     <div class="main">
 
         <div class="head">
             <p class="head_1">Order #@Model.order3D.ModelID<span></span></p>
             <p class="head_2">Expected Arrival: @Model.order3D.order3DExpectedD @Model.order3D.order3DExpectedT </p>
         </div>
-
-        <ul>
+        </div>
+        <ul style="margin-bottom:70px">
             <!-- 1 Bar-->
             <li>
                 <i class="fa-regular fa-eye icon"></i>

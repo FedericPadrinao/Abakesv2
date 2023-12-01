@@ -10,7 +10,7 @@
 
 .main {
     width: 100%;
-    height: 60vh;
+    height: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,12 +40,13 @@
     font-size: 16px;
     font-weight: 600;
     color: #333;
-    margin-top: 30px;
-    margin-bottom: 60px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 ul {
     display: flex;
+
 }
 
     ul li {
@@ -111,7 +112,7 @@ ul li .progres p {
 
 ul li .active {
     background-color: #998270;
-    display: grid;
+ 
     place-items: center;
 }
 
@@ -133,6 +134,7 @@ ul li .active .uil {
 @media (max-width: 980px) {
     ul {
         flex-direction: column;
+        margin-bottom:40px;
     }
 
         ul li {
@@ -168,17 +170,14 @@ ul li .active .uil {
 @media (max-width:600px) {
     .head .head_1 {
         font-size: 24px;
-        margin-top: 550px;
     }
 
     .head .head_2 {
         font-size: 16px;
-        margin-top: 30px;
     
     }
 
     .main {
-        margin-bottom: 550px;
     }
 
 }
