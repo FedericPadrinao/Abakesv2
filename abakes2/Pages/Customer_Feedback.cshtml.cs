@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public List<Feedbacks> listFeedback = new List<Feedbacks>();
         public List<UserInfo> userInfo = new List<UserInfo>();
         public int fbID = 0;
-        public string connectionString = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
@@ -112,7 +112,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Product WHERE status ='true'";
+                    string sql = "select * from feedback WHERE status ='true'";
                     //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -188,7 +188,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Feedbacks: " + e.ToString());
 
             }
 

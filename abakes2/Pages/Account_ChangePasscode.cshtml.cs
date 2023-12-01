@@ -7,7 +7,7 @@ namespace abakes2.Pages
     public class Account_ChangePasscodeModel : PageModel
     {
         // ... (existing properties and methods)
-        public string connectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];

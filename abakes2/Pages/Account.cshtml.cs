@@ -5,6 +5,7 @@ using System;
 using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
+using BCrypt.Net;
 
 namespace abakes2.Pages
 {
@@ -23,7 +24,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=eu-az-sql-serv5434154f0e9a4d00a109437d48355b69.database.windows.net;Initial Catalog=d5rw6jsfzbuks4y;Persist Security Info=True;User ID=uqqncmi3rkbksbc;Password=***********";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
@@ -62,6 +63,7 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 username = reader.GetString(1);
+                                // Use BCrypt-hashed password for LoginCustomer
                                 pass = reader.GetString(4);
                                 userimage = reader.GetString(8);
                                 userstatus = reader.GetString(11);
@@ -69,6 +71,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
+
                 // ADMIN
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
@@ -84,6 +87,7 @@ namespace abakes2.Pages
                             {
                                 x++;
                                 username = reader.GetString(1);
+                                // Use the existing (non-hashed) password for LoginSample
                                 pass = reader.GetString(2);
                                 userimage = reader.GetString(4);
                                 userstatus = reader.GetString(5);
@@ -96,18 +100,19 @@ namespace abakes2.Pages
             {
                 Console.WriteLine("Error : " + e.ToString());
             }
-
-            if (!password.Equals(pass))
+            try
             {
-                TempData["FailMessage"] = "Invalid Credentials!";
-                errorMessage = "Invalid Credentials!";
-                return Page();
-            }
-            else
-            {
+                // Check password based on whether it's from LoginCustomer or LoginSample
                 if (x > 0)
                 {
                     // Admin account, no need for verification
+                    if (!BCrypt.Net.BCrypt.Verify(password, pass))
+                    {
+                        TempData["FailMessage"] = "Invalid Credentials!";
+                        errorMessage = "Invalid Credentials!";
+                        return Page();
+                    }
+
                     HttpContext.Session.SetString("username", username);
                     HttpContext.Session.SetString("userimage", userimage);
                     HttpContext.Session.SetString("userstatus", userstatus);
@@ -119,12 +124,19 @@ namespace abakes2.Pages
                     // Customer account, check if verified
                     bool isVerified = IsUserVerified(username);
 
-                    if (isVerified)
+                    if (!BCrypt.Net.BCrypt.Verify(password, pass))
+                    {
+                        TempData["FailMessage"] = "Invalid Credentials!";
+                        errorMessage = "Invalid Credentials!";
+                        return Page();
+                    }
+                    else if (isVerified)
                     {
                         // User is verified, proceed with login
                         HttpContext.Session.SetString("username", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
+
                         // Check if there is a stored URL and redirect the user to that URL
                         string returnUrl = HttpContext.Session.GetString("ReturnUrl");
                         if (!string.IsNullOrEmpty(returnUrl))
@@ -143,7 +155,16 @@ namespace abakes2.Pages
                     }
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error : " + e.ToString());
+
+                // Redirect the user to the account page with an error message
+                TempData["FailMessage"] = "Invalid Credentials";
+                return RedirectToPage("/Account");
+            }
         }
+
 
         // Method to check if the user is verified
         bool IsUserVerified(string username)
@@ -228,7 +249,8 @@ namespace abakes2.Pages
                         command.Parameters.AddWithValue("@username", customerInfo.username);
                         command.Parameters.AddWithValue("@lname", customerInfo.lname);
                         command.Parameters.AddWithValue("@fname", customerInfo.fname);
-                        command.Parameters.AddWithValue("@password", customerInfo.password);
+                        // Hash the password before storing it
+                        command.Parameters.AddWithValue("@password", BCrypt.Net.BCrypt.HashPassword(customerInfo.password));
                         command.Parameters.AddWithValue("@verificationCode", verificationCode);
 
                         command.ExecuteNonQuery();
@@ -282,4 +304,3 @@ namespace abakes2.Pages
         }
     }
 }
-
