@@ -7,12 +7,23 @@ namespace abakes2.Pages
     public class Account_VerifyModel : PageModel
     {
         public string email { get; set; }
+        public String userconfirm = "";
         public string verification_code { get; set; }
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
             email = HttpContext.Request.Query["email"];
+            userconfirm = HttpContext.Session.GetString("username");
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
         }
 
 

@@ -14,6 +14,16 @@ namespace abakes2.Pages
             userconfirm = HttpContext.Session.GetString("username");
             imgconfirm = HttpContext.Session.GetString("userimage");
             statusconfirm = HttpContext.Session.GetString("userstatus");
+            userconfirm = HttpContext.Session.GetString("username");
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

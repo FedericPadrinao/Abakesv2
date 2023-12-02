@@ -51,6 +51,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Add3DAsset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQWRkM0RBc3NldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Add3DCake.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQWRkM0RDYWtlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_AddProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQWRkUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ChangePassSucc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQ2hhbmdlUGFzc1N1Y2MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -59,8 +71,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_EditProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fRWRpdFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DAsset.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RBc3NldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DCake.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RDYWtlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DOrders.cshtml]
@@ -113,6 +133,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Notif.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTm90aWYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_View3DAsset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fVmlldzNEQXNzZXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_View3DCake.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fVmlldzNEQ2FrZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ViewPayment.cshtml]

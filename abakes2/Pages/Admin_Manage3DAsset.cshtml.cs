@@ -8,10 +8,11 @@ namespace abakes2.Pages
     {
         public List<Products> listProduct = new List<Products>();
         public List<UserInfo> userInfo = new List<UserInfo>();
+        public List<Asset3DInfo> assetInfo = new List<Asset3DInfo>();
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetProducts(string sortProduct)
         {
@@ -20,28 +21,23 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Product WHERE status='true'"; //getting the data based from the pdid variable
+                    string sql = "select * from Asset3D"; //getting the data based from the pdid variable
 
                     string search = Request.Query["search"];
                     if (!String.IsNullOrEmpty(search))
                     {
-                        sql = "SELECT * FROM Product WHERE status ='true' AND ProductName LIKE '%" + search + "%'";
+                        sql = "SELECT * FROM Asset3D WHERE AssetName LIKE '%" + search + "%'";
                     }
 
                     switch (sortProduct)
                     {
                         case "Sort Name":
-                            sql += "ORDER BY ProductName DESC";
+                            sql += "ORDER BY AssetName DESC";
                             break;
                         case "Sort Name2":
-                            sql += "ORDER BY ProductName ASC";
+                            sql += "ORDER BY AssetName ASC";
                             break;
-                        case "Sort Price":
-                            sql += "ORDER BY ProductPrice DESC";
-                            break;
-                        case "Sort Price2":
-                            sql += "ORDER BY ProductPrice ASC";
-                            break;
+                       
 
                     }
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -50,16 +46,14 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                Products pd = new Products();
+                                Asset3DInfo asset = new Asset3DInfo();
+                                asset.AssetID = reader.GetInt32(0);
+                                asset.AssetName = reader.GetString(1);
+                                asset.AssetPath = reader.GetString(2);
+                              
+                                assetInfo.Add(asset);
 
-                                pd.pdID = reader.GetFieldValue<int>(reader.GetOrdinal("ProductID"));
-                                pd.pdName = reader.GetFieldValue<string>(reader.GetOrdinal("ProductName"));
-                                pd.pdCategory = reader.GetFieldValue<string>(reader.GetOrdinal("ProductCategory"));
-                                pd.pdPrice = reader.GetFieldValue<int>(reader.GetOrdinal("ProductPrice"));
-                                pd.pdDescription = reader.GetFieldValue<string>(reader.GetOrdinal("ProductDesc"));
-                                pd.pdImg = reader.GetFieldValue<string>(reader.GetOrdinal("ProductImg"));
-
-                                listProduct.Add(pd);
+                          
 
 
 
@@ -88,7 +82,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "delete from Product where ProductID='" + id + "'"; //getting the data based from the pdid variable
+                    string sql = "delete from Asset3D where AssetID='" + id + "'"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -111,41 +105,7 @@ namespace abakes2.Pages
 
             }
 
-            return Redirect("/ProductList");
-        }
-
-        public IActionResult OnGetArchive()
-        {
-            string id = Request.Query["id"];
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString)) //static
-                {
-                    connection.Open();
-                    String sql2 = "update Product set status='false' where ProductID='" + id + "'";
-                    using (SqlCommand command = new SqlCommand(sql2, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                command.ExecuteNonQuery();
-
-                            }
-                        }
-
-
-
-
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-
-            }
-
-            return Redirect("/Admin_ManageCakes");
+            return Redirect("/Admin_Manage3DAsset");
         }
         public void OnGet(string sortProduct)
         {

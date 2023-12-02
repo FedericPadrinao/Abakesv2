@@ -17,9 +17,9 @@ namespace abakes2.Pages
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
-
         public int notifCount = 0;
         public int pnotifCount = 0;
+        public int pubnotifCount = 0;
         public int cartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
@@ -73,7 +73,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Asset3D "; //getting the data based from the fbid variable
+                    string sql = "select * from Asset3D ORDER BY AssetName ASC"; //getting the data based from the fbid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
 
@@ -145,7 +145,7 @@ namespace abakes2.Pages
                     string sql3 = "INSERT INTO Order3DForm " +
                          "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery) " +
                          "VALUES " +
-                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, 'N/A', 'N/A', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery); SELECT SCOPE_IDENTITY(); ";
+                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, '', '', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery); SELECT SCOPE_IDENTITY(); ";
 
                     using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
                     {
@@ -162,10 +162,10 @@ namespace abakes2.Pages
                         insertcommand.Parameters.AddWithValue("@delivery", Delivery);
                         insertcommand.Parameters.AddWithValue("@preferred", Preferred);
                         insertcommand.Parameters.AddWithValue("@modeltype", order3DForm.ModelType);
-                        insertcommand.Parameters.AddWithValue("@dateCreated", "N/A");
+                        insertcommand.Parameters.AddWithValue("@dateCreated", "");
                         insertcommand.Parameters.AddWithValue("@orderstatus", "Design Your Cake");
-                        insertcommand.Parameters.AddWithValue("@receipt", "N/A");
-                        insertcommand.Parameters.AddWithValue("@paymentMethod", "N/A");
+                        insertcommand.Parameters.AddWithValue("@receipt", "");
+                        insertcommand.Parameters.AddWithValue("@paymentMethod", "");
 
 
                         insertedPrimaryKey = Convert.ToInt32(insertcommand.ExecuteScalar());
@@ -301,7 +301,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND username = '" + userconfirm + "'";
+                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND isRead = 'false'  AND username = '" + userconfirm + "'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -309,6 +309,22 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 pnotifCount = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(NotificationID) from ReadPublicNotif where username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pubnotifCount = reader.GetInt32(0);
                             }
                         }
                     }
@@ -329,7 +345,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                totalnotifCount = notifCount + pnotifCount;
+                totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
 

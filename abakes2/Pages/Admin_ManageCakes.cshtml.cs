@@ -19,7 +19,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Product WHERE status='true'"; //getting the data based from the pdid variable
+                    string sql = "select * from Product WHERE status='true' ORDER BY ProductID DESC"; //getting the data based from the pdid variable
 
                     string search = Request.Query["search"];
                     if (!String.IsNullOrEmpty(search))
@@ -110,7 +110,7 @@ namespace abakes2.Pages
 
             }
 
-            return Redirect("/ProductList");
+            return Redirect("/Admin_ManageCakes");
         }
 
         public IActionResult OnGetArchive()

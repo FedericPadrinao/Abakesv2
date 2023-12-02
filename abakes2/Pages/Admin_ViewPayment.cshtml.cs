@@ -10,7 +10,6 @@ namespace abakes2.Pages
         public string errorMessage = "";
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public NotificationInfo notifInfo = new NotificationInfo();
-
         public UserInfo userInfo = new UserInfo();
         public OrderSimpleInfo orderSimple = new OrderSimpleInfo();
         public CustomerInfo customerInfo = new CustomerInfo();

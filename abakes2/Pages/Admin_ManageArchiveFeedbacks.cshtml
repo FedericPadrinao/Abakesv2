@@ -156,14 +156,16 @@
 
                                 <td>
 
-                                    <a class='btn' asp-page-handler="Approval" asp-route-id=@item.fbID style="background:#7685FF; ">
-                                        <i class="fas fa-check" style="font-size:30px;"></i><div>Approve</div>
-                                    </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
-
+                                    <a class='btn' href='/ViewFeedback?id=@item.fbID' style="background:#FFCA6D; color:black;">
+                                        <i class="fas fa-eye" style="font-size:30px;"></i> <div>View</div>
+                                    </a>
                                     <a class='btn' asp-page-handler="Remove" asp-route-id=@item.fbID style="background:#9a0009;">
                                         <i class="fas fa-trash" style="font-size:30px;"></i> <div>Delete</div>
                                     </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
-                                    
+                                    <a class='btn' asp-page-handler="Approval" asp-route-id=@item.fbID style="background:#7685FF; ">
+                                        Approve
+                                    </a> @*asp-page-handler gets the method Remove. asp-route-"value" *@
+
                                 </td>
                             </tr>
 

@@ -15,6 +15,7 @@ namespace abakes2.Pages
         public String statusconfirm = "";
         public int notifCount = 0;
         public int pnotifCount = 0;
+        public int pubnotifCount = 0;
         public int cartCount = 0;
         public int totalnotifCount = 0;
         public string spageid;
@@ -112,7 +113,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from feedback WHERE status ='true'";
+                    string sql = "select * from Product WHERE status ='true'";
                     //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -155,7 +156,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND username = '" + userconfirm + "'";
+                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND isRead = 'false'  AND username = '" + userconfirm + "'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -163,6 +164,22 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 pnotifCount = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(NotificationID) from ReadPublicNotif where username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pubnotifCount = reader.GetInt32(0);
                             }
                         }
                     }
@@ -183,12 +200,12 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                totalnotifCount = notifCount + pnotifCount;
+                totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Feedbacks: " + e.ToString());
+                Console.WriteLine("Error Reading Products: " + e.ToString());
 
             }
 

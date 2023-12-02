@@ -11,11 +11,21 @@ namespace abakes2.Pages
     public class Account_Resend_VerifModel : PageModel
     {
         public string Email { get; set; }
+        public String userconfirm = "";
         public string ConnectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
-            // Handle GET requests if needed
+            userconfirm = HttpContext.Session.GetString("username");
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
         }
         public IActionResult OnPost()
         {
@@ -120,7 +130,7 @@ namespace abakes2.Pages
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); // Change to your information
             message.To.Add(new MailboxAddress(firstName, email));
-            message.Subject = "Verification Code Resent";
+            message.Subject = "New Verification Code";
 
             var builder = new BodyBuilder();
             builder.TextBody = $"Hello {firstName},\n\nYour new verification code is: {verificationCode}\n\nThank you,\nThe Abakes Team";

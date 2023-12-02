@@ -1,0 +1,231 @@
+﻿@page
+@model abakes2.Pages.Admin_EditProductModel
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <script src="https://kit.fontawesome.com/e91d01519e.js" crossorigin="anonymous"></script>
+
+    <title>View Simple Order</title>
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <!-- Banner -->
+    <!-- Banner -->
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
+            </div>
+            <div class="search">
+                <input type="text" name="search" placeholder="search here">
+                <label for="search"><i class="fas fa-search"></i></label>
+            </div>
+            <i class="fas fa-bell"></i>
+            <div class="user">
+                <img src="~/img/AdminDashboard/user.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/Admin_ManageCakes">
+                        <i class="fas fa-birthday-cake"></i>
+                        <div>Manage Cake</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Manage3DAsset">
+                        <i class="fa-brands fa-unity"></i>
+                        <div>Manage 3D Asset</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageOrders">
+                        <i class="fas fa-receipt"></i>
+                        <div>Manage Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageFeedback">
+                        <i class="fas fa-comments"></i>
+                        <div>Manage Feedback</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_Notif">
+                        <i class="fas fa-bell"></i>
+                        <div>Manage Notification</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageQR">
+                        <i class="fas fa-qrcode"></i>
+                        <div>Manage QR Code</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageAcc">
+                        <i class="fas fa-user"></i>
+                        <div>Account Manager</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/AdminDashboard">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>Statistical Report</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ChangePassword">
+                        <i class="fas fa-lock"></i>
+                        <div>Change Password</div>
+                    </a>
+                </li>
+                <li>
+                    <a asp-page="/index" asp-page-handler="LogOut">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>Log out</div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+
+        <div class="main">
+            <section class="page-heading" style="background-image: url('/img/contact/cover2.png');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-content">
+                                <h2>Adding Price</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <div class="account-page">
+                <div class="container" style="padding-top: 55px;">
+
+                    <!-- CUSTOMER INFORMATION-->
+                    <div class="row">
+                        
+                        <br />
+                        <!-- PRICE DETAILS-->
+                        <div class="row">
+                            <div class="adminbox" style="height: 50%; width: 550px; padding: 45px; border-radius: 5%; text-align:left;">
+                                <form method="post" enctype="multipart/form-data">
+                                
+                                    <div class="p-5 p-lg-5 border">
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <h2 style="text-align:center;">Add a Product</h2>
+                                            </div>
+                                        </div>
+                                    <input type ="hidden" id="id" name="id" value="" />
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <label for="c_hadd" class="text-black"><b>Product Name:</b> </label>
+                                            <input type="text" class="form-control" id="pdName" name="name" required placeholder="@Model.productInfo.pdName">
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <label for="c_hadd" class="text-black"><b>Product Price:</b> </label>
+                                                <input style="height:21px" type="number" name="price" required placeholder="@Model.productInfo.pdPrice" />
+                                            </div>                                     
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-6">
+                                                <label for="c_hadd" class="text-black"><b>Product Description:</b> </label>
+                                            <textarea id="message" name="description" rows="10" cols="80" minlength="0" maxlength="200" required placeholder="@Model.productInfo.pdDescription"></textarea>
+                                            </div>                                     
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <label for="c_hadd" class="text-black"><b>Product Image:</b> </label>
+                                                <img src="@Model.productInfo.pdImg" id="imgPreview" width="50%" />
+                                                <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
+                                            </div>                                     
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-lg-12">
+
+                                                <button type="submit" class="btn" name="submit" id="submit">Submit</button>
+                                            </div>
+                                            <p>@Model.successMessage</p>
+                                            <p>@Model.errorMessage</p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- javascript -->
+
+                <script>
+                    var MenuItems = document.getElementById("MenuItems");
+                    MenuItems.style.maxHeight = "0px";
+                    function menutoggle() {
+                        if (MenuItems.style.maxHeight == "0px") {
+                            MenuItems.style.maxHeight = "300px"
+                        }
+                        else {
+                            MenuItems.style.maxHeight = "0px"
+                        }
+                    }
+                </script>
+
+                <!-- Toggle Form -->
+                <script>
+                    var LoginForm = document.getElementById("LoginForm");
+                    var RegForm = document.getElementById("RegForm");
+                    var Indicator = document.getElementById("Indicator");
+                    function register() {
+                        RegForm.style.transform = "translatex(0px)";
+                        LoginForm.style.transform = "translatex(0px)";
+                        Indicator.style.transform = "translateX(100px)";
+
+                    }
+                    function login() {
+                        RegForm.style.transform = "translatex(300px)";
+                        LoginForm.style.transform = "translatex(300px)";
+                        Indicator.style.transform = "translate(0px)";
+
+                    }
+                </script>
+                <script>
+                function previewImage() {
+                    var fileInput = document.getElementById('fileInput');
+                    var imgPreview = document.getElementById('imgPreview');
+
+                    if (fileInput.files && fileInput.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+                            imgPreview.src = e.target.result;
+                        }
+
+                        reader.readAsDataURL(fileInput.files[0]);
+                    }
+                }
+                </script>
+
+</body>

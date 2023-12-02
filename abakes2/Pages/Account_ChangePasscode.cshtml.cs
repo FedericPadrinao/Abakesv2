@@ -6,7 +6,15 @@ namespace abakes2.Pages
 {
     public class Account_ChangePasscodeModel : PageModel
     {
-        // ... (existing properties and methods)
+        public String userconfirm = "";
+        public String imgconfirm = "";
+        public String statusconfirm = "";
+
+        public int notifCount = 0;
+        public int pnotifCount = 0;
+        public int cartCount = 0;
+        public int totalnotifCount = 0;
+        public int NotificationCount { get; set; }
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public IActionResult OnPost()
         {
@@ -71,6 +79,20 @@ namespace abakes2.Pages
                 }
             }
         }
+        public void OnGet()
+        {
+            userconfirm = HttpContext.Session.GetString("username");
 
+            if (userconfirm != null)
+            {
+                Response.Redirect("/Index");
+
+            }
+            else
+            {
+
+            }
+
+        }
     }
 }

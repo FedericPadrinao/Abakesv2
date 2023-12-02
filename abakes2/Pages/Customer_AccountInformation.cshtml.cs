@@ -13,7 +13,11 @@ namespace abakes2.Pages
         public String successMessage = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
-
+        public int notifCount = 0;
+        public int pnotifCount = 0;
+        public int pubnotifCount = 0;
+        public int cartCount = 0;
+        public int totalnotifCount = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
@@ -58,6 +62,7 @@ namespace abakes2.Pages
                                 customerInfo.phone = reader.GetString(7);
                                 customerInfo.city = reader.GetString(9);
                                 customerInfo.barangay = reader.GetString(10);
+                                customerInfo.img = reader.GetString(8);
 
 
                             }
@@ -69,6 +74,84 @@ namespace abakes2.Pages
             catch (Exception e)
             {
                 Console.WriteLine("Error : " + e.ToString());
+            }
+            //NAV COUNT
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(NotificationID) from Notification where status = 'true'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            while (reader.Read())
+                            {
+                                notifCount = reader.GetInt32(0);
+
+                            }
+
+
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(NotificationID) from PrivateNotification where status = 'true' AND isRead = 'false'  AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pnotifCount = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(NotificationID) from ReadPublicNotif where username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pubnotifCount = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from OrderSimple where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalnotifCount = notifCount + pnotifCount - pubnotifCount;
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
             }
         }
 
@@ -102,5 +185,6 @@ namespace abakes2.Pages
             }
             Response.Redirect("/Index");
         }
+
     }
 }

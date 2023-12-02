@@ -106,7 +106,7 @@ namespace abakes2.Pages
 
                         connection.Open();
 
-                        string sql = "Insert into PrivateNotification (NotificationTitle,username,NotificationText,NotificationImage,status,DateCreated) values (@NotifTitle,@username,@NotifText,@NotifImage,'true',@DateCreated)";
+                        string sql = "Insert into PrivateNotification (NotificationTitle,username,NotificationText,NotificationImage,status,DateCreated,isRead) values (@NotifTitle,@username,@NotifText,@NotifImage,'true',@DateCreated,'false')";
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
                             command.Parameters.AddWithValue("@NotifTitle", NotifTitle);

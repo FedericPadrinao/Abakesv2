@@ -123,7 +123,7 @@
             <div class="admin-table">
 
 
-                <a type="submit" class="btn" style="margin:1%;">Add</a>
+                <a href="/Admin_AddProduct" type="submit" class="btn" style="margin:1%;">Add</a>
                 <a href="/Admin_ManageArchiveCakes" type="submit" class="btn" style="margin:1%;">Archive</a>
                 <a asp-page="/Admin_ManageCakes" asp-route-sortProduct="Sort Name" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↓ Name</a>
                 <a asp-page="/Admin_ManageCakes" asp-route-sortProduct="Sort Name2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↑ Name</a>
@@ -170,7 +170,7 @@
 
 
                                 <td style="align-content:center;">
-                                    <a class='btn' style="background:#F1DEB9; color:black;" href='/ViewProduct?id=@item.pdID'>
+                                    <a class='btn' style="background:#F1DEB9; color:black;" href='/Admin_EditProduct?id=@item.pdID'>
                                         <i class="fas fa-pencil" style="font-size:30px;"></i> <div>Edit</div>
                                     </a>
                                     <a class='btn ' style="background:#9a0009;" asp-page-handler="Delete" asp-route-id=@item.pdID>
@@ -179,9 +179,7 @@
                                     <a class='btn ' style="background:#7685FF; " asp-page-handler="Archive" asp-route-id=@item.pdID>
                                         <i class="fas fa-archive" style="font-size:30px;"></i> <div>Archive</div>
                                     </a>
-                                    <a class='btn ' style="background:#FFCA6D; color:black;" type="submit">
-                                        <i class="fas fa-eye" style="font-size:30px;"></i> <div>View</div>
-                                    </a>
+                                   
                                 </td>
                             </tr>
                         }

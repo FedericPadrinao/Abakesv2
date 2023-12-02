@@ -467,11 +467,14 @@
             obj = model1.scene;
             scene.add(model1.scene);
             console.log(obj.getObjectByName('pCylinder5_1002_0'));
+            obj.position.set(0, -30, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
             obj.getObjectByName(textureName).material.color.setHex(color1);
             obj.getObjectByName(textureName2).material.color.setHex(color2);
             obj.getObjectByName(textureName3).material.color.setHex(color3);
+
+            
            
-            obj.position.set(0, -30, 0); // Start position ng MODEL sa screen front/back,up/down,right/left (+,-)
+           
             obj.scale.set(scale,scale,scale); // Size ng model dapat pantay siya or magiiba yung shape
         }, undefined, function (error) {
             console.error(error);

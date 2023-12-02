@@ -5,7 +5,6 @@ using System;
 using MailKit.Net.Smtp;
 using MailKit;
 using MimeKit;
-using BCrypt.Net;
 
 namespace abakes2.Pages
 {
@@ -63,7 +62,6 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 username = reader.GetString(1);
-                                // Use BCrypt-hashed password for LoginCustomer
                                 pass = reader.GetString(4);
                                 userimage = reader.GetString(8);
                                 userstatus = reader.GetString(11);
@@ -71,7 +69,6 @@ namespace abakes2.Pages
                         }
                     }
                 }
-
                 // ADMIN
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
@@ -87,7 +84,6 @@ namespace abakes2.Pages
                             {
                                 x++;
                                 username = reader.GetString(1);
-                                // Use the existing (non-hashed) password for LoginSample
                                 pass = reader.GetString(2);
                                 userimage = reader.GetString(4);
                                 userstatus = reader.GetString(5);
@@ -100,13 +96,12 @@ namespace abakes2.Pages
             {
                 Console.WriteLine("Error : " + e.ToString());
             }
+
             try
             {
-                // Check password based on whether it's from LoginCustomer or LoginSample
                 if (x > 0)
                 {
-                    // Admin account, no need for verification
-                    if (!BCrypt.Net.BCrypt.Verify(password, pass))
+                    if (!password.Equals(pass))
                     {
                         TempData["FailMessage"] = "Invalid Credentials!";
                         errorMessage = "Invalid Credentials!";
@@ -121,7 +116,6 @@ namespace abakes2.Pages
                 }
                 else
                 {
-                    // Customer account, check if verified
                     bool isVerified = IsUserVerified(username);
 
                     if (!BCrypt.Net.BCrypt.Verify(password, pass))
@@ -132,12 +126,10 @@ namespace abakes2.Pages
                     }
                     else if (isVerified)
                     {
-                        // User is verified, proceed with login
                         HttpContext.Session.SetString("username", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
 
-                        // Check if there is a stored URL and redirect the user to that URL
                         string returnUrl = HttpContext.Session.GetString("ReturnUrl");
                         if (!string.IsNullOrEmpty(returnUrl))
                         {
@@ -165,8 +157,6 @@ namespace abakes2.Pages
             }
         }
 
-
-        // Method to check if the user is verified
         bool IsUserVerified(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -178,14 +168,12 @@ namespace abakes2.Pages
                     command.Parameters.AddWithValue("@username", username);
                     object result = command.ExecuteScalar();
 
-                    // If the result is not null, convert it to boolean
                     if (result != null && result != DBNull.Value)
                     {
                         return Convert.ToBoolean(result);
                     }
                 }
             }
-            // Default to false if there's an issue
             return false;
         }
 
@@ -203,17 +191,14 @@ namespace abakes2.Pages
 
             try
             {
-                // Check if email or username already exists
                 if (IsEmailOrUsernameExists(customerInfo.email, customerInfo.username))
                 {
                     TempData["FailMessage"] = "Email or username already exists!";
                     return Page();
                 }
 
-                // Generate a verification code
                 string verificationCode = GenerateVerificationCode();
 
-                // MailSEND
                 var email = new MimeMessage();
 
                 email.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
@@ -228,10 +213,7 @@ namespace abakes2.Pages
                 using (var smtp = new SmtpClient())
                 {
                     smtp.Connect("smtp.gmail.com", 465, true);
-
-                    // Note: only needed if the SMTP server requires authentication
                     smtp.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz");
-
                     smtp.Send(email);
                     smtp.Disconnect(true);
                 }
@@ -249,7 +231,6 @@ namespace abakes2.Pages
                         command.Parameters.AddWithValue("@username", customerInfo.username);
                         command.Parameters.AddWithValue("@lname", customerInfo.lname);
                         command.Parameters.AddWithValue("@fname", customerInfo.fname);
-                        // Hash the password before storing it
                         command.Parameters.AddWithValue("@password", BCrypt.Net.BCrypt.HashPassword(customerInfo.password));
                         command.Parameters.AddWithValue("@verificationCode", verificationCode);
 
@@ -304,3 +285,4 @@ namespace abakes2.Pages
         }
     }
 }
+

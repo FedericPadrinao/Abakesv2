@@ -10,10 +10,7 @@ namespace abakes2.Pages
         public List<NotificationInfo> listNotifications = new List<NotificationInfo>();
         public int NotificationCount { get; set; } // Property to store notification count
         public CustomerInfo customerInfo = new CustomerInfo();
-        
-
-        
-
+        public bool IsRead { get; set; }
         public String userconfirm = "";
         public String errorMessage = "";
         public String statusconfirm = "";
@@ -44,7 +41,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "select * from Notification where status = 'true'";
+                    string sql = "SELECT * FROM Notification WHERE status = 'true' ORDER BY DateCreated DESC";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -73,15 +70,23 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "select * from PrivateNotification where status = 'true' AND username = '" + userconfirm + "'";
+                    string sql = "SELECT * FROM PrivateNotification WHERE status = 'true' AND username = @username ORDER BY DateCreated DESC";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                        command.Parameters.AddWithValue("@username", userconfirm);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
                                 PrivateNotifInfo pni = new PrivateNotifInfo();
                                 NotificationInfo notificationInfo = new NotificationInfo();
+                                pni.IsRead = reader.GetFieldValue<bool>(reader.GetOrdinal("isRead"));
+
+                                if (!pni.IsRead)
+                                {
+                                    NotificationCount++; // Increment NotificationCount only for unread private notifications
+                                }
+
                                 pni.NotifID = reader.GetFieldValue<int>(reader.GetOrdinal("NotificationID"));
                                 pni.NotifName = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
                                 pni.NotifTitle = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationTitle"));
@@ -89,14 +94,27 @@ namespace abakes2.Pages
                                 pni.NotifImg = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationImage"));
                                 pni.DateCreated = reader.GetFieldValue<string>(reader.GetOrdinal("DateCreated"));
                                 listPrivateNotifInfo.Add(pni);
+                            }
 
-                                NotificationCount = listNotifications.Count + listPrivateNotifInfo.Count;
+                            // After reading all private notifications, update NotificationCount
+                            int privateNotifCount = listPrivateNotifInfo.Count(pni => !pni.IsRead);
+
+                            // Subtract count for notifications meeting specific conditions
+                            NotificationCount = listNotifications.Count + privateNotifCount;
+
+                            // Subtract count based on conditions in IsNotificationRead method
+                            foreach (var notification in listNotifications.ToList())
+                            {
+                                if (IsNotificationRead(notification.NotifID, notification.NotifTitle, userconfirm))
+                                {
+                                    NotificationCount--;
+                                }
                             }
                         }
                     }
-                }
+                 }
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                        using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     string sql = "select count(OrderID) from OrderSimple where status = 'true' AND username = '" + userconfirm + "'";
@@ -120,5 +138,92 @@ namespace abakes2.Pages
 
         }
 
+        public IActionResult OnPostMarkAsRead(int notificationId)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "UPDATE PrivateNotification SET isRead = 1 WHERE NotificationID = @notificationId";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@notificationId", notificationId);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+            }
+            return RedirectToPage("/Customer_Notif");
+        }
+
+        public IActionResult OnPostMarkPubAsRead(int notificationId)
+        {
+            try
+            {
+                string currentUsername = HttpContext.Session.GetString("username");
+
+                if (string.IsNullOrEmpty(currentUsername))
+                {
+                    // Handle the case where the username is not available
+                    // Redirect, log, or perform any other necessary action
+                    return RedirectToPage("/Index");
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Retrieve notification details
+                    string selectSql = "SELECT NotificationTitle FROM Notification WHERE NotificationID = @notificationId";
+                    using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
+                    {
+                        selectCommand.Parameters.AddWithValue("@notificationId", notificationId);
+                        string notificationTitle = selectCommand.ExecuteScalar()?.ToString();
+
+                        // Insert into ReadPublicNotif table
+                        string insertSql = "INSERT INTO ReadPublicNotif (username, NotificationID, NotificationTitle) VALUES (@username, @notificationId, @notificationTitle)";
+                        using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
+                        {
+                            insertCommand.Parameters.AddWithValue("@username", currentUsername);
+                            insertCommand.Parameters.AddWithValue("@notificationId", notificationId);
+                            insertCommand.Parameters.AddWithValue("@notificationTitle", notificationTitle);
+
+                            insertCommand.ExecuteNonQuery();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+                // Handle the exception or log it as needed
+            }
+
+            return RedirectToPage("/Customer_Notif");
+        }
+
+
+        public bool IsNotificationRead(int notificationId, string notificationTitle, string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = "SELECT COUNT(*) FROM ReadPublicNotif WHERE Username = @username AND NotificationID = @notificationId AND NotificationTitle = @notificationTitle";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@notificationId", notificationId);
+                    command.Parameters.AddWithValue("@notificationTitle", notificationTitle);
+
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
     }
 }
+
