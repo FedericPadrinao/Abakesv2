@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public List<Products> listProduct = new List<Products>();
         public List<UserInfo> userInfo = new List<UserInfo>();
         public int pdID = 0;
-        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net;Initial Catalog=drt6diqvzxczvbi;User ID=uhsk2j20jhg6qgk;Password=***********";
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";

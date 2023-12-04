@@ -6,7 +6,7 @@ namespace abakes2.Pages
 {
     public class Admin_ChangePasswordModel : PageModel
     {
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net;Initial Catalog=drt6diqvzxczvbi;User ID=uhsk2j20jhg6qgk;Password=***********";
 
         public string username { get; set; }
         public string userconfirm = "";

@@ -15,7 +15,7 @@ namespace abakes2.Pages
     {
         public List<code> codeList = new List<code>();
         public string userconfirm = "";
-        public String connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public String connectionProvider = "Data Source=eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net;Initial Catalog=drt6diqvzxczvbi;User ID=uhsk2j20jhg6qgk;Password=***********";
 
         public void OnGet()
         {

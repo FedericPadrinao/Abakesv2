@@ -19,7 +19,7 @@ namespace abakes2.Pages
         public int pubnotifCount = 0;
         public int cartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net;Initial Catalog=drt6diqvzxczvbi;User ID=uhsk2j20jhg6qgk;Password=***********";
         public int NotificationCount { get; set; } // Property to store notification count
         public IndexModel(ILogger<IndexModel> logger)
         {
