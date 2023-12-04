@@ -19,7 +19,7 @@ namespace abakes2.Pages
         public int pubnotifCount = 0;
         public int cartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionString = "Data Source=eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net;Initial Catalog=drt6diqvzxczvbi;User ID=uhsk2j20jhg6qgk;Password=***********";
+        public string connectionString = "Server=tcp:eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net,1433;Initial Catalog=drt6diqvzxczvbi;Persist Security Info=False;User ID=uhsk2j20jhg6qgk;Password=3CZlMPeUY7D3yleRYezMeodZ2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public int NotificationCount { get; set; } // Property to store notification count
         public IndexModel(ILogger<IndexModel> logger)
         {
