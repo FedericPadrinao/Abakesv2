@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
@@ -101,18 +101,27 @@ namespace abakes2.Pages
             {
                 if (x > 0)
                 {
-                    if (!password.Equals(pass))
-                    {
+                    if (password.Equals(pass)){
+                        HttpContext.Session.SetString("username", username);
+                        HttpContext.Session.SetString("userimage", userimage);
+                        HttpContext.Session.SetString("userstatus", userstatus);
+
+                        return RedirectToPage("/AdminDashboard");
+                    }
+                    else if (BCrypt.Net.BCrypt.Verify(password, pass)) {
+                        HttpContext.Session.SetString("username", username);
+                        HttpContext.Session.SetString("userimage", userimage);
+                        HttpContext.Session.SetString("userstatus", userstatus);
+
+                        return RedirectToPage("/AdminDashboard");
+
+                    }
+
+                    else {
                         TempData["FailMessage"] = "Invalid Credentials!";
                         errorMessage = "Invalid Credentials!";
                         return Page();
                     }
-
-                    HttpContext.Session.SetString("username", username);
-                    HttpContext.Session.SetString("userimage", userimage);
-                    HttpContext.Session.SetString("userstatus", userstatus);
-
-                    return RedirectToPage("/AdminDashboard");
                 }
                 else
                 {

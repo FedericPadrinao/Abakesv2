@@ -16,7 +16,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             String id = Request.Query["Id"];

@@ -1,19 +1,15 @@
-// ... (existing using statements)
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
-using Org.BouncyCastle.Asn1.Ocsp;
 using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
     public class Admin_ChangePasswordModel : PageModel
     {
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public string username { get; set; }
         public string userconfirm = "";
-
 
         public IActionResult OnPost()
         {
@@ -22,8 +18,12 @@ namespace abakes2.Pages
             string newPassword = Request.Form["newPassword"];
             string confirmNewPassword = Request.Form["confirmNewPassword"];
 
-            // Assume admin credentials are already validated during login.
-            // You may have a session or some other mechanism to ensure this.
+            // Ensure that the current password and stored password match
+            if (!CheckCurrentPassword(userconfirm, currentPassword))
+            {
+                TempData["FailMessage"] = "Invalid current password.";
+                return Page();
+            }
 
             // Check if the new password and confirm password match
             if (newPassword != confirmNewPassword)
@@ -32,10 +32,36 @@ namespace abakes2.Pages
                 return Page();
             }
 
-            // Change the admin's password
+            // If all conditions are met, change the password
             ChangePassword(currentPassword, newPassword);
 
             return RedirectToPage("/Admin_ChangePassSucc");
+        }
+
+        // Method to check if the current password matches the stored password
+        private bool CheckCurrentPassword(string username, string currentPassword)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "SELECT password FROM LoginSample WHERE username = @username";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@username", username);
+                        string storedPassword = (string)command.ExecuteScalar();
+
+                        return !string.IsNullOrEmpty(storedPassword) && ((currentPassword == storedPassword) || BCrypt.Net.BCrypt.Verify(currentPassword, storedPassword));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["FailMessage"] = ex.Message;
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         // Method to change the admin's password in the database
@@ -52,7 +78,7 @@ namespace abakes2.Pages
                         command.Parameters.AddWithValue("@userconfirm", userconfirm);
                         string storedPassword = (string)command.ExecuteScalar();
 
-                        if (!string.IsNullOrEmpty(storedPassword) && BCrypt.Net.BCrypt.Verify(currentPassword, storedPassword))
+                        if (!string.IsNullOrEmpty(storedPassword) && ((currentPassword == storedPassword) || BCrypt.Net.BCrypt.Verify(currentPassword, storedPassword)))
                         {
                             sql = "UPDATE LoginSample SET password = @newPassword WHERE username = @userconfirm";
                             command.Parameters.Clear();
