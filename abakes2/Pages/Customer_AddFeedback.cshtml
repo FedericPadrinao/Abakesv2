@@ -217,9 +217,11 @@
                                                         <h4 style="text-align:left;">Security Code:</h4>
                                                     <input type="text" id="seccode" name="securitycode" required class="form-control" />
                                                 </div>
-                                            </div>
-                                            <br />
-                                            <span style="color: red;">@Model.errorMessage</span>
+                                            </div> 
+                                             @if (TempData["ErrorMessageProfile"] != null)
+                                                {
+                                                    <div class="alert alert-danger">@TempData["ErrorMessageProfile"]</div>
+                                                }
                                         </div>
                                         <div class="content">
                                         </div>
@@ -231,7 +233,7 @@
                                             <div class="col-sm-12">
                                                     <h4 style="text-align:left;">Message:</h4>
                                                 <div class="content">
-                                                    <textarea id="message" name="textmessage" rows="5" minlength="25" maxlength="200" required class="form-control"></textarea>
+                                                    <textarea id="message" name="textmessage" rows="5" minlength="10" maxlength="200" required class="form-control"></textarea>
                                                 </div>
                                                 <div class="btnfeedback"></div>
                                                 <a class='btn btn-dark btn-sm btn-blue' href="/Index"> Back </a>

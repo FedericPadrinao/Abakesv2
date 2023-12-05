@@ -163,7 +163,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-content">
-
+                        @if (Model.threeEmpty == 1 && Model.simpleEmpty == 1)
+                        {
+                            <script>
+                                window.location.href = '/Customer_OrderStatus_NoOrder';
+                             </script>
+                        }
                         <h2>Cart</h2>
                     </div>
                 </div>

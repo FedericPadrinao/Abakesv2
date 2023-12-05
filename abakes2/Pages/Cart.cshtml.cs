@@ -11,14 +11,15 @@ namespace abakes2.Pages
         public OrderSimpleInfo os = new OrderSimpleInfo();
         public Order3DForm order3D = new Order3DForm();
         public String userconfirm = "";
-        public string connectionProvider = "Server=tcp:eu-az-sql-serv8c295e6a1afc4f69be52fd159aeb63da.database.windows.net,1433;Initial Catalog=drt6diqvzxczvbi;Persist Security Info=False;User ID=uhsk2j20jhg6qgk;Password=3CZlMPeUY7D3yleRYezMeodZ2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
         public int TotalCart = 0;
         public int cartcount = 0;
         public String imgconfirm = "";
         public String statusconfirm = "";
-
+        public int simpleEmpty = 0;
+        public int threeEmpty = 0;
         public int pubnotifCount = 0;
         public int notifCount = 0;
         public int pnotifCount = 0;
@@ -39,25 +40,34 @@ namespace abakes2.Pages
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (!reader.HasRows)
                             {
+                                simpleEmpty++;
                                 
+                                Console.WriteLine("No orders found for user: " + simpleEmpty);
+                            }
+                            else
+                            {
+                                while (reader.Read())
+                                {
 
 
-                                os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
-                                os.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-                                os.osOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
-                                os.osShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
-                                os.osTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
-                                os.osFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
-                                os.osSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
-                                os.osInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
-                                os.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
-                                os.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-                                os.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-                               
 
+                                    os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
+                                    os.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
+                                    os.osOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
+                                    os.osShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
+                                    os.osTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
+                                    os.osFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
+                                    os.osSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
+                                    os.osInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                    os.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
+                                    os.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
+                                    os.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
 
+                                  
+
+                                }
                             }
                         }
                     }
@@ -314,19 +324,29 @@ namespace abakes2.Pages
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            while (reader.Read())
+                            if (!reader.HasRows)
+                            {
+                                threeEmpty++;
+                                Console.WriteLine("No orders found for 3duser: " + threeEmpty);
+                            }
+                            else
                             {
 
 
-
-                                order3D.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
-                                order3D.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
-                                order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
-                                order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
-                                order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                                while (reader.Read())
+                                {
 
 
 
+                                    order3D.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
+                                    order3D.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
+                                    order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                    order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
+                                    order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+
+
+
+                                }
                             }
                         }
                     }

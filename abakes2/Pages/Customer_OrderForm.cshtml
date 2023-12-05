@@ -193,28 +193,28 @@
                     <!--Shapes-->
                     <h3>Shapes:</h3>
                     <label class="form-check-label" for="round">‌‌ ‌ ‌ Round</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="round" name="shapes" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="round" name="shapes" required/>
                     <label class="form-check-label" for="square">Square</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="square" name="shapes" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="square" name="shapes" required />
                     <label class="form-check-label" for="heart">Heart</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="heart" name="shapes" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="heart" name="shapes" required />
                     <label class="form-check-label" for="othershape">Others</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="othershape" name="shapes" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="othershape" name="shapes" required />
                     <br />
                     <!--Tier-->
                     <h3>Tier:</h3>
                     <label class="form-check-label" for="tier1">‌‌ ‌ ‌ 1 Tier</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="tier1" name="tier" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="tier1" name="tier" required />
                     <label class="form-check-label" for="tier2">2 Tiers</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="tier2" name="tier" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="tier2" name="tier" required />
                     <label class="form-check-label" for="tier3">3 Tiers</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="tier3" name="tier" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="tier3" name="tier" required />
                     <label class="form-check-label" for="othertier">Others</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="othertier" name="tier" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="othertier" name="tier" required />
                     <br /><br />
                     <!--Flavor-->
                     <label for="flavors"><h3>Cake Flavors‌: ‌ ‌ </h3></label>
-                    <select name="flavors" id="flavors">
+                    <select name="flavors" id="flavors" required>
                         <option value="matcha">Matcha</option>
                         <option value="strawberry">Strawberry</option>
                         <option value="vanilla">Vanilla</option>
@@ -224,7 +224,7 @@
                     <br /><br />
                     <!--Size-->
                     <label for="sizes"><h3>Cake Size‌‌: ‌ ‌ ‌‌ ‌ ‌ ‌‌ </h3></label>
-                    <select name="sizes" id="cakesize">
+                    <select name="sizes" id="cakesize" required>
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
@@ -234,17 +234,17 @@
                     <!--Delivery Type-->
                     <h3>Delivery Type:</h3>
                     <label class="form-check-label" for="standdelivery">‌‌ ‌ ‌ Standard Delivery</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="Delivery" name="delivery" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="Delivery" name="delivery" required />
                     <label class="form-check-label" for="pickup">Pick up</label>
-                    <input class="form-check-input" style="height:21px" type="radio" value="Pickup" name="delivery" />
+                    <input class="form-check-input" style="height:21px" type="radio" value="Pickup" name="delivery" required />
                     <label class="form-check-label" for="pickup">Preferred Delivery/Pickup</label>
-                    <input style="height:21px" type="date" name="preferred" />
+                    <input style="height:21px" type="date" name="preferred" required />
                     <!--Dedication-->
                     <h3>Dedication:</h3> 
-                    <input type="text" name="dedication" />
+                    <input type="text" name="dedication" required />
                     <!--Special Instructions-->
                     <h3>Special Instructions:</h3>
-                    <textarea name="special_instructions" id="specinst" ></textarea>
+                    <textarea name="special_instructions" id="specinst" required ></textarea>
                     <div style="padding:30px 20px; margin:2px;">
                         <button type="submit" class="btn" >Confirm</button>
                     </div>
