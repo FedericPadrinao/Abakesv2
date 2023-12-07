@@ -181,3 +181,36 @@ ul li .active .uil {
     }
 
 }
+@media (min-width: 768px) and (max-width: 991px) {
+    ul {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+        ul li {
+            flex-direction: row;
+        }
+
+            ul li .progres {
+                margin: 25px 30px;
+            }
+
+    .progres::after {
+        width: 5px;
+        height: 55px;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    .one::after {
+        height: 0;
+    }
+
+    ul li .icon {
+        font-size: 1px;
+        transform: scale(45.5);
+        margin: 0px 155px;
+    }
+}

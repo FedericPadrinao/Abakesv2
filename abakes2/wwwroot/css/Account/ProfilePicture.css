@@ -62,3 +62,9 @@ h1 {
         left: 0%;
     }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+    .profile-pic-div {
+        top: 50%;
+        left: 0%;
+    }
+}
