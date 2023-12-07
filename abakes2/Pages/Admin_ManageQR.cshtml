@@ -118,7 +118,12 @@
 
             <div class="admin-table">
                 <button type="submit" class="btn" style="margin:1%;">Search</button>
-                <a type="submit" asp-page-handler="Generate" class="btn" style="margin:1%;">Generate</a>
+                <form method="post" asp-page-handler="Generate">
+                    <input type="number" placeholder="Enter Discount" name="DiscountCoupon" max="100" required> 
+                     <button type="submit" class="btn" style="margin:1%;">Generate</button>
+                </form>
+
+               
                 <div class="search">
                     <label for="search"><i class="fas fa-search"></i></label>
                     <input type="text" name="search" placeholder="Search for Codes">
@@ -130,6 +135,7 @@
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Generated Code</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Status</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Expiration Date</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Discount</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:45%;">QR Code</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:15%;">Action</th>
                         </tr>
@@ -142,6 +148,7 @@
                                 <td><p>@item.generatedCode</p></td>
                                 <td><p>@item.status</p></td>
                                 <td><p>@item.dateexpiry</p></td>
+                                <td><p>@item.discount%</p></td>
 
                                 <td>
                                     @if (item.status.Equals("true"))

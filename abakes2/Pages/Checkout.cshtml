@@ -173,13 +173,28 @@
             <div class="col-md-6">
                 <div class="row mb-5">
                     <div class="col-md-12">
-                        <h2 class="h3 mb-3 text-black">QR Code</h2>
-                        
+                        <h2 class="h3 mb-3 text-black">QR/Coupon Code</h2>
+                        <div class="p-3 p-lg-5 border">
                             <div class="input-group">
                                 <div class="input-group-append">
-                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 683px;">
+                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">
                                 </div>
+                                
                             </div>
+                            <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
+                            
+                            <div class="input-group">
+                                <form method="post" asp-page-handler="Discount">
+
+                               
+                                <input type="text" name="coupon" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2"  >
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit" id="button-addon2">Apply</button>
+                                </div>
+                                 </form>
+                            </div>
+                            
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -205,7 +220,9 @@
                                                 <strong>Shapes: </strong> @item.osShapes <br> 
                                                <strong>Tier: </strong>   @item.osTier<br>
                                                 <strong>Color: </strong>  @item.osColor<br>
-                                                <strong>Dedication: </strong>  @item.osDedication <br> 
+                                                <strong>Dedication: </strong>  @item.osDedication <br>
+                                                <strong>Mode of Delivery: </strong>  @item.osDelivery <br> 
+
                                             </td>
                                             <td><strong> PHP @item.osPrice</strong></td>
                                         </tr>
@@ -226,6 +243,7 @@
                                         <td class="text-black font-weight-bold"><strong>Total Price</strong></td>
                                         <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCost</strong></td>
                                     </tr>
+                                    
                                 </tbody>
                             </table>
                                  <!-- Place Order Button -->

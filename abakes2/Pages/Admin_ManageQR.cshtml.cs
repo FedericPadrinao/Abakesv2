@@ -16,7 +16,7 @@ namespace abakes2.Pages
         public List<code> codeList = new List<code>();
         public string userconfirm = "";
         public String connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
-
+       
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
@@ -89,12 +89,13 @@ namespace abakes2.Pages
 
         }
 
-        public IActionResult OnGetGenerate()
+        public void OnPostGenerate()
         {
             var rand = new Random();
             var code = new StringBuilder();
             var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var codeLength = 5;
+            int discount = int.Parse(Request.Form["DiscountCoupon"]);
 
             for (int i = 0; i < codeLength; i++)
             {
@@ -111,21 +112,17 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     String sql2 = "INSERT INTO GenerateCode " +
-                                  "(code,status,date) VALUES " +
-                                  "(@code,@status,@date);";
+                                  "(code,status,date,Discount,avail2D,avail3D) VALUES " +
+                                  "(@code,@status,@date,@discount,@avail2d,@avail3d);";
 
                     using (SqlCommand command = new SqlCommand(sql2, connection))
                     {
                         command.Parameters.AddWithValue("@code", maincode);
                         command.Parameters.AddWithValue("@status", "true");
                         command.Parameters.AddWithValue("@date", expiration);
-
-
-
-
-
-
-
+                        command.Parameters.AddWithValue("@discount", discount);
+                        command.Parameters.AddWithValue("@avail2d", "true");
+                        command.Parameters.AddWithValue("@avail3d", "true");
 
                         command.ExecuteNonQuery();
 
@@ -136,12 +133,12 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                return Page();
+                Console.WriteLine("Exception: " + e.Message);
+
             }
 
 
-            return Redirect("/card?maincode=" + maincode);
+           Response.Redirect("/card?maincode=" + maincode);
         }
 
 
@@ -244,7 +241,7 @@ namespace abakes2.Pages
                                 read.generatedCode = reader.GetString(1);
                                 read.status = reader.GetString(2);
                                 read.dateexpiry = reader.GetString(3);
-
+                                read.discount = reader.GetInt32(4);
                                 codeList.Add(read);
 
                             }
@@ -267,6 +264,6 @@ namespace abakes2.Pages
         public string generatedCode;
         public string status;
         public string dateexpiry;
-
+        public int discount;
     }
 }

@@ -26,7 +26,10 @@ namespace abakes2.Pages
         public OrderSimpleInfo os = new OrderSimpleInfo();
         public Order3DForm order3D = new Order3DForm();
         public String statusconfirm = "";
-
+        public int discountCode = 0;
+        public decimal discountedPrice = 0;
+        public int finaldiscountedPrice = 0;
+        public int orderPrice = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
@@ -97,12 +100,12 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Order3DForm WHERE username=@user AND status = 'true' AND OrderID = @orderId";
+                    String sql = "SELECT * FROM Order3DForm WHERE username=@user AND status = 'true'";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("user", userconfirm);
-                        command.Parameters.AddWithValue("@orderID", pdID);
+                       
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -119,6 +122,7 @@ namespace abakes2.Pages
                                 order3D.Color3 = reader.GetString(9);
                                 order3D.status = reader.GetString(11);
                                 order3D.order3DPrice = reader.GetInt32(12);
+                                orderPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
                                 order3D.order3DQuantity = reader.GetInt32(13);
                                 order3D.order3DShip = reader.GetInt32(14);
                                 order3D.order3DDP = reader.GetInt32(15);
@@ -264,7 +268,82 @@ namespace abakes2.Pages
         }
 
 
+        public void OnPostDiscount()
+        {
+            OnGet();
+            string couponcode = Request.Form["coupon"];
+            int checkSec = 0;
+            int percentage = 100;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql2 = "SELECT * FROM GenerateCode WHERE code=@CouponCode AND status='true' AND avail3D='true'";
 
+                    //getting the data based from the pdid variable
+                    using (SqlCommand command = new SqlCommand(sql2, connection))
+                    {
+                        command.Parameters.AddWithValue("@CouponCode", couponcode);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                checkSec++;
+                                discountCode = reader.GetFieldValue<int>(reader.GetOrdinal("Discount"));
+
+                                discountedPrice = ((decimal)discountCode / percentage) * orderPrice;
+                                finaldiscountedPrice = (int)Math.Round(discountedPrice);
+
+                            }
+                        }
+                    }
+
+                    Console.WriteLine("Coupon" + discountCode + "discountedPrice" + discountedPrice + "finaldiscountedPrice" + finaldiscountedPrice + "OrderPrice" + orderPrice);
+                    Console.WriteLine("check" + checkSec);
+                    if (checkSec > 0)
+                    {
+
+
+                        string sql3 = "update GenerateCode set avail3D='false' where code='" + couponcode + "'";
+
+                        using (SqlCommand command = new SqlCommand(sql3, connection))
+                        {
+
+                            command.ExecuteNonQuery();
+                        }
+
+                        string sql4 = "update Order3DForm set OrderPrice=@discountedPrice WHERE username = @username AND status = 'true'";
+
+                        using (SqlCommand command = new SqlCommand(sql4, connection))
+                        {
+                            command.Parameters.AddWithValue("@username", userconfirm);
+                            command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
+                            command.ExecuteNonQuery();
+                        }
+
+
+                    }
+                    else
+                    {
+                        errorMessage = "The code you used is invalid or has expired!";
+                        TempData["errorMessageProfile"] = errorMessage;
+                        Response.Redirect("/Checkout3D");
+                    }
+
+
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Response.Redirect("/Checkout3D");
+            }
+
+            Response.Redirect("/Checkout3D");
+        }
 
         public void OnGet()
         {
