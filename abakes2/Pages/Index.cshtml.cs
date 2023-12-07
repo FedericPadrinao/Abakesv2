@@ -220,6 +220,7 @@ namespace abakes2.Pages
         public string order3DPreferredD = "";
         public string order3DExpectedD = "";
         public string order3DExpectedT = "";
+        public string order3DDateCreated = "";
         public string order3Dstatus = "";
         public string receipt = "";
         public string paymentMethod = "";

@@ -4,8 +4,9 @@ using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
-    public class Customer_InvoiceModel : PageModel
+    public class Customer_Invoice3DModel : PageModel
     {
+        public string FormattedDateTime { get; set; }
         public string userconfirm = "";
         public String statusconfirm = "";
         public string imgconfirm = "";
@@ -13,8 +14,8 @@ namespace abakes2.Pages
         public String successMessage = "";
         public int TotalCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
-        public string FormattedDateTime { get; set; }
-        public InvoiceInfo invoiceInfo = new InvoiceInfo();
+        
+        public Order3DForm order3d = new Order3DForm();
         public CustomerInfo customerInfo = new CustomerInfo();
         public void OnGet()
         {
@@ -38,29 +39,23 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                invoiceInfo.invoiceID = reader.GetInt32(0);
-                                invoiceInfo.invoiceOccasion = reader.GetString(2);
-                                invoiceInfo.invoiceShapes = reader.GetString(3);
-                                invoiceInfo.invoiceTier = reader.GetString(4);
-                                invoiceInfo.invoiceFlavors = reader.GetString(5);
-                                invoiceInfo.invoiceSizes = reader.GetString(6);
-                                invoiceInfo.invoiceInstruction = reader.GetString(7);
-                                invoiceInfo.invoiceDelivery = reader.GetString(8);
-                                invoiceInfo.status = reader.GetString(9);
-                                invoiceInfo.invoicePrice = reader.GetInt32(10);
-                                invoiceInfo.invoiceQuantity = reader.GetInt32(11);
-                                invoiceInfo.invoiceShip = reader.GetInt32(12);
-                                invoiceInfo.invoiceDP = reader.GetInt32(13);
-                                invoiceInfo.invoicePreferredD = reader.GetString(14);
-                                invoiceInfo.invoiceExpectedD = reader.GetString(15);
-                                invoiceInfo.invoiceExpectedT = reader.GetString(16);
-                                invoiceInfo.invoiceColor = reader.GetString(17);
-                                invoiceInfo.invoiceDedication = reader.GetString(18);
-                                invoiceInfo.invoiceDateCreated = reader.GetString(19);
-                                invoiceInfo.orderStatus = reader.GetString(20);
-                                invoiceInfo.receipt = reader.GetString(21);
-                                invoiceInfo.paymentMethod = reader.GetString(22);
-                                TotalCost = invoiceInfo.invoiceDP + invoiceInfo.invoicePrice + invoiceInfo.invoiceShip;
+                                order3d.ModelID = reader.GetInt32(0);
+
+                                order3d.instructions = reader.GetString(10);
+                                order3d.status = reader.GetString(11);
+                                order3d.order3DPrice = reader.GetInt32(12);
+                                order3d.order3DQuantity = reader.GetInt32(13);
+                                order3d.order3DShip = reader.GetInt32(14);
+                                order3d.order3DDP = reader.GetInt32(15);
+                                order3d.order3DPreferredD = reader.GetString(16);
+                                order3d.order3DExpectedD = reader.GetString(17);
+                                order3d.order3DExpectedT = reader.GetString(18);
+                                order3d.ModelType = reader.GetString(19);
+                                order3d.order3DDateCreated = reader.GetString(20);
+                                order3d.receipt = reader.GetString(22);
+                                order3d.paymentMethod = reader.GetString(23);
+                                order3d.order3DDelivery = reader.GetString(24);
+                                TotalCost = order3d.order3DDP + order3d.order3DPrice + order3d.order3DShip;
                             }
                         }
                     }
@@ -103,7 +98,6 @@ namespace abakes2.Pages
             {
                 errorMessage = ex.Message;
             }
-            // Get the current date and time
             DateTime now = DateTime.Now;
 
             // Format the date and time
