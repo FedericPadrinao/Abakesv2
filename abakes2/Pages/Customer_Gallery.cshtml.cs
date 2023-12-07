@@ -17,6 +17,8 @@ namespace abakes2.Pages
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
         public string spageid;
@@ -205,6 +207,22 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
