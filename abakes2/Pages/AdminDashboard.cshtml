@@ -114,17 +114,8 @@
 
                 <div class="card">
                     <div class="card-content">
-                        <div class="number">42</div>
-                        <div class="card-name">Sales</div>
-                    </div>
-                    <div class="icon-box">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="number">68</div>
-                        <div class="card-name">Average Rating</div>
+                        <div class="number">@Model.feedbackrating</div>
+                        <div class="card-name">Average Service Rating</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-star"></i>
@@ -132,7 +123,7 @@
                 </div>
                 <div class="card">
                     <div class="card-content">
-                        <div class="number">₱46,500</div>
+                        <div class="number">PHP @Model.totalearnings</div>
                         <div class="card-name">Earnings</div>
                     </div>
                     <div class="icon-box">
@@ -161,6 +152,42 @@
                     <div class="card-content">
                         <div class="number">@Model.simplepending</div>
                         <div class="card-name">Pending Simple Orders</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-clipboard"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.threepending</div>
+                        <div class="card-name">Pending 3D Orders</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-clipboard"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.threesimplecount</div>
+                        <div class="card-name">Approved 3D Orders</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-clipboard"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.totalpendingpayment</div>
+                        <div class="card-name">Incomplete Payment</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-clipboard"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.totalcompleteorder</div>
+                        <div class="card-name">Completed Orders</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-clipboard"></i>

@@ -27,7 +27,7 @@ namespace abakes2.Pages
         public Order3DForm order3D = new Order3DForm();
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void GetProducts()
