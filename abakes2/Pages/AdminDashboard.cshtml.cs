@@ -14,7 +14,7 @@ namespace abakes2.Pages
         public int usercount = 0;
         public int ordersimplecount = 0;
         public int simplepending = 0;
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
@@ -101,6 +101,70 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     string sql = "SELECT flavors, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order' GROUP BY flavors";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            List<int> data = new List<int>();
+                            List<string> labels = new List<string>();
+
+                            while (reader.Read())
+                            {
+                                labels.Add(reader.GetString(0));
+                                data.Add(reader.GetInt32(1));
+                            }
+
+                            return new JsonResult(new { labels, data });
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { error = e.Message });
+            }
+        }
+
+        public JsonResult OnGetGetShapeData()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "SELECT shapes, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order' GROUP BY shapes";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            List<int> data = new List<int>();
+                            List<string> labels = new List<string>();
+
+                            while (reader.Read())
+                            {
+                                labels.Add(reader.GetString(0));
+                                data.Add(reader.GetInt32(1));
+                            }
+
+                            return new JsonResult(new { labels, data });
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { error = e.Message });
+            }
+        }
+
+        public JsonResult OnGetGetOccasionData()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "SELECT occasion, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order' GROUP BY occasion";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())

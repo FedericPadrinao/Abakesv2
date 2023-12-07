@@ -168,16 +168,22 @@
                 </div>
             </div>
             <div class="charts">
-                <div class="chart">
-                    <h2>Earnings (past 12 months)</h2>
-                    <div>
-                        <canvas id="lineChart"></canvas>
-                    </div>
-                </div>
                 <div class="chart doughnut-chart">
                     <h2>Cake Flavors</h2>
                     <div>
                         <canvas id="doughnut" data-url="@Url.Page("AdminDashboard", "GetFlavorData")"></canvas>
+                    </div>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h2>Cake Shapes</h2>
+                    <div>
+                        <canvas id="doughnut2" data-url="@Url.Page("AdminDashboard", "GetShapeData")"></canvas>
+                    </div>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h2>Occasions for Cakes</h2>
+                    <div>
+                        <canvas id="doughnut3" data-url="@Url.Page("AdminDashboard", "GetOccasionData")"></canvas>
                     </div>
                 </div>
             </div>
@@ -186,6 +192,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script src="~/js/AdminDashboardjs/chart1.js"></script>
     <script src="~/js/AdminDashboardjs/chart2.js"></script>
+    <script src="~/js/AdminDashboardjs/chart3.js"></script>
+    <script src="~/js/AdminDashboardjs/chart4.js"></script>
 </body>
 
 </html>
