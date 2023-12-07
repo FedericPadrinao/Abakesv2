@@ -10,7 +10,7 @@ namespace abakes2.Pages
         public String imgconfirm = "";
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
 
         public int notifCount = 0;
         public int pnotifCount = 0;

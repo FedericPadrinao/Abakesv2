@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public List<Feedbacks> listFeedback = new List<Feedbacks>();
         public List<UserInfo> userInfo = new List<UserInfo>();
         public int fbID = 0;
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";

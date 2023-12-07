@@ -247,6 +247,34 @@ header {
 		}
 
 
+@media (min-width: 360px) {
+	.rating {
+		letter-spacing: .4rem;
+	}
+}
+@media (min-width: 390px) {
+	.rating {
+		letter-spacing: 0.9rem;
+	}
+}
+@media (min-width: 410px) {
+	.rating {
+		letter-spacing: 1.2rem;
+	}
+}
+@media (min-width: 415px) {
+	.rating {
+		letter-spacing: 1.5rem;
+	}
+}
+@media (min-width: 991px) {
+	.rating {
+		letter-spacing: 0.1rem;
+	}
+}
+
+
+
 
 
 .main-banner .container-fluid {
