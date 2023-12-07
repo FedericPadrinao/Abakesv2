@@ -148,13 +148,12 @@
 
 								<td>
 								abakes881@gmail.com<br />
-
+								Customer: @Model.customerInfo.fname @Model.customerInfo.lname
 								</td>
 							</tr>
-							<tr>
-								<td>Customer: @Model.userconfirm</td>
-							</tr>
+							
 						</table>
+						
 					</td>
 				</tr>
 
@@ -171,20 +170,28 @@
 				</tr>
 
 				<tr class="heading">
-					<td>Cake</td>
+					<td>Cake[3D]</td>
 
-					<td>Price</td>
+					<td>Product Price</td>
 				</tr>
 
 				<tr class="item">
 					<td>@Model.order3d.ModelType</td>
-
-					<td>PHP @Model.order3d.order3DPrice</td>
+				
+				<td>PHP @Model.order3d.order3DPrice</td>
 				</tr>
-								<tr class="heading">
-					<td>Item</td>
+				@foreach (var item in @Model.asset3DList)
+				{
+					<tr class="item">
+						<td>@item.AssetName</td>
+						<td></td> 
+					</tr>
+					
+				}
+				<tr class="heading">
+					<td>Breakdown</td>
 
-					<td>Price</td>
+					<td>Total Price</td>
 				</tr>
 
 				<tr class="item">
@@ -199,18 +206,32 @@
 					<td>PHP @Model.order3d.order3DShip</td>
 				</tr>
 
-
-
-				<tr class="total">
+				@if(Model.order3d.netOrder3DPrice == 0){
+					<tr class="total">
 					<td></td>
 
 					<td>PHP @Model.TotalCost</td>
 				</tr>
+			}
+			else
+			{
+				<tr class="item">
+					<td>Discounted Product Price</td>
+
+					<td>PHP @Model.order3d.netOrder3DPrice</td>
+				</tr>
+				<tr class="total">
+					<td>Net Price</td>
+
+					<td>PHP @Model.TotalNetCost</td>
+			</tr>
+			}
+			
 			</table>
 		</div>
 				<div class="buttons-container">
 
-		<a class='btn btn-secondary' href="/Admin_ManageQR">Go Back</a>
+		<a class='btn btn-secondary' href="/Customer_CompleteOrders">Go Back</a>
 		
 		
 		

@@ -25,11 +25,14 @@ namespace abakes2.Pages
         public String successMessage = "";
         public CustomerInfo customerInfo = new CustomerInfo();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
+        public OrderSimpleInfo os = new OrderSimpleInfo();
+
         public String statusconfirm = "";
         //public code codeInfo = new code();
         public int discountCode = 0;
         public decimal discountedPrice = 0;
         public int finaldiscountedPrice = 0;
+        public int TotalNetCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        
 
@@ -106,8 +109,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                OrderSimpleInfo os = new OrderSimpleInfo();
-
+                               
 
                                 os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
                                 os.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
@@ -125,9 +127,11 @@ namespace abakes2.Pages
                                 os.osDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
                                 os.osColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
                                 os.osDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
+                                os.netOrderPrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
                                 listOrderSimple.Add(os);
 
-                                TotalCost = TotalCart + ShippingPrice;
+                                TotalCost = TotalCart + TotalDP + ShippingPrice;
+                                TotalNetCost = os.netOrderPrice + TotalDP + ShippingPrice;
                             }
                         }
                     }
@@ -204,13 +208,14 @@ namespace abakes2.Pages
                                         invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                         invoice.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
                                         invoice.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
-
+                                        invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
+                                        invoice.CouponCode = reader.GetFieldValue<string>(reader.GetOrdinal("Coupon"));
 
                                         using (SqlConnection connectionWrite = new SqlConnection(connectionProvider)) //get the data from the cart
                                         {
                                             connectionWrite.Open();
-                                            string insertsql = "insert into Invoice (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, DateCreated, orderstatus, receipt, PaymentMethod)" +
-                                    "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, @status, @orderprice, @orderquantity, @shippingprice, @downpayment, @preferred, @expecteddelivery, @expectedtime, @color, @dedication, @currentDate, '50% Downpayment', @receipt, @paymentMethod);";
+                                            string insertsql = "insert into Invoice (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, DateCreated, orderstatus, receipt, PaymentMethod,Coupon,NetInvoicePrice)" +
+                                    "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, @status, @orderprice, @orderquantity, @shippingprice, @downpayment, @preferred, @expecteddelivery, @expectedtime, @color, @dedication, @currentDate, '50% Downpayment', @receipt, @paymentMethod,@coupon,@netInvoicePrice);";
                                             using (SqlCommand insertCommand = new SqlCommand(insertsql, connectionWrite))
                                             {
                                                 insertCommand.Parameters.AddWithValue("@username", invoice.invoiceUsername);
@@ -234,7 +239,9 @@ namespace abakes2.Pages
                                                 insertCommand.Parameters.AddWithValue("@currentDate", currentDate);
                                                 insertCommand.Parameters.AddWithValue("@receipt", "img/Account/" + fileName);
                                                 insertCommand.Parameters.AddWithValue("@paymentMethod", paymentMethod);
-                                                // Add more parameters as needed
+                                                insertCommand.Parameters.AddWithValue("@coupon", invoice.CouponCode);
+                                                insertCommand.Parameters.AddWithValue("@netInvoicePrice", invoice.NetInvoicePrice);
+                  
 
                                                 insertCommand.ExecuteNonQuery();
                                             }
@@ -337,11 +344,12 @@ namespace abakes2.Pages
                                 command.ExecuteNonQuery();
                             }
                         
-                        string sql4 = "update OrderSimple set OrderPrice=@discountedPrice WHERE username = @username AND status = 'true'";
+                        string sql4 = "update OrderSimple set NetOrderPrice=@discountedPrice,Coupon=@coupon WHERE username = @username AND status = 'true'";
 
                             using (SqlCommand command = new SqlCommand(sql4, connection))
                             {
                                 command.Parameters.AddWithValue("@username", userconfirm);
+                                command.Parameters.AddWithValue("@coupon", couponcode);
                                 command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
                                 command.ExecuteNonQuery();
                             }

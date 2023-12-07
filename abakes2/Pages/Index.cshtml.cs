@@ -224,7 +224,8 @@ namespace abakes2.Pages
         public string order3Dstatus = "";
         public string receipt = "";
         public string paymentMethod = "";
-
+        public string order3DCoupon = "";
+        public int netOrder3DPrice = 0;
     }
 
     public class OrderSimpleInfo
@@ -248,6 +249,8 @@ namespace abakes2.Pages
         public string osExpectedT = "";
         public string osColor = "";
         public string osDedication = "";
+        public string osCoupon = "";
+        public int netOrderPrice = 0;
     }
 
     public class InvoiceInfo
@@ -275,6 +278,8 @@ namespace abakes2.Pages
         public string orderStatus = "";
         public string receipt = "";
         public string paymentMethod = "";
+        public string CouponCode = "";
+        public int NetInvoicePrice = 0;
     }
     public class Feedbacks
     {

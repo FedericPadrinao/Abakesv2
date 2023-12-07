@@ -97,6 +97,17 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
                                 invoiceInfo.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                 invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+
+                                invoiceInfo.invoiceOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
+                                invoiceInfo.invoiceShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
+                                invoiceInfo.invoiceTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
+                                invoiceInfo.invoiceFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
+                                invoiceInfo.invoiceSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
+                                invoiceInfo.invoiceDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
+                               
+                                invoiceInfo.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
+                                invoiceInfo.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
+                               
                             }
                         }
                     }

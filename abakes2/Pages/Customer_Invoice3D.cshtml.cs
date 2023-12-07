@@ -13,10 +13,12 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String successMessage = "";
         public int TotalCost = 0;
+        public int TotalNetCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         
         public Order3DForm order3d = new Order3DForm();
         public CustomerInfo customerInfo = new CustomerInfo();
+        public List<Asset3DForm> asset3DList = new List<Asset3DForm>();
         public void OnGet()
         {
             String id = Request.Query["Id"];
@@ -30,7 +32,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Invoice WHERE InvoiceID=@id ";
+                    String sql = "SELECT * FROM Order3DForm WHERE OrderID=@id ";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -55,7 +57,32 @@ namespace abakes2.Pages
                                 order3d.receipt = reader.GetString(22);
                                 order3d.paymentMethod = reader.GetString(23);
                                 order3d.order3DDelivery = reader.GetString(24);
+                                order3d.netOrder3DPrice = reader.GetInt32(26);
+                                TotalNetCost = order3d.netOrder3DPrice + order3d.order3DDP + order3d.order3DShip;
                                 TotalCost = order3d.order3DDP + order3d.order3DPrice + order3d.order3DShip;
+                            }
+                        }
+                    }
+
+
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM Asset3DForm WHERE OrderID=@id ";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Asset3DForm asset = new Asset3DForm();
+                                asset.AssetName = reader.GetString(3);
+
+                                asset3DList.Add(asset);
                             }
                         }
                     }

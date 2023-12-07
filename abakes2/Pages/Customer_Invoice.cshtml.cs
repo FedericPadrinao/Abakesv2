@@ -12,6 +12,7 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String successMessage = "";
         public int TotalCost = 0;
+        public int TotalNetCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public string FormattedDateTime { get; set; }
         public InvoiceInfo invoiceInfo = new InvoiceInfo();
@@ -60,6 +61,9 @@ namespace abakes2.Pages
                                 invoiceInfo.orderStatus = reader.GetString(20);
                                 invoiceInfo.receipt = reader.GetString(21);
                                 invoiceInfo.paymentMethod = reader.GetString(22);
+                                invoiceInfo.CouponCode = reader.GetString(23);
+                                invoiceInfo.NetInvoicePrice = reader.GetInt32(24);
+                                TotalNetCost = invoiceInfo.NetInvoicePrice + invoiceInfo.invoiceDP + invoiceInfo.invoiceShip;
                                 TotalCost = invoiceInfo.invoiceDP + invoiceInfo.invoicePrice + invoiceInfo.invoiceShip;
                             }
                         }

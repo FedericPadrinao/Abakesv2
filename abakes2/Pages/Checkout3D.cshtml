@@ -217,52 +217,56 @@
                                             <td>
                                              
                                                 <strong>Cake Details: </strong> @Model.order3D.ModelType<br>
-                                                        @Model.os.osSizes<br>
-                                                       @Model.os.osShapes <br> 
-                                                       @Model.os.osOccasion<br>
-                                                       @Model.os.osColor<br>
-                                                         @Model.os.osDedication <br> 
+                                                 @foreach (var item in @Model.asset3DList)
+				                                {   
+						                             @item.AssetName<br/>
+				                                }     
                                             </td>
                                             
-                                                @if (Model.os.osPrice == 0){
+                                               
                                                    <td><strong> PHP @Model.order3D.order3DPrice </strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osPrice </strong> </td>
-                                                }
+                                               
+                                               
                                         </tr>
-                                    
+                                     <tr>
+                                        <td class="text-black font-weight-bold"><strong>Product Price</strong></td>
+                                        <td><strong> PHP @Model.order3D.order3DPrice </strong> </td>   
+                                    </tr>
                                     <tr>
-                                        <td class="text-black font-weight-bold"><strong>Downpayment</strong></td>
-                                        @if (Model.os.osDP == 0){
-                                                   <td class="text-black"> <strong>PHP @Model.order3D.order3DDP</strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osDP </strong> </td>
-                                                }
+                                        <td class="text-black font-weight-bold"><strong>50% Downpayment</strong></td>         
+                                        <td class="text-black"> <strong>PHP @Model.order3D.order3DDP</strong> </td>
+                                       
+                                          
                                         
                                     </tr>
-                                    <tr>
-                                        <td class="text-black font-weight-bold"><strong>Product Price</strong></td>
-                                        @if (Model.os.osPrice == 0){
-                                                   <td><strong> PHP @Model.order3D.order3DPrice </strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osPrice </strong> </td>
-                                                }
-                                    </tr>
+                                   
                                     <tr>
                                         <td class="text-black font-weight-bold"><strong>Shipping Fee</strong></td>
-                                        @if (Model.os.osShip == 0){
+                                        
                                                    <td><strong> PHP @Model.order3D.order3DShip </strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osShip </strong> </td>
-                                                }
+            
                                     </tr>
-                                    <tr>
+                                    
+                                    @if (Model.order3D.netOrder3DPrice == 0)
+                                    {
+                                         <tr>
                                         <td class="text-black font-weight-bold"><strong>Total Price</strong></td>
                                         <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCost</strong></td>
+                                         </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                         <td class="text-black font-weight-bold"><strong>Discounted Product Price</strong></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.order3D.netOrder3DPrice</strong></td>
+                                        </tr>
+                                        <tr>
+                                         <td class="text-black font-weight-bold"><strong>Net Price</strong><small>(Discounted Product Price + Shipping + Downpayment)</small></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.TotalNetCost</strong></td>
+                                        </tr>
+                                        
+                                    }
+                                    
                                     </tr>
                                 </tbody>
                             </table>

@@ -228,21 +228,40 @@
                                         </tr>
                                     }
                                     <tr>
-                                        <td class="text-black font-weight-bold"><strong>Total Downpayment</strong></td>
-                                        <td class="text-black"> <strong>PHP @Model.TotalDP</strong> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-black font-weight-bold"><strong>Total Product</strong></td>
+                                        <td class="text-black font-weight-bold"><strong>Gross Product</strong></td>
                                         <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCart</strong></td>
                                     </tr>
+                                    <tr>
+                                        <td class="text-black font-weight-bold"><strong>50% Downpayment</strong></td>
+                                        <td class="text-black"> <strong>PHP @Model.TotalDP</strong> </td>
+                                    </tr>
+                                    
                                     <tr>
                                         <td class="text-black font-weight-bold"><strong>Shipping Fee</strong></td>
                                         <td class="text-black"> <strong>PHP @Model.ShippingPrice</strong></td>
                                     </tr>
-                                    <tr>
+                                   
+                                        
+                                        @if (Model.os.netOrderPrice == 0)
+                                    {
+                                         <tr>
                                         <td class="text-black font-weight-bold"><strong>Total Price</strong></td>
                                         <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCost</strong></td>
-                                    </tr>
+                                         </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                         <td class="text-black font-weight-bold"><strong>Discounted Product Price</strong></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.os.netOrderPrice</strong></td>
+                                        </tr>
+                                        <tr>
+                                         <td class="text-black font-weight-bold"><strong>Net Price</strong><small>(Discounted Product Price + Shipping + Downpayment)</small></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.TotalNetCost</strong></td>
+                                        </tr>
+                                        
+                                    }
+                              
                                     
                                 </tbody>
                             </table>

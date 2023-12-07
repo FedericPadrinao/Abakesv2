@@ -185,8 +185,8 @@ namespace abakes2.Pages
                     using (SqlConnection connection = new SqlConnection(connectionProvider))
                     {
                         connection.Open();
-                        string sql = "insert into OrderSimple (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication)" +
-                            "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, 'false' , '0' , '1', '0', '0', @preferred, 'N/A', 'N/A', @color, @dedication);";
+                        string sql = "insert into OrderSimple (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, Coupon, NetOrderPrice)" +
+                            "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, 'false' , '0' , '1', '0', '0', @preferred, '', '', @color, @dedication, '', 0);";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {

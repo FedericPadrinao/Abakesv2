@@ -149,13 +149,12 @@
 
 								<td>
 								abakes881@gmail.com<br />
-
+								Customer: @Model.customerInfo.fname @Model.customerInfo.lname
 								</td>
 							</tr>
-							<tr>
-								<td>Customer: @Model.userconfirm</td>
-							</tr>
+							
 						</table>
+						
 					</td>
 				</tr>
 
@@ -174,7 +173,7 @@
 				<tr class="heading">
 					<td>Cake</td>
 
-					<td>Price</td>
+					<td>Product Price</td>
 				</tr>
 
 				<tr class="item">
@@ -183,9 +182,9 @@
 					<td>PHP @Model.invoiceInfo.invoicePrice</td>
 				</tr>
 								<tr class="heading">
-					<td>Item</td>
+					<td>Breakdown</td>
 
-					<td>Price</td>
+					<td>Total Price</td>
 				</tr>
 
 				<tr class="item">
@@ -200,18 +199,32 @@
 					<td>PHP @Model.invoiceInfo.invoiceShip</td>
 				</tr>
 
-
-
-				<tr class="total">
+				@if(Model.invoiceInfo.NetInvoicePrice == 0){
+					<tr class="total">
 					<td></td>
 
 					<td>PHP @Model.TotalCost</td>
 				</tr>
+			}
+			else
+			{
+				<tr class="item">
+					<td>Discounted Product Price</td>
+
+					<td>PHP @Model.invoiceInfo.NetInvoicePrice</td>
+				</tr>
+				<tr class="total">
+					<td>Net Price</td>
+
+					<td>PHP @Model.TotalNetCost</td>
+			</tr>
+			}
+			
 			</table>
 		</div>
 				<div class="buttons-container">
 
-		<a class='btn btn-secondary' href="/Admin_ManageQR">Go Back</a>
+		<a class='btn btn-secondary' href="/Customer_CompleteOrders">Go Back</a>
 		
 		
 		

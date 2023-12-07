@@ -25,11 +25,13 @@ namespace abakes2.Pages
         public CustomerInfo customerInfo = new CustomerInfo();
         public OrderSimpleInfo os = new OrderSimpleInfo();
         public Order3DForm order3D = new Order3DForm();
+        public List<Asset3DForm> asset3DList = new List<Asset3DForm>();
         public String statusconfirm = "";
         public int discountCode = 0;
         public decimal discountedPrice = 0;
         public int finaldiscountedPrice = 0;
         public int orderPrice = 0;
+        public int TotalNetCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
@@ -131,14 +133,37 @@ namespace abakes2.Pages
                                 order3D.order3DExpectedT = reader.GetString(18);
                                 order3D.order3Dstatus = reader.GetString(11);
                                 order3D.ModelType = reader.GetString(19);
+                                order3D.netOrder3DPrice = reader.GetInt32(26);
                                 TotalCost = TotalCart + ShippingPrice;
+                                TotalNetCost = order3D.netOrder3DPrice + order3D.order3DDP + order3D.order3DShip;
                             }
                         }
                     }
 
 
                 }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM Asset3DForm WHERE OrderID=@id ";
 
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", order3D.ModelID);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Asset3DForm asset = new Asset3DForm();
+                                asset.AssetName = reader.GetString(3);
+
+                                asset3DList.Add(asset);
+                            }
+                        }
+                    }
+
+
+                }
 
             }
             catch (Exception e)
@@ -209,7 +234,7 @@ namespace abakes2.Pages
                                         order3D.order3DExpectedD = reader.GetString(17);
                                         order3D.order3DExpectedT = reader.GetString(18);
                                         order3D.order3Dstatus = reader.GetString(21);
-
+                                        order3D.netOrder3DPrice = reader.GetInt32(26);
 
                                         using (SqlConnection connectionWrite = new SqlConnection(connectionProvider)) //get the data from the cart
                                         {
@@ -313,11 +338,12 @@ namespace abakes2.Pages
                             command.ExecuteNonQuery();
                         }
 
-                        string sql4 = "update Order3DForm set OrderPrice=@discountedPrice WHERE username = @username AND status = 'true'";
+                        string sql4 = "update Order3DForm set NetOrderPrice=@discountedPrice, Coupon=@coupon WHERE username = @username AND status = 'true'";
 
                         using (SqlCommand command = new SqlCommand(sql4, connection))
                         {
                             command.Parameters.AddWithValue("@username", userconfirm);
+                            command.Parameters.AddWithValue("@coupon", couponcode);
                             command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
                             command.ExecuteNonQuery();
                         }
