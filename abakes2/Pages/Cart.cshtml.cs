@@ -9,9 +9,10 @@ namespace abakes2.Pages
         public List<CustomerInfo> listCustomer = new List<CustomerInfo>();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public OrderSimpleInfo os = new OrderSimpleInfo();
+        public InvoiceInfo invoice = new InvoiceInfo();
         public Order3DForm order3D = new Order3DForm();
         public String userconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
         public int TotalCart = 0;
@@ -24,6 +25,8 @@ namespace abakes2.Pages
         public int notifCount = 0;
         public int pnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
         public void GetOrders()
@@ -72,7 +75,49 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                
+                using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
+                {
+                    connection.Open();
+                    string sql = "select * from Invoice where username='" + userconfirm + "' AND orderstatus ='Order Confirmation'"; //get all the data from the shopping cart based on the user.
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            
+                                while (reader.Read())
+                                {
+                                invoice.invoiceID = reader.GetInt32(0);
+                                invoice.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
+                                invoice.invoiceOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
+                                invoice.invoiceShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
+                                invoice.invoiceTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
+                                invoice.invoiceFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
+                                invoice.invoiceSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
+                                invoice.invoiceInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                invoice.invoiceDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
+                                invoice.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
+                                invoice.invoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                                invoice.invoiceQuantity = reader.GetFieldValue<int>(reader.GetOrdinal("OrderQuantity"));
+                                invoice.invoiceShip = reader.GetFieldValue<int>(reader.GetOrdinal("ShippingPrice"));
+                                invoice.invoiceDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
+                                invoice.invoicePreferredD = reader.GetFieldValue<string>(reader.GetOrdinal("PreferredDelivery"));
+                                invoice.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
+                                invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
+                                invoice.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
+                                invoice.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
+                                invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetInvoicePrice"));
+                                invoice.CouponCode = reader.GetFieldValue<string>(reader.GetOrdinal("Coupon"));
+
+
+
+
+
+                            }
+                            
+                        }
+                    }
+                }
+
             }
             catch (Exception e)
             {
@@ -313,7 +358,24 @@ namespace abakes2.Pages
                             }
                         }
                     }
+
                 }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart

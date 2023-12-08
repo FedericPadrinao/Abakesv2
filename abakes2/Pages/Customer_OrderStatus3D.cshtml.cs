@@ -10,7 +10,7 @@ namespace abakes2.Pages
         public String imgconfirm = "";
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public int notifCount = 0;
         public int pnotifCount = 0;
@@ -41,7 +41,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Order3DForm WHERE username=@user ";
+                    String sql = "SELECT * FROM Order3DForm WHERE username=@user and orderstatus!='Complete Order' ";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -69,6 +69,7 @@ namespace abakes2.Pages
                                 order3D.order3DExpectedD = reader.GetString(17);
                                 order3D.order3DExpectedT = reader.GetString(18);
                                 order3D.order3Dstatus = reader.GetString(21);
+                                order3D.picture = reader.GetString(27);
 
                             }
                         }
@@ -80,11 +81,12 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Asset3DForm WHERE username=@user ";
+                    String sql = "SELECT * FROM Asset3DForm WHERE username=@user and OrderID=@orderID";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@user", userconfirm);
+                        command.Parameters.AddWithValue("@orderID", order3D.ModelID);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())

@@ -13,7 +13,7 @@ namespace abakes2.Pages
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetUsers(string sortUser)
         {
@@ -113,6 +113,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
+                                customer.ordermax = reader.GetFieldValue<string>(reader.GetOrdinal("ordermax"));
                                 command.ExecuteNonQuery();
 
                             }
@@ -145,6 +146,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
+                                
                                 command.ExecuteNonQuery();
 
                             }
@@ -179,6 +181,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
+                               
                                 command.ExecuteNonQuery();
 
                             }
@@ -210,6 +213,8 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
+                                customer.ordermax3D = reader.GetFieldValue<string>(reader.GetOrdinal("ordermax3D"));
+
                                 command.ExecuteNonQuery();
 
                             }
@@ -244,6 +249,7 @@ namespace abakes2.Pages
                         {
                             customer.ordermax = reader.GetFieldValue<string>(reader.GetOrdinal("ordermax"));
                             customer.ordermax3D = reader.GetFieldValue<string>(reader.GetOrdinal("ordermax3D"));
+
                         }
                     }
                 }

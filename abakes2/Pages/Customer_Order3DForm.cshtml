@@ -258,7 +258,7 @@
                     <button class="functionbtn" id="loadModel1Button" onclick="activateButton()">Activate</button>
                     <button class="functionbtn" id="DisplayDecoration">Display Decorations</button>
 
-                     <form id="insertCake" method="post">
+                     <form id="insertCake" method="post" enctype="multipart/form-data">
                         <h3 style="text-align:center; color:black;">Delivery Type:</h3>
 
                         <div class="form-check">
@@ -306,7 +306,7 @@
                             </div>
                             <!--Delivery Type-->
                     
-
+                            <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
                </div>
                         <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
                     </form>
@@ -879,7 +879,26 @@
 
         }
 
+         var loadFile = function (event) {
+            var image = document.getElementById("output");
+            image.src = URL.createObjectURL(event.target.files[0]);
+        };
 
+
+        function previewImage() {
+            var fileInput = document.getElementById('fileInput');
+            var imgPreview = document.getElementById('imgPreview');
+
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imgPreview.src = e.target.result;
+                }
+
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
 
     </script>
 

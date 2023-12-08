@@ -12,7 +12,7 @@ namespace abakes2.Pages
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetUsers(string sortUser)
         {
@@ -23,25 +23,26 @@ namespace abakes2.Pages
                     connection.Open();
                     //getting the data based from the pdid variable
                     string sql = "SELECT * FROM Invoice WHERE OrderStatus != @orderStatus";
-                    string sql3d = "SELECT * FROM Order3DForm WHERE OrderStatus != 'Complete Order'";
+                    string sql3d = "SELECT * FROM Order3DForm WHERE OrderStatus != 'Complete Order' and status != 'false'";
                     string search = Request.Query["search"];
                     if (!String.IsNullOrEmpty(search))
                     {
                         // Use parameterized query to avoid SQL injection
                         sql = "SELECT * FROM Invoice WHERE username LIKE @username AND OrderStatus != @orderStatus";
-                        sql3d = "SELECT * FROM Order3DForm WHERE username LIKE @username AND OrderStatus != @orderStatus";
+                        sql3d = "SELECT * FROM Order3DForm WHERE username LIKE @username AND OrderStatus != @orderStatus and status != 'false'";
                     }
                     else
                     {
                         // Use parameterized query to avoid SQL injection
                         sql = "SELECT * FROM Invoice WHERE OrderStatus != @orderStatus";
-                        sql3d = "SELECT * FROM Order3DForm WHERE OrderStatus != 'Complete Order'";
+                        sql3d = "SELECT * FROM Order3DForm WHERE OrderStatus != 'Complete Order' and status != 'false'";
                     }
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@username", "%" + search + "%"); // Use parameterized values
                         command.Parameters.AddWithValue("@orderStatus", "Complete Order"); // Adjust as needed
+                        command.Parameters.AddWithValue("@status", "false"); 
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

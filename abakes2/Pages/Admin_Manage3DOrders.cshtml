@@ -144,6 +144,10 @@
                         <tr>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Order Number</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Name</th> 
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Cake</th> 
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Instruction</th> 
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Preferred Date</th> 
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Image to be added to cake</th> 
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:0%;">Action</th>
                         </tr>
                     </thead>
@@ -154,6 +158,12 @@
                             <tr>
                                 <td><p>@item.ModelID</p></td>
                                 <td><p>@item.username</p></td>              
+                                <td><p>@item.ModelType</p></td>              
+                                <td><p>@item.instructions</p></td>              
+                                <td><p>@item.order3DPreferredD</td>  
+                        <td>
+                        <img src="@item.picture" alt="logo" class="product-thumbnail;" style="max-width: 50%;">
+                        </td>
 
                                 <td>
                                     <a href='/Cart?id=@item.ModelID&handler=Reject' style="background:#FF696E;" class="btn btn-primary btn-sm">

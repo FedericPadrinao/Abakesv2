@@ -21,7 +21,7 @@ namespace abakes2.Pages
         public int cartCount3D = 0;
         public int totalcartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public int NotificationCount { get; set; } // Property to store notification count
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -244,6 +244,7 @@ namespace abakes2.Pages
         public string paymentMethod = "";
         public string order3DCoupon = "";
         public int netOrder3DPrice = 0;
+        public string picture = "";
     }
 
     public class OrderSimpleInfo

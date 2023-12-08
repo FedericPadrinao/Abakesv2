@@ -15,7 +15,7 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String statusconfirm = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetOrders()
         {
@@ -36,7 +36,10 @@ namespace abakes2.Pages
 
                                 order3DList.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderId"));
                                 order3DList.username = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-
+                                order3DList.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                order3DList.order3DPreferredD = reader.GetFieldValue<string>(reader.GetOrdinal("PreferredDelivery"));
+                                order3DList.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
+                                order3DList.picture = reader.GetFieldValue<string>(reader.GetOrdinal("picture"));
                                 orderSimpleInfo.Add(os);
                                 order3DInfo.Add(order3DList);
 
