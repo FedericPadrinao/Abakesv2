@@ -145,6 +145,25 @@ namespace abakes2.Pages
                         }
                     }
                 }
+<<<<<<< HEAD
+=======
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
+>>>>>>> parent of 836313c (DemoRecording v1.6)
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
