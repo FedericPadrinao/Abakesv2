@@ -216,7 +216,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
                     string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
