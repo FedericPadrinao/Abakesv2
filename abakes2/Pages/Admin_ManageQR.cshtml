@@ -136,7 +136,6 @@
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Status</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Expiration Date</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Discount</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:45%;">QR Code</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:15%;">Action</th>
                         </tr>
                     </thead>
@@ -150,16 +149,6 @@
                                 <td><p>@item.dateexpiry</p></td>
                                 <td><p>@item.discount%</p></td>
 
-                                <td>
-                                    @if (item.status.Equals("true"))
-                                    {
-
-                                    }
-                                    else
-                                    {
-                                        <a class='btn btn-btn-dark btn-sm' disabled style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4;"> Deactivate </a>
-                                    }
-                                </td>
 
 
                                 <td>

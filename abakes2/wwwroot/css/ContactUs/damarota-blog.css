@@ -236,14 +236,14 @@ header {
 	.rating > input:checked ~ label,
 	.rating:not(:checked) > label:hover,
 	.rating:not(:checked) > label:hover ~ label {
-		color: #2ce679;
+		color: rgb(252,188,180);
 	}
 
 		.rating > input:checked ~ label:hover,
 		.rating > input:checked ~ label:hover,
 		.rating > input:hover ~ input:checked ~ label,
 		.rating > input:checked ~ input:hover ~ label {
-			color: #2ddc76
+			color: rgb(252,188,180);
 		}
 
 

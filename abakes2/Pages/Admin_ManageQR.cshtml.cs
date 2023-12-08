@@ -15,7 +15,7 @@ namespace abakes2.Pages
     {
         public List<code> codeList = new List<code>();
         public string userconfirm = "";
-        public String connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public String connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        
         public void OnGet()
         {

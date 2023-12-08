@@ -40,9 +40,17 @@
 
 
 		.code-container h1 {
-			margin-right: 120px; 
-
+			margin-right: 100px;
+			display: block;
 			margin-left: 40px;
+			text-align:left;
+			margin-bottom:30px;
+			
+		}
+		.code-container p{
+		display: block;
+			text-align: left;
+			margin-left:15px;
 		}
 
 
@@ -77,12 +85,14 @@
 			<p>Your order made our day and we hope this brighten yours.</p>
 			<hr class="divider" />
 			<p >Love your cake? Leave a review on our website using the code below</p>
-
+			 
 			<div class="code-container">
+				<p>Enter the code at checkout for a discount.</p>
+
 				<h1>CODE: @Model.code</h1>
 				@if (!string.IsNullOrEmpty(Model.QRCodeImage))
 				{
-					<img src="@Model.QRCodeImage" alt="QR Code" style="width: 100px; height: auto;" />
+					<img src="@Model.QRCodeImage" alt="QR Code" style="margin-right:10px;width: 100px; height: auto;" />
 				}
 			</div>
 		</div>
