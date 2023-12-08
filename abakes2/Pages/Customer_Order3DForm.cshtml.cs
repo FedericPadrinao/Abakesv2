@@ -21,9 +21,11 @@ namespace abakes2.Pages
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void GetModels()
         {
@@ -143,9 +145,9 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     string sql3 = "INSERT INTO Order3DForm " +
-                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery) " +
+                         "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery, Coupon, NetOrderPrice) " +
                          "VALUES " +
-                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, '', '', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery); SELECT SCOPE_IDENTITY(); ";
+                         "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, '', '', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery, '', 0); SELECT SCOPE_IDENTITY(); ";
 
                     using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
                     {
@@ -345,6 +347,22 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }

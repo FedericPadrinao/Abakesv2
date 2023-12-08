@@ -10,12 +10,14 @@ namespace abakes2.Pages
         public String imgconfirm = "";
         public String statusconfirm = "";
 
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public int notifCount = 0;
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public UserInfo userInfo = new UserInfo();
         public OrderSimpleInfo orderInfo = new OrderSimpleInfo();
@@ -214,8 +216,6 @@ namespace abakes2.Pages
                         }
                     }
                 }
-<<<<<<< HEAD
-=======
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -232,7 +232,6 @@ namespace abakes2.Pages
                     }
                 }
                 totalcartCount = cartCount3D + cartCount;
->>>>>>> parent of 836313c (DemoRecording v1.6)
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }

@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\3DForm\" />
-    <Folder Include="wwwroot\css\faqs\css\" />
     <Folder Include="wwwroot\css\Index\" />
   </ItemGroup>
 

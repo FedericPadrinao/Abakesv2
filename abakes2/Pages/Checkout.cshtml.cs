@@ -17,6 +17,9 @@ namespace abakes2.Pages
         public int TotalDP = 0;
         public int ShippingPrice = 0;
         public int cartcount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
+        public int orderPrice = 0;
         public string imgconfirm = "";
         public int TotalCost = 0;
         public string userconfirm = "";
@@ -24,10 +27,15 @@ namespace abakes2.Pages
         public String successMessage = "";
         public CustomerInfo customerInfo = new CustomerInfo();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
-        public String statusconfirm = "";
-    
+        public OrderSimpleInfo os = new OrderSimpleInfo();
 
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public String statusconfirm = "";
+        //public code codeInfo = new code();
+        public int discountCode = 0;
+        public decimal discountedPrice = 0;
+        public int finaldiscountedPrice = 0;
+        public int TotalNetCost = 0;
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        
 
         public void GetProducts()
@@ -103,8 +111,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                OrderSimpleInfo os = new OrderSimpleInfo();
-
+                               
 
                                 os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
                                 os.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
@@ -117,13 +124,16 @@ namespace abakes2.Pages
                                 os.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
                                 os.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
                                 os.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                                orderPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
                                 os.osShip = reader.GetFieldValue<int>(reader.GetOrdinal("ShippingPrice"));
                                 os.osDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
                                 os.osColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
                                 os.osDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
+                                os.netOrderPrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
                                 listOrderSimple.Add(os);
 
-                                TotalCost = TotalCart + ShippingPrice;
+                                TotalCost = TotalCart + TotalDP + ShippingPrice;
+                                TotalNetCost = os.netOrderPrice + TotalDP + ShippingPrice;
                             }
                         }
                     }
@@ -200,13 +210,14 @@ namespace abakes2.Pages
                                         invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                         invoice.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
                                         invoice.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
-
+                                        invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
+                                        invoice.CouponCode = reader.GetFieldValue<string>(reader.GetOrdinal("Coupon"));
 
                                         using (SqlConnection connectionWrite = new SqlConnection(connectionProvider)) //get the data from the cart
                                         {
                                             connectionWrite.Open();
-                                            string insertsql = "insert into Invoice (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, DateCreated, orderstatus, receipt, PaymentMethod)" +
-                                    "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, @status, @orderprice, @orderquantity, @shippingprice, @downpayment, @preferred, @expecteddelivery, @expectedtime, @color, @dedication, @currentDate, '50% Downpayment', @receipt, @paymentMethod);";
+                                            string insertsql = "insert into Invoice (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, DateCreated, orderstatus, receipt, PaymentMethod,Coupon,NetInvoicePrice)" +
+                                    "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, @status, @orderprice, @orderquantity, @shippingprice, @downpayment, @preferred, @expecteddelivery, @expectedtime, @color, @dedication, @currentDate, '50% Downpayment', @receipt, @paymentMethod,@coupon,@netInvoicePrice);";
                                             using (SqlCommand insertCommand = new SqlCommand(insertsql, connectionWrite))
                                             {
                                                 insertCommand.Parameters.AddWithValue("@username", invoice.invoiceUsername);
@@ -230,7 +241,9 @@ namespace abakes2.Pages
                                                 insertCommand.Parameters.AddWithValue("@currentDate", currentDate);
                                                 insertCommand.Parameters.AddWithValue("@receipt", "img/Account/" + fileName);
                                                 insertCommand.Parameters.AddWithValue("@paymentMethod", paymentMethod);
-                                                // Add more parameters as needed
+                                                insertCommand.Parameters.AddWithValue("@coupon", invoice.CouponCode);
+                                                insertCommand.Parameters.AddWithValue("@netInvoicePrice", invoice.NetInvoicePrice);
+                  
 
                                                 insertCommand.ExecuteNonQuery();
                                             }
@@ -288,7 +301,83 @@ namespace abakes2.Pages
         }
 
 
+        public void OnPostDiscount()
+        {
+            OnGet();
+            string couponcode = Request.Form["coupon"];
+            int checkSec = 0;
+            int percentage = 100;
+            try
+            {
+                    using (SqlConnection connection = new SqlConnection(connectionProvider))
+                    {
+                        connection.Open();
+                        string sql2 = "SELECT * FROM GenerateCode WHERE code=@CouponCode AND status='true' AND avail2d='true'";
 
+                        //getting the data based from the pdid variable
+                        using (SqlCommand command = new SqlCommand(sql2, connection))
+                        {
+                        command.Parameters.AddWithValue("@CouponCode", couponcode);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    checkSec++;
+                                    discountCode = reader.GetFieldValue<int>(reader.GetOrdinal("Discount"));
+                                    
+                                    discountedPrice = ((decimal)discountCode/percentage)*orderPrice;
+                                    finaldiscountedPrice = (int)Math.Round(discountedPrice);
+
+                            }
+                            }
+                        }
+                    
+                    Console.WriteLine("Coupon" + discountCode + "discountedPrice" + discountedPrice + "finaldiscountedPrice" + finaldiscountedPrice + "OrderPrice" + orderPrice);
+                    Console.WriteLine("check" + checkSec);
+                        if (checkSec > 0)
+                        {
+
+                        
+                           string sql3 = "update GenerateCode set avail2d='false' where code='" + couponcode + "'";
+
+                            using (SqlCommand command = new SqlCommand(sql3, connection))
+                            {
+                                
+                                command.ExecuteNonQuery();
+                            }
+                        
+                        string sql4 = "update OrderSimple set NetOrderPrice=@discountedPrice,Coupon=@coupon WHERE username = @username AND status = 'true'";
+
+                            using (SqlCommand command = new SqlCommand(sql4, connection))
+                            {
+                                command.Parameters.AddWithValue("@username", userconfirm);
+                                command.Parameters.AddWithValue("@coupon", couponcode);
+                                command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
+                                command.ExecuteNonQuery();
+                            }
+                            
+
+                    }
+                    else
+                        {
+                            errorMessage = "The code you used is invalid or has expired!";
+                            TempData["errorMessageProfile"] = errorMessage;
+                            Response.Redirect("/Checkout");
+                        }
+
+
+
+                    }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Response.Redirect("/Checkout");
+            }
+
+            Response.Redirect("/Checkout");
+        }
 
         public void OnGet()
         {
@@ -414,6 +503,22 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }

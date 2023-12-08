@@ -9,8 +9,9 @@ namespace abakes2.Pages
         public List<CustomerInfo> listCustomer = new List<CustomerInfo>();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public List<InvoiceInfo> listInvoice = new List<InvoiceInfo>();
+        public List<Order3DForm> listOrder3D = new List<Order3DForm>();
         public String userconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
 
@@ -21,6 +22,8 @@ namespace abakes2.Pages
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
         public void GetOrders()
@@ -51,6 +54,42 @@ namespace abakes2.Pages
                                 
                                 listInvoice.Add(invoice);
 
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
+                {
+                    connection.Open();
+                    string sql = "select * from Order3DForm where username='" + userconfirm + "' AND orderstatus ='Complete Order'"; //get all the data from the shopping cart based on the user.
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Order3DForm order3d= new Order3DForm();
+                                
+
+                                order3d.ModelID = reader.GetInt32(0);
+                               
+                                order3d.instructions = reader.GetString(10);
+                                order3d.status = reader.GetString(11);
+                                order3d.order3DPrice = reader.GetInt32(12);
+                                order3d.order3DQuantity = reader.GetInt32(13);
+                                order3d.order3DShip = reader.GetInt32(14);
+                                order3d.order3DDP = reader.GetInt32(15);
+                                order3d.order3DPreferredD = reader.GetString(16);
+                                order3d.order3DExpectedD = reader.GetString(17);
+                                order3d.order3DExpectedT = reader.GetString(18);
+                                order3d.ModelType = reader.GetString(19);
+                                order3d.order3DDateCreated = reader.GetString(20);
+                                order3d.receipt = reader.GetString(22);
+                                order3d.paymentMethod = reader.GetString(23);
+                                order3d.order3DDelivery = reader.GetString(24);
+                                
+                                listOrder3D.Add(order3d);
 
                             }
                         }
@@ -186,6 +225,22 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }

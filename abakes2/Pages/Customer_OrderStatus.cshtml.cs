@@ -17,6 +17,8 @@ namespace abakes2.Pages
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public string userconfirm = "";
         public String errorMessage = "";
@@ -27,7 +29,7 @@ namespace abakes2.Pages
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public String statusconfirm = "";
         public string imgconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void OnGet()
@@ -97,6 +99,17 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
                                 invoiceInfo.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                 invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+
+                                invoiceInfo.invoiceOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
+                                invoiceInfo.invoiceShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
+                                invoiceInfo.invoiceTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
+                                invoiceInfo.invoiceFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
+                                invoiceInfo.invoiceSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
+                                invoiceInfo.invoiceDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
+                               
+                                invoiceInfo.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
+                                invoiceInfo.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
+                               
                             }
                         }
                     }
@@ -209,8 +222,6 @@ namespace abakes2.Pages
                         }
                     }
                 }
-<<<<<<< HEAD
-=======
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -227,7 +238,6 @@ namespace abakes2.Pages
                     }
                 }
                 totalcartCount = cartCount3D + cartCount;
->>>>>>> parent of 836313c (DemoRecording v1.6)
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }

@@ -18,8 +18,10 @@ namespace abakes2.Pages
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public int NotificationCount { get; set; } // Property to store notification count
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -102,6 +104,22 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
@@ -220,10 +238,12 @@ namespace abakes2.Pages
         public string order3DPreferredD = "";
         public string order3DExpectedD = "";
         public string order3DExpectedT = "";
+        public string order3DDateCreated = "";
         public string order3Dstatus = "";
         public string receipt = "";
         public string paymentMethod = "";
-
+        public string order3DCoupon = "";
+        public int netOrder3DPrice = 0;
     }
 
     public class OrderSimpleInfo
@@ -247,6 +267,8 @@ namespace abakes2.Pages
         public string osExpectedT = "";
         public string osColor = "";
         public string osDedication = "";
+        public string osCoupon = "";
+        public int netOrderPrice = 0;
     }
 
     public class InvoiceInfo
@@ -274,6 +296,8 @@ namespace abakes2.Pages
         public string orderStatus = "";
         public string receipt = "";
         public string paymentMethod = "";
+        public string CouponCode = "";
+        public int NetInvoicePrice = 0;
     }
     public class Feedbacks
     {

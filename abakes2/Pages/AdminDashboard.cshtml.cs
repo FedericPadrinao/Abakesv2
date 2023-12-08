@@ -11,10 +11,22 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String successMessage = "";
         public int feedbackcount = 0;
+        public double feedbackrating = 0;
         public int usercount = 0;
         public int ordersimplecount = 0;
         public int simplepending = 0;
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public int threepending = 0;
+        public int threesimplecount = 0;
+        public int threecompleteorder = 0;
+        public int simplecompleteorder = 0;
+        public int simplependingpayment = 0;
+        public int threependingpayment = 0;
+        public int totalpendingpayment = 0;
+        public int earnings = 0;
+        public int earnings3D = 0;
+        public int totalearnings = 0;
+        public int totalcompleteorder = 0;
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
@@ -86,7 +98,155 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3DForm where status='false'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                threepending = reader.GetInt32(0);
 
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3DForm where orderstatus='Complete Order'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                threecompleteorder = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(InvoiceID) from Invoice where orderstatus='Complete Order'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                simplecompleteorder = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(InvoiceID) from Invoice where orderstatus!='Complete Order'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                simplependingpayment= reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3DForm where orderstatus!='Complete Order'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                threependingpayment = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3DForm where status!='false'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                threesimplecount = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select sum(OrderPrice) from Invoice where orderstatus='Complete Order'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                earnings = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select sum(OrderPrice) from Order3DForm where orderstatus='Complete Order'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                earnings3D = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select AVG(CAST(rating AS FLOAT)) AS avgrating from feedback where status='true'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                               feedbackrating = reader.GetDouble(0);
+
+                            }
+                        }
+                    }
+                }
+                totalearnings = earnings + earnings3D;
+                totalcompleteorder = threecompleteorder + simplecompleteorder;
+                totalpendingpayment = threependingpayment + simplependingpayment;
+                
             }
             catch (Exception e)
             {

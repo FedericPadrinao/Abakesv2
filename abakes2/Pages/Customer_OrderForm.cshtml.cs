@@ -17,10 +17,12 @@ namespace abakes2.Pages
         public int pnotifCount = 0;
         public int pubnotifCount = 0;
         public int cartCount = 0;
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
 
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void OnGet()
@@ -149,8 +151,6 @@ namespace abakes2.Pages
                         }
                     }
                 }
-<<<<<<< HEAD
-=======
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -167,7 +167,6 @@ namespace abakes2.Pages
                     }
                 }
                 totalcartCount = cartCount3D + cartCount;
->>>>>>> parent of 836313c (DemoRecording v1.6)
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
 
             }
@@ -204,8 +203,8 @@ namespace abakes2.Pages
                     using (SqlConnection connection = new SqlConnection(connectionProvider))
                     {
                         connection.Open();
-                        string sql = "insert into OrderSimple (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication)" +
-                            "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, 'false' , '0' , '1', '0', '0', @preferred, 'N/A', 'N/A', @color, @dedication);";
+                        string sql = "insert into OrderSimple (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, Coupon, NetOrderPrice)" +
+                            "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, 'false' , '0' , '1', '0', '0', @preferred, '', '', @color, @dedication, '', 0);";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {

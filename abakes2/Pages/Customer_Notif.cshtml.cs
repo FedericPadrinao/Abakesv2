@@ -18,7 +18,9 @@ namespace abakes2.Pages
         public String imageconfrim = "";
         public String imgconfirm = "";
         public int cartCount = 0;
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public int cartCount3D = 0;
+        public int totalcartCount = 0;
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {
@@ -114,8 +116,8 @@ namespace abakes2.Pages
                     }
                  }
 
-                        using (SqlConnection connection = new SqlConnection(connectionString))
-                {
+                 using (SqlConnection connection = new SqlConnection(connectionString))
+                  {   
                     connection.Open();
                     string sql = "select count(OrderID) from OrderSimple where status = 'true' AND username = '" + userconfirm + "'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
@@ -129,6 +131,22 @@ namespace abakes2.Pages
                         }
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "select count(OrderID) from Order3dForm where status = 'true' AND username = '" + userconfirm + "'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                cartCount3D = reader.GetInt32(0);
+                            }
+                        }
+                    }
+                }
+                totalcartCount = cartCount3D + cartCount;
             }
 
             catch (Exception ex)
