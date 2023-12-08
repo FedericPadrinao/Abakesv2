@@ -19,7 +19,7 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String successMessage = "";
 
-        public string connectionString = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public int pdID = 0;
         public string pdName = "";
         public string pdCategory = "";

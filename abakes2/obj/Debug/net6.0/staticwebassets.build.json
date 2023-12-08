@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pOLPRlPpLoGzcYMKoZWzYZlYSCc0eBRAKL4lMGYVwJQ=",
+  "Hash": "yjypZmmQDrig0dkXTfCzkhXNzjOQ2S2UNL4tvi976lg=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -372,23 +372,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\faqs\\css\\style.css"
-    },
-    {
-      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\css\\faqs\\css\\style.scss",
-      "SourceId": "abakes2",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
-      "BasePath": "_content/abakes2",
-      "RelativePath": "css/faqs/css/style.scss",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\faqs\\css\\style.scss"
     },
     {
       "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\damarota-blog.css",
@@ -3925,6 +3908,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\AdminDashboardjs\\chart2.js"
+    },
+    {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart3.js",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "js/AdminDashboardjs/chart3.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AdminDashboardjs\\chart3.js"
+    },
+    {
+      "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart4.js",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "js/AdminDashboardjs/chart4.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AdminDashboardjs\\chart4.js"
     },
     {
       "Identity": "C:\\Users\\rovic\\Desktop\\abakess github\\Abakesv2\\abakes2\\wwwroot\\js\\color-modes.js",

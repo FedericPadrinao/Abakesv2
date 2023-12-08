@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public List<CustomerInfo> listCustomer = new List<CustomerInfo>();
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public String userconfirm = "";
-        public string connectionProvider = "Data Source=orange\\sqlexpress;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
    
