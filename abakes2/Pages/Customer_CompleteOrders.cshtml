@@ -118,7 +118,7 @@
                 }
             </div>
             <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-            <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="badge" data-badge="@Model.totalcartCount"><img src="images/cart.png" width="30px" height="30px"></a>
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
@@ -149,7 +149,8 @@
                     <th>Price</th>
                     <th>Delivery</th>
                     <th>Date Paid</th>
-                    <th>Receipt</th>
+                    <th>Proof of Payment</th>
+                    <th>Invoice</th>
                     
                 </tr>
                 @foreach (var item in Model.listInvoice)
@@ -183,7 +184,47 @@
     <td>
         <img src="@item.receipt">
     </td>
+    <td>
+        <a href='/Customer_Invoice?id=@item.invoiceID' class="btn"> View </a>
+    </td>
+</tr>
 
+                }
+
+        @foreach (var item in Model.listOrder3D)
+        {             
+        <tr>
+   
+    <td>
+        <p>@item.ModelID</p>
+    </td>
+    <td>
+        <div class="cart-info">
+            
+            <p>@item.ModelType </p>
+            
+            
+           
+           
+        </div>
+    </td>
+
+    <td>
+        <p>@item.order3DPrice </p>
+    </td>
+
+    <td>
+        <p>@item.order3DExpectedD @item.order3DExpectedT </p>
+    </td>
+    <td>
+         <p>@item.order3DDateCreated </p>
+    </td>
+    <td>
+        <img src="@item.receipt">
+    </td>
+    <td>
+        <a href='/Customer_Invoice3D?id=@item.ModelID' class="btn"> View </a>
+    </td>
 </tr>
 
                 }

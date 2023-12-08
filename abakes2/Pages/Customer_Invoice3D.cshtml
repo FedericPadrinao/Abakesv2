@@ -1,8 +1,7 @@
 ﻿@page
-@model abakes2.Pages.Customer_InvoiceModel
+@model abakes2.Pages.Customer_Invoice3DModel
 @{
 }
-
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -127,7 +126,7 @@
 								</td>
 
 								<td>
-									Invoice #: @Model.invoiceInfo.invoiceID<br />
+									Invoice #: @Model.order3d.ModelID<br />
 								Created: @Model.FormattedDateTime<br />
 								
 								</td>
@@ -165,23 +164,31 @@
 				</tr>
 
 				<tr class="details">
-					<td>@Model.invoiceInfo.paymentMethod</td>
+					<td>@Model.order3d.paymentMethod</td>
 
 					<td></td>
 				</tr>
 
 				<tr class="heading">
-					<td>Cake</td>
+					<td>Cake[3D]</td>
 
 					<td>Product Price</td>
 				</tr>
 
 				<tr class="item">
-					<td>@Model.invoiceInfo.invoiceOccasion<br />@Model.invoiceInfo.invoiceTier<br />@Model.invoiceInfo.invoiceFlavors</td>
-
-					<td>PHP @Model.invoiceInfo.invoicePrice</td>
+					<td>@Model.order3d.ModelType</td>
+				
+				<td>PHP @Model.order3d.order3DPrice</td>
 				</tr>
-								<tr class="heading">
+				@foreach (var item in @Model.asset3DList)
+				{
+					<tr class="item">
+						<td>@item.AssetName</td>
+						<td></td> 
+					</tr>
+					
+				}
+				<tr class="heading">
 					<td>Breakdown</td>
 
 					<td>Total Price</td>
@@ -190,16 +197,16 @@
 				<tr class="item">
 					<td>Downpayment</td>
 
-					<td>PHP @Model.invoiceInfo.invoiceDP</td>
+					<td>PHP @Model.order3d.order3DDP</td>
 				</tr>
 
 				<tr class="item">
 					<td>Shipping</td>
 
-					<td>PHP @Model.invoiceInfo.invoiceShip</td>
+					<td>PHP @Model.order3d.order3DShip</td>
 				</tr>
 
-				@if(Model.invoiceInfo.NetInvoicePrice == 0){
+				@if(Model.order3d.netOrder3DPrice == 0){
 					<tr class="total">
 					<td></td>
 
@@ -211,7 +218,7 @@
 				<tr class="item">
 					<td>Discounted Product Price</td>
 
-					<td>PHP @Model.invoiceInfo.NetInvoicePrice</td>
+					<td>PHP @Model.order3d.netOrder3DPrice</td>
 				</tr>
 				<tr class="total">
 					<td>Net Price</td>

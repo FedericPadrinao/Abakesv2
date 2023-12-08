@@ -99,7 +99,7 @@
             @if (Model.userconfirm != null)
             {
                 <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                <a href="/Cart" class="badge" data-badge="@Model.cartCount"><img src="images/cart.png" width="30px" height="30px"></a>
+                <a href="/Cart" class="badge" data-badge="@Model.totalcartCount"><img src="images/cart.png" width="30px" height="30px"></a>
 
             }
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
@@ -173,13 +173,28 @@
             <div class="col-md-6">
                 <div class="row mb-5">
                     <div class="col-md-12">
-                        <h2 class="h3 mb-3 text-black">QR Code</h2>
-                        
+                        <h2 class="h3 mb-3 text-black">QR/Coupon Code</h2>
+                        <div class="p-3 p-lg-5 border">
                             <div class="input-group">
                                 <div class="input-group-append">
-                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 683px;">
+                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">
                                 </div>
+                                
                             </div>
+                            <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
+                            
+                            <div class="input-group">
+                                <form method="post" asp-page-handler="Discount">
+
+                               
+                                <input type="text" name="coupon" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2"  >
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit" id="button-addon2">Apply</button>
+                                </div>
+                                 </form>
+                            </div>
+                            
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -202,52 +217,56 @@
                                             <td>
                                              
                                                 <strong>Cake Details: </strong> @Model.order3D.ModelType<br>
-                                                        @Model.os.osSizes<br>
-                                                       @Model.os.osShapes <br> 
-                                                       @Model.os.osOccasion<br>
-                                                       @Model.os.osColor<br>
-                                                         @Model.os.osDedication <br> 
+                                                 @foreach (var item in @Model.asset3DList)
+				                                {   
+						                             @item.AssetName<br/>
+				                                }     
                                             </td>
                                             
-                                                @if (Model.os.osPrice == 0){
+                                               
                                                    <td><strong> PHP @Model.order3D.order3DPrice </strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osPrice </strong> </td>
-                                                }
+                                               
+                                               
                                         </tr>
-                                    
+                                     <tr>
+                                        <td class="text-black font-weight-bold"><strong>Product Price</strong></td>
+                                        <td><strong> PHP @Model.order3D.order3DPrice </strong> </td>   
+                                    </tr>
                                     <tr>
-                                        <td class="text-black font-weight-bold"><strong>Downpayment</strong></td>
-                                        @if (Model.os.osDP == 0){
-                                                   <td class="text-black"> <strong>PHP @Model.order3D.order3DDP</strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osDP </strong> </td>
-                                                }
+                                        <td class="text-black font-weight-bold"><strong>50% Downpayment</strong></td>         
+                                        <td class="text-black"> <strong>PHP @Model.order3D.order3DDP</strong> </td>
+                                       
+                                          
                                         
                                     </tr>
-                                    <tr>
-                                        <td class="text-black font-weight-bold"><strong>Product Price</strong></td>
-                                        @if (Model.os.osPrice == 0){
-                                                   <td><strong> PHP @Model.order3D.order3DPrice </strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osPrice </strong> </td>
-                                                }
-                                    </tr>
+                                   
                                     <tr>
                                         <td class="text-black font-weight-bold"><strong>Shipping Fee</strong></td>
-                                        @if (Model.os.osShip == 0){
+                                        
                                                    <td><strong> PHP @Model.order3D.order3DShip </strong> </td>
-                                                }
-                                                else{
-                                                    <td><strong> PHP @Model.os.osShip </strong> </td>
-                                                }
+            
                                     </tr>
-                                    <tr>
+                                    
+                                    @if (Model.order3D.netOrder3DPrice == 0)
+                                    {
+                                         <tr>
                                         <td class="text-black font-weight-bold"><strong>Total Price</strong></td>
                                         <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCost</strong></td>
+                                         </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                         <td class="text-black font-weight-bold"><strong>Discounted Product Price</strong></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.order3D.netOrder3DPrice</strong></td>
+                                        </tr>
+                                        <tr>
+                                         <td class="text-black font-weight-bold"><strong>Net Price</strong><small>(Discounted Product Price + Shipping + Downpayment)</small></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.TotalNetCost</strong></td>
+                                        </tr>
+                                        
+                                    }
+                                    
                                     </tr>
                                 </tbody>
                             </table>
