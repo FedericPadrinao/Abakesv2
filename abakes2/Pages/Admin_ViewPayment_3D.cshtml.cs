@@ -154,6 +154,20 @@ namespace abakes2.Pages
                     {
                         command.ExecuteNonQuery();
                     }
+
+                }
+                if (orderstatus == "Complete Order")
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionProvider))
+                    {
+                        connection.Open();
+                        String sql = "UPDATE LoginCustomer SET ordermax3D='true' WHERE username='" + user + "'";
+
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                    }
                 }
             }
             catch (Exception ex)

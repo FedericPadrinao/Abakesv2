@@ -51,6 +51,7 @@ namespace abakes2.Pages
                                 invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                 invoice.invoiceDateCreated = reader.GetFieldValue<string>(reader.GetOrdinal("DateCreated"));
                                 invoice.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                invoice.picture = reader.GetFieldValue<string>(reader.GetOrdinal("receipt2"));
                                 
                                 listInvoice.Add(invoice);
 
@@ -88,7 +89,7 @@ namespace abakes2.Pages
                                 order3d.receipt = reader.GetString(22);
                                 order3d.paymentMethod = reader.GetString(23);
                                 order3d.order3DDelivery = reader.GetString(24);
-                                
+                                order3d.picture = reader.GetString(28);
                                 listOrder3D.Add(order3d);
 
                             }

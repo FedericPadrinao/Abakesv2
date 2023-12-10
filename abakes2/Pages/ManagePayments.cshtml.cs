@@ -55,6 +55,7 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
                                 invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
                                 invoiceInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                invoiceInfo.picture = reader.GetFieldValue<string>(reader.GetOrdinal("receipt2"));
                               
                                 
                                 
@@ -79,6 +80,7 @@ namespace abakes2.Pages
 
                                 order3DInfo.order3Dstatus = reader.GetString(21);
                                 order3DInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                order3DInfo.picture = reader.GetFieldValue<string>(reader.GetOrdinal("picture"));
                                 order3DList.Add(order3DInfo);
                             }
                         }

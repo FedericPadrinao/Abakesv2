@@ -132,7 +132,8 @@
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Type</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Username</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Order Status</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Picture</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">First Payment(Down Payment)</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Last Payment(Full Payment)</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:13%;">Action</th>
                         </tr>
                     </thead>
@@ -151,17 +152,11 @@
                                 <td>
                                     <img src="@item.receipt">
                                 </td>
-
+                                <td>
+                                    <img src="@item.picture">
+                                </td>
                                 <td style="align-content:center;">
-                                    @if (Model.customer.ordermax == "true"){
-                                        <a class='btn' style="background: #178a00;" asp-page-handler="Complete" asp-route-user=@item.invoiceUsername>
-                                        <i class="fas fa-cart-plus" style="font-size:30px;"></i><div>Allow user to order again</div> </a>
-                                    }
-                                    else{
-                                       <a class='btn' style="background: #ff5e5b;" asp-page-handler="Pause" asp-route-user=@item.invoiceUsername>
-                                        <i class="fas fa-cart-arrow-down" style="font-size:30px;"></i><div>Limit customer to one order</div> </a>
-                                    }
-                                        
+                                   
                                     <a href='/Admin_ViewPayment?user=@item.invoiceUsername' class="btn" style="background: #ffffb9; color: black;">
                                         <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
                                     </a>                        
@@ -180,16 +175,11 @@
                                 <td>
                                     <img src="@item.receipt">
                                 </td>
-
+                                <td>
+                                    <img src="@item.picture">
+                                </td>
                                 <td style="align-content:center;">
-                                     @if (Model.customer.ordermax3D == "true"){
-                                        <a class='btn' style="background: #178a00;" asp-page-handler="Finish" asp-route-user=@item.username>
-                                        <i class="fas fa-cart-plus" style="font-size:30px;"></i><div>Allow user to order again</div> </a>
-                                    }
-                                    else{
-                                       <a class='btn' style="background: #ff5e5b;" asp-page-handler="Stop" asp-route-user=@item.username>
-                                        <i class="fas fa-cart-arrow-down" style="font-size:30px;"></i><div>Limit customer to one order</div> </a>
-                                    }
+                                    
                                     <a href='/Admin_ViewPayment_3D?user=@item.username' class="btn" style="background: #ffffb9; color: black;">
                                         <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
                                     </a>                        

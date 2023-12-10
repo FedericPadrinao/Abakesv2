@@ -41,8 +41,19 @@
         }
 
     .receiptimg{
+        
         margin-top: 10px;
-        margin-bottom: 10px;
+       
+    }
+    .receiptimg h3 {
+        text-align: center;
+    }
+    .receiptimg img {
+        display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 70%;
+         
     }
 </style>
 
@@ -342,11 +353,24 @@
 
                                 </div>
                             </div>
+
                         </div>
-                       
+                            
                         <div class="receiptimg">
-                            <img src="@Model.invoiceInfo.receipt" width="800" height="800">
+                            <table>
+                                <tr>
+                                    <th> <h3>First Payment</h3> </th>
+                                    <th> <h3>Last Payment</h3> </th>
+                                </tr> 
+                                <tr>
+                                    <td><img src="@Model.invoiceInfo.receipt" ></td> 
+                                    <td><img src="@Model.invoiceInfo.picture" ></td> 
+                                </tr>
+                            </table> 
+                            
+                            
                         </div>
+                        
                 </div>
             </div>
                   </div>

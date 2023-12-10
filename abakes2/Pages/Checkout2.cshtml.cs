@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
-    public class CheckoutModel : PageModel
+    public class Checkout2Model : PageModel
     {
         public string username { get; set; }
         public string password { get; set; }
@@ -39,7 +39,7 @@ namespace abakes2.Pages
         public int finaldiscountedPrice = 0;
         public int TotalNetCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
-       
+
 
         public void GetProducts()
         { //will load getProducts everytime you launch the website
@@ -48,10 +48,10 @@ namespace abakes2.Pages
             {
 
                 //TOTAL PRODUCT
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) 
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    string sql = "SELECT SUM(OrderPrice) FROM OrderSimple WHERE username = @username AND status = 'true'";
+                    string sql = "SELECT SUM(OrderPrice) FROM Invoice WHERE username = @username AND orderstatus = 'Order Confirmation'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@username", userconfirm);
@@ -69,7 +69,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
                 {
                     connection.Open();
-                    string sql = "select sum(Downpayment) from OrderSimple where username = @username AND status = 'true'"; 
+                    string sql = "select sum(Downpayment) from Invoice where username = @username AND orderstatus = 'Order Confirmation'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@username", userconfirm);
@@ -87,7 +87,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
                 {
                     connection.Open();
-                    string sql = "select ShippingPrice from OrderSimple where username = @username AND status = 'true'";
+                    string sql = "select ShippingPrice from Invoice where username = @username AND orderstatus = 'Order Confirmation'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@username", userconfirm);
@@ -101,48 +101,8 @@ namespace abakes2.Pages
                         }
                     }
                 }
-               
 
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
-                {
-                    connection.Open();
-                    string sql = "select * from OrderSimple where username = @username AND status = 'true'"; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@username", userconfirm);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                               
-
-                                os.osID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
-                                os.osUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-                                os.osOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
-                                os.osShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
-                                os.osTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
-                                os.osFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
-                                os.osSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
-                                os.osInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
-                                os.osDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
-                                os.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-                                orderstatus = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-                                os.osPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-                                orderPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-                                os.osShip = reader.GetFieldValue<int>(reader.GetOrdinal("ShippingPrice"));
-                                os.osDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
-                                os.osColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
-                                os.osDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
-                                os.netOrderPrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
-                                listOrderSimple.Add(os);
-
-                                TotalCost = TotalCart + TotalDP + ShippingPrice;
-                                TotalNetCost = os.netOrderPrice + TotalDP + ShippingPrice;
-                            }
-                        }
-                    }
-                }
-
+       
                 using (SqlConnection connection = new SqlConnection(connectionProvider)) //static
                 {
                     connection.Open();
@@ -175,15 +135,16 @@ namespace abakes2.Pages
                                 invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                 invoice.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
                                 invoice.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
-                                invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
+                                invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetInvoicePrice"));
                                 invoice.CouponCode = reader.GetFieldValue<string>(reader.GetOrdinal("Coupon"));
-
+                                TotalCost = TotalCart + TotalDP + ShippingPrice;
+                                TotalNetCost = invoice.NetInvoicePrice + TotalDP + ShippingPrice;
                                 remainingFee = invoice.invoiceDP + invoice.invoiceShip;
                             }
                         }
                     }
                 }
-
+               
 
             }
             catch (Exception e)
@@ -227,7 +188,7 @@ namespace abakes2.Pages
                             connection.Open();
 
 
-                            string selectsql = "SELECT * FROM OrderSimple WHERE username = @username AND status = 'true'";
+                            string selectsql = "select * from Invoice where username = @username AND orderstatus = 'Order Confirmation'";
                             using (SqlCommand command = new SqlCommand(selectsql, connection))
                             {
                                 command.Parameters.AddWithValue("@username", userconfirm);
@@ -237,6 +198,7 @@ namespace abakes2.Pages
                                     {
 
                                         InvoiceInfo invoice = new InvoiceInfo();
+                                        invoice.invoiceID = reader.GetFieldValue<int>(reader.GetOrdinal("InvoiceID"));
                                         invoice.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
                                         invoice.invoiceOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
                                         invoice.invoiceShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
@@ -255,59 +217,29 @@ namespace abakes2.Pages
                                         invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                         invoice.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
                                         invoice.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
-                                        invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
+                                        invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetInvoicePrice"));
                                         invoice.CouponCode = reader.GetFieldValue<string>(reader.GetOrdinal("Coupon"));
 
                                         using (SqlConnection connectionWrite = new SqlConnection(connectionProvider)) //get the data from the cart
                                         {
                                             connectionWrite.Open();
-                                            string insertsql = "insert into Invoice (username, occasion, shapes, tier, flavors, sizes, instructions, delivery, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, color, dedication, DateCreated, orderstatus, receipt, PaymentMethod,Coupon,NetInvoicePrice,receipt2)" +
-                                    "VALUES(@username, @occasion, @shapes, @tier, @flavors, @sizes, @instructions, @delivery, @status, @orderprice, @orderquantity, @shippingprice, @downpayment, @preferred, @expecteddelivery, @expectedtime, @color, @dedication, @currentDate, '50% Downpayment', @receipt, @paymentMethod,@coupon,@netInvoicePrice,'');";
-                                            using (SqlCommand insertCommand = new SqlCommand(insertsql, connectionWrite))
+                                            string insertsql = "UPDATE Invoice " +
+                                                        "SET DateCreated = @currentDate, orderstatus = 'Full Payment', " +
+                                                        "receipt2 = @receipt " +
+                                                        "WHERE InvoiceID = @orderId;";
+                                            using (SqlCommand updateCommand = new SqlCommand(insertsql, connectionWrite))
                                             {
-                                                insertCommand.Parameters.AddWithValue("@username", invoice.invoiceUsername);
-                                                insertCommand.Parameters.AddWithValue("@occasion", invoice.invoiceOccasion);
-                                                insertCommand.Parameters.AddWithValue("@shapes", invoice.invoiceShapes);
-                                                insertCommand.Parameters.AddWithValue("@tier", invoice.invoiceTier);
-                                                insertCommand.Parameters.AddWithValue("@flavors", invoice.invoiceFlavors);
-                                                insertCommand.Parameters.AddWithValue("@sizes", invoice.invoiceSizes);
-                                                insertCommand.Parameters.AddWithValue("@instructions", invoice.invoiceInstruction);
-                                                insertCommand.Parameters.AddWithValue("@delivery", invoice.invoiceDelivery);
-                                                insertCommand.Parameters.AddWithValue("@status", invoice.status);
-                                                insertCommand.Parameters.AddWithValue("@orderPrice", invoice.invoicePrice);
-                                                insertCommand.Parameters.AddWithValue("@orderquantity", invoice.invoiceQuantity);
-                                                insertCommand.Parameters.AddWithValue("@shippingprice", invoice.invoiceShip);
-                                                insertCommand.Parameters.AddWithValue("@downpayment", invoice.invoiceDP);
-                                                insertCommand.Parameters.AddWithValue("@preferred", invoice.invoicePreferredD);
-                                                insertCommand.Parameters.AddWithValue("@expecteddelivery", invoice.invoiceExpectedD);
-                                                insertCommand.Parameters.AddWithValue("@expectedtime", invoice.invoiceExpectedT);
-                                                insertCommand.Parameters.AddWithValue("@color", invoice.invoiceColor);
-                                                insertCommand.Parameters.AddWithValue("@dedication", invoice.invoiceDedication);
-                                                insertCommand.Parameters.AddWithValue("@currentDate", currentDate);
-                                                insertCommand.Parameters.AddWithValue("@receipt", "img/Account/" + fileName);
-                                                insertCommand.Parameters.AddWithValue("@paymentMethod", paymentMethod);
-                                                insertCommand.Parameters.AddWithValue("@coupon", invoice.CouponCode);
-                                                insertCommand.Parameters.AddWithValue("@netInvoicePrice", invoice.NetInvoicePrice);
-                  
+                                                updateCommand.Parameters.AddWithValue("@currentDate", currentDate);
+                                                updateCommand.Parameters.AddWithValue("@receipt", "img/Account/" + fileName);
+                                                
+                                                updateCommand.Parameters.AddWithValue("@orderId", invoice.invoiceID);
 
-                                                insertCommand.ExecuteNonQuery();
+                                                updateCommand.ExecuteNonQuery();
                                             }
                                         }
 
-                                        //Remove All Items from Cart
 
-                                        using (SqlConnection connectionDelete = new SqlConnection(connectionProvider)) //get the data from the cart
-                                        {
-                                            connectionDelete.Open();
-                                            string sql = "delete from OrderSimple where username='" + userconfirm + "'"; //deletes all content from user's cat after checking out
-                                            using (SqlCommand deleteCommand = new SqlCommand(sql, connectionDelete))
-                                            {
-
-
-                                                deleteCommand.ExecuteNonQuery();
-
-                                            }
-                                        }
+                                      
 
                                     }
                                 }
@@ -345,209 +277,8 @@ namespace abakes2.Pages
             return Redirect("/Index");
         }
 
-        public async Task<IActionResult> OnPostFullPaymentAsync(IFormFile file)
-        {
-            OnGet();
-            try
-            {
-                // File format validation
-                if (file != null && file.Length > 0)
-                {
-                    string fileExtension = Path.GetExtension(file.FileName).ToLower();
-                    if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
-                    {
-                        // Valid file format, proceed with upload
-                        using (SqlConnection connection = new SqlConnection(connectionProvider))
-                        {
-                            string fileName = Path.GetFileName(file.FileName);
-                            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Account", fileName);
-
-                            using (var stream = new FileStream(filePath, FileMode.Create))
-                            {
-                                await file.CopyToAsync(stream);
-                            }
-
-
-                            connection.Open();
-
-
-                            string selectsql = "SELECT * FROM OrderSimple WHERE username = @username AND status = 'true'";
-                            using (SqlCommand command = new SqlCommand(selectsql, connection))
-                            {
-                                command.Parameters.AddWithValue("@username", userconfirm);
-                                using (SqlDataReader reader = command.ExecuteReader())
-                                {
-                                    while (reader.Read())
-                                    {
-
-                                        InvoiceInfo invoice = new InvoiceInfo();
-                                        invoice.invoiceID = reader.GetFieldValue<int>(reader.GetOrdinal("InvoiceID"));
-                                        invoice.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
-                                        invoice.invoiceOccasion = reader.GetFieldValue<string>(reader.GetOrdinal("occasion"));
-                                        invoice.invoiceShapes = reader.GetFieldValue<string>(reader.GetOrdinal("shapes"));
-                                        invoice.invoiceTier = reader.GetFieldValue<string>(reader.GetOrdinal("tier"));
-                                        invoice.invoiceFlavors = reader.GetFieldValue<string>(reader.GetOrdinal("flavors"));
-                                        invoice.invoiceSizes = reader.GetFieldValue<string>(reader.GetOrdinal("sizes"));
-                                        invoice.invoiceInstruction = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
-                                        invoice.invoiceDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("delivery"));
-                                        invoice.status = reader.GetFieldValue<string>(reader.GetOrdinal("status"));
-                                        invoice.invoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
-                                        invoice.invoiceQuantity = reader.GetFieldValue<int>(reader.GetOrdinal("OrderQuantity"));
-                                        invoice.invoiceShip = reader.GetFieldValue<int>(reader.GetOrdinal("ShippingPrice"));
-                                        invoice.invoiceDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
-                                        invoice.invoicePreferredD = reader.GetFieldValue<string>(reader.GetOrdinal("PreferredDelivery"));
-                                        invoice.invoiceExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
-                                        invoice.invoiceExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
-                                        invoice.invoiceColor = reader.GetFieldValue<string>(reader.GetOrdinal("color"));
-                                        invoice.invoiceDedication = reader.GetFieldValue<string>(reader.GetOrdinal("dedication"));
-                                        invoice.NetInvoicePrice = reader.GetFieldValue<int>(reader.GetOrdinal("NetOrderPrice"));
-                                        invoice.CouponCode = reader.GetFieldValue<string>(reader.GetOrdinal("Coupon"));
-
-                                        using (SqlConnection connectionWrite = new SqlConnection(connectionProvider)) //get the data from the cart
-                                        {
-                                            connectionWrite.Open();
-                                            string insertsql = "UPDATE Invoice SET receipt2 = @receipt2 WHERE username = @username and InvoiceID= @invoiceID";
-                                            using (SqlCommand insertCommand = new SqlCommand(insertsql, connectionWrite))
-                                            {                               
-                                                insertCommand.Parameters.AddWithValue("@receipt2", "img/Account/" + fileName);
-                                                insertCommand.Parameters.AddWithValue("@invoiceID", invoice.invoiceID);
-                                                insertCommand.Parameters.AddWithValue("@coupon", invoice.CouponCode);
-                                                insertCommand.Parameters.AddWithValue("@username", userconfirm);
-                                               
-
-
-                                                insertCommand.ExecuteNonQuery();
-                                            }
-                                        }
-
-                                        //Remove All Items from Cart
-
-                                        using (SqlConnection connectionDelete = new SqlConnection(connectionProvider)) //get the data from the cart
-                                        {
-                                            connectionDelete.Open();
-                                            string sql = "delete from OrderSimple where username='" + userconfirm + "'"; //deletes all content from user's cat after checking out
-                                            using (SqlCommand deleteCommand = new SqlCommand(sql, connectionDelete))
-                                            {
-
-
-                                                deleteCommand.ExecuteNonQuery();
-
-                                            }
-                                        }
-
-                                    }
-                                }
-                            }
-
-
-                         
-
-
-                        }
-
-
-                    }
-                    else
-                    {
-                        // Invalid file format, set error message
-                       
-                     
-
-                        return Redirect("/Index");
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-           
-
-           
-
-                return Redirect("/Index");
-            }
-
-
-            return Redirect("/Index");
-        }
-
-        public void OnPostDiscount()
-        {
-            OnGet();
-            string couponcode = Request.Form["coupon"];
-            int checkSec = 0;
-            int percentage = 100;
-            try
-            {
-                    using (SqlConnection connection = new SqlConnection(connectionProvider))
-                    {
-                        connection.Open();
-                        string sql2 = "SELECT * FROM GenerateCode WHERE code=@CouponCode AND status='true' AND avail2d='true'";
-
-                        //getting the data based from the pdid variable
-                        using (SqlCommand command = new SqlCommand(sql2, connection))
-                        {
-                        command.Parameters.AddWithValue("@CouponCode", couponcode);
-                        using (SqlDataReader reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    checkSec++;
-                                    discountCode = reader.GetFieldValue<int>(reader.GetOrdinal("Discount"));
-                                    
-                                    discountedPrice = ((decimal)discountCode/percentage)*orderPrice;
-                                    finaldiscountedPrice = (int)Math.Round(discountedPrice);
-
-                            }
-                            }
-                        }
-                    
-                    Console.WriteLine("Coupon" + discountCode + "discountedPrice" + discountedPrice + "finaldiscountedPrice" + finaldiscountedPrice + "OrderPrice" + orderPrice);
-                    Console.WriteLine("check" + checkSec);
-                        if (checkSec > 0)
-                        {
-
-                        
-                           string sql3 = "update GenerateCode set avail2d='false' where code='" + couponcode + "'";
-
-                            using (SqlCommand command = new SqlCommand(sql3, connection))
-                            {
-                                
-                                command.ExecuteNonQuery();
-                            }
-                        
-                        string sql4 = "update OrderSimple set NetOrderPrice=@discountedPrice,Coupon=@coupon WHERE username = @username AND status = 'true'";
-
-                            using (SqlCommand command = new SqlCommand(sql4, connection))
-                            {
-                                command.Parameters.AddWithValue("@username", userconfirm);
-                                command.Parameters.AddWithValue("@coupon", couponcode);
-                                command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
-                                command.ExecuteNonQuery();
-                            }
-                            
-
-                    }
-                    else
-                        {
-                            errorMessage = "The code you used is invalid or has expired!";
-                            TempData["errorMessageProfile"] = errorMessage;
-                            Response.Redirect("/Checkout");
-                        }
-
-
-
-                    }
-                
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Response.Redirect("/Checkout");
-            }
-
-            Response.Redirect("/Checkout");
-        }
+  
+       
 
         public void OnGet()
         {
@@ -578,12 +309,12 @@ namespace abakes2.Pages
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        
+
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                               
+
                                 customerInfo.username = reader.GetString(1);
                                 customerInfo.lname = reader.GetString(2);
                                 customerInfo.fname = reader.GetString(3);
@@ -611,7 +342,7 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
 
-                              invoiceorderstatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
+                                invoiceorderstatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
 
 
                             }

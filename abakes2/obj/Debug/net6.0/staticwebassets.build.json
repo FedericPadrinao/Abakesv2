@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iwI42bGpeGBru0+pUPJrxMEt+b0RMnZmBwmlClVr8WI=",
+  "Hash": "WwQx0OOfoBpjdoEX6JHITHc2JiVI5Xw+bJ7jWASJiRE=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -3602,6 +3602,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Notification\\18c6af23-842d-4b16-9d65-943d06f12678.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Notification\\274961b5-3ad9-45dd-a901-f854321c6b5d.png",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Notification/274961b5-3ad9-45dd-a901-f854321c6b5d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Notification\\274961b5-3ad9-45dd-a901-f854321c6b5d.png"
+    },
+    {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Notification\\4e07a49c-98f1-4a5a-8eb4-e2e8a81917cf.jpg",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Notification/4e07a49c-98f1-4a5a-8eb4-e2e8a81917cf.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Notification\\4e07a49c-98f1-4a5a-8eb4-e2e8a81917cf.jpg"
     },
     {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Notification\\636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",

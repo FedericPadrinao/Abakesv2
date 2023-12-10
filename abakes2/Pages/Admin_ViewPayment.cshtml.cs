@@ -58,8 +58,9 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceDateCreated = reader.GetString(19);
                                 invoiceInfo.orderStatus = reader.GetString(20);
                                 invoiceInfo.receipt = reader.GetString(21);
-                                invoiceInfo.paymentMethod = reader.GetString(22);
 
+                                invoiceInfo.paymentMethod = reader.GetString(22);
+                                invoiceInfo.picture = reader.GetString(25);
                             }
                         }
                     }
@@ -117,6 +118,19 @@ namespace abakes2.Pages
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.ExecuteNonQuery();
+                    }
+                }
+                if (orderstatus == "Complete Order")
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionProvider))
+                    {
+                        connection.Open();
+                        String sql = "UPDATE LoginCustomer SET ordermax='true' WHERE username='" + user + "'";
+
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            command.ExecuteNonQuery();
+                        }
                     }
                 }
             }

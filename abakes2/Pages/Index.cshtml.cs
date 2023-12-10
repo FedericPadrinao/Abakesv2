@@ -299,6 +299,7 @@ namespace abakes2.Pages
         public string paymentMethod = "";
         public string CouponCode = "";
         public int NetInvoicePrice = 0;
+        public string picture = "";
     }
     public class Feedbacks
     {

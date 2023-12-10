@@ -149,7 +149,8 @@
                     <th>Price</th>
                     <th>Delivery</th>
                     <th>Date Paid</th>
-                    <th>Proof of Payment</th>
+                    <th colspan="2">Proof of Payment</th>
+                   
                     <th>Invoice</th>
                     
                 </tr>
@@ -183,6 +184,9 @@
     </td>
     <td>
         <img src="@item.receipt">
+    </td>
+     <td>
+        <img src="@item.picture">
     </td>
     <td>
         <a href='/Customer_Invoice?id=@item.invoiceID' class="btn"> View </a>
@@ -221,6 +225,9 @@
     </td>
     <td>
         <img src="@item.receipt">
+    </td>
+     <td>
+        <img src="@item.picture">
     </td>
     <td>
         <a href='/Customer_Invoice3D?id=@item.ModelID' class="btn"> View </a>

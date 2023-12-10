@@ -55,6 +55,7 @@ namespace abakes2.Pages
                                 invoiceInfo.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
                                 invoiceInfo.orderStatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
                                 invoiceInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                invoiceInfo.picture = reader.GetFieldValue<string>(reader.GetOrdinal("receipt2"));
 
                                 invoiceList.Add(invoiceInfo);
 
@@ -83,6 +84,7 @@ namespace abakes2.Pages
 
                                 order3DInfo.order3Dstatus = reader.GetString(21);
                                 order3DInfo.receipt = reader.GetFieldValue<string>(reader.GetOrdinal("receipt"));
+                                order3DInfo.picture = reader.GetFieldValue<string>(reader.GetOrdinal("picture"));
                                 order3DList.Add(order3DInfo);
                             }
                         }
@@ -98,142 +100,7 @@ namespace abakes2.Pages
 
             }
         }
-        public IActionResult OnGetComplete()
-        {
-            string user = Request.Query["user"];
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString)) //static
-                {
-                    connection.Open();
-                    String sql2 = "update LoginCustomer set ordermax='false' where username='" + user + "'";
-                    using (SqlCommand command = new SqlCommand(sql2, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                customer.ordermax = reader.GetFieldValue<string>(reader.GetOrdinal("ordermax"));
-                                command.ExecuteNonQuery();
-
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("Error Removing Accounts: " + err.ToString());
-            }
-
-            return Redirect("/ManagePayments2");
-        }
-
-     
-        public IActionResult OnGetPause()
-        {
-            string user = Request.Query["user"];
-            try
-            {
-
-                using (SqlConnection connection = new SqlConnection(connectionString)) //static
-                {
-                    connection.Open();
-                    String sql2 = "update LoginCustomer set ordermax='true' where username='" + user + "'";
-                    using (SqlCommand command = new SqlCommand(sql2, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                
-                                command.ExecuteNonQuery();
-
-                            }
-                        }
-
-
-
-
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("Error Removing Accounts: " + err.ToString());
-            }
-
-            return Redirect("/ManagePayments2");
-        }
-
-        public IActionResult OnGetFinish()
-        {
-            string user = Request.Query["user"];
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString)) //static
-                {
-                    connection.Open();
-                    String sql2 = "update LoginCustomer set ordermax3D='false' where username='" + user + "'";
-                    using (SqlCommand command = new SqlCommand(sql2, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                               
-                                command.ExecuteNonQuery();
-
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("Error Removing Accounts: " + err.ToString());
-            }
-
-            return Redirect("/ManagePayments2");
-        }
-
-        public IActionResult OnGetStop()
-        {
-            string user = Request.Query["user"];
-            try
-            {
-
-                using (SqlConnection connection = new SqlConnection(connectionString)) //static
-                {
-                    connection.Open();
-                    String sql2 = "update LoginCustomer set ordermax3D='true' where username='" + user + "'";
-                    using (SqlCommand command = new SqlCommand(sql2, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                customer.ordermax3D = reader.GetFieldValue<string>(reader.GetOrdinal("ordermax3D"));
-
-                                command.ExecuteNonQuery();
-
-                            }
-                        }
-
-
-
-
-                    }
-                }
-            }
-            catch (Exception err)
-            {
-                Console.WriteLine("Error Removing Accounts: " + err.ToString());
-            }
-
-            return Redirect("/ManagePayments2");
-        }
-
+       
         public void OnGet(string sortUser)
         {
             GetUsers(sortUser);

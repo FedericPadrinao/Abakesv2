@@ -232,7 +232,7 @@ namespace abakes2.Pages
                 {
                     connection.Open();
                     String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode) " +
-                        "VALUES (@username, @lname, @fname, @password, @email, 'N/A', 'N/A', '/img/Account/Default.jpg', 'N/A', 'N/A', 'true', 'true', 'false', 'false', @verificationCode, 'false', 'N/A')";
+                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '')";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {

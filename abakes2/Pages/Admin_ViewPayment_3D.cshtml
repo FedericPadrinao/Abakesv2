@@ -30,7 +30,7 @@
         margin: 40px auto;
     }
     .adminbox {
-        height: 800px;
+        height: 900px;
         width: 100%;
         padding: 45px;
         border-radius: 5%;
@@ -40,9 +40,20 @@
     .adminbox h2 {
         text-align: center;
     }
-    .receiptimg {
+   .receiptimg{
+        
         margin-top: 10px;
-        margin-bottom: 10px;
+       
+    }
+    .receiptimg h3 {
+        text-align: center;
+    }
+    .receiptimg img {
+        display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 70%;
+         
     }
     .container3d {
         max-height: 350px;
@@ -484,8 +495,19 @@
                         </div>
                     </div>
                     <div class="receiptimg">
-                        <img src="@Model.order3d.receipt" width="800" height="800">
-                    </div>
+                            <table>
+                                <tr>
+                                    <th> <h3>First Payment</h3> </th>
+                                    <th> <h3>Last Payment</h3> </th>
+                                </tr> 
+                                <tr>
+                                    <td><img src="@Model.order3d.receipt" ></td> 
+                                    <td><img src="@Model.order3d.picture" ></td> 
+                                </tr>
+                            </table> 
+                            
+                            
+                        </div>
                 </div>
             </div>
         </div>

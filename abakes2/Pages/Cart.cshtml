@@ -163,7 +163,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-content">
-                        @if (Model.threeEmpty == 1 && Model.simpleEmpty == 1)
+                        @if (Model.threeEmpty == 1 && Model.simpleEmpty == 1 && Model.invoiceEmpty == 1 && Model.threeinvoiceEmpty == 1)
                         {
                             <script>
                                 window.location.href = '/Customer_OrderStatus_NoOrder';
@@ -196,47 +196,84 @@
                     @if (Model.os.osID == 0)
                     {
                         <td>@Model.invoice.invoiceID</td>
-                    }
-                    else
-                    {
-                    <td>@Model.os.osID </td>
-
-                    }
-                    
-                        <td>Simple Order</td>
+                        <td>Simple Order(For Full Payment)</td>
 
                         <td>
 
                             <div class="cart-info">
 
                                 <div>
-                                    <p>Tier: @Model.os.osOccasion @Model.invoice.invoiceOccasion</p>
-                                    <p>Shapes: @Model.os.osShapes @Model.invoice.invoiceShapes</p>
-                                    <p>Flavors: @Model.os.osFlavors @Model.invoice.invoiceFlavors</p>
-                                    <p>Sizes: @Model.os.osSizes @Model.invoice.invoiceSizes</p>
+                                    <p>Tier: @Model.invoice.invoiceOccasion</p>
+                                    <p>Shapes: @Model.invoice.invoiceShapes</p>
+                                    <p>Flavors: @Model.invoice.invoiceFlavors</p>
+                                    <p>Sizes:  @Model.invoice.invoiceSizes</p>
                                 </div>
                             </div>
                     
                         </td>
 
-                        <td><p>@Model.os.osInstruction @Model.invoice.invoiceInstruction</p></td>
-                        <td><p>@Model.os.osDelivery @Model.invoice.invoiceDelivery</p></td>
-                        <td><p>@Model.os.osPrice @Model.invoice.invoicePrice</p></td>
-                        @if (Model.os.osID == 0)
-                    {
-                        <td><a href='/Checkout?id=@Model.invoice.invoiceID' class="btn btn-primary btn-sm x-button">Checkout</a>
-                            </td>
+                        <td><p>@Model.invoice.invoiceInstruction</p></td>
+                        <td><p>@Model.invoice.invoiceDelivery</p></td>
+                        <td><p>@Model.invoice.invoiceDP</p></td>
+                         <td><a href='/Checkout2?id=@Model.invoice.invoiceID' class="btn btn-primary btn-sm x-button">Checkout</a></td>
                     }
                     else
                     {
-                    <td><a href='/Checkout?id=@Model.os.osID' class="btn btn-primary btn-sm x-button">Checkout</a>
-                    <a href='/Cart?id=@Model.os.osID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">Remove</a></td>
+                    <td>@Model.os.osID </td>
+                    <td>Simple Order</td>
 
+                        <td>
+                            <div class="cart-info">
+
+                                <div>
+                                    <p>Tier: @Model.os.osOccasion</p>
+                                    <p>Shapes: @Model.os.osShapes</p>
+                                    <p>Flavors: @Model.os.osFlavors</p>
+                                    <p>Sizes: @Model.os.osSizes</p>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><p>@Model.os.osInstruction</p></td>
+                        <td><p>@Model.os.osDelivery</p></td>
+                        <td><p>@Model.os.osPrice</p></td>
+                         <td><a href='/Checkout?id=@Model.os.osID' class="btn btn-primary btn-sm x-button">Checkout</a>
+                    <a href='/Cart?id=@Model.os.osID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">Remove</a></td>
                     }
+                    
+                        
+                   
+                        
                         
                        
                     </tr>
                     <!--3D ORDER ROW-->
+                @if (Model.order3D.order3Dstatus == "Order Confirmation")
+                {
+                <tr>
+                        <td>@Model.order3D.ModelID</td>
+                        <td>3D Order(For Full Payment)</td>
+
+                        <td>
+
+                            <div class="cart-info">
+                                <div>
+                                    <p>@Model.order3D.ModelType</p>
+                                </div>
+                            </div>
+                    
+                        </td>
+
+                        <td><p>@Model.order3D.instructions</p></td>
+                        <td><p>@Model.order3D.order3DDelivery</p></td>
+                        <td><p>@Model.order3D.order3DDP</p></td>
+                        <td><a href='/Checkout3D2?id=@Model.order3D.ModelID' class="btn btn-primary btn-sm x-button">Checkout</a>
+                           </td>
+                    </tr>
+
+                }
+                else
+                {
                     <tr>
                         <td>@Model.order3D.ModelID</td>
                         <td>3D Order</td>
@@ -258,6 +295,8 @@
                         <td><a href='/Checkout3D?id=@Model.order3D.ModelID' class="btn btn-primary btn-sm x-button">Checkout</a>
                              <a href='/Cart?id=@Model.order3D.ModelID&handler=RemoveCart' class="btn btn-primary btn-sm x-button">Remove</a></td>
                     </tr>
+                }
+                
                 
             </table>
         </form>

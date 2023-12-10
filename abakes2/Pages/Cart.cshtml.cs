@@ -21,6 +21,8 @@ namespace abakes2.Pages
         public String statusconfirm = "";
         public int simpleEmpty = 0;
         public int threeEmpty = 0;
+        public int invoiceEmpty = 0;
+        public int threeinvoiceEmpty = 0;
         public int pubnotifCount = 0;
         public int notifCount = 0;
         public int pnotifCount = 0;
@@ -83,8 +85,13 @@ namespace abakes2.Pages
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            
-                                while (reader.Read())
+                            if (!reader.HasRows)
+                            {
+                                invoiceEmpty++;
+
+                                Console.WriteLine("No orders found for user: " + simpleEmpty);
+                            }
+                            while (reader.Read())
                                 {
                                 invoice.invoiceID = reader.GetInt32(0);
                                 invoice.invoiceUsername = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
@@ -405,7 +412,43 @@ namespace abakes2.Pages
                                     order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
                                     order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
                                     order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                             
 
+
+                                }
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider)) //get the data from the cart
+                {
+                    connection.Open();
+                    string sql = "select * from Order3DForm where username='" + userconfirm + "' AND orderstatus ='Order Confirmation'"; //get all the data from the shopping cart based on the user.
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                threeinvoiceEmpty++;
+                                Console.WriteLine("No orders found for 3duser: " + threeEmpty);
+                            }
+                            else
+                            {
+
+
+                                while (reader.Read())
+                                {
+
+
+
+                                    order3D.ModelID = reader.GetFieldValue<int>(reader.GetOrdinal("OrderID"));
+                                    order3D.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
+                                    order3D.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
+                                    order3D.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
+                                    order3D.order3DPrice = reader.GetFieldValue<int>(reader.GetOrdinal("OrderPrice"));
+                                    order3D.order3DDP = reader.GetFieldValue<int>(reader.GetOrdinal("Downpayment"));
+                                    order3D.order3Dstatus = reader.GetFieldValue<string>(reader.GetOrdinal("orderstatus"));
 
 
                                 }

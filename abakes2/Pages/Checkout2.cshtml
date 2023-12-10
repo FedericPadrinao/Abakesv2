@@ -1,5 +1,5 @@
 ﻿@page
-@model abakes2.Pages.CheckoutModel
+@model abakes2.Pages.Checkout2Model
 @{
 }
 <head>
@@ -165,7 +165,7 @@
                         </div>
                     </div>
 
-                      <a type="submit" href="/Customer_AccountInformation?user=@Model.userconfirm" class="btn btn-primary btn-lg py-3 btn-block">Change your Billing Details</a>
+                      
 
                 </div>
             </div>
@@ -173,27 +173,11 @@
             <div class="col-md-6">
                 <div class="row mb-5">
                     <div class="col-md-12">
-                        <h2 class="h3 mb-3 text-black">QR/Coupon Code</h2>
+                        <h2 class="h3 mb-3 text-black">QR Code</h2>
                         <div class="p-3 p-lg-5 border">
-                            <div class="input-group">
-                                <div class="input-group-append">
-                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">
-                                </div>
-                                
-                            </div>
-                            <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
-                            
-                            <div class="input-group">
-                                <form method="post" asp-page-handler="Discount">
-
-                               
-                                <input type="text" name="coupon" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2"  >
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit" id="button-addon2">Apply</button>
-                                </div>
-                                 </form>
-                            </div>
-                            
+                            <div class="input-group">                      
+                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 422px;">
+                            </div>                          
                         </div>
                         </div>
                     </div>
@@ -213,28 +197,24 @@
                             
                         
                                 <tbody>
-                                    @foreach (var item in Model.listOrderSimple)
-                                    {
+                                  
                                         <tr>
                                             <td>
-                                              <strong>Occassion:</strong>  @item.osOccasion<br>
-                                                <strong>Flavor: </strong>  @item.osFlavors<br>
-                                                <strong>Shapes: </strong> @item.osShapes <br> 
-                                               <strong>Tier: </strong>   @item.osTier<br>
-                                                <strong>Color: </strong>  @item.osColor<br>
-                                                <strong>Dedication: </strong>  @item.osDedication <br>
-                                                <strong>Mode of Delivery: </strong>  @item.osDelivery <br> 
+                                              <strong>Occassion:</strong>  @Model.invoice.invoiceOccasion<br>
+                                                <strong>Flavor: </strong>  @Model.invoice.invoiceFlavors<br>
+                                                <strong>Shapes: </strong> @Model.invoice.invoiceShapes <br> 
+                                               <strong>Tier: </strong>   @Model.invoice.invoiceTier<br>
+                                                <strong>Color: </strong>  @Model.invoice.invoiceColor<br>
+                                                <strong>Dedication: </strong>  @Model.invoice.invoiceDedication <br>
+                                                <strong>Mode of Delivery: </strong>  @Model.invoice.invoiceDelivery <br> 
 
                                             </td>
-                                            <td><strong> PHP @item.osPrice</strong></td>
+                                            <td><strong> PHP @Model.invoice.invoicePrice</strong></td>
                                         </tr>
-                                    }
+                                    
+                                  
                                     <tr>
-                                        <td class="text-black font-weight-bold"><strong>Product Price</strong></td>
-                                        <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCart</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-black font-weight-bold"><strong>50% Downpayment</strong></td>
+                                        <td class="text-black font-weight-bold"><strong>Remaining Product Price</strong></td>
                                         <td class="text-black"> <strong>PHP @Model.TotalDP</strong> </td>
                                     </tr>
                                     
@@ -244,29 +224,16 @@
                                     </tr>
                                    
                                         
-                                        @if (Model.os.netOrderPrice == 0)
-                                    {
+                                 
                                          <tr>
-                                        <td class="text-black font-weight-bold"><strong>Full Payment</strong><small>(Product Price + Shipping Fee)</small></td>
-                                        <td class="text-black font-weight-bold"><strong>PHP @Model.TotalCost</strong></td>
+                                        <td class="text-black font-weight-bold"><strong>Amount Left to Pay</strong><small>((Product Price-50% Downpayment)) + Shipping Fee)</small></td>
+                                        <td class="text-black font-weight-bold"><strong>PHP @Model.remainingFee</strong></td>
                                          </tr>
-                                    }
-                                    else
-                                    {
-                                        <tr>
-                                         <td class="text-black font-weight-bold"><strong>Discounted Product Price</strong></td>
-                                        <td class="text-black font-weight-bold"><strong>PHP @Model.os.netOrderPrice</strong></td>
-                                        </tr>
-                                        <tr>
-                                         <td class="text-black font-weight-bold"><strong>Net Price</strong><small>(Discounted Product Price + Shipping + Downpayment)</small></td>
-                                        <td class="text-black font-weight-bold"><strong>PHP @Model.TotalNetCost</strong></td>
-                                        </tr>
-                                        
-                                    }
-                              
+                                    
+                            
                                     
                                 </tbody>
-                            }
+                            
                             
                             </table>
                                  <!-- Place Order Button -->
@@ -276,17 +243,10 @@
                                      <!-- Payment Methods -->
                                
                                     <h3 class="h6 mb-0">
-                                        <label class="custom-radio">
-                                            <input type="radio" name="paymentMethod" value="GCASH">
-                                            GCASH
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="paymentMethod" value="COD">
-                                            Cash on Delivery
-                                        </label>
+                                        Please upload payment of the remaining amount
                                     </h3>                            
                                 <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
-                                <button type="submit" onclick="window.location='thankyou.html'" class="btn btn-primary btn-lg py-3 btn-block">Proceed To Checkout</button>
+                                <button type="submit" onclick="window.location='thankyou.html'" class="btn btn-primary btn-lg py-3 btn-block">Pay remaining amount</button>
                                 </form>
                             
                          
