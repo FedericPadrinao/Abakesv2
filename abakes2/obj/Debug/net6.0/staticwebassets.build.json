@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WwQx0OOfoBpjdoEX6JHITHc2JiVI5Xw+bJ7jWASJiRE=",
+  "Hash": "8u2chw0V/hehugLtI6b3GidI2mckGFhOFnfkOGJovRI=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -2261,6 +2261,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Account\\seulgi-red-velvet-reve-festival-finale-uhdpaper.com-4K-7.654.jpg"
     },
     {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Account\\tgr.png",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Account/tgr.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\tgr.png"
+    },
+    {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280 (1).png",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -2293,6 +2310,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280.png"
+    },
+    {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Account\\ubecake.jpg",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Account/ubecake.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Account\\ubecake.jpg"
     },
     {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\img\\Account\\user.png",

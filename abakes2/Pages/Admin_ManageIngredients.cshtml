@@ -1,5 +1,6 @@
 ﻿@page
-@model abakes2.Pages.Admin_ManageArchiveCakesModel
+@model abakes2.Pages.Admin_ManageIngredientsModel
+
 @{
     Layout = null;
 }
@@ -12,7 +13,7 @@
     <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
     <script src="https://kit.fontawesome.com/e91d01519e.js" crossorigin="anonymous"></script>
 
-    <title>Manage Cakes</title>
+    <title>Manage Ingredients</title>
 </head>
 
 <body>
@@ -23,7 +24,6 @@
             <div class="logo">
                 <a href="/AdminDashboard"><img src="~/img/logo/logofooter.png" alt="logo" width="75px"></a>
             </div>
-
             <div class="user">
                 <img src="~/img/AdminDashboard/user.png" alt="">
             </div>
@@ -31,21 +31,21 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="/Admin_ManageCakes" class="active">
+                    <a href="/Admin_ManageCakes">
                         <i class="fas fa-birthday-cake"></i>
                         <div>Manage Cake</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Admin_ManageIngredients">
-                        <i class="fas fa-utensils"></i>
-                        <div>Manage Ingredients</div>
                     </a>
                 </li>
                 <li>
                     <a href="/Admin_Manage3DAsset">
                         <i class="fa-brands fa-unity"></i>
                         <div>Manage 3D Asset</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Admin_ManageIngredients" class="active">
+                        <i class="fas fa-utensils"></i>
+                        <div>Manage Ingredients</div>
                     </a>
                 </li>
                 <li>
@@ -113,7 +113,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-content">
-                                <h2>Manage Archived Cakes</h2>
+                                <h2>Manage Flavors</h2>
                             </div>
                         </div>
                     </div>
@@ -122,15 +122,21 @@
             <!--Title Bar End-->
 
             <div class="admin-table">
-                <a href="/Admin_ManageCakes" type="submit" class="btn" style="margin:1%;">Displayed</a>
-                <a asp-page="/Admin_ManageArchiveCakes" asp-route-sortProduct="Sort Name" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black; margin-top:20px;margin-bottom:20px;"> ↓ Name</a>
-                <a asp-page="/Admin_ManageArchiveCakes" asp-route-sortProduct="Sort Name2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black; margin-top:20px;margin-bottom:20px;"> ↑ Name</a>
-                <a asp-page="/Admin_ManageArchiveCakes" asp-route-sortProduct="Sort Price" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black; margin-top:20px;margin-bottom:20px;"> ↓ Price</a>
-                <a asp-page="/Admin_ManageArchiveCakes" asp-route-sortProduct="Sort Price2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black; margin-top:20px;margin-bottom:20px;"> ↑ Price</a>
+                <form method="post" asp-page-handler="Generate">
+                    <input type="text" placeholder="Enter Flavor Name" name="flavors" required> 
+                     <button type="submit" class="btn" style="margin:1%;">Add Flavor</button>
+                </form>
+
+                
+                <a href="/Admin_ManageColors" type="submit" class="btn" style="margin:1%;">Manage Colors</a>
+                <a asp-page="/Admin_ManageIngredients" asp-route-sortProduct="Sort Name" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↓ Name</a>
+                <a asp-page="/Admin_ManageIngredients" asp-route-sortProduct="Sort Name2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↑ Name</a>      
+                <a asp-page="/Admin_ManageIngredients" asp-route-sortProduct="Sort Status" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> Show Archived Flavors</a>
+                <a asp-page="/Admin_ManageIngredients" asp-route-sortProduct="Sort Status2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> Show Displayed Flavors</a>
                 <form method="get">
                     <div class="search">
                         <button type="submit" for="search"><i class="fas fa-search"></i></button>
-                        <input type="text" name="search" placeholder="Search for Product">
+                        <input type="text" name="search" placeholder="Search for Flavors">
 
                     </div>
                 </form>
@@ -139,26 +145,23 @@
 
                 <table class="table" style="margin:1%;">
                     <thead>
+
                         <tr>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">ID</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Category</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Name</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Price</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:41%;">Description</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:34%;">Image</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Flavor</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Status(false = display, true = hidden)</th>                         
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:13%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.listProduct)
+                        @foreach (var item in Model.flavorsList)
                         {
                             <tr>
-                                <td><p>@item.pdID</p></td>
-                                <td><p>@item.pdCategory</p></td>
-                                <td><p>@item.pdName</p></td>
-                                <td><p>@item.pdPrice</p></td>
-                                <td><p>@item.pdDescription</p></td>
-                                <td><img src="@item.pdImg" alt="Product Image"></td>
+                                <td><p>@item.CakeID</p></td>
+                                <td><p>@item.CakeFlavor</p></td>
+                                <td><p>@item.status</p></td>
+                                
+                                
 
 
                                 @* <style="max-width: 50%;">*@
@@ -166,17 +169,27 @@
 
 
 
-                                <td>
-                                    <a class='btn' style="background:#F1DEB9; color:black;" href='/Admin_EditProduct?id=@item.pdID'>
+                                <td style="align-content:center;">
+                                    <a class='btn' style="background:#F1DEB9; color:black;" href='/Admin_EditIngredient?id=@item.CakeID'>
                                         <i class="fas fa-pencil" style="font-size:30px;"></i> <div>Edit</div>
                                     </a>
-                                    <a class='btn' style="background:#9a0009;" asp-page-handler="Delete" asp-route-id=@item.pdID>
+                                    <a class='btn ' style="background:#9a0009;" asp-page-handler="Delete" asp-route-id=@item.CakeID>
                                         <i class="fas fa-trash" style="font-size:30px;"></i> <div>Delete</div>
                                     </a>
-                                    <a class='btn' style="background:#7685FF; " asp-page-handler="Archive" asp-route-id=@item.pdID>
+                                    @if (@item.status == "false")
+                                    {
+                                     <a class='btn ' style="background:#7685FF; " asp-page-handler="Archive" asp-route-id=@item.CakeID>
+                                        <i class="fas fa-archive" style="font-size:30px;"></i> <div>Archive</div>
+                                        </a>
+
+                                    }
+                                    else
+                                    {
+                                         <a class='btn ' style="background:#7685FF; " asp-page-handler="Display" asp-route-id=@item.CakeID>
                                         <i class="fas fa-archive" style="font-size:30px;"></i> <div>Display</div>
                                     </a>
-                                 
+                                    }
+
                                 </td>
                             </tr>
                         }

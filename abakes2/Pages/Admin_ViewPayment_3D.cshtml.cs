@@ -62,6 +62,7 @@ namespace abakes2.Pages
                                 order3d.receipt = reader.GetString(22);
                                 order3d.paymentMethod = reader.GetString(23);
                                 order3d.order3DDelivery = reader.GetString(24);
+                                order3d.picture = reader.GetString(27);
 
                             }
                         }
@@ -161,7 +162,7 @@ namespace abakes2.Pages
                     using (SqlConnection connection = new SqlConnection(connectionProvider))
                     {
                         connection.Open();
-                        String sql = "UPDATE LoginCustomer SET ordermax3D='true' WHERE username='" + user + "'";
+                        String sql = "UPDATE LoginCustomer SET ordermax3D='false' WHERE username='" + user + "'";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {

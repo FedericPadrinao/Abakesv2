@@ -170,6 +170,7 @@
                     <!--Occasion-->
                     <label for="occasion"><h3>Occasion‌: ‌ ‌ </h3></label>
                     <select name="occasion" id="occasion" required>
+                        
                         <option value="Birthday">Birthday Party</option>
                         <option value="Wedding">Wedding</option>
                         <option value="Debut">Debut</option>
@@ -179,16 +180,11 @@
                     <!--Colors-->
                      <label for="color"><h3>Base Color: ‌ ‌ </h3></label>
                         <select name="color" id="color" required>
-                            <option value="Red">Red</option>
-                            <option value="Green">Green</option>
-                            <option value="Blue">Blue</option>
-                            <option value="Yellow">Yellow</option>
-                            <option value="Purple">Purple</option>
-                            <option value="Orange">Orange</option>
-                            <option value="Pink">Pink</option>
-                            <option value="Brown">Brown</option>
-                            <option value="Gray">Gray</option>
-                            <option value="Black">Black</option>
+                            @foreach (var item in Model.colorsList)
+                            {
+                                <option value="@item.CakeColor">@item.CakeColor</option>
+                            }
+                            
                         </select>
                     <!--Shapes-->
                     <h3>Shapes:</h3>
@@ -215,12 +211,11 @@
                     <!--Flavor-->
                     <label for="flavors"><h3>Cake Flavors‌: ‌ ‌ </h3></label>
                     <select name="flavors" id="flavors" required>
-                        <option value="matcha">Matcha</option>
-                        <option value="strawberry">Strawberry</option>
-                        <option value="vanilla">Vanilla</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="otherflavor">Others</option>
-                    </select>
+                    @foreach (var item in Model.flavorsList)
+                    {
+                        <option value="@item.CakeFlavor">@item.CakeFlavor</option>
+                    }
+                        </select>
                     <br /><br />
                     <!--Size-->
                     <label for="sizes"><h3>Cake Size‌‌: ‌ ‌ ‌‌ ‌ ‌ ‌‌ </h3></label>
@@ -237,6 +232,7 @@
                     <input class="form-check-input" style="height:21px" type="radio" value="Delivery" name="delivery" required />
                     <label class="form-check-label" for="pickup">Pick up</label>
                     <input class="form-check-input" style="height:21px" type="radio" value="Pickup" name="delivery" required />
+                    <br />
                     <label class="form-check-label" for="pickup">Preferred Delivery/Pickup</label>
                     <input style="height:21px" type="date" name="preferred" required />
                     <!--Dedication-->

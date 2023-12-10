@@ -125,7 +125,7 @@ namespace abakes2.Pages
                     using (SqlConnection connection = new SqlConnection(connectionProvider))
                     {
                         connection.Open();
-                        String sql = "UPDATE LoginCustomer SET ordermax='true' WHERE username='" + user + "'";
+                        String sql = "UPDATE LoginCustomer SET ordermax='false' WHERE username='" + user + "'";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {

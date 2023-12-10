@@ -11,6 +11,7 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String successMessage = "";
         public int feedbackcount = 0;
+        public string formatrating = "";
         public double feedbackrating = 0;
         public int usercount = 0;
         public int ordersimplecount = 0;
@@ -238,6 +239,7 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                feedbackrating = reader.GetDouble(0);
+                             formatrating = feedbackrating.ToString("F2");
 
                             }
                         }

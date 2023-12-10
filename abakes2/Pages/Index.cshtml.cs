@@ -181,6 +181,20 @@ namespace abakes2.Pages
         public string PositionZ = "";
 
     }
+
+    public class CakeColors
+    {
+        public int CakeID = 0;
+        public string CakeColor = "";
+        public string status = "";
+    }
+
+    public class CakeFlavors
+    {
+        public int CakeID = 0;
+        public string CakeFlavor = "";
+        public string status = "";
+    }
     public class OrderInfo
     {
         public int odID = 0;

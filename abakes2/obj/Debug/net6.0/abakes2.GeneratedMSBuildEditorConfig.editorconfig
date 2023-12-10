@@ -111,8 +111,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQ2FrZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageColors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQ29sb3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlRmVlZGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageIngredients.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlSW5ncmVkaWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageNotif.cshtml]

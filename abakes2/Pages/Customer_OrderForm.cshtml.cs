@@ -7,6 +7,8 @@ namespace abakes2.Pages
     {
         public CustomerInfo customerInfo = new CustomerInfo();
         public InvoiceInfo invoiceInfo = new InvoiceInfo(); 
+        public List<CakeColors> colorsList = new List<CakeColors>();
+        public List<CakeFlavors> flavorsList = new List<CakeFlavors>();
         public List<OrderSimpleInfo> orderSimpleInfo = new List<OrderSimpleInfo>();
         public String userconfirm = "";
         public String errorMessage = "";
@@ -168,7 +170,42 @@ namespace abakes2.Pages
                 }
                 totalcartCount = cartCount3D + cartCount;
                 totalnotifCount = notifCount + pnotifCount - pubnotifCount;
-
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select * from CakeColors where status ='false'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CakeColors colors = new CakeColors();
+                                colors.CakeID = reader.GetInt32(0);
+                                colors.CakeColor = reader.GetString(1);
+                                colorsList.Add(colors);
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select * from CakeFlavors where status='false'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CakeFlavors flavors = new CakeFlavors();
+                                flavors.CakeID = reader.GetInt32(0);
+                                flavors.CakeFlavor = reader.GetString(1);
+                                flavorsList.Add(flavors);
+                            }
+                        }
+                    }
+                }
             }
 
             catch (Exception ex)
