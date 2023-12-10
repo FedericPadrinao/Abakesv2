@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
     <script src="https://kit.fontawesome.com/e91d01519e.js" crossorigin="anonymous"></script>
 
     <title>Admin Panel</title>
@@ -211,6 +212,31 @@
                     <h2>Occasions for Cakes</h2>
                     <div>
                         <canvas id="doughnut3" data-url="@Url.Page("AdminDashboard", "GetOccasionData")"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="charts" style="grid-template-columns: 4fr;">
+                <div class="chart">
+                    <h2>Monthly Sales</h2>
+                    <div>
+                        <table class="charts-css line multiple show-data show-labels show-primary-axis show-1-secondary-axes ">
+                            <caption>Monthly Sales</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Month</th>
+                                    <th scope="col">Sales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var monthlySale in Model.MonthlySalesData)
+                                {
+                                    <tr>
+                                        <th scope="row">@monthlySale.Month</th>
+                                        <td style="--start: 0; --end: @(monthlySale.Sales / 40000.0);"><span class="data">@monthlySale.Sales</span></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

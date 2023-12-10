@@ -5,340 +5,341 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = abakes2
 build_property.RootNamespace = abakes2
-build_property.ProjectDir = C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2\
+build_property.ProjectDir = D:\Library\Desktop\AbakesDef\Abakesv2\abakes2\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Federic\Documents\UST\CAPSTONE\version 14\version 14\abakes2\abakes2
+build_property.MSBuildProjectDirectory = D:\Library\Desktop\AbakesDef\Abakesv2\abakes2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/AboutUs.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXRVcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account_ChangePasscode.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account_ChangePasscode.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudF9DaGFuZ2VQYXNzY29kZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account_Forgot_Pass.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account_Forgot_Pass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudF9Gb3Jnb3RfUGFzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account_Reg_Succ.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account_Reg_Succ.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudF9SZWdfU3VjYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account_Resend_Verif.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account_Resend_Verif.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudF9SZXNlbmRfVmVyaWYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account_Verify.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account_Verify.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudF9WZXJpZnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Account_Verif_Succ.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Account_Verif_Succ.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudF9WZXJpZl9TdWNjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/AdminDashboard.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Add3DAsset.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Add3DAsset.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQWRkM0RBc3NldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Add3DCake.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Add3DCake.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQWRkM0RDYWtlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_AddProduct.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_AddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQWRkUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ChangePassSucc.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ChangePassSucc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQ2hhbmdlUGFzc1N1Y2MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ChangePassword.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_EditProduct.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DAsset.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Manage3DAsset.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RBc3NldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DCake.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Manage3DCake.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RDYWtlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DOrders.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Manage3DOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RPcmRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Manage3DOrders2.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Manage3DOrders2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlM0RPcmRlcnMyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageAcc.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageAcc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQWNjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageArchiveCakes.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageArchiveCakes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQXJjaGl2ZUNha2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageArchiveFeedbacks.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageArchiveFeedbacks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQXJjaGl2ZUZlZWRiYWNrcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageBlockedAcc.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageBlockedAcc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQmxvY2tlZEFjYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageCakes.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageCakes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlQ2FrZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageFeedback.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlRmVlZGJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageNotif.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageNotif.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlTm90aWYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageOrders.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlT3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageQR.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageQR.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlUVIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ManageSimpleOrders2.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ManageSimpleOrders2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTWFuYWdlU2ltcGxlT3JkZXJzMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_Notif.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_Notif.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fTm90aWYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_View3DAsset.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_View3DAsset.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fVmlldzNEQXNzZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_View3DCake.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_View3DCake.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fVmlldzNEQ2FrZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ViewPayment.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ViewPayment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fVmlld1BheW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Admin_ViewPayment_3D.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Admin_ViewPayment_3D.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5fVmlld1BheW1lbnRfM0QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/card.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/card.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Cart.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Checkout.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Checkout2.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Checkout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Checkout3D.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Checkout3D.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXQzRC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Checkout3D2.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Checkout3D2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlY2tvdXQzRDIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/ContactUs.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/ContactUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_AccountInformation.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_AccountInformation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQWNjb3VudEluZm9ybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_AccountSettings.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_AccountSettings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQWNjb3VudFNldHRpbmdzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_AddFeedback.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_AddFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQWRkRmVlZGJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Block.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Block.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQmxvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_CakesForApproval.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_CakesForApproval.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQ2FrZXNGb3JBcHByb3ZhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_CompleteOrders.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_CompleteOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQ29tcGxldGVPcmRlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_ContactSoon.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_ContactSoon.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfQ29udGFjdFNvb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_FAQS.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_FAQS.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfRkFRUy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Feedback.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Feedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfRmVlZGJhY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Feedback_Prompt.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Feedback_Prompt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfRmVlZGJhY2tfUHJvbXB0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_FullCapacity_Prompt.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_FullCapacity_Prompt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfRnVsbENhcGFjaXR5X1Byb21wdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Gallery.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Gallery.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfR2FsbGVyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Invoice.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Invoice.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfSW52b2ljZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Invoice3D.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Invoice3D.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfSW52b2ljZTNELmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_MaxOrder.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_MaxOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfTWF4T3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Notif.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Notif.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfTm90aWYuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Order3DForm.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Order3DForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXIzREZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderForm.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_OrderForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJGb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderStatus.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_OrderStatus.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdGF0dXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderStatus3D.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_OrderStatus3D.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdGF0dXMzRC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderStatus_NoOrder.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_OrderStatus_NoOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdGF0dXNfTm9PcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderSuccess3D_Prompt.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_OrderSuccess3D_Prompt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdWNjZXNzM0RfUHJvbXB0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_OrderSuccess_Prompt.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_OrderSuccess_Prompt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfT3JkZXJTdWNjZXNzX1Byb21wdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_PNotif.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_PNotif.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfUE5vdGlmLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_Privacy.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_TermsandCondition.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_TermsandCondition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfVGVybXNhbmRDb25kaXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_ViewFeedback.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_ViewFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfVmlld0ZlZWRiYWNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Customer_ViewProduct.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Customer_ViewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJfVmlld1Byb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/DisplayTest.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/DisplayTest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheVRlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Error.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Index.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/ManagePayments.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/ManagePayments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlUGF5bWVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/ManagePayments2.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/ManagePayments2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlUGF5bWVudHMyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Privacy.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/View3DOrder.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/View3DOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlldzNET3JkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/ViewAccount.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/ViewAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0FjY291bnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/ViewSimpleOrder.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/ViewSimpleOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1NpbXBsZU9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/_ViewImports.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/_ViewStart.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Federic/Documents/UST/CAPSTONE/version 14/version 14/abakes2/abakes2/Pages/Shared/_Layout.cshtml]
+[D:/Library/Desktop/AbakesDef/Abakesv2/abakes2/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9gkolk5p28

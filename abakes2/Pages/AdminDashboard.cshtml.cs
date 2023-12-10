@@ -7,6 +7,7 @@ namespace abakes2.Pages
     {
         public List<Products> listProduct = new List<Products>();
         public List<UserInfo> userInfo = new List<UserInfo>();
+        public List<MonthlySales> MonthlySalesData { get; set; }
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
@@ -29,6 +30,7 @@ namespace abakes2.Pages
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
+            MonthlySalesData = GetMonthlySalesData();
             userconfirm = HttpContext.Session.GetString("username");
             try
             {
@@ -347,6 +349,64 @@ namespace abakes2.Pages
             {
                 return new JsonResult(new { error = e.Message });
             }
+        }
+        private List<MonthlySales> GetMonthlySalesData()
+        {
+            List<MonthlySales> monthlySalesData = new List<MonthlySales>();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+
+                    for (int month = 1; month <= 12; month++)
+                    {
+                        string sql = $"SELECT ISNULL(SUM(OrderPrice), 0) AS MonthlySales " +
+                                     $"FROM (" +
+                                     $"    SELECT OrderPrice, MONTH(ExpectedDelivery) AS SaleMonth " +
+                                     $"    FROM Invoice " +
+                                     $"    WHERE orderstatus = 'Complete Order' AND MONTH(ExpectedDelivery) = {month} " +
+                                     $"    UNION ALL " +
+                                     $"    SELECT OrderPrice, MONTH(ExpectedDelivery) AS SaleMonth " +
+                                     $"    FROM Order3DForm " +
+                                     $"    WHERE orderstatus = 'Complete Order' AND MONTH(ExpectedDelivery) = {month} " +
+                                     $") AS MonthlyData";
+
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    monthlySalesData.Add(new MonthlySales
+                                    {
+                                        Month = GetMonthName(month),
+                                        Sales = reader.GetInt32(0)
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error retrieving monthly sales data: " + e.Message);
+            }
+
+            return monthlySalesData;
+        }
+
+        private string GetMonthName(int month)
+        {
+            return new DateTime(2023, month, 1).ToString("MMMM");
+        }
+
+        public class MonthlySales
+        {
+            public string Month { get; set; }
+            public int Sales { get; set; }
         }
     }
 }
