@@ -238,7 +238,7 @@
                                 {
                                     <tr>
                                         <th scope="row">@monthlySale.Month</th>
-                                        <td style="--start: 0; --end: @(monthlySale.Sales / 40000.0);"><span class="data">@monthlySale.Sales</span></td>
+                                        <td style="--start: 0.1; --end: @(monthlySale.Sales / 40000.0 + 0.1);" class="border"><span class="data">@monthlySale.Sales</span></td>
                                     </tr>
                                 }
                             </tbody>
