@@ -1,1475 +1,1515 @@
 {
   "Files": [
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\abakes2.bundle.scp.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\abakes2.bundle.scp.css",
       "PackagePath": "staticwebassets\\abakes2.bundle.scp.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\3DForm\\body.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\3DForm\\body.css",
       "PackagePath": "staticwebassets\\css\\3DForm\\body.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Account\\PageHeading.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Account\\PageHeading.css",
       "PackagePath": "staticwebassets\\css\\Account\\PageHeading.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Account\\PasswordCard.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Account\\PasswordCard.css",
       "PackagePath": "staticwebassets\\css\\Account\\PasswordCard.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Account\\ProfilePicture.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Account\\ProfilePicture.css",
       "PackagePath": "staticwebassets\\css\\Account\\ProfilePicture.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\AdminDashboard\\dropdown.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\AdminDashboard\\dropdown.css",
       "PackagePath": "staticwebassets\\css\\AdminDashboard\\dropdown.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\AdminDashboard\\styles.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\AdminDashboard\\styles.css",
       "PackagePath": "staticwebassets\\css\\AdminDashboard\\styles.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Cart\\aos.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Cart\\aos.css",
       "PackagePath": "staticwebassets\\css\\Cart\\aos.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\aos.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\aos.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\aos.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\bootstrap.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\jquery-ui.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\jquery-ui.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\jquery-ui.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\magnific-popup.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\magnific-popup.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\magnific-popup.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\owl.carousel.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\owl.carousel.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\owl.theme.default.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\owl.theme.default.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\style.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Checkout\\style.css",
       "PackagePath": "staticwebassets\\css\\Checkout\\style.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\ContactUs\\damarota-blog.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\ContactUs\\damarota-blog.css",
       "PackagePath": "staticwebassets\\css\\ContactUs\\damarota-blog.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\damarota-blog.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\damarota-blog.css",
       "PackagePath": "staticwebassets\\css\\Feedback\\damarota-blog.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\layout.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\layout.css",
       "PackagePath": "staticwebassets\\css\\Feedback\\layout.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\owl.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\owl.css",
       "PackagePath": "staticwebassets\\css\\Feedback\\owl.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\owl.theme.default.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Feedback\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\css\\Feedback\\owl.theme.default.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Index\\font.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Index\\font.css",
       "PackagePath": "staticwebassets\\css\\Index\\font.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\CustomerNotif.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\CustomerNotif.css",
       "PackagePath": "staticwebassets\\css\\Notification\\CustomerNotif.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\style.css.bak",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\style.css.bak",
       "PackagePath": "staticwebassets\\css\\Notification\\style.css.bak"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\styles.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\styles.css",
       "PackagePath": "staticwebassets\\css\\Notification\\styles.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\styles.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\Notification\\styles.css.map",
       "PackagePath": "staticwebassets\\css\\Notification\\styles.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\OrderStatus\\OrderStatus.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\OrderStatus\\OrderStatus.css",
       "PackagePath": "staticwebassets\\css\\OrderStatus\\OrderStatus.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\badge\\badge.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\badge\\badge.css",
       "PackagePath": "staticwebassets\\css\\badge\\badge.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\card\\card.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\card\\card.css",
       "PackagePath": "staticwebassets\\css\\card\\card.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\card\\card_background.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\card\\card_background.png",
       "PackagePath": "staticwebassets\\css\\card\\card_background.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\footer\\layout.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\faqs\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\faqs\\css\\style.css"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\faqs\\css\\style.scss",
+      "PackagePath": "staticwebassets\\css\\faqs\\css\\style.scss"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\footer\\layout.css",
       "PackagePath": "staticwebassets\\css\\footer\\layout.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\homepage\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\homepage\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.rtl.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\css\\homepage\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\css\\homepage\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\carousel.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\homepage\\carousel.css",
       "PackagePath": "staticwebassets\\css\\homepage\\carousel.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\css\\style.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\favicon.ico",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\fonts\\Amsterdam.ttf",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\fonts\\Amsterdam.ttf",
       "PackagePath": "staticwebassets\\fonts\\Amsterdam.ttf"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\fonts\\Bugaki.ttf",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\fonts\\Bugaki.ttf",
       "PackagePath": "staticwebassets\\fonts\\Bugaki.ttf"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\fonts\\Lobster-Regular.ttf",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\fonts\\Lobster-Regular.ttf",
       "PackagePath": "staticwebassets\\fonts\\Lobster-Regular.ttf"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\fonts\\Poppins-ExtraBold.ttf",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\fonts\\Poppins-ExtraBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins-ExtraBold.ttf"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\fonts\\Poppins.ttf",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\fonts\\Poppins.ttf",
       "PackagePath": "staticwebassets\\fonts\\Poppins.ttf"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\app-store.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\app-store.png",
       "PackagePath": "staticwebassets\\images\\app-store.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\buy-1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\buy-1.jpg",
       "PackagePath": "staticwebassets\\images\\buy-1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\buy-2.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\buy-2.jpg",
       "PackagePath": "staticwebassets\\images\\buy-2.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\buy-3.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\buy-3.jpg",
       "PackagePath": "staticwebassets\\images\\buy-3.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\cart.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\cart.png",
       "PackagePath": "staticwebassets\\images\\cart.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\category-1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\category-1.jpg",
       "PackagePath": "staticwebassets\\images\\category-1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\category-2.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\category-2.jpg",
       "PackagePath": "staticwebassets\\images\\category-2.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\category-3.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\category-3.jpg",
       "PackagePath": "staticwebassets\\images\\category-3.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\exclusive.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\exclusive.png",
       "PackagePath": "staticwebassets\\images\\exclusive.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-1.jpg",
       "PackagePath": "staticwebassets\\images\\gallery-1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-2.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-2.jpg",
       "PackagePath": "staticwebassets\\images\\gallery-2.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-3.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-3.jpg",
       "PackagePath": "staticwebassets\\images\\gallery-3.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-4.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\gallery-4.jpg",
       "PackagePath": "staticwebassets\\images\\gallery-4.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\image1.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\image1.png",
       "PackagePath": "staticwebassets\\images\\image1.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo-coca-cola.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo-coca-cola.png",
       "PackagePath": "staticwebassets\\images\\logo-coca-cola.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo-godrej.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo-godrej.png",
       "PackagePath": "staticwebassets\\images\\logo-godrej.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo-oppo.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo-oppo.png",
       "PackagePath": "staticwebassets\\images\\logo-oppo.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo-paypal.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo-paypal.png",
       "PackagePath": "staticwebassets\\images\\logo-paypal.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo-philips.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo-philips.png",
       "PackagePath": "staticwebassets\\images\\logo-philips.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo-white.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo-white.png",
       "PackagePath": "staticwebassets\\images\\logo-white.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\logo.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\menu.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\menu.png",
       "PackagePath": "staticwebassets\\images\\menu.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\play-store.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\play-store.png",
       "PackagePath": "staticwebassets\\images\\play-store.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-1.jpg",
       "PackagePath": "staticwebassets\\images\\product-1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-10.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-10.jpg",
       "PackagePath": "staticwebassets\\images\\product-10.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-11.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-11.jpg",
       "PackagePath": "staticwebassets\\images\\product-11.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-12.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-12.jpg",
       "PackagePath": "staticwebassets\\images\\product-12.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-2.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-2.jpg",
       "PackagePath": "staticwebassets\\images\\product-2.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-3.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-3.jpg",
       "PackagePath": "staticwebassets\\images\\product-3.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-4.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-4.jpg",
       "PackagePath": "staticwebassets\\images\\product-4.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-5.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-5.jpg",
       "PackagePath": "staticwebassets\\images\\product-5.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-6.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-6.jpg",
       "PackagePath": "staticwebassets\\images\\product-6.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-7.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-7.jpg",
       "PackagePath": "staticwebassets\\images\\product-7.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-8.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-8.jpg",
       "PackagePath": "staticwebassets\\images\\product-8.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\product-9.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\product-9.jpg",
       "PackagePath": "staticwebassets\\images\\product-9.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\user-1.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\user-1.png",
       "PackagePath": "staticwebassets\\images\\user-1.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\user-2.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\user-2.png",
       "PackagePath": "staticwebassets\\images\\user-2.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\images\\user-3.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\images\\user-3.png",
       "PackagePath": "staticwebassets\\images\\user-3.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\0e91b449464ab639456d08592a6e32b6.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\0e91b449464ab639456d08592a6e32b6.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\0e91b449464ab639456d08592a6e32b6.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\20190802160928.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\20190802160928.png",
       "PackagePath": "staticwebassets\\img\\Account\\20190802160928.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\24b7bc9bbf8e705f679b825641c64da0.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\24b7bc9bbf8e705f679b825641c64da0.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\24b7bc9bbf8e705f679b825641c64da0.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\26a47d3d0bd5ccb4d8168bcf5cc232c0.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\26a47d3d0bd5ccb4d8168bcf5cc232c0.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\26a47d3d0bd5ccb4d8168bcf5cc232c0.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\2X2.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\2X2.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\2X2.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\301422207_1106715286601987_3706881604186559122_n.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\301422207_1106715286601987_3706881604186559122_n.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\301422207_1106715286601987_3706881604186559122_n.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\303570666_5360183047431616_6838423367577067799_n.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\303570666_5360183047431616_6838423367577067799_n.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\303570666_5360183047431616_6838423367577067799_n.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\34249825f427aa199cc76833419d0293.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\34249825f427aa199cc76833419d0293.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\34249825f427aa199cc76833419d0293.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\41b1b32b902a6f87cf3d17620d42783f.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\41b1b32b902a6f87cf3d17620d42783f.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\41b1b32b902a6f87cf3d17620d42783f.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\47f147b11f1a1af39628bed444a41311.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\47f147b11f1a1af39628bed444a41311.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\47f147b11f1a1af39628bed444a41311.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\5.5.7-packet-tracer---explore-network-protocols.pdf",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\5.5.7-packet-tracer---explore-network-protocols.pdf",
       "PackagePath": "staticwebassets\\img\\Account\\5.5.7-packet-tracer---explore-network-protocols.pdf"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\517W8PqSuyL._AC_UF1000,1000_QL80_.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\517W8PqSuyL._AC_UF1000,1000_QL80_.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\517W8PqSuyL._AC_UF1000,1000_QL80_.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\682a8148ff12f2ce26c8ec7717ae35c6.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\682a8148ff12f2ce26c8ec7717ae35c6.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\682a8148ff12f2ce26c8ec7717ae35c6.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\71ec9c8fba7b5a7f177640f0cef8334e.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\71ec9c8fba7b5a7f177640f0cef8334e.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\71ec9c8fba7b5a7f177640f0cef8334e.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\7670a85e0a606601891e527abed80206.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\7670a85e0a606601891e527abed80206.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\7670a85e0a606601891e527abed80206.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\7b680a2b4fa5d86378e0c477f3932d72.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\7b680a2b4fa5d86378e0c477f3932d72.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\7b680a2b4fa5d86378e0c477f3932d72.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\800px-Terry_Crews_by_Gage_Skidmore_5.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\800px-Terry_Crews_by_Gage_Skidmore_5.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\800px-Terry_Crews_by_Gage_Skidmore_5.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Default.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Default.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\Default.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\F-5_Dz3bAAAkNcj - Copy.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\F-5_Dz3bAAAkNcj - Copy.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\F-5_Dz3bAAAkNcj - Copy.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Gcash TGR Jersey.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Gcash TGR Jersey.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\Gcash TGR Jersey.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Screenshot_20231129_205821.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\Screenshot_20231129_205821.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\Screenshot_20231129_205821.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\_F-ELECP Grade Computation form for grade consultation.xlsx",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\_F-ELECP Grade Computation form for grade consultation.xlsx",
       "PackagePath": "staticwebassets\\img\\Account\\_F-ELECP Grade Computation form for grade consultation.xlsx"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\accountcake.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\accountcake.png",
       "PackagePath": "staticwebassets\\img\\Account\\accountcake.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ae0854a0021f83cbdb816917b314f142.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ae0854a0021f83cbdb816917b314f142.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\ae0854a0021f83cbdb816917b314f142.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\asfasfdasf.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\asfasfdasf.png",
       "PackagePath": "staticwebassets\\img\\Account\\asfasfdasf.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\b5638582db6aa8065aff54354dae354a.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\b5638582db6aa8065aff54354dae354a.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\b5638582db6aa8065aff54354dae354a.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\bg.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\bg.png",
       "PackagePath": "staticwebassets\\img\\Account\\bg.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\cakew.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\cakew.png",
       "PackagePath": "staticwebassets\\img\\Account\\cakew.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\deviling.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\deviling.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\deviling.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\df5866ad25ae796492965ac636b7a230.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\df5866ad25ae796492965ac636b7a230.png",
       "PackagePath": "staticwebassets\\img\\Account\\df5866ad25ae796492965ac636b7a230.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\e4b5809f64f771d1de4e7e25ba0e4833.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\e4b5809f64f771d1de4e7e25ba0e4833.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\e4b5809f64f771d1de4e7e25ba0e4833.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ea1ebeb70081085ab8eaa48083336bc5.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ea1ebeb70081085ab8eaa48083336bc5.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\ea1ebeb70081085ab8eaa48083336bc5.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\eec6248068270dcf76585a8e9ac0c63f.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\eec6248068270dcf76585a8e9ac0c63f.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\eec6248068270dcf76585a8e9ac0c63f.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\f0ececd6bca8ad0018aaa93121c91eec.jpg_2200x2200q80.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\f0ececd6bca8ad0018aaa93121c91eec.jpg_2200x2200q80.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\f0ececd6bca8ad0018aaa93121c91eec.jpg_2200x2200q80.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\f2dfdf8e08dffa7501ccd125c8ae1dad.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\f2dfdf8e08dffa7501ccd125c8ae1dad.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\f2dfdf8e08dffa7501ccd125c8ae1dad.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\frog.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\frog.png",
       "PackagePath": "staticwebassets\\img\\Account\\frog.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ghostring.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ghostring.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\ghostring.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\image (1).png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\image (1).png",
       "PackagePath": "staticwebassets\\img\\Account\\image (1).png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\image (3).png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\image (3).png",
       "PackagePath": "staticwebassets\\img\\Account\\image (3).png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\mod06.docx",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\mod06.docx",
       "PackagePath": "staticwebassets\\img\\Account\\mod06.docx"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\poring.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\poring.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\poring.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\poring2.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\poring2.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\poring2.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\poring3.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\poring3.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\poring3.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi-kang-seulgi.gif",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi-kang-seulgi.gif",
       "PackagePath": "staticwebassets\\img\\Account\\seulgi-kang-seulgi.gif"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi-red-velvet-reve-festival-finale-uhdpaper.com-4K-7.654.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi-red-velvet-reve-festival-finale-uhdpaper.com-4K-7.654.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\seulgi-red-velvet-reve-festival-finale-uhdpaper.com-4K-7.654.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\seulgi.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\seulgi.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280 (1).png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\tgr.png",
+      "PackagePath": "staticwebassets\\img\\Account\\tgr.png"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280 (1).png",
       "PackagePath": "staticwebassets\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280 (1).png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280.png",
       "PackagePath": "staticwebassets\\img\\Account\\tumblr_ade1c16ab0e368b596946ec4c387ca38_ab84c8c9_1280.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\user.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\ubecake.jpg",
+      "PackagePath": "staticwebassets\\img\\Account\\ubecake.jpg"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\user.png",
       "PackagePath": "staticwebassets\\img\\Account\\user.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\AdminDashboard\\sampleqr.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\AdminDashboard\\sampleqr.png",
       "PackagePath": "staticwebassets\\img\\AdminDashboard\\sampleqr.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\AdminDashboard\\user.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\AdminDashboard\\user.png",
       "PackagePath": "staticwebassets\\img\\AdminDashboard\\user.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\1 UST Zoom Background_Main_Bldg.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\1 UST Zoom Background_Main_Bldg.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\1 UST Zoom Background_Main_Bldg.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\18c6af23-842d-4b16-9d65-943d06f12678.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\18c6af23-842d-4b16-9d65-943d06f12678.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\18c6af23-842d-4b16-9d65-943d06f12678.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\274961b5-3ad9-45dd-a901-f854321c6b5d.png",
+      "PackagePath": "staticwebassets\\img\\Notification\\274961b5-3ad9-45dd-a901-f854321c6b5d.png"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\4e07a49c-98f1-4a5a-8eb4-e2e8a81917cf.jpg",
+      "PackagePath": "staticwebassets\\img\\Notification\\4e07a49c-98f1-4a5a-8eb4-e2e8a81917cf.jpg"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
       "PackagePath": "staticwebassets\\img\\Notification\\636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\78664cd4-fc07-4954-a3ea-087a10b12a37.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\78664cd4-fc07-4954-a3ea-087a10b12a37.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\78664cd4-fc07-4954-a3ea-087a10b12a37.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\7ef4ea7d-e74a-4238-9554-8fc6d4757183.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\7ef4ea7d-e74a-4238-9554-8fc6d4757183.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\7ef4ea7d-e74a-4238-9554-8fc6d4757183.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\800px-Terry_Crews_by_Gage_Skidmore_5.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\800px-Terry_Crews_by_Gage_Skidmore_5.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\800px-Terry_Crews_by_Gage_Skidmore_5.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\9ad9139f-b375-4d7b-a84f-deab9d06a4b8.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\9ad9139f-b375-4d7b-a84f-deab9d06a4b8.png",
       "PackagePath": "staticwebassets\\img\\Notification\\9ad9139f-b375-4d7b-a84f-deab9d06a4b8.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\MV5BMjE0MDkzMDQwOF5BMl5BanBnXkFtZTgwOTE1Mjg1MzE@._V1_.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\aabc8661-cee1-425e-8b84-a1a22a264275.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\aabc8661-cee1-425e-8b84-a1a22a264275.png",
       "PackagePath": "staticwebassets\\img\\Notification\\aabc8661-cee1-425e-8b84-a1a22a264275.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\ae0854a0021f83cbdb816917b314f142.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\ae0854a0021f83cbdb816917b314f142.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\ae0854a0021f83cbdb816917b314f142.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\ben.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\ben.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\ben.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\channels4_profile.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\channels4_profile.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\channels4_profile.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\f8ac2bba-7172-45a3-9da7-b624dac1b529.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\f8ac2bba-7172-45a3-9da7-b624dac1b529.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\f8ac2bba-7172-45a3-9da7-b624dac1b529.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\frog.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\frog.png",
       "PackagePath": "staticwebassets\\img\\Notification\\frog.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\ghostring.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\ghostring.jpg",
       "PackagePath": "staticwebassets\\img\\Notification\\ghostring.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\image (1).png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\image (1).png",
       "PackagePath": "staticwebassets\\img\\Notification\\image (1).png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\whalea.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\whalea.png",
       "PackagePath": "staticwebassets\\img\\Notification\\whalea.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\QRCODE.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\QRCODE.jpg",
       "PackagePath": "staticwebassets\\img\\QRCODE.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\Terms\\bg.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Terms\\bg.png",
       "PackagePath": "staticwebassets\\img\\Terms\\bg.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\aboutus\\aboutusvideo.mp4",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\aboutus\\aboutusvideo.mp4",
       "PackagePath": "staticwebassets\\img\\aboutus\\aboutusvideo.mp4"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\aboutus\\cake4.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\aboutus\\cake4.jpeg",
       "PackagePath": "staticwebassets\\img\\aboutus\\cake4.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\aboutus\\scake7.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\aboutus\\scake7.png",
       "PackagePath": "staticwebassets\\img\\aboutus\\scake7.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\card\\card_background.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\card\\card_background.png",
       "PackagePath": "staticwebassets\\img\\card\\card_background.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\card\\line_divider.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\card\\line_divider.png",
       "PackagePath": "staticwebassets\\img\\card\\line_divider.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\Location.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\Location.png",
       "PackagePath": "staticwebassets\\img\\contact\\Location.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\cover.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\cover.jpg",
       "PackagePath": "staticwebassets\\img\\contact\\cover.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\cover2.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\cover2.png",
       "PackagePath": "staticwebassets\\img\\contact\\cover2.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\cover3.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\cover3.png",
       "PackagePath": "staticwebassets\\img\\contact\\cover3.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\facebook.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\facebook.png",
       "PackagePath": "staticwebassets\\img\\contact\\facebook.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\instagram.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\instagram.png",
       "PackagePath": "staticwebassets\\img\\contact\\instagram.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\messenger.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\contact\\messenger.png",
       "PackagePath": "staticwebassets\\img\\contact\\messenger.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\android-chrome-192x192.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\android-chrome-192x192.png",
       "PackagePath": "staticwebassets\\img\\favicon\\android-chrome-192x192.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\android-chrome-512x512.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\android-chrome-512x512.png",
       "PackagePath": "staticwebassets\\img\\favicon\\android-chrome-512x512.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\apple-touch-icon.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\img\\favicon\\apple-touch-icon.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\favicon-16x16.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\favicon-16x16.png",
       "PackagePath": "staticwebassets\\img\\favicon\\favicon-16x16.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\favicon-32x32.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\favicon-32x32.png",
       "PackagePath": "staticwebassets\\img\\favicon\\favicon-32x32.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\favicon.ico",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\favicon\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicon\\favicon.ico"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\1st product.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\1st product.jpg",
       "PackagePath": "staticwebassets\\img\\feedback\\1st product.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\addfeedback1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\addfeedback1.jpg",
       "PackagePath": "staticwebassets\\img\\feedback\\addfeedback1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\bfast.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\bfast.jpg",
       "PackagePath": "staticwebassets\\img\\feedback\\bfast.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\cake1.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\cake1.png",
       "PackagePath": "staticwebassets\\img\\feedback\\cake1.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\cake4.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\cake4.jpeg",
       "PackagePath": "staticwebassets\\img\\feedback\\cake4.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\eggpie.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\eggpie.jpg",
       "PackagePath": "staticwebassets\\img\\feedback\\eggpie.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\feedback 3.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\feedback 3.png",
       "PackagePath": "staticwebassets\\img\\feedback\\feedback 3.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\feedback1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\feedback1.jpg",
       "PackagePath": "staticwebassets\\img\\feedback\\feedback1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\feedback2.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\feedback2.png",
       "PackagePath": "staticwebassets\\img\\feedback\\feedback2.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\frog.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\frog.png",
       "PackagePath": "staticwebassets\\img\\feedback\\frog.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\scake5.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\scake5.jpg",
       "PackagePath": "staticwebassets\\img\\feedback\\scake5.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\scake6.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\scake6.png",
       "PackagePath": "staticwebassets\\img\\feedback\\scake6.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\tgr.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\tgr.png",
       "PackagePath": "staticwebassets\\img\\feedback\\tgr.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\gcash\\abakesqr.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\feedback\\ubecake.jpg",
+      "PackagePath": "staticwebassets\\img\\feedback\\ubecake.jpg"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\gcash\\abakesqr.jpg",
       "PackagePath": "staticwebassets\\img\\gcash\\abakesqr.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cake1.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cake1.png",
       "PackagePath": "staticwebassets\\img\\homepage\\cake1.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cake2.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cake2.jpeg",
       "PackagePath": "staticwebassets\\img\\homepage\\cake2.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cake4.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cake4.jpeg",
       "PackagePath": "staticwebassets\\img\\homepage\\cake4.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakean.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakean.png",
       "PackagePath": "staticwebassets\\img\\homepage\\cakean.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakehb.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakehb.png",
       "PackagePath": "staticwebassets\\img\\homepage\\cakehb.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakew.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakew.png",
       "PackagePath": "staticwebassets\\img\\homepage\\cakew.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\homepage_bg1.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\homepage_bg1.png",
       "PackagePath": "staticwebassets\\img\\homepage\\homepage_bg1.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\icon1.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\icon1.png",
       "PackagePath": "staticwebassets\\img\\homepage\\icon1.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\icon2.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\icon2.png",
       "PackagePath": "staticwebassets\\img\\homepage\\icon2.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\icon3.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\icon3.png",
       "PackagePath": "staticwebassets\\img\\homepage\\icon3.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake1.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake1.jpeg",
       "PackagePath": "staticwebassets\\img\\homepage\\scake1.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake2.1.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake2.1.jpeg",
       "PackagePath": "staticwebassets\\img\\homepage\\scake2.1.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake2.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake2.jpeg",
       "PackagePath": "staticwebassets\\img\\homepage\\scake2.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake3.jpeg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake3.jpeg",
       "PackagePath": "staticwebassets\\img\\homepage\\scake3.jpeg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake4.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake4.jpg",
       "PackagePath": "staticwebassets\\img\\homepage\\scake4.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake5.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake5.jpg",
       "PackagePath": "staticwebassets\\img\\homepage\\scake5.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake6.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\scake6.png",
       "PackagePath": "staticwebassets\\img\\homepage\\scake6.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\Logo.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\Logo.png",
       "PackagePath": "staticwebassets\\img\\logo\\Logo.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\SmallLogo.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\SmallLogo.png",
       "PackagePath": "staticwebassets\\img\\logo\\SmallLogo.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\facebook.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\facebook.png",
       "PackagePath": "staticwebassets\\img\\logo\\facebook.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\headingbg.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\headingbg.jpg",
       "PackagePath": "staticwebassets\\img\\logo\\headingbg.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\instagram.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\instagram.png",
       "PackagePath": "staticwebassets\\img\\logo\\instagram.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\logofooter.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\logofooter.png",
       "PackagePath": "staticwebassets\\img\\logo\\logofooter.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\mail.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\mail.png",
       "PackagePath": "staticwebassets\\img\\logo\\mail.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\phone.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\logo\\phone.png",
       "PackagePath": "staticwebassets\\img\\logo\\phone.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\DXnKU-oXkAcBItG.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\DXnKU-oXkAcBItG.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\DXnKU-oXkAcBItG.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\bentocake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\bentocake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\bentocake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\butterflycake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\butterflycake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\butterflycake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\dinosaurcake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\dinosaurcake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\dinosaurcake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\lioncake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\lioncake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\lioncake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\mechaniccake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\mechaniccake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\mechaniccake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\mermaidcake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\mermaidcake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\mermaidcake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\mermaidcake1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\mermaidcake1.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\mermaidcake1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\nakedcake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\nakedcake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\nakedcake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\overloadcake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\overloadcake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\overloadcake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\overloadcake1.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\overloadcake1.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\overloadcake1.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\pawcake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\pawcake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\pawcake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\pokercake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\pokercake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\pokercake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\princesscake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\princesscake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\princesscake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\safaricake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\safaricake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\safaricake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\ubecake.jpg",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\menu\\ubecake.jpg",
       "PackagePath": "staticwebassets\\img\\menu\\ubecake.jpg"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\navbar\\notification.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\navbar\\notification.png",
       "PackagePath": "staticwebassets\\img\\navbar\\notification.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\img\\receipt\\receiptexample.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\receipt\\receiptexample.png",
       "PackagePath": "staticwebassets\\img\\receipt\\receiptexample.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart1.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart1.js",
       "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart1.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart2.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart2.js",
       "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart2.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart3.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart3.js",
       "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart3.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\DragControls.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart4.js",
+      "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart4.js"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\DragControls.js",
       "PackagePath": "staticwebassets\\js\\DragControls.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\GLTFLoader.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\GLTFLoader.js",
       "PackagePath": "staticwebassets\\js\\GLTFLoader.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\Notification\\script.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\Notification\\script.js",
       "PackagePath": "staticwebassets\\js\\Notification\\script.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\OrbitControls.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\OrbitControls.js",
       "PackagePath": "staticwebassets\\js\\OrbitControls.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\OrderStatus\\OrderStatus.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\OrderStatus\\OrderStatus.js",
       "PackagePath": "staticwebassets\\js\\OrderStatus\\OrderStatus.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\ProfilePicture.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\ProfilePicture.js",
       "PackagePath": "staticwebassets\\js\\ProfilePicture.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\color-modes.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\color-modes.js",
       "PackagePath": "staticwebassets\\js\\color-modes.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\dat.gui.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\dat.gui.min.js",
       "PackagePath": "staticwebassets\\js\\dat.gui.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\homepagejs\\bootstrap.bundle.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\faqs\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\faqs\\js\\main.js"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\faqs\\js\\util.js",
+      "PackagePath": "staticwebassets\\js\\faqs\\js\\util.js"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\homepagejs\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\js\\homepagejs\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\homepagejs\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\homepagejs\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\js\\homepagejs\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\site.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\star-rating.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\star-rating.js",
       "PackagePath": "staticwebassets\\js\\star-rating.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\three.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\three.js",
       "PackagePath": "staticwebassets\\js\\three.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\three.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\three.min.js",
       "PackagePath": "staticwebassets\\js\\three.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\three.module.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\three.module.js",
       "PackagePath": "staticwebassets\\js\\three.module.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\three.module.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\three.module.min.js",
       "PackagePath": "staticwebassets\\js\\three.module.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\BufferGeometryUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\BufferGeometryUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\BufferGeometryUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\CameraUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\CameraUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\CameraUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\GPUStatsPanel.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\GPUStatsPanel.js",
       "PackagePath": "staticwebassets\\js\\utils\\GPUStatsPanel.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\GeometryCompressionUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\GeometryCompressionUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\GeometryCompressionUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\GeometryUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\GeometryUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\GeometryUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\LDrawUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\LDrawUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\LDrawUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\PackedPhongMaterial.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\PackedPhongMaterial.js",
       "PackagePath": "staticwebassets\\js\\utils\\PackedPhongMaterial.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\SceneUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\SceneUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\SceneUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\ShadowMapViewer.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\ShadowMapViewer.js",
       "PackagePath": "staticwebassets\\js\\utils\\ShadowMapViewer.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\SkeletonUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\SkeletonUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\SkeletonUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\TextureUtils.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\TextureUtils.js",
       "PackagePath": "staticwebassets\\js\\utils\\TextureUtils.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\UVsDebug.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\UVsDebug.js",
       "PackagePath": "staticwebassets\\js\\utils\\UVsDebug.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\WorkerPool.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\utils\\WorkerPool.js",
       "PackagePath": "staticwebassets\\js\\utils\\WorkerPool.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\B_doublelayer.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\B_doublelayer.json",
       "PackagePath": "staticwebassets\\models\\B_doublelayer.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\B_singlelayer.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\B_singlelayer.json",
       "PackagePath": "staticwebassets\\models\\B_singlelayer.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\B_triplelayer.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\B_triplelayer.json",
       "PackagePath": "staticwebassets\\models\\B_triplelayer.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\CreamFilledCake.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\CreamFilledCake.json",
       "PackagePath": "staticwebassets\\models\\CreamFilledCake.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\StrawberriesAndBlueberries.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\StrawberriesAndBlueberries.json",
       "PackagePath": "staticwebassets\\models\\StrawberriesAndBlueberries.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\TheCakeFromPortal.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\TheCakeFromPortal.json",
       "PackagePath": "staticwebassets\\models\\TheCakeFromPortal.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\TripleChocolateCake.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\TripleChocolateCake.json",
       "PackagePath": "staticwebassets\\models\\TripleChocolateCake.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\choco.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\choco.json",
       "PackagePath": "staticwebassets\\models\\cake2\\choco.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\license.txt",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\license.txt",
       "PackagePath": "staticwebassets\\models\\cake2\\license.txt"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\scene.bin",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\scene.bin",
       "PackagePath": "staticwebassets\\models\\cake2\\scene.bin"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1001_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1001_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1001_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1001_metallicRoughness.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1001_metallicRoughness.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1001_metallicRoughness.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1002_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1002_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1002_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1002_metallicRoughness.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1002_metallicRoughness.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1002_metallicRoughness.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1003_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1003_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1003_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1003_metallicRoughness.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1003_metallicRoughness.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1003_metallicRoughness.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1004_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1004_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1004_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1005_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1005_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1005_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1006_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1006_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1006_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1007_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cake2\\textures\\1007_baseColor.png",
       "PackagePath": "staticwebassets\\models\\cake2\\textures\\1007_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-0.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-0.json",
       "PackagePath": "staticwebassets\\models\\candle-0.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-1.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-1.json",
       "PackagePath": "staticwebassets\\models\\candle-1.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-2.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-2.json",
       "PackagePath": "staticwebassets\\models\\candle-2.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-3.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-3.json",
       "PackagePath": "staticwebassets\\models\\candle-3.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-4.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-4.json",
       "PackagePath": "staticwebassets\\models\\candle-4.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-5.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-5.json",
       "PackagePath": "staticwebassets\\models\\candle-5.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-6.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-6.json",
       "PackagePath": "staticwebassets\\models\\candle-6.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-7.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-7.json",
       "PackagePath": "staticwebassets\\models\\candle-7.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-8.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-8.json",
       "PackagePath": "staticwebassets\\models\\candle-8.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\candle-9.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\candle-9.json",
       "PackagePath": "staticwebassets\\models\\candle-9.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cherries.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cherries.json",
       "PackagePath": "staticwebassets\\models\\cherries.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\chocolate_cake\\license.txt",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\chocolate_cake\\license.txt",
       "PackagePath": "staticwebassets\\models\\chocolate_cake\\license.txt"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\chocolate_cake\\scene.bin",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\chocolate_cake\\scene.bin",
       "PackagePath": "staticwebassets\\models\\chocolate_cake\\scene.bin"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\chocolate_cake\\scene.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\chocolate_cake\\scene.json",
       "PackagePath": "staticwebassets\\models\\chocolate_cake\\scene.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\cream.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cream.json",
       "PackagePath": "staticwebassets\\models\\cream.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\license.txt",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\license.txt",
       "PackagePath": "staticwebassets\\models\\doublelayer\\license.txt"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\scene.bin",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\scene.bin",
       "PackagePath": "staticwebassets\\models\\doublelayer\\scene.bin"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\scene.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\scene.json",
       "PackagePath": "staticwebassets\\models\\doublelayer\\scene.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\scene.json.bak",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\doublelayer\\scene.json.bak",
       "PackagePath": "staticwebassets\\models\\doublelayer\\scene.json.bak"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\fionnaANDcake.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\fionnaANDcake.json",
       "PackagePath": "staticwebassets\\models\\fionnaANDcake.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\fruits.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\fruits.json",
       "PackagePath": "staticwebassets\\models\\fruits.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\fruitsnew.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\fruitsnew.json",
       "PackagePath": "staticwebassets\\models\\fruitsnew.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\icing-small.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\icing-small.json",
       "PackagePath": "staticwebassets\\models\\icing-small.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\low-render-cherries.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\low-render-cherries.json",
       "PackagePath": "staticwebassets\\models\\low-render-cherries.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\newfruits.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\newfruits.json",
       "PackagePath": "staticwebassets\\models\\newfruits.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\pinkmacaron.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\pinkmacaron.json",
       "PackagePath": "staticwebassets\\models\\pinkmacaron.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\preset_VelvetMacaronCake.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\preset_VelvetMacaronCake.json",
       "PackagePath": "staticwebassets\\models\\preset_VelvetMacaronCake.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\scene.bin",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\scene.bin",
       "PackagePath": "staticwebassets\\models\\scene.bin"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\scene.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\scene.json",
       "PackagePath": "staticwebassets\\models\\scene.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\strawberries-blueberries.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\strawberries-blueberries.json",
       "PackagePath": "staticwebassets\\models\\strawberries-blueberries.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_baseColor.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_baseColor.png",
       "PackagePath": "staticwebassets\\models\\textures\\lambert2_baseColor.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_metallicRoughness.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_metallicRoughness.png",
       "PackagePath": "staticwebassets\\models\\textures\\lambert2_metallicRoughness.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_normal.png",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_normal.png",
       "PackagePath": "staticwebassets\\models\\textures\\lambert2_normal.png"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesFinish\\Abakesv2\\abakes2\\wwwroot\\models\\two-strawberries.json",
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\two-strawberries.json",
       "PackagePath": "staticwebassets\\models\\two-strawberries.json"
     },
     {
