@@ -316,12 +316,12 @@
                         }
 
                         @if ((Model.pagecurrent) == 1) { }else{
-                                <a href="/Customer_Gallery?page=@(Model.pagecurrent-1)" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Previous</a>
+                                <a href="/Customer_Feedback?page=@(Model.pagecurrent-1)" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">Previous</a>
                         }
 
                         @while(counts <= totales){
                             @if(counter <=5){
-                                    <a href="/Customer_Gallery?page=@Model.pagecurrent" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"> @Model.pagecurrent</a>
+                                    <a href="/Customer_Feedback?page=@Model.pagecurrent" style="color:rgb(159, 167, 189); font-family:Poppins ExtraBold;"> @Model.pagecurrent</a>
                             }else{
 
                             }

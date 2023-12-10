@@ -76,18 +76,23 @@ namespace abakes2.Pages
             {
 
             }
-            string osid = Request.Query["id"]; //name from the front end "?id=
-
+            String user = Request.Query["user"];
             try
             {
 
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "delete from Order3DForm where OrderID='" + osid + "' and username='" + userconfirm + "'"; //getting the data based from the pdid variable
+                    string sql = "delete from Order3DForm WHERE username='" + user + "'"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.ExecuteNonQuery();
+                    }
+
+                    String sql2 = "UPDATE LoginCustomer SET ordermax3D='false' WHERE username='" + user + "'";
+                    using (SqlCommand command2 = new SqlCommand(sql2, connection))
+                    {
+                        command2.ExecuteNonQuery();
                     }
                 }
 

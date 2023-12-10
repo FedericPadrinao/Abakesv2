@@ -134,7 +134,7 @@
                     </form>
 
 
-                    <label>Notify customers (Currently at Full Capacity: Orders Unavailable)</label>
+                    
                     <form method="get">
                         <div class="search">
                             <button type="submit" for="search"><i class="fas fa-search"></i></button>
@@ -184,7 +184,7 @@
                                 <td><p>@item.order3DExpectedD @item.order3DExpectedT</p></td>              
 
                                 <td>
-                                    <a href='/Cart?id=@item.ModelID&handler=Reject' style="background:#FF696E;" class="btn btn-primary btn-sm">
+                                    <a href='/Admin_Manage3DOrders2?user=@item.username&handler=Reject' style="background:#FF696E;" class="btn btn-primary btn-sm">
                                         <i class="fas fa-times" style="font-size:30px;"></i><div>Reject</div>
                                     </a>
                                     <a href='/View3DOrder?id=@item.ModelID' style="background:#7685FF;" class="btn">

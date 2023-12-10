@@ -129,6 +129,7 @@ namespace abakes2.Pages
             string posX = Request.Form["positionx"];
             string posY = Request.Form["positiony"];
             string posZ = Request.Form["positionz"];
+            
             string instructions = Request.Form["special_instructions"];
             string Delivery = Request.Form["delivery"];
             string Preferred = Request.Form["preferred"];
@@ -141,27 +142,22 @@ namespace abakes2.Pages
             int insertedPrimaryKey = 0;
             try
             {
-                if (file != null && file.Length > 0)
+                if (file == null)
                 {
-                    string fileExtension = Path.GetExtension(file.FileName).ToLower();
-                    if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
-                    {
+                   
                         // Valid file format, proceed with upload
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
-                            string fileName = Path.GetFileName(file.FileName);
-                            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Account", fileName);
-
-                            using (var stream = new FileStream(filePath, FileMode.Create))
-                            {
-                                await file.CopyToAsync(stream);
-                            }
+                        
+                            string fileName = "";
+                           
+                           
 
                             connection.Open();
                             string sql3 = "INSERT INTO Order3DForm " +
-                                 "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery, Coupon, NetOrderPrice,picture) " +
+                                 "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery, Coupon, NetOrderPrice,picture,dedicationpic) " +
                                  "VALUES " +
-                                 "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, '', '', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery, '', 0, @picture); SELECT SCOPE_IDENTITY(); ";
+                                 "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, '', '', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery, '', 0, '', @dedicationpic); SELECT SCOPE_IDENTITY(); ";
 
                             using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
                             {
@@ -182,7 +178,109 @@ namespace abakes2.Pages
                                 insertcommand.Parameters.AddWithValue("@orderstatus", "Design Your Cake");
                                 insertcommand.Parameters.AddWithValue("@receipt", "");
                                 insertcommand.Parameters.AddWithValue("@paymentMethod", "");
-                                insertcommand.Parameters.AddWithValue("@picture", "img/Account/" + fileName);
+                                insertcommand.Parameters.AddWithValue("@dedicationpic", fileName);
+
+
+                                insertedPrimaryKey = Convert.ToInt32(insertcommand.ExecuteScalar());
+
+
+
+
+                            }
+                        }
+
+
+                        for (int i = 0; i < assetNameList.Length - 1; i++)
+                        {
+                            using (SqlConnection connection = new SqlConnection(connectionString))
+                            {
+                                connection.Open();
+                                string sql4 = "INSERT INTO Asset3DForm " +
+                                     "(OrderID, username, ModelName, ModelPath, ModelScale, PositionX, PositionY, PositionZ) " +
+                                     "VALUES " +
+                                     "(@orderID, @username, @assetname, @assetpath, @assetscale, @positionx, @positiony, @positionz) ";
+
+                                using (SqlCommand insertcommand1 = new SqlCommand(sql4, connection))
+                                {
+
+
+                                    Console.WriteLine("LengtH: " + assetNameList.Length);
+                                    insertcommand1.Parameters.AddWithValue("@orderid", insertedPrimaryKey);
+                                    insertcommand1.Parameters.AddWithValue("@username", userconfirm);
+                                    insertcommand1.Parameters.AddWithValue("@assetname", assetNameList[i]);
+                                    insertcommand1.Parameters.AddWithValue("@assetpath", assetPathList[i]);
+                                    insertcommand1.Parameters.AddWithValue("@assetscale", assetScaleList[i]);
+                                    insertcommand1.Parameters.AddWithValue("@positionx", posXList[i]);
+                                    insertcommand1.Parameters.AddWithValue("@positiony", posYList[i]);
+                                    insertcommand1.Parameters.AddWithValue("@positionz", posZList[i]);
+
+
+                                    insertcommand1.ExecuteNonQuery();
+
+                                }
+                            }
+                        }
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+                            String sql = "UPDATE LoginCustomer SET ordermax3D = 'true' WHERE username = @user";
+                            using (SqlCommand command = new SqlCommand(sql, connection))
+                            {
+
+                                command.Parameters.AddWithValue("@user", userconfirm);
+                                command.ExecuteNonQuery();
+
+
+
+                                // Redirect to the success page after successful form submission
+                                return RedirectToPage("/Customer_OrderSuccess3D_Prompt");
+
+                            }
+                        }
+                    
+                }
+                if (file != null && file.Length > 0)
+                {
+                    string fileExtension = Path.GetExtension(file.FileName).ToLower();
+                    if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png")
+                    {
+                        // Valid file format, proceed with upload
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            string fileName = Path.GetFileName(file.FileName);
+                            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Account", fileName);
+
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                await file.CopyToAsync(stream);
+                            }
+
+                            connection.Open();
+                            string sql3 = "INSERT INTO Order3DForm " +
+                                 "(username, Tier1, Scale1, Texture1, Texture2, Texture3, Color1, Color2, Color3, instructions, status, OrderPrice, OrderQuantity, ShippingPrice, Downpayment, PreferredDelivery, ExpectedDelivery, ExpectedTime, ModelType, DateCreated, orderstatus, receipt, PaymentMethod, OrderDelivery, Coupon, NetOrderPrice,picture,dedicationpic) " +
+                                 "VALUES " +
+                                 "(@username, @Tier1, @Scale1, @Texture1, @Texture2, @Texture3, @Color1, @Color2, @Color3, @instructions, 'false', '0' , '1', '0', '0', @preferred, '', '', @modeltype, @dateCreated, @orderstatus, @receipt, @paymentMethod, @delivery, '', 0, '', @dedicationpic); SELECT SCOPE_IDENTITY(); ";
+
+                            using (SqlCommand insertcommand = new SqlCommand(sql3, connection))
+                            {
+                                insertcommand.Parameters.AddWithValue("@username", userconfirm);
+                                insertcommand.Parameters.AddWithValue("@Tier1", order3DForm.ModelName1);
+                                insertcommand.Parameters.AddWithValue("@Scale1", order3DForm.Scale1);
+                                insertcommand.Parameters.AddWithValue("@Texture1", order3DForm.Texture1);
+                                insertcommand.Parameters.AddWithValue("@Texture2", order3DForm.Texture2);
+                                insertcommand.Parameters.AddWithValue("@Texture3", order3DForm.Texture3);
+                                insertcommand.Parameters.AddWithValue("@Color1", order3DForm.Color);
+                                insertcommand.Parameters.AddWithValue("@Color2", order3DForm.Color2);
+                                insertcommand.Parameters.AddWithValue("@Color3", order3DForm.Color3);
+                                insertcommand.Parameters.AddWithValue("@instructions", instructions);
+                                insertcommand.Parameters.AddWithValue("@delivery", Delivery);
+                                insertcommand.Parameters.AddWithValue("@preferred", Preferred);
+                                insertcommand.Parameters.AddWithValue("@modeltype", order3DForm.ModelType);
+                                insertcommand.Parameters.AddWithValue("@dateCreated", "");
+                                insertcommand.Parameters.AddWithValue("@orderstatus", "Design Your Cake");
+                                insertcommand.Parameters.AddWithValue("@receipt", "");
+                                insertcommand.Parameters.AddWithValue("@paymentMethod", "");
+                                insertcommand.Parameters.AddWithValue("@dedicationpic", "img/Account/" + fileName);
 
 
                                 insertedPrimaryKey = Convert.ToInt32(insertcommand.ExecuteScalar());

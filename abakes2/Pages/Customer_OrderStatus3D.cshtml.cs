@@ -69,7 +69,7 @@ namespace abakes2.Pages
                                 order3D.order3DExpectedD = reader.GetString(17);
                                 order3D.order3DExpectedT = reader.GetString(18);
                                 order3D.order3Dstatus = reader.GetString(21);
-                                order3D.picture = reader.GetString(27);
+                                order3D.picture = reader.GetString(28);
 
                             }
                         }

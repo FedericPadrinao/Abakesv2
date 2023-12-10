@@ -30,6 +30,41 @@ namespace abakes2.Pages
 
             try
             {
+                if(file == null)
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionProvider))
+                    {
+                     
+                        connection.Open();
+                        string sql = "Insert into Notification (NotificationTitle,NotificationText,NotificationImage,status,DateCreated) values (@NotifTitle,@NotifText,@NotifImage,'true',@DateCreated)";
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
+                            command.Parameters.AddWithValue("@NotifText", NotifText);
+                            command.Parameters.AddWithValue("@NotifImage", "");
+                            command.Parameters.AddWithValue("@DateCreated", currentDate);
+
+                            command.ExecuteNonQuery();
+
+                            // Retrieve all users from the LoginCustomer table
+                            string getUsersSql = "SELECT fname, email, is_verified FROM LoginCustomer WHERE is_verified = 1";
+                            using (SqlCommand getUsersCommand = new SqlCommand(getUsersSql, connection))
+                            {
+                                using (SqlDataReader reader = getUsersCommand.ExecuteReader())
+                                {
+                                    while (reader.Read())
+                                    {
+                                        string customerName = reader["fname"].ToString();
+                                        string customerEmail = reader["email"].ToString();
+
+                                        // Send email with image attachment
+                                        SendNotificationEmail(customerName, customerEmail, NotifTitle, NotifText, "");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 //image upload
                 if (file != null && file.Length > 0)
                 {

@@ -302,11 +302,11 @@
                         <h4 style="text-align:center; color:black;">Special Instructions</h4>
                                 <div class="col-md-12">
 
-                            <textarea name="special_instructions" class="form-control specialinstructions" rows="4" placeholder="Additional instructions (Dietary Restrictions, Type of icing, Allergies, Less sugar, etc.)" required></textarea>
+                            <textarea name="special_instructions" class="form-control specialinstructions" rows="4" placeholder="Additional instructions (Dietary Restrictions, Type of icing, Allergies, Less sugar, etc.)" value=" "></textarea>
                             </div>
                             <!--Delivery Type-->
                     
-                            <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
+                            <input type="file" id="fileInput" name="file" value="" onchange="previewImage()" />
                </div>
                         <button type="submit" class="functionbtn" value="submit" asp-page-handler="InsertCake">Save Cake</button>
                     </form>

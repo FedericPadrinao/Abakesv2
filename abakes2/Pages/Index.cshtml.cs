@@ -259,6 +259,7 @@ namespace abakes2.Pages
         public string order3DCoupon = "";
         public int netOrder3DPrice = 0;
         public string picture = "";
+        public string dedicationpic = "";
     }
 
     public class OrderSimpleInfo

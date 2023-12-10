@@ -127,9 +127,9 @@
 
                 <a href="/Admin_ManageOrders" class="btn" style="margin:1%;">View Pending Orders</a>
 
-                <button type="submit" class="btn" style="margin:1%;">Confirm Orders</button>
+               
 
-                <input type="checkbox" name="checkbox" />Notify customers (Currently at Full Capacity: Orders Unavailable)
+              
 
 
                 <form method="get">
@@ -188,7 +188,7 @@
                                 <td><p>@item.osExpectedT</p></td>
 
                                 <td>
-                                    <a href='/Admin_ManageSimpleOrders2?id=@item.osID&handler=Reject' class="btn btn-primary btn-sm" style="background: #9a0009;">
+                                    <a href='/Admin_ManageSimpleOrders2?user=@item.osUsername&handler=Reject' class="btn btn-primary btn-sm" style="background: #9a0009;">
                                         <i class="fas fa-times" style="font-size:30px;"></i><div>Remove</div>
                                     </a>
                                     <a href='/ViewSimpleOrder?id=@item.osID' class="btn" style="background:#F1DEB9; color:black;">
