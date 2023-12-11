@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Data.SqlClient;
 
 namespace abakes2.Pages
@@ -16,6 +17,7 @@ namespace abakes2.Pages
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
@@ -30,6 +32,13 @@ namespace abakes2.Pages
                 return Page();
             }
 
+            // Check if the passcode is expired
+            if (IsPasscodeExpired(email))
+            {
+                TempData["FailMessage"] = "Passcode has expired. Please request a new one.";
+                return Page();
+            }
+
             // Check if the new password and confirm password match
             if (newPassword != confirmPassword)
             {
@@ -37,8 +46,8 @@ namespace abakes2.Pages
                 return Page();
             }
 
-            // Update the password in the database
-            UpdatePassword(email, newPassword);
+            // Update the password and passcode expiration in the database
+            UpdatePasswordAndPasscodeExpiration(email, newPassword);
 
             TempData["AlertMessage"] = "Password changed successfully!";
             return RedirectToPage("/Account");
@@ -64,13 +73,36 @@ namespace abakes2.Pages
             }
         }
 
-        // Method to update the password in the database
-        private void UpdatePassword(string email, string newPassword)
+        // Method to check if the passcode is expired
+        private bool IsPasscodeExpired(string email)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
             {
                 connection.Open();
-                string sql = "UPDATE LoginCustomer SET password = @newPassword WHERE email = @email";
+                string sql = "SELECT passcode_exp FROM LoginCustomer WHERE email = @email";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        DateTime passcodeExpiration = Convert.ToDateTime(result);
+                        return passcodeExpiration < DateTime.Now;
+                    }
+                }
+            }
+            // Default to false if no passcode expiration is found
+            return false;
+        }
+
+        // Method to update the password and passcode expiration in the database
+        private void UpdatePasswordAndPasscodeExpiration(string email, string newPassword)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "UPDATE LoginCustomer SET password = @newPassword, passcode_exp = NULL WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -79,6 +111,7 @@ namespace abakes2.Pages
                 }
             }
         }
+
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
@@ -86,13 +119,11 @@ namespace abakes2.Pages
             if (userconfirm != null)
             {
                 Response.Redirect("/Index");
-
             }
             else
             {
-
+                // Additional logic if needed
             }
-
         }
     }
 }

@@ -14,19 +14,20 @@ namespace abakes2.Pages
         public string Email { get; set; }
         public string ConnectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
-        public void OnGet() {
+        public void OnGet()
+        {
             userconfirm = HttpContext.Session.GetString("username");
 
             if (userconfirm != null)
             {
                 Response.Redirect("/Index");
-
             }
             else
             {
-
+                // Additional logic if needed
             }
         }
+
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
@@ -39,7 +40,11 @@ namespace abakes2.Pages
 
             string newPasscode = GeneratePasscode();
 
+            // Update passcode and passcode expiration
             UpdatePasscode(email, newPasscode);
+
+            // Update passcode expiration
+            UpdatePasscodeExpiration(email);
 
             string UserName = GetUserName(email);
 
@@ -50,13 +55,12 @@ namespace abakes2.Pages
             return RedirectToPage("/Account_ChangePasscode");
         }
 
-
         private void UpdatePasscode(string email, string passcode)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "UPDATE LoginCustomer SET passcode = @passcode WHERE email = @email";
+                string sql = "UPDATE LoginCustomer SET passcode = @passcode, passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -66,10 +70,22 @@ namespace abakes2.Pages
             }
         }
 
-        // Method to generate a new passcode
+        private void UpdatePasscodeExpiration(string email)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionProvider))
+            {
+                connection.Open();
+                string sql = "UPDATE LoginCustomer SET passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         private string GeneratePasscode()
         {
-            // Customize the passcode generation logic as needed
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             var passcode = new string(Enumerable.Repeat(chars, 8)
@@ -77,16 +93,15 @@ namespace abakes2.Pages
             return passcode;
         }
 
-        // Method to send the passcode by email
         private void SendPasscodeByEmail(string email, string UserName, string passcode)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); 
+            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
             message.To.Add(new MailboxAddress(UserName, email));
             message.Subject = "Password Change Verification Code";
 
             var builder = new BodyBuilder();
-            builder.TextBody = $"Hello {UserName},\n\nYour verification code for changing your passord is: {passcode}\n\nThank you,\nThe Abakes Team";
+            builder.TextBody = $"Hello {UserName},\n\nYour verification code for changing your password is: {passcode}\n\nThank you,\nThe Abakes Team";
 
             message.Body = builder.ToMessageBody();
 
@@ -112,11 +127,11 @@ namespace abakes2.Pages
 
                     int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    // If count is greater than 0, the email exists
                     return count > 0;
                 }
             }
         }
+
         private string GetUserName(string email)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
