@@ -449,6 +449,10 @@
       "PackagePath": "staticwebassets\\img\\Account\\df5866ad25ae796492965ac636b7a230.png"
     },
     {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\download.jpeg",
+      "PackagePath": "staticwebassets\\img\\Account\\download.jpeg"
+    },
+    {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Account\\e4b5809f64f771d1de4e7e25ba0e4833.jpg",
       "PackagePath": "staticwebassets\\img\\Account\\e4b5809f64f771d1de4e7e25ba0e4833.jpg"
     },
@@ -775,6 +779,10 @@
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakehb.png",
       "PackagePath": "staticwebassets\\img\\homepage\\cakehb.png"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakehb2.png",
+      "PackagePath": "staticwebassets\\img\\homepage\\cakehb2.png"
     },
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\homepage\\cakew.png",

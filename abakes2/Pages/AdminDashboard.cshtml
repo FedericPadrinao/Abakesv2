@@ -57,7 +57,7 @@
                         <div>Manage Orders</div>
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a href="/ManagePayments">
                         <i class="fas fa-money-check"></i>
                         <div>Manage Payments</div>
@@ -88,7 +88,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/AdminDashboard"  class="active">
+                    <a href="/AdminDashboard" class="active">
                         <i class="fas fa-chart-bar"></i>
                         <div>Statistical Report</div>
                     </a>
@@ -99,9 +99,9 @@
                         <div>Change Password</div>
                     </a>
                 </li>
-                 <li>
-                     <a asp-page="/index" asp-page-handler="LogOut">
-                            <i class="fas fa-sign-out-alt"></i>
+                <li>
+                    <a asp-page="/index" asp-page-handler="LogOut">
+                        <i class="fas fa-sign-out-alt"></i>
                         <div>Log out</div>
                     </a>
                 </li>
@@ -243,6 +243,24 @@
                                 }
                             </tbody>
                         </table>
+                        <form id="monthForm" method="get" asp-page="AdminDashboard">
+                            <label for="monthSelect">Select Month:</label>
+                            <select id="monthSelect" name="selectedMonth" onchange="document.getElementById('monthForm').submit()">
+                                <option value="0">All Months</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -253,6 +271,11 @@
     <script src="~/js/AdminDashboardjs/chart2.js"></script>
     <script src="~/js/AdminDashboardjs/chart3.js"></script>
     <script src="~/js/AdminDashboardjs/chart4.js"></script>
+    <script>
+        function updatePieCharts(selectedMonth) {
+            window.location.href = `AdminDashboard?selectedMonth=${selectedMonth}`;
+        }
+    </script>
 </body>
 
 </html>
