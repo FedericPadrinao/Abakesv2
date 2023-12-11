@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IrRtHrKIFraMZLhkMATTKrJl6UtEWXYpXJws83cG0uQ=",
+  "Hash": "XZWbf9CjyL5NaVdH6njy6VnkatqJWzi4lA1rDtwKrcA=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -3842,6 +3842,23 @@
       "OriginalItemSpec": "wwwroot\\img\\Notification\\9ad9139f-b375-4d7b-a84f-deab9d06a4b8.png"
     },
     {
+      "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\a2435384-2f71-4b8e-9bac-17ebe0ef66e3.png",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Notification/a2435384-2f71-4b8e-9bac-17ebe0ef66e3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Notification\\a2435384-2f71-4b8e-9bac-17ebe0ef66e3.png"
+    },
+    {
       "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\aabc8661-cee1-425e-8b84-a1a22a264275.png",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -3908,6 +3925,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Notification\\channels4_profile.jpg"
+    },
+    {
+      "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\d3fd1e98-b7ac-4381-880c-25d83012b77e.png",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "img/Notification/d3fd1e98-b7ac-4381-880c-25d83012b77e.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Notification\\d3fd1e98-b7ac-4381-880c-25d83012b77e.png"
     },
     {
       "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\img\\Notification\\f8ac2bba-7172-45a3-9da7-b624dac1b529.jpg",
