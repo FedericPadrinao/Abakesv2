@@ -32,10 +32,10 @@
     border: 1px solid BLACK;
     padding: 0px; /* Adjust padding as needed */
     border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 10px;
     overflow-y: auto;
     max-height: 70px;
+    padding: 10px 10px;
 }
 .container-box-3d {
     padding: 0px; /* Adjust padding as needed */
@@ -316,6 +316,37 @@
       }
       .row.content {height:auto;} 
     }
+
+
+
+@media (max-width: 767px) {
+    .container-box {
+        min-height: 300px;
+    }
+    .container-box-3d {
+        padding: 0px; /* Adjust padding as needed */
+        border-radius: 20px;
+        max-height: 400px;
+        max-width: 800px;
+        margin: 30px 10px;
+    }
+    }
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container-box {
+        min-height: 700px;
+    }
+    .container-box-3d {
+        padding: 0px; /* Adjust padding as needed */
+        border-radius: 20px;
+        margin-bottom: 10px;
+        max-height: 700px;
+        max-width: 900px;
+        margin: 70px auto;
+    }
+    }
+
 
 
   </style>

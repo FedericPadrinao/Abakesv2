@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         
         public void OnGet()
         {
@@ -138,7 +138,15 @@ namespace abakes2.Pages
                         HttpContext.Session.SetString("username", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
+                        // Check if it's the first-time login
+                        if (IsFirstTimeLogin(username))
+                        {
+                            // Update the first_time_login status
+                            UpdateFirstTimeLoginStatus(username, false);
 
+                            // Redirect to the specific page for first-time login
+                            return RedirectToPage("/Customer_AccountInformation", new { user = username });
+                        }
                         string returnUrl = HttpContext.Session.GetString("ReturnUrl");
                         if (!string.IsNullOrEmpty(returnUrl))
                         {
@@ -165,7 +173,25 @@ namespace abakes2.Pages
                 return RedirectToPage("/Account");
             }
         }
+        private bool IsFirstTimeLogin(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT first_time FROM LoginCustomer WHERE username = @username";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    object result = command.ExecuteScalar();
 
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToBoolean(result);
+                    }
+                }
+            }
+            return false;
+        }
         bool IsUserVerified(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -185,7 +211,20 @@ namespace abakes2.Pages
             }
             return false;
         }
-
+        private void UpdateFirstTimeLoginStatus(string username, bool status)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "UPDATE LoginCustomer SET first_time = @status WHERE username = @username";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@status", status);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
 
         public IActionResult OnPostRegister()
@@ -231,8 +270,8 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode) " +
-                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '')";
+                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time) " +
+                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true')";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {

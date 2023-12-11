@@ -17,6 +17,15 @@
     <title>Manage Notification</title>
 </head>
 
+<style>
+
+    @@media (max-width: 767px) {
+        .page-heading .text-content h2 {
+    font-size:100px;
+    }
+    }
+</style>
+
 <body>
     <!--NAV BAR-->
 
@@ -107,43 +116,43 @@
                 </li>
             </ul>
         </div>
-
-        <div class="main">
-            <section class="page-heading" style="background-image: url('/img/contact/cover2.png');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-content">
-                                <h2>Manage Notification</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <a href="/Admin_ManageNotif" type="submit" class="btn" style="margin:1%;">Manage Notifications</a>
-            <div class="col-2">
-                <div class="account-page" style="padding-left: 55px; padding-top:10px;">
-                    <div class="container">
-                        <div class="adminbox" style="height:900px; width:550px; padding:45px; border-radius:5%;">
-                            <form id="GlobalNotifForm" method="post" enctype="multipart/form-data">
-                                <h2>Global Notification</h2>
-                                <h3>Notification Title</h3>
-                                <input type="text" placeholder="Notification Title" name="title">
-                                <h3>Notification Text</h3>
-                                <textarea id="message" name="textmessage" rows="10" cols="80" minlength="10" maxlength="200" required></textarea>
-                                <!-- <input style="height:400px;" type="text"> -->
-                                <h3>Notification Image</h3>
-                                <input type="file" id="fileInput" name="file" onchange="previewImage()" />
-                                <button type="submit" class="btn">Post Notification</button>
-
-                            </form>
-                        </div>
+<div class="main">
+    <section class="page-heading" style="background-image: url('/img/contact/cover2.png');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+                        <h2>Manage Notification</h2>
                     </div>
                 </div>
             </div>
-
         </div>
+    </section>
+
+    <a href="/Admin_ManageNotif" type="submit" class="btn" style="margin:1%;">Manage Notifications</a>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 offset-lg-3">
+                <div class="account-page" style="padding: 10px;">
+                    <div class="adminbox" style=" max-width: 400px; margin: 0 auto; min-height:500px; margin:40px 20px; padding: 30px;border-radius: 5%;">
+                        <form id="GlobalNotifForm" method="post" enctype="multipart/form-data">
+                            <h2>Global Notification</h2>
+                            <h3>Notification Title</h3>
+                            <input type="text" class="form-control" placeholder="Notification Title" name="title">
+                            <h3>Notification Text</h3>
+                            <textarea id="message" class="form-control" name="textmessage" rows="5" minlength="10" maxlength="200" required></textarea>
+                            <h3>Notification Image</h3>
+                            <input type="file" id="fileInput" class="form-control" name="file" onchange="previewImage()" />
+                            <button type="submit" class="btn btn-primary">Post Notification</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
         <!-- javascript -->
 
         <script>

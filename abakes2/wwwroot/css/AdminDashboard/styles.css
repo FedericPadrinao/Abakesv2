@@ -514,7 +514,17 @@ img {
     #doughnut {
         padding: 50px;
     }
+
+
+
+ 
+        .page-heading .text-content h2
+
+{
+    font-size: 100px;
+    padding: 2px;
 }
+
 
 @media (max-width:500px) {
     .topbar {
