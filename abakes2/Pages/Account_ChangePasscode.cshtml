@@ -72,8 +72,14 @@
                     <form id="ForgotChange" method="post" style="top:120px; padding:40px 20px;">
                         <input type="text" placeholder="Email" name="email" id="emailInput" value="@TempData["Email"]" required>
                         <input type="text" placeholder="Verification Code" name="passcode" id="passcodeInput" required>
-                        <input type="password" placeholder="New Password" name="newPassword" id="newPasswordInput" required>
-                        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPasswordInput" required>
+                        <input type="password" placeholder="New Password" name="newPassword" id="newPasswordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must: Be at least 8 characters in length.
+                    Include at least one upper case letter.
+                    Include at least one number.
+                    Include at least one special character." required>
+                        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPasswordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must: Be at least 8 characters in length.
+                    Include at least one upper case letter.
+                    Include at least one number.
+                    Include at least one special character." required>
                         <button type="submit" class="btn btn-primary">Change Password</button>
                         <a asp-page="/Account_Forgot_Pass">Go Back</a>
                     </form>

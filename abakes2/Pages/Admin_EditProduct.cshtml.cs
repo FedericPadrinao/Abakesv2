@@ -25,6 +25,7 @@ namespace abakes2.Pages
         [HttpPost]
         public async Task<IActionResult> OnPostAsync(IFormFile file)
         {
+            OnGet();
             string pdname = Request.Form["name"];
 
             string price = Request.Form["price"];
@@ -41,10 +42,9 @@ namespace abakes2.Pages
                 {
                     await file.CopyToAsync(stream);
                 }
-                int counter = GetProducts(pdname);
+                
 
-                if (counter == 0)
-                {
+               
                     try
                     {
 
@@ -86,52 +86,49 @@ namespace abakes2.Pages
                         Console.WriteLine(e.Message);
                         return Redirect("/Admin_ManageCakes");
                     }
-                }
-                else
-                {
-                    errorMessage = "This Product is Already Added!";
-                    return Page();
-                }
-
 
             }
+            else
+                {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionProvider))
+                    {
+                        connection.Open();
+                        String sql2 = "UPDATE Product " +
+                           "SET " +
+                           "ProductCategory = 'Cake', " +
+                           "ProductName = @ProductName, " +
+                           "ProductPrice = @ProductPrice, " +
+                           "ProductDesc = @ProductDesc, " +
+                           "status = 'true' " +
+                           "WHERE " +
+                           "ProductID = @ProductID;";
+
+                        using (SqlCommand command = new SqlCommand(sql2, connection))
+                        {
+                            command.Parameters.AddWithValue("@ProductID", id);
+                            command.Parameters.AddWithValue("@ProductName", pdname);
+                            command.Parameters.AddWithValue("@ProductPrice", price);
+                            command.Parameters.AddWithValue("@ProductDesc", desc);
+
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return Redirect("/Admin_ManageCakes");
+                }
+            }
+
+
 
             return Redirect("/Admin_ManageCakes");
         }
 
-
-
-
-        public int GetProducts(string pdname)
-        {
-            int count = 0;
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString)) //static
-                {
-                    connection.Open();
-                    string sql = "select * from Product where ProductName='" + pdname + "'"; //getting the data based from the pdid variable
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                count++;
-                            }
-                        }
-                    }
-                }
-
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
-
-            }
-            return count;
-        }
+  
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("user");
