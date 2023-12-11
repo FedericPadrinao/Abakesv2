@@ -122,9 +122,14 @@
                 <span class="unread-notifications-number">@Model.NotificationCount</span>
             </p>
         </div>
-        <div class="col-5 mark-as-read text-end">
-            <a href="#" id="markAllAsRead" class="mark-as-read-button align-middle">Mark all as read</a>
-        </div>
+            <div class="col-5 mark-as-read text-end">
+                @if (Model.NotificationCount > 0)
+                {
+                    <form method="post" asp-page-handler="MarkAllAsRead">
+                        <button id="markAllAsRead" class="btn mark-as-read-button" style=" color:white;display:inline; padding: 5px 10px; max-width:80%" align-middle">Mark all as read</button>
+                    </form>
+                }
+            </div>
     </div>
 
     <!-- PUBLIC NOTIFICATION -->
@@ -179,17 +184,17 @@
                         <div class="col-11 notification-text">
                             <p>
                                 <a href="#" class="link name">@item.NotifTitle</a>
-                                
+                                @if (!item.IsRead)
+                                {
+                                    <span class="unread-symbol">•</span>
+                                    <form method="post" asp-page-handler="MarkAsRead">
+                                        <input type="hidden" name="notificationId" value="@item.NotifID" />
+                                        <button class="btn" style="display:inline; padding: 5px 20px; max-width:30%" type="submit" class="mark-as-read-button">Mark as Read</button>
+                                    </form>
+                                }
                             </p>
                             <p class="time">@item.DateCreated</p>
-                            @if (!item.IsRead)
-                            {
-                                <span class="unread-symbol">•</span>
-                                <form method="post" asp-page-handler="MarkAsRead">
-                                    <input type="hidden" name="notificationId" value="@item.NotifID" />
-                                    <button class="btn" style="display:inline; padding: 5px 20px; max-width:30%" type="submit" class="mark-as-read-button">Mark as Read</button>
-                                </form>
-                            }
+
                             <div class="col-1 profile-picture clickable-image">
                                 <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
                             </div>

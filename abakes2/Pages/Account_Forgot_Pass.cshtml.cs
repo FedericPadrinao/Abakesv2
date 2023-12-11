@@ -14,19 +14,20 @@ namespace abakes2.Pages
         public string Email { get; set; }
         public string ConnectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
-        public void OnGet() {
+        public void OnGet()
+        {
             userconfirm = HttpContext.Session.GetString("username");
 
             if (userconfirm != null)
             {
                 Response.Redirect("/Index");
-
             }
             else
             {
-
+                // Additional logic if needed
             }
         }
+
         public IActionResult OnPost()
         {
             string email = Request.Form["email"];
@@ -39,24 +40,28 @@ namespace abakes2.Pages
 
             string newPasscode = GeneratePasscode();
 
+            // Update passcode and passcode expiration
             UpdatePasscode(email, newPasscode);
+
+            // Update passcode expiration
+            UpdatePasscodeExpiration(email);
 
             string UserName = GetUserName(email);
 
-            SendPasscodeByEmail(email, UserName, newPasscode);
+            // Send the email with the new password, passcode, and expiration date
+            SendPasscodeByEmail(email, UserName, newPasscode, GetPasscodeExpiration(email));
 
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
             TempData["Email"] = email;
             return RedirectToPage("/Account_ChangePasscode");
         }
 
-
         private void UpdatePasscode(string email, string passcode)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "UPDATE LoginCustomer SET passcode = @passcode WHERE email = @email";
+                string sql = "UPDATE LoginCustomer SET passcode = @passcode, passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email UPDATE LoginSample SET passcode = @passcode, passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -66,10 +71,22 @@ namespace abakes2.Pages
             }
         }
 
-        // Method to generate a new passcode
+        private void UpdatePasscodeExpiration(string email)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionProvider))
+            {
+                connection.Open();
+                string sql = "UPDATE LoginCustomer SET passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email UPDATE LoginSample SET passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         private string GeneratePasscode()
         {
-            // Customize the passcode generation logic as needed
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
             var passcode = new string(Enumerable.Repeat(chars, 8)
@@ -77,16 +94,15 @@ namespace abakes2.Pages
             return passcode;
         }
 
-        // Method to send the passcode by email
-        private void SendPasscodeByEmail(string email, string UserName, string passcode)
+        private void SendPasscodeByEmail(string email, string UserName, string passcode, DateTime passcodeExpiration)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); 
+            message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
             message.To.Add(new MailboxAddress(UserName, email));
             message.Subject = "Password Change Verification Code";
 
             var builder = new BodyBuilder();
-            builder.TextBody = $"Hello {UserName},\n\nYour verification code for changing your passord is: {passcode}\n\nThank you,\nThe Abakes Team";
+            builder.TextBody = $"Hello {UserName},\n\nYour verification code for changing your password is: {passcode}\nIt will expire at {passcodeExpiration.ToString("yyyy-MM-dd HH:mm:ss")}\n\nThank you,\nThe Abakes Team";
 
             message.Body = builder.ToMessageBody();
 
@@ -102,27 +118,41 @@ namespace abakes2.Pages
 
         private bool IsEmailExists(string email)
         {
+            if (IsEmailExistsInTable(email, "LoginCustomer"))
+            {
+                return true;
+            }
+            else if (IsEmailExistsInTable(email, "LoginSample"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool IsEmailExistsInTable(string email, string tableName)
+        {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT COUNT(*) FROM LoginCustomer WHERE email = @email";
+                string sql = $"SELECT COUNT(*) FROM {tableName} WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
 
                     int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    // If count is greater than 0, the email exists
                     return count > 0;
                 }
             }
         }
+
         private string GetUserName(string email)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT username FROM LoginCustomer WHERE email = @email";
+                string sql = "SELECT username FROM LoginCustomer WHERE email = @email UNION SELECT username FROM LoginSample WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -130,6 +160,27 @@ namespace abakes2.Pages
                     return command.ExecuteScalar() as string;
                 }
             }
+        }
+
+        private DateTime GetPasscodeExpiration(string email)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT passcode_exp FROM LoginCustomer WHERE email = @email UNION SELECT passcode_exp FROM LoginSample WHERE email = @email";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@email", email);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToDateTime(result);
+                    }
+                }
+            }
+            // Default to current time if no expiration time is found
+            return DateTime.Now;
         }
     }
 }

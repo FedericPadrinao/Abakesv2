@@ -242,6 +242,41 @@ namespace abakes2.Pages
                 }
             }
         }
+        public IActionResult OnPostMarkAllAsRead()
+        {
+            try
+            {
+                string currentUsername = HttpContext.Session.GetString("username");
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Mark all private notifications as read
+                    string privateSql = "UPDATE PrivateNotification SET isRead = 1 WHERE username = @username AND status = 'true' AND isRead = 0";
+                    using (SqlCommand privateCommand = new SqlCommand(privateSql, connection))
+                    {
+                        privateCommand.Parameters.AddWithValue("@username", currentUsername);
+                        privateCommand.ExecuteNonQuery();
+                    }
+
+                    // Mark all public notifications as read
+                    string publicSql = "INSERT INTO ReadPublicNotif (username, NotificationID, NotificationTitle) SELECT @username, NotificationID, NotificationTitle FROM Notification WHERE status = 'true' AND NOT EXISTS (SELECT 1 FROM ReadPublicNotif WHERE Username = @username AND NotificationID = Notification.NotificationID)";
+                    using (SqlCommand publicCommand = new SqlCommand(publicSql, connection))
+                    {
+                        publicCommand.Parameters.AddWithValue("@username", currentUsername);
+                        publicCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+                // Handle the exception or log it as needed
+            }
+
+            return RedirectToPage("/Customer_Notif");
+        }
+
     }
 }
 
