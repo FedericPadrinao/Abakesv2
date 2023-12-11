@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\abakes2.csproj": {}
+    "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\abakes2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\abakes2.csproj": {
+    "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\abakes2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\abakes2.csproj",
+        "projectUniqueName": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\abakes2.csproj",
         "projectName": "abakes2",
-        "projectPath": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\abakes2.csproj",
-        "packagesPath": "C:\\Users\\Federic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\obj\\",
+        "projectPath": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\abakes2.csproj",
+        "packagesPath": "C:\\Users\\kistral\\.nuget\\packages\\",
+        "outputPath": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Federic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kistral\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,7 +99,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -115,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

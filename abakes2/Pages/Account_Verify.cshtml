@@ -50,10 +50,10 @@
             <div class="dropdown text-end">
                 <a href="/Account" class="active">Sign in</a>
             </div>
-@*             @if (Model.userconfirm != null)
+            @*             @if (Model.userconfirm != null)
             {
-                <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
+            <a href="/Customer_Notif" class="badge" data-badge="10"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+            <a href="/Cart" class="badge" data-badge="10"><img src="images/cart.png" width="30px" height="30px"></a>
 
             } *@
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
@@ -76,8 +76,8 @@
                         <div class="alert alert-danger">@TempData["FailMessage"]</div>
                     }
                     <form id="VerifyForm" method="post" style="top:160px;">
-                        <input type="text" placeholder="Email" name="email" id="emailInput">
-                        <input type="text" placeholder="Verification Code" name="verificationCode" id="verificationCode">
+                        <input type="text" placeholder="Email" name="email" id="emailInput" required>
+                        <input type="text" placeholder="Verification Code" name="verificationCode" id="verificationCode" required>
                         <button type="submit" class="btn btn-primary">Verify</button>
                         <a asp-page="/Account_Resend_Verif">Resend Verification Code</a>
                     </form>
