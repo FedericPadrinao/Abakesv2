@@ -9,7 +9,6 @@ namespace abakes2.Pages
         public string email { get; set; }
         public String userconfirm = "";
         public string verification_code { get; set; }
-        public DateTime verif_exp { get; set; }
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
@@ -33,20 +32,6 @@ namespace abakes2.Pages
             string email = Request.Form["email"];
             string verificationCode = Request.Form["verificationCode"];
 
-            // Check if the email exists in the LoginCustomer table
-            if (!IsEmailExists(email))
-            {
-                TempData["FailMessage"] = "Email does not exist!";
-                return Page();
-            }
-
-            // Check if the email is already verified
-            if (IsEmailVerified(email))
-            {
-                TempData["FailMessage"] = "Email is already verified!";
-                return Page();
-            }
-
             // Validate the email and verification code against the database
             if (IsEmailAndVerificationCodeValid(email, verificationCode))
             {
@@ -57,7 +42,7 @@ namespace abakes2.Pages
             else
             {
                 // Set an error message and stay on the same page
-                TempData["FailMessage"] = "Invalid verification code or code has expired.";
+                TempData["FailMessage"] = "Error Message";
                 return Page();
             }
         }
@@ -68,7 +53,7 @@ namespace abakes2.Pages
             using (SqlConnection connection = new SqlConnection(connectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT COUNT(*) FROM LoginCustomer WHERE email = @email AND verification_code = @verificationCode AND verif_exp > GETDATE() AND is_verified = 0";
+                string sql = "SELECT COUNT(*) FROM LoginCustomer WHERE email = @email AND verification_code = @verificationCode";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -76,48 +61,9 @@ namespace abakes2.Pages
 
                     int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    // If count is greater than 0, the email, verification code, and expiration time are valid
+                    // If count is greater than 0, the email and verification code match
                     return count > 0;
                 }
-            }
-        }
-
-        // Method to check if the email is already verified
-        private bool IsEmailVerified(string email)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionProvider))
-            {
-                connection.Open();
-                string sql = "SELECT is_verified FROM LoginCustomer WHERE email = @email";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@email", email);
-
-                    object result = command.ExecuteScalar();
-
-                    // If result is not null and is true, the email is verified
-                    return result != null && (bool)result;
-                }
-            }
-        }
-
-        // Method to check if the email exists in the LoginCustomer table
-        private bool IsEmailExists(string email)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionProvider))
-            {
-                connection.Open();
-                string sql = "SELECT COUNT(*) FROM LoginCustomer WHERE email = @email";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@email", email);
-
-                    int count = Convert.ToInt32(command.ExecuteScalar());
-
-                    // If count is greater than 0, the email exists
-                    return count > 0;
-                }
-
             }
         }
 

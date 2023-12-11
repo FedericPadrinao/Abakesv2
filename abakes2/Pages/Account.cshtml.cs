@@ -230,7 +230,6 @@ namespace abakes2.Pages
                 }
 
                 string verificationCode = GenerateVerificationCode();
-                DateTime verificationCodeExpiration = DateTime.Now.AddMinutes(3);
 
                 var email = new MimeMessage();
 
@@ -240,7 +239,7 @@ namespace abakes2.Pages
                 email.Subject = "A-Bakes Registration";
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
                 {
-                    Text = $"Hello {customerInfo.fname} {customerInfo.lname}! Thank you for registering at A-bakes! Your verification code is: {verificationCode}. It will expire at {verificationCodeExpiration.ToString("yyyy-MM-dd HH:mm:ss")}"
+                    Text = $"Hello {customerInfo.fname} {customerInfo.lname}! Thank you for registering at A-bakes! Your verification code is: {verificationCode}"
                 };
 
                 using (var smtp = new SmtpClient())
@@ -255,8 +254,8 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time, verif_exp) " +
-                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true', DATEADD(MINUTE, 3, GETDATE()))";
+                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time) " +
+                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true')";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {

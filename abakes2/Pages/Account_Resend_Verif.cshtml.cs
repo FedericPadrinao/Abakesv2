@@ -48,18 +48,14 @@ namespace abakes2.Pages
             // Generate a new verification code
             string newVerificationCode = GenerateVerificationCode();
 
-            // Update the verification code and expiration time in the database
-            UpdateVerificationCodeAndExpiration(email, newVerificationCode);
+            // Update the verification code in the database
+            UpdateVerificationCode(email, newVerificationCode);
 
             // Get the first name associated with the email
             string firstName = GetFirstName(email);
 
-            // Get the new expiration time
-            DateTime verificationCodeExpiration = GetVerificationCodeExpiration(email);
-
-            // Send the new verification code to the user with the expiration time
-            SendVerificationCodeByEmail(email, firstName, newVerificationCode, verificationCodeExpiration);
-
+            // Send the new verification code to the user
+            SendVerificationCodeByEmail(email, firstName, newVerificationCode);
 
             // Set a success message and stay on the same page
             TempData["ResendSucc"] = "Verification code sent. Please check your email for the new verificaiton code.";
@@ -87,12 +83,12 @@ namespace abakes2.Pages
         }
 
         // Method to update verification code
-        private void UpdateVerificationCodeAndExpiration(string email, string verificationCode)
+        private void UpdateVerificationCode(string email, string verificationCode)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "UPDATE LoginCustomer SET verification_code = @verificationCode, verif_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
+                string sql = "UPDATE LoginCustomer SET verification_code = @verificationCode WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -100,28 +96,6 @@ namespace abakes2.Pages
                     command.ExecuteNonQuery();
                 }
             }
-        }
-
-        // Method to get the verification code expiration time
-        private DateTime GetVerificationCodeExpiration(string email)
-        {
-            using (SqlConnection connection = new SqlConnection(ConnectionProvider))
-            {
-                connection.Open();
-                string sql = "SELECT verif_exp FROM LoginCustomer WHERE email = @email";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@email", email);
-                    object result = command.ExecuteScalar();
-
-                    if (result != null && result != DBNull.Value)
-                    {
-                        return Convert.ToDateTime(result);
-                    }
-                }
-            }
-            // Default to current time if no expiration time is found
-            return DateTime.Now;
         }
 
         // Method to get the first name associated with the email
@@ -151,7 +125,7 @@ namespace abakes2.Pages
         }
 
         // Method to send the verification code by email
-        private void SendVerificationCodeByEmail(string email, string firstName, string verificationCode, DateTime verificationCodeExpiration)
+        private void SendVerificationCodeByEmail(string email, string firstName, string verificationCode)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); // Change to your information
@@ -159,7 +133,7 @@ namespace abakes2.Pages
             message.Subject = "New Verification Code";
 
             var builder = new BodyBuilder();
-            builder.TextBody = $"Hello {firstName},\n\nYour new verification code is: {verificationCode}\nIt will expire at {verificationCodeExpiration.ToString("yyyy-MM-dd HH:mm:ss")}\n\nThank you,\nThe Abakes Team";
+            builder.TextBody = $"Hello {firstName},\n\nYour new verification code is: {verificationCode}\n\nThank you,\nThe Abakes Team";
 
             message.Body = builder.ToMessageBody();
 
@@ -172,7 +146,6 @@ namespace abakes2.Pages
                 client.Disconnect(true);
             }
         }
-
 
         private bool IsEmailExists(string email)
         {
