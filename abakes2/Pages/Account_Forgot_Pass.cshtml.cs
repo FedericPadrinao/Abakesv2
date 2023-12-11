@@ -61,7 +61,7 @@ namespace abakes2.Pages
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "UPDATE LoginCustomer SET passcode = @passcode, passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
+                string sql = "UPDATE LoginCustomer SET passcode = @passcode, passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email UPDATE LoginSample SET passcode = @passcode, passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -76,7 +76,7 @@ namespace abakes2.Pages
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "UPDATE LoginCustomer SET passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
+                string sql = "UPDATE LoginCustomer SET passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email UPDATE LoginSample SET passcode_exp = DATEADD(MINUTE, 3, GETDATE()) WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -118,10 +118,24 @@ namespace abakes2.Pages
 
         private bool IsEmailExists(string email)
         {
+            if (IsEmailExistsInTable(email, "LoginCustomer"))
+            {
+                return true;
+            }
+            else if (IsEmailExistsInTable(email, "LoginSample"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool IsEmailExistsInTable(string email, string tableName)
+        {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT COUNT(*) FROM LoginCustomer WHERE email = @email";
+                string sql = $"SELECT COUNT(*) FROM {tableName} WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -138,7 +152,7 @@ namespace abakes2.Pages
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT username FROM LoginCustomer WHERE email = @email";
+                string sql = "SELECT username FROM LoginCustomer WHERE email = @email UNION SELECT username FROM LoginSample WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
@@ -153,7 +167,7 @@ namespace abakes2.Pages
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT passcode_exp FROM LoginCustomer WHERE email = @email";
+                string sql = "SELECT passcode_exp FROM LoginCustomer WHERE email = @email UNION SELECT passcode_exp FROM LoginSample WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
