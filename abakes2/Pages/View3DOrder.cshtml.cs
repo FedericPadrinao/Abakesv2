@@ -1,5 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MimeKit;
+using MailKit.Net.Smtp;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.IO;
+using System.Threading.Tasks;
+using MimeKit.Utils;
 using System.Data.SqlClient;
 
 namespace abakes2.Pages
@@ -124,11 +132,15 @@ namespace abakes2.Pages
         }
         public void OnPost()
         {
+            OnGet();
             string price = Request.Form["price"];
             string ship = Request.Form["ship"];
             string id = Request.Form["id"];
             string ExpectedDelivery = Request.Form["expectedD"];
             string ExpectedTime = Request.Form["expectedT"];
+            string NotifTitle = "Review & Quotation for your 3D Order is done!";
+            string NotifText = "Your order comes with  the price of " + price + "! " + "\n Shipping Fee of" + ship + ". \n" + "Please pay either 50% DP or pay in full" + "\n Please expect your delivery to come at " + ExpectedDelivery + " " + ExpectedTime + ".";
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
             int ids = int.Parse(id);
 
             double productPrice = double.Parse(price);
@@ -147,6 +159,28 @@ namespace abakes2.Pages
                         command.ExecuteNonQuery();
                     }
                 }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+
+                    string sql = "Insert into PrivateNotification (NotificationTitle,username,NotificationText,NotificationImage,status,DateCreated,isRead) values (@NotifTitle,@username,@NotifText,@NotifImage,'true',@DateCreated,'false')";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
+                        command.Parameters.AddWithValue("@NotifText", NotifText);
+                        command.Parameters.AddWithValue("@username", customerInfo.username);
+                        command.Parameters.AddWithValue("@NotifImage", "");
+                        command.Parameters.AddWithValue("@DateCreated", currentDate);
+
+                        command.ExecuteNonQuery();
+
+                        // Send email with image attachment
+                        Console.WriteLine("CUSOTOMER" + customerInfo.username);
+                        SendNotificationEmail(customerInfo.fname, customerInfo.email, NotifTitle, NotifText);
+                        // Set TempData for success message
+                        TempData["SuccessMessage"] = "Notification successfully sent!";
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -154,6 +188,33 @@ namespace abakes2.Pages
                 return;
             }
             Response.Redirect("/Admin_Manage3DOrders");
+        }
+        private void SendNotificationEmail(string customerName, string customerEmail, string notifTitle, string notifText)
+        {
+            var email = new MimeMessage();
+
+            email.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
+            email.To.Add(new MailboxAddress(customerName, customerEmail));
+
+            email.Subject = notifTitle;
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = notifText;
+
+
+
+            bodyBuilder.HtmlBody = $@"
+                <p>{notifText}</p>";
+
+            email.Body = bodyBuilder.ToMessageBody();
+
+            using (var smtp = new SmtpClient())
+            {
+                smtp.Connect("smtp.gmail.com", 465, true);
+                smtp.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz");
+                smtp.Send(email);
+                smtp.Disconnect(true);
+            }
         }
     }
 }

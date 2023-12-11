@@ -277,7 +277,7 @@ namespace abakes2.Pages
                         errorMessageProfile = "Invalid file format. Please upload a JPEG, JPG, or PNG file.";
                         TempData["errorMessageProfile"] = errorMessageProfile; // Store the success message in TempData
 
-                        return Redirect("/Index");
+                        return Redirect("/Checkout3D2");
                     }
                 }
             }
@@ -288,11 +288,11 @@ namespace abakes2.Pages
 
                 TempData["errorMessageProfile"] = errorMessageProfile; // Store the success message in TempData
 
-                return Redirect("/Index");
+                return Redirect("/Checkout3D2");
             }
 
 
-            return Redirect("/Index");
+            return Redirect("/Customer_OrderStatus3D");
         }
 
 

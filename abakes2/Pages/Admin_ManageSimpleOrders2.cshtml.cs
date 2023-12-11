@@ -1,7 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MimeKit;
+using MailKit.Net.Smtp;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-
+using System.IO;
+using System.Threading.Tasks;
+using MimeKit.Utils;
 namespace abakes2.Pages
 {
     public class Admin_ManageSimpleOrders2Model : PageModel
@@ -101,26 +107,98 @@ namespace abakes2.Pages
             {
 
             }
+            string id = Request.Query["id"]; //name from the front end "?id=
             String user = Request.Query["user"];
+            string NotifTitle = "Order Rejected!";
+            string NotifText = "Your order has been rejected! We apologize for this inconvenience. You may message our page for inquiries.";
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
             try
             {
+                using (SqlConnection connection = new SqlConnection(connectionString)) //static
+                {
+                    connection.Open();
+                    string sql = "select * from OrderSimple WHERE OrderID=@ID"; //getting the data based from the odid variable
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", id);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+
+                                customerInfo.username = reader.GetFieldValue<string>(reader.GetOrdinal("username"));
+
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM LoginCustomer WHERE username=@user";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@user", customerInfo.username);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+
+                                customerInfo.lname = reader.GetString(2);
+                                customerInfo.fname = reader.GetString(3);
+                                customerInfo.email = reader.GetString(5);
+                                customerInfo.address = reader.GetString(6);
+                                customerInfo.phone = reader.GetString(7);
+                                customerInfo.city = reader.GetString(9);
+                                customerInfo.barangay = reader.GetString(10);
+                            }
+                        }
+                    }
+                }
 
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "delete from OrderSimple WHERE username='" + user + "'"; //getting the data based from the pdid variable
+                    string sql = "delete from OrderSimple WHERE OrderID=@ID"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                        command.Parameters.AddWithValue("@ID", id);
                         command.ExecuteNonQuery();
                     }
 
-                    String sql2 = "UPDATE LoginCustomer SET ordermax='false' WHERE username='" + user + "'";
+                    String sql2 = "UPDATE LoginCustomer SET ordermax='false' WHERE username='" + customerInfo.username + "'";
                     using (SqlCommand command2 = new SqlCommand(sql2, connection))
                     {
+                        command2.Parameters.AddWithValue("@ID", id);
                         command2.ExecuteNonQuery();
                     }
                 }
-               
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+
+                    connection.Open();
+
+                    string sql = "Insert into PrivateNotification (NotificationTitle,username,NotificationText,NotificationImage,status,DateCreated,isRead) values (@NotifTitle,@username,@NotifText,@NotifImage,'true',@DateCreated,'false')";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@NotifTitle", NotifTitle);
+                        command.Parameters.AddWithValue("@NotifText", NotifText);
+                        command.Parameters.AddWithValue("@username", customerInfo.username);
+                        command.Parameters.AddWithValue("@NotifImage", "");
+                        command.Parameters.AddWithValue("@DateCreated", currentDate);
+
+                        command.ExecuteNonQuery();
+
+                        // Send email with image attachment
+                        SendNotificationEmail(customerInfo.fname, customerInfo.email, NotifTitle, NotifText);
+                        // Set TempData for success message
+                        TempData["SuccessMessage"] = "Notification successfully sent!";
+                    }
+                }
 
             }
             catch (Exception e)
@@ -130,6 +208,34 @@ namespace abakes2.Pages
 
             return Page();
         }
-       
+        private void SendNotificationEmail(string customerName, string customerEmail, string notifTitle, string notifText)
+        {
+            var email = new MimeMessage();
+
+            email.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
+            email.To.Add(new MailboxAddress(customerName, customerEmail));
+
+            email.Subject = notifTitle;
+
+            var bodyBuilder = new BodyBuilder();
+            bodyBuilder.TextBody = notifText;
+
+
+
+            bodyBuilder.HtmlBody = $@"
+                <p>{notifText}</p>
+                <p>Please log in to website for a detailed review</p>";
+
+            email.Body = bodyBuilder.ToMessageBody();
+
+            using (var smtp = new SmtpClient())
+            {
+                smtp.Connect("smtp.gmail.com", 465, true);
+                smtp.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz");
+                smtp.Send(email);
+                smtp.Disconnect(true);
+            }
+        }
+
     }
 }
