@@ -37,18 +37,19 @@
                         <div>Manage Cake</div>
                     </a>
                 </li>
+                 <li>
+                    <a href="/Admin_ManageIngredients">
+                        <i class="fas fa-utensils"></i>
+                        <div>Manage Ingredients</div>
+                    </a>
+                </li>
                 <li>
                     <a href="/Admin_Manage3DAsset">
                         <i class="fa-brands fa-unity"></i>
                         <div>Manage 3D Asset</div>
                     </a>
                 </li>
-                <li>
-                    <a href="/Admin_ManageIngredients">
-                        <i class="fas fa-utensils"></i>
-                        <div>Manage Ingredients</div>
-                    </a>
-                </li>
+               
                 <li>
                     <a href="/Admin_ManageOrders">
                         <i class="fas fa-receipt"></i>
@@ -122,18 +123,15 @@
             </section>
             <!--Title Bar End-->
 
-            <div class="admin-table">
-                <button type="submit" class="btn" style="margin:1%;">Search</button>
+            <div class="admin-table">          
                 <form method="post" asp-page-handler="Generate">
-                    <input type="number" placeholder="Enter Discount" name="DiscountCoupon" max="100" required> 
+                    <input type="number" placeholder="Enter Discount(Input 0 if no discount)" name="DiscountCoupon" max="100"> 
                      <button type="submit" class="btn" style="margin:1%;">Generate</button>
                 </form>
-
-               
-                <div class="search">
-                    <label for="search"><i class="fas fa-search"></i></label>
-                    <input type="text" name="search" placeholder="Search for Codes">
-                </div>
+                <a asp-page="/Admin_ManageQR" asp-route-sortProduct="Sort Name" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↓ ID</a>
+                <a asp-page="/Admin_ManageQR" asp-route-sortProduct="Sort Name2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↑ ID</a>      
+                <a asp-page="/Admin_ManageQR" asp-route-sortProduct="Sort Status" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> Show Codes with no Discount</a>
+                <a asp-page="/Admin_ManageQR" asp-route-sortProduct="Sort Status2" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> Show Codes with Discount</a>
                 <table class="table" style="margin:1%;">
                     <thead>
                         <tr>
@@ -142,6 +140,8 @@
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Status</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Expiration Date</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:25%;">Discount</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Discount Status</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">3D Discount Status</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:15%;">Action</th>
                         </tr>
                     </thead>
@@ -154,12 +154,14 @@
                                 <td><p>@item.status</p></td>
                                 <td><p>@item.dateexpiry</p></td>
                                 <td><p>@item.discount%</p></td>
+                                <td><p>@item.avail2d</p></td>
+                                <td><p>@item.avail3d</p></td>
 
 
 
                                 <td>
                                     <a class='btn btn-btn-dark btn-sm' asp-page-handler="Deactivate" asp-route-id="@item.id" style="background: #9a0009; padding:15px 13px;" asp-page-handler="Remove" asp-route-id=@item.id>
-                                        <i class="fas fa-ban" style="font-size:30px;"></i> <div>Deactivate</div>
+                                        <i class="fas fa-ban" style="font-size:30px;"></i> <div>Delete</div>
                                     </a>
                                     <a class='btn btn-btn-dark btn-sm' href="/card?maincode=@item.generatedCode" style="background:#FFCA6D; color:black; padding:15px 30px;">
                                         <i class="fas fa-qrcode" style="font-size:30px;"></i><div>View</div>

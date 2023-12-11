@@ -1,6 +1,7 @@
 ﻿@page
 @model abakes2.Pages.CheckoutModel
 @{
+    var discountErrorMessage = TempData["DiscountErrorMessage"] as string;
 }
 <head>
     <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
@@ -175,7 +176,12 @@
                     <div class="col-md-12">
                         <h2 class="h3 mb-3 text-black">QR/Coupon Code</h2>
                         <div class="p-3 p-lg-5 border">
+                               @if (TempData["DiscountErrorMessage"] != null)
+                            {
+                                <div class="alert alert-danger">@TempData["DiscountErrorMessage"]</div>
+                            }
                             <div class="input-group">
+                              
                                 <div class="input-group-append">
                                    <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">
                                 </div>
@@ -184,7 +190,8 @@
                             <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
                             
                             <div class="input-group">
-                                <form method="post" asp-page-handler="Discount">
+                               
+                                     <form method="post" asp-page-handler="Discount">
 
                                
                                 <input type="text" name="coupon" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2"  >
@@ -192,6 +199,9 @@
                                     <button class="btn btn-primary" type="submit" id="button-addon2">Apply</button>
                                 </div>
                                  </form>
+                                 
+                                
+                               
                             </div>
                             
                         </div>
@@ -271,7 +281,7 @@
                             </table>
                                  <!-- Place Order Button -->
                             <div class="form-group">
-                            
+                           
                             <form method="post" enctype="multipart/form-data" >
                                      <!-- Payment Methods -->
                                

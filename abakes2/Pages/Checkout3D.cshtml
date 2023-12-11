@@ -175,6 +175,10 @@
                     <div class="col-md-12">
                         <h2 class="h3 mb-3 text-black">QR/Coupon Code</h2>
                         <div class="p-3 p-lg-5 border">
+                             @if (TempData["DiscountErrorMessage"] != null)
+                            {
+                                <div class="alert alert-danger">@TempData["DiscountErrorMessage"]</div>
+                            }
                             <div class="input-group">
                                 <div class="input-group-append">
                                    <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">

@@ -17,7 +17,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public String connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
        
-        public void OnGet()
+        public void OnGet(string sortProduct)
         {
             userconfirm = HttpContext.Session.GetString("username");
             if (userconfirm != null)
@@ -30,7 +30,7 @@ namespace abakes2.Pages
 
             }
 
-            ReadCode();
+            ReadCode(sortProduct);
 
         }
 
@@ -95,6 +95,7 @@ namespace abakes2.Pages
             var code = new StringBuilder();
             var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var codeLength = 5;
+
             int discount = int.Parse(Request.Form["DiscountCoupon"]);
 
             for (int i = 0; i < codeLength; i++)
@@ -142,9 +143,9 @@ namespace abakes2.Pages
         }
 
 
-        public JsonResult OnGetExpiration()
+        public JsonResult OnGetExpiration(string sortProduct)
         {
-            ReadCode();
+            ReadCode(sortProduct);
 
             DateTime current = DateTime.Now;
             string currentDate = current.ToString("MMM dd yyyy h:mm tt").Replace(" ", "");
@@ -217,7 +218,7 @@ namespace abakes2.Pages
 
 
 
-        public void ReadCode()
+        public void ReadCode(string sortProduct)
         {
             try
             {
@@ -226,8 +227,23 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "select * from GenerateCode order by id desc";
+                    String sql = "select * from GenerateCode";
 
+                    switch (sortProduct)
+                    {
+                        case "Sort Name":
+                            sql += " ORDER BY id DESC";
+                            break;
+                        case "Sort Name2":
+                            sql += " ORDER BY id ASC";
+                            break;
+                        case "Sort Status":
+                            sql = "select * from GenerateCode WHERE Discount = 0";
+                            break;
+                        case "Sort Status2":
+                            sql = "select * from GenerateCode WHERE Discount !=0";
+                            break;
+                    }
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -242,6 +258,8 @@ namespace abakes2.Pages
                                 read.status = reader.GetString(2);
                                 read.dateexpiry = reader.GetString(3);
                                 read.discount = reader.GetInt32(4);
+                                read.avail2d = reader.GetString(5);
+                                read.avail3d = reader.GetString(6);
                                 codeList.Add(read);
 
                             }
@@ -265,5 +283,7 @@ namespace abakes2.Pages
         public string status;
         public string dateexpiry;
         public int discount;
+        public string avail2d;
+        public string avail3d;
     }
 }

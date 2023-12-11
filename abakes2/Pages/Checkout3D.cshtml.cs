@@ -27,10 +27,12 @@ namespace abakes2.Pages
         public CustomerInfo customerInfo = new CustomerInfo();
         public OrderSimpleInfo os = new OrderSimpleInfo();
         public Order3DForm order3D = new Order3DForm();
+        public code code = new code();
         public List<Asset3DForm> asset3DList = new List<Asset3DForm>();
         public String statusconfirm = "";
         public int discountCode = 0;
         public decimal discountedPrice = 0;
+        public decimal discountedPrice2 = 0;
         public int finaldiscountedPrice = 0;
         public int orderPrice = 0;
         public int TotalNetCost = 0;
@@ -295,7 +297,7 @@ namespace abakes2.Pages
         }
 
 
-        public void OnPostDiscount()
+        public async Task<IActionResult> OnPostDiscountAsync()
         {
             OnGet();
             string couponcode = Request.Form["coupon"];
@@ -316,61 +318,74 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                checkSec++;
+                                
                                 discountCode = reader.GetFieldValue<int>(reader.GetOrdinal("Discount"));
-
+                                code.status = reader.GetString(2);
+                                code.avail2d = reader.GetString(5);
                                 discountedPrice = ((decimal)discountCode / percentage) * orderPrice;
+                                discountedPrice2 = orderPrice - discountedPrice;
                                 finaldiscountedPrice = (int)Math.Round(discountedPrice);
 
                             }
                         }
                     }
-
-                    Console.WriteLine("Coupon" + discountCode + "discountedPrice" + discountedPrice + "finaldiscountedPrice" + finaldiscountedPrice + "OrderPrice" + orderPrice);
-                    Console.WriteLine("check" + checkSec);
-                    if (checkSec > 0)
+                    if (discountCode == 0 || code.status == "false" || code.avail2d == "false")
                     {
 
-
-                        string sql3 = "update GenerateCode set avail3D='false' where code='" + couponcode + "'";
-
-                        using (SqlCommand command = new SqlCommand(sql3, connection))
-                        {
-
-                            command.ExecuteNonQuery();
-                        }
-
-                        string sql4 = "update Order3DForm set NetOrderPrice=@discountedPrice, Coupon=@coupon WHERE username = @username AND status = 'true'";
-
-                        using (SqlCommand command = new SqlCommand(sql4, connection))
-                        {
-                            command.Parameters.AddWithValue("@username", userconfirm);
-                            command.Parameters.AddWithValue("@coupon", couponcode);
-                            command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
-                            command.ExecuteNonQuery();
-                        }
-
-
+                        TempData["DiscountErrorMessage"] = "Discount code is not valid.";
+                        return RedirectToPage("/Checkout3D", new { user = userconfirm });
                     }
+
                     else
                     {
-                        errorMessage = "The code you used is invalid or has expired!";
-                        TempData["errorMessageProfile"] = errorMessage;
-                        Response.Redirect("/Checkout3D");
+
+                        checkSec++;
+                        Console.WriteLine("Coupon" + discountCode + "discountedPrice" + discountedPrice + "finaldiscountedPrice" + finaldiscountedPrice + "OrderPrice" + orderPrice);
+                        Console.WriteLine("check" + checkSec);
+                        if (checkSec > 0)
+                        {
+
+
+                            string sql3 = "update GenerateCode set avail3D='false' where code='" + couponcode + "'";
+
+                            using (SqlCommand command = new SqlCommand(sql3, connection))
+                            {
+
+                                command.ExecuteNonQuery();
+                            }
+
+                            string sql4 = "update Order3DForm set NetOrderPrice=@discountedPrice, Coupon=@coupon WHERE username = @username AND status = 'true'";
+
+                            using (SqlCommand command = new SqlCommand(sql4, connection))
+                            {
+                                command.Parameters.AddWithValue("@username", userconfirm);
+                                command.Parameters.AddWithValue("@coupon", couponcode);
+                                command.Parameters.AddWithValue("@discountedPrice", finaldiscountedPrice);
+                                command.ExecuteNonQuery();
+                            }
+
+
+                        }
+                        else
+                        {
+                           
+                            
+                            return RedirectToPage("/Checkout3D", new { user = userconfirm });
+                        }
+
+
+
                     }
 
-
-
                 }
-
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Response.Redirect("/Checkout3D");
+                return RedirectToPage("/Checkout", new { user = userconfirm });
             }
 
-            Response.Redirect("/Checkout3D");
+            return RedirectToPage("/Checkout", new { user = userconfirm });
         }
 
         public void OnGet()

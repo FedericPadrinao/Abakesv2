@@ -36,6 +36,7 @@ namespace abakes2.Pages
         //public code codeInfo = new code();
         public int discountCode = 0;
         public decimal discountedPrice = 0;
+        public decimal discountedPrice2 = 0;
         public int finaldiscountedPrice = 0;
         public int TotalNetCost = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
