@@ -141,8 +141,6 @@ namespace abakes2.Pages
                         // Check if it's the first-time login
                         if (IsFirstTimeLogin(username))
                         {
-                            // Update the first_time_login status
-                            UpdateFirstTimeLoginStatus(username, false);
 
                             // Redirect to the specific page for first-time login
                             return RedirectToPage("/Customer_AccountInformation", new { user = username });
@@ -210,20 +208,6 @@ namespace abakes2.Pages
                 }
             }
             return false;
-        }
-        private void UpdateFirstTimeLoginStatus(string username, bool status)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionProvider))
-            {
-                connection.Open();
-                string sql = "UPDATE LoginCustomer SET first_time = @status WHERE username = @username";
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@username", username);
-                    command.Parameters.AddWithValue("@status", status);
-                    command.ExecuteNonQuery();
-                }
-            }
         }
 
 

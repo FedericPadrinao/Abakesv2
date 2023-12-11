@@ -36,7 +36,7 @@ namespace abakes2.Pages
             try
             {
 
-                using (SqlConnection connection = new SqlConnection(connectionProvider)) 
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
                     string sql = "select count(id) from feedback";
@@ -46,7 +46,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                              feedbackcount = reader.GetInt32(0);
+                                feedbackcount = reader.GetInt32(0);
 
                             }
                         }
@@ -159,7 +159,7 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                simplependingpayment= reader.GetInt32(0);
+                                simplependingpayment = reader.GetInt32(0);
 
                             }
                         }
@@ -213,7 +213,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                
+
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
@@ -240,8 +240,8 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                               feedbackrating = reader.GetDouble(0);
-                             formatrating = feedbackrating.ToString("F2");
+                                feedbackrating = reader.GetDouble(0);
+                                formatrating = feedbackrating.ToString("F2");
 
                             }
                         }
@@ -250,21 +250,29 @@ namespace abakes2.Pages
                 totalearnings = earnings + earnings3D;
                 totalcompleteorder = threecompleteorder + simplecompleteorder;
                 totalpendingpayment = threependingpayment + simplependingpayment;
-                
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error Reading Products: " + e.Message);
             }
         }
-        public JsonResult OnGetGetFlavorData()
+        public JsonResult OnGetGetFlavorData(int? selectedMonth)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    string sql = "SELECT flavors, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order' GROUP BY flavors";
+                    string sql = "SELECT flavors, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order'";
+
+                    if (selectedMonth.HasValue && selectedMonth != 0)
+                    {
+                        sql += $" AND MONTH(ExpectedDelivery) = {selectedMonth}";
+                    }
+
+                    sql += " GROUP BY flavors";
+
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -289,14 +297,22 @@ namespace abakes2.Pages
             }
         }
 
-        public JsonResult OnGetGetShapeData()
+        public JsonResult OnGetGetShapeData(int? selectedMonth)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    string sql = "SELECT shapes, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order' GROUP BY shapes";
+                    string sql = "SELECT shapes, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order'";
+
+                    if (selectedMonth.HasValue && selectedMonth != 0)
+                    {
+                        sql += $" AND MONTH(ExpectedDelivery) = {selectedMonth}";
+                    }
+
+                    sql += " GROUP BY shapes";
+
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -321,14 +337,22 @@ namespace abakes2.Pages
             }
         }
 
-        public JsonResult OnGetGetOccasionData()
+        public JsonResult OnGetGetOccasionData(int? selectedMonth)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    string sql = "SELECT occasion, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order' GROUP BY occasion";
+                    string sql = "SELECT occasion, COUNT(*) as count FROM Invoice WHERE orderstatus = 'Complete Order'";
+
+                    if (selectedMonth.HasValue && selectedMonth != 0)
+                    {
+                        sql += $" AND MONTH(ExpectedDelivery) = {selectedMonth}";
+                    }
+
+                    sql += " GROUP BY occasion";
+
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
