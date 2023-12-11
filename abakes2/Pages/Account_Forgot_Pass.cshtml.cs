@@ -41,9 +41,9 @@ namespace abakes2.Pages
 
             UpdatePasscode(email, newPasscode);
 
-            string firstName = GetFirstName(email);
+            string UserName = GetUserName(email);
 
-            SendPasscodeByEmail(email, firstName, newPasscode);
+            SendPasscodeByEmail(email, UserName, newPasscode);
 
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
             TempData["Email"] = email;
@@ -78,15 +78,15 @@ namespace abakes2.Pages
         }
 
         // Method to send the passcode by email
-        private void SendPasscodeByEmail(string email, string firstName, string passcode)
+        private void SendPasscodeByEmail(string email, string UserName, string passcode)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com")); 
-            message.To.Add(new MailboxAddress(firstName, email));
+            message.To.Add(new MailboxAddress(UserName, email));
             message.Subject = "Password Change Verification Code";
 
             var builder = new BodyBuilder();
-            builder.TextBody = $"Hello {firstName},\n\nYour verification code for changing your passord is: {passcode}\n\nThank you,\nThe Abakes Team";
+            builder.TextBody = $"Hello {UserName},\n\nYour verification code for changing your passord is: {passcode}\n\nThank you,\nThe Abakes Team";
 
             message.Body = builder.ToMessageBody();
 
@@ -117,12 +117,12 @@ namespace abakes2.Pages
                 }
             }
         }
-        private string GetFirstName(string email)
+        private string GetUserName(string email)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionProvider))
             {
                 connection.Open();
-                string sql = "SELECT fname FROM LoginCustomer WHERE email = @email";
+                string sql = "SELECT username FROM LoginCustomer WHERE email = @email";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@email", email);
