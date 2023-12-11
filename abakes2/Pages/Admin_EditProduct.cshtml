@@ -138,30 +138,30 @@
                                                 <h2 style="text-align:center;">Add a Product</h2>
                                             </div>
                                         </div>
-                                    <input type ="hidden" id="id" name="id" value="@Model.productInfo.pdID" />
+                                    <input type ="hidden" id="id" name="id" value="" />
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <label for="c_hadd" class="text-black"><b>Product Name:</b> </label>
-                                            <input type="text" class="form-control" id="pdName" name="name" value="@Model.productInfo.pdName">
+                                            <input type="text" class="form-control" id="pdName" name="name" required placeholder="@Model.productInfo.pdName">
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="col-md-12">
                                                 <label for="c_hadd" class="text-black"><b>Product Price:</b> </label>
-                                                <input style="height:21px" type="number" name="price"  value="@Model.productInfo.pdPrice" />
+                                                <input style="height:21px" type="number" name="price" required placeholder="@Model.productInfo.pdPrice" />
                                             </div>                                     
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-6">
                                                 <label for="c_hadd" class="text-black"><b>Product Description:</b> </label>
-                                            <input id="message" name="description" rows="10" cols="80" minlength="0" maxlength="200"  value="@Model.productInfo.pdDescription"></input>
+                                            <textarea id="message" name="description" rows="10" cols="80" minlength="0" maxlength="200" required placeholder="@Model.productInfo.pdDescription"></textarea>
                                             </div>                                     
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-12">
                                                 <label for="c_hadd" class="text-black"><b>Product Image:</b> </label>
                                                 <img src="@Model.productInfo.pdImg" id="imgPreview" width="50%" />
-                                                <input type="file" id="fileInput" name="file" onchange="previewImage()" />
+                                                <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
                                             </div>                                     
                                         </div>
                                         <div class="form-group row">

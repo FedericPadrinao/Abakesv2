@@ -98,12 +98,7 @@
                             <input type="text" placeholder="Email" name="email" id="email" value="@Model.customerInfo.email" required>
 
                             @*<input type="text" placeholder="Phone">*@
-                            <input type="password" placeholder="Password" name="password" id="password" 
-                               value="@Model.customerInfo.password" 
-                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must: Be at least 8 characters in length.
-                    Include at least one upper case letter.
-                    Include at least one number.
-                    Include at least one special character." required>
+                            <input type="password" placeholder="Password" name="password" id="password" value="@Model.customerInfo.password" required>
                             <button type="submit" class="btn" value="submit" asp-page-handler="Register">Register</button>
                         </form>
                     </div>
