@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         
         public void OnGet()
         {
@@ -255,7 +255,7 @@ namespace abakes2.Pages
                 email.Subject = "A-Bakes Registration";
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
                 {
-                    Text = $"Hello {customerInfo.fname}! Thank you for registering at A-bakes! Your verification code is: {verificationCode}"
+                    Text = $"Hello {customerInfo.fname} {customerInfo.lname}! Thank you for registering at A-bakes! Your verification code is: {verificationCode}"
                 };
 
                 using (var smtp = new SmtpClient())

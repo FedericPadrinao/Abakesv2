@@ -12,7 +12,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
       
 
         [HttpPost]
@@ -66,10 +66,10 @@ namespace abakes2.Pages
                     else
                     {
                         // Invalid file format, set error message
-                        errorMessageProfile = "Invalid file format. Please upload a .JSON file.";
-                        TempData["errorMessageProfile"] = errorMessageProfile; // Store the success message in TempData
+                        
+                        TempData["InvalidJSONMessage"] = "Invalid file format. Please upload a .JSON file.";
 
-                        return Redirect("/Admin_Manage3DAsset");
+                        return Redirect("/Admin_Add3DAsset");
                     }
                 }
             }
