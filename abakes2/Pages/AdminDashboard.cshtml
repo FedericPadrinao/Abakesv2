@@ -1,11 +1,9 @@
 ﻿@page
 @model abakes2.Pages.AdminDashboardModel
 @{
-}
-
-@{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +16,11 @@
     <script src="https://kit.fontawesome.com/e91d01519e.js" crossorigin="anonymous"></script>
 
     <title>Admin Panel</title>
+    <style>
+    a {
+        text-decoration: none;
+    }
+</style>
 </head>
 
 <body>
@@ -109,16 +112,34 @@
         </div>
         <div class="main">
             <div class="cards">
+                <a href="Admin_ManageFeedback">
                 <div class="card">
+                    
                     <div class="card-content">
+                        
                         <div class="number">@Model.feedbackcount</div>
-                        <div class="card-name">Feedback</div>
+                        <div class="card-name">Active Feedback</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-comment"></i>
                     </div>
+                    
                 </div>
-
+                </a>
+                <a href="Admin_ManageArchiveFeedbacks">
+                <div class="card">
+                    
+                    <div class="card-content">
+                        
+                        <div class="number">@Model.feedbackpendingcount</div>
+                        <div class="card-name">Pending Feedback</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    
+                </div>
+                </a>
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.formatrating</div>
@@ -137,15 +158,29 @@
                         <i class="fas fa-peso-sign"></i>
                     </div>
                 </div>
+                <a href="Admin_ManageAcc">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.usercount</div>
-                        <div class="card-name">Users</div>
+                        <div class="card-name">Active Users</div>
                     </div>
                     <div class="icon-box">
                         <i class="fas fa-users"></i>
                     </div>
                 </div>
+                </a>
+                <a href="Admin_ManageBlockedAcc">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">@Model.blockedusercount</div>
+                        <div class="card-name">Blocked Users</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-slash"></i>
+                    </div>
+                </div>
+                </a>
+                <a href="Admin_ManageSimpleOrders2">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.ordersimplecount</div>
@@ -155,6 +190,8 @@
                         <i class="fa-solid fa-check"></i>
                     </div>
                 </div>
+                </a>
+                <a href="Admin_ManageOrders">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.simplepending</div>
@@ -164,6 +201,8 @@
                         <i class="fa-regular fa-clock"></i>
                     </div>
                 </div>
+                </a>
+                <a href="Admin_Manage3DOrders">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.threepending</div>
@@ -173,6 +212,8 @@
                         <i class="fas solid fa-clock"></i>
                     </div>
                 </div>
+                </a>
+                <a href="Admin_Manage3DOrders2">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.threesimplecount</div>
@@ -182,6 +223,8 @@
                         <i class="fa-solid fa-list-check"></i>
                     </div>
                 </div>
+                </a>
+                <a href="ManagePayments">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.totalpendingpayment</div>
@@ -191,6 +234,8 @@
                         <i class="fas fa-clipboard"></i>
                     </div>
                 </div>
+                </a>
+                <a href="ManagePayments2">
                 <div class="card">
                     <div class="card-content">
                         <div class="number">@Model.totalcompleteorder</div>
@@ -200,6 +245,7 @@
                         <i class="fa-solid fa-clipboard-check"></i>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="charts" style="grid-template-rows: repeat(2, 1fr);">
                 <div class="chart doughnut-chart">

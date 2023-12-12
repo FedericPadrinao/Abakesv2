@@ -14,9 +14,20 @@
     <link rel="stylesheet" href="~/css/ContactUs/damarota-blog.css " asp-append-version="true">
     <link href="~/css/footer/layout.css" rel="stylesheet" asp-append-version="true">
     <link href="~/css/badge/badge.css" rel="stylesheet" asp-append-version="true">
-
+    
 </head>
 
+<style>
+    .limited-text {
+    font-size: 19px;
+    color: rgb(159, 167, 189);
+    font-family: Poppins ExtraBold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Set your desired max-width */
+    }
+    </style>
 
 
 <!-- NAV BAR -->
@@ -283,7 +294,7 @@
                         </div>
                         <div class="container">
                             <br> <br>
-                          <h3 style="font-size: 19px;color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">@item.fbMessage</h3>
+                          <h3 class="limited-text" style="font-size: 19px;color:rgb(159, 167, 189); font-family:Poppins ExtraBold;">@item.fbMessage</h3>
                         </div>
                               <a class='btn btn-btn-dark btn-sm' href='/Customer_ViewFeedback?id=@item.fbID' style="color:rgb(173, 136, 125); font-family:Poppins ExtraBold; background-color: #fbc1b4; margin-top:20px;"> View</a>
                    </div>

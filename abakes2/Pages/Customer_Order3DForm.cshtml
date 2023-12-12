@@ -408,7 +408,7 @@
             scene.add(ambientLight);
 
             //DIRECTIONAL LIGHT PARA KUMINTAB YUNG MODEL
-            directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+            directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
             scene.add(directionalLight);
             obj;
 
@@ -694,7 +694,7 @@
                         });
 
                         var model1 = gltf${varCounter}.scene;
-                        var handle = 10 * model1.scale.x;
+                        var handle = 8 * model1.scale.x;
                         globalVariables[${indexCount}].modelDragBox${varCounter} = new THREE.Mesh(
                             new THREE.BoxGeometry(handle, handle, handle),
                             new THREE.MeshBasicMaterial({ transparent: true, opacity: 0 })

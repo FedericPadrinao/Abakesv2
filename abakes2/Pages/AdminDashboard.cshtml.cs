@@ -13,9 +13,11 @@ namespace abakes2.Pages
         public String errorMessage = "";
         public String successMessage = "";
         public int feedbackcount = 0;
+        public int feedbackpendingcount = 0;
         public string formatrating = "";
         public double feedbackrating = 0;
         public int usercount = 0;
+        public int blockedusercount = 0;
         public int ordersimplecount = 0;
         public int simplepending = 0;
         public int threepending = 0;
@@ -48,7 +50,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    string sql = "select count(id) from feedback";
+                    string sql = "select count(id) from feedback where status='true'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -65,7 +67,24 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    string sql = "select count(Id) from LoginCustomer";
+                    string sql = "select count(id) from feedback where status='false'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                feedbackpendingcount = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(Id) from LoginCustomer where accstatus='true'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -73,6 +92,22 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 usercount = reader.GetInt32(0);
+
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "select count(Id) from LoginCustomer where accstatus='false'";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                blockedusercount = reader.GetInt32(0);
 
                             }
                         }

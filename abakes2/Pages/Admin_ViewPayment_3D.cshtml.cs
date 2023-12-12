@@ -91,7 +91,7 @@ namespace abakes2.Pages
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        command.Parameters.AddWithValue("@user", userconfirm);
+                        command.Parameters.AddWithValue("@user", order3d.username);
                         command.Parameters.AddWithValue("@orderID", order3d.ModelID);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {

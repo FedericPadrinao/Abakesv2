@@ -67,6 +67,10 @@
 
             }
             
+        .imgPreview{
+            max-height: 200px;
+            
+        }
     </style>
 
 </head>
@@ -170,12 +174,7 @@
                                 <div class="col-lg-4">
                                     <div class="sidebar-item contact-information">
                                         <div class="sidebar-heading">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                        <h4 style="text-align:left;">Name:</h4>
-                                                    <input type="text" id="fname" name="name" required class="form-control" /><br />
-                                                </div>
-                                            </div>
+                                            
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                         <h4 style="text-align:left;">Star:</h4>
@@ -209,6 +208,9 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     <h4 style="text-align:left;">Image:</h4>
+                                                    
+                                                    <img class="imgPreview" id="imgPreview" />
+
                                                     <input type="file" id="fileInput" name="file" required onchange="previewImage()" class="form-control" />
                                                 </div>
                                             </div>

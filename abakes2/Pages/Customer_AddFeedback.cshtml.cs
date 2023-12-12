@@ -142,7 +142,8 @@ namespace abakes2.Pages
 
         public async Task<IActionResult> OnPostAsync(IFormFile file)
         {
-            string name = Request.Form["name"];
+
+            userconfirm = HttpContext.Session.GetString("username");
 
             string star = Request.Form["rating"];
             string secCode = Request.Form["securitycode"];
@@ -196,7 +197,7 @@ namespace abakes2.Pages
 
                             using (SqlCommand command = new SqlCommand(sql, connection))
                             {
-                                command.Parameters.AddWithValue("@name", name);
+                                command.Parameters.AddWithValue("@name", userconfirm);
                                 command.Parameters.AddWithValue("@rating", star);
                                 command.Parameters.AddWithValue("@message", message);
                                 command.Parameters.AddWithValue("@image", "/img/feedback/" + fileName);
@@ -245,7 +246,7 @@ namespace abakes2.Pages
                 return Page();
             }
 
-            return Redirect("/Index");
+            return Redirect("/");
         }
     }
 }

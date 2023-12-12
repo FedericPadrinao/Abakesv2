@@ -8,6 +8,7 @@ namespace abakes2.Pages
     {
         public List<UserInfo> listUser = new List<UserInfo>();
         public List<Feedbacks> listFeedback = new List<Feedbacks>();
+        public Feedbacks fb = new Feedbacks();
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
@@ -42,13 +43,13 @@ namespace abakes2.Pages
                         {
                             while (reader.Read())
                             {
-                                Feedbacks fb = new Feedbacks();
+                               
                                 fb.fbID = reader.GetFieldValue<int>(reader.GetOrdinal("Id"));
-                                fb.fbName = reader.GetFieldValue<string>(reader.GetOrdinal("FeedbackName"));
-                                fb.fbRating = reader.GetString(reader.GetOrdinal("FeedbackRating"));
-                                fb.fbMessage = reader.GetFieldValue<string>(reader.GetOrdinal("FeedbackMessage"));
+                                fb.fbName = reader.GetFieldValue<string>(reader.GetOrdinal("name"));
+                                fb.fbRating = reader.GetString(reader.GetOrdinal("rating"));
+                                fb.fbMessage = reader.GetFieldValue<string>(reader.GetOrdinal("message"));
 
-                                listFeedback.Add(fb);
+                              
 
                             }
                         }

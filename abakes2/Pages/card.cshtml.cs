@@ -14,7 +14,7 @@ namespace abakes2.Pages
         public string code = "";
         public void OnGet()
         {
-            string userconfirm = HttpContext.Session.GetString("username");
+            string userconfirm = HttpContext.Session.GetString("useradmin");
 
             if (userconfirm != null)
             {
