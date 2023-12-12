@@ -1325,6 +1325,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\50thanniversary.json",
+      "PackagePath": "staticwebassets\\models\\50thanniversary.json"
+    },
+    {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\B_doublelayer.json",
       "PackagePath": "staticwebassets\\models\\B_doublelayer.json"
     },
@@ -1339,14 +1343,6 @@
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\CreamFilledCake.json",
       "PackagePath": "staticwebassets\\models\\CreamFilledCake.json"
-    },
-    {
-      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\StrawberriesAndBlueberries.json",
-      "PackagePath": "staticwebassets\\models\\StrawberriesAndBlueberries.json"
-    },
-    {
-      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\TheCakeFromPortal.json",
-      "PackagePath": "staticwebassets\\models\\TheCakeFromPortal.json"
     },
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\TripleChocolateCake.json",
@@ -1461,6 +1457,10 @@
       "PackagePath": "staticwebassets\\models\\chocolate_cake\\scene.json"
     },
     {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cranberries.json",
+      "PackagePath": "staticwebassets\\models\\cranberries.json"
+    },
+    {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\cream.json",
       "PackagePath": "staticwebassets\\models\\cream.json"
     },
@@ -1485,12 +1485,24 @@
       "PackagePath": "staticwebassets\\models\\fionnaANDcake.json"
     },
     {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\flowers.json",
+      "PackagePath": "staticwebassets\\models\\flowers.json"
+    },
+    {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\fruits.json",
       "PackagePath": "staticwebassets\\models\\fruits.json"
     },
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\fruitsnew.json",
       "PackagePath": "staticwebassets\\models\\fruitsnew.json"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\happybirthday.json",
+      "PackagePath": "staticwebassets\\models\\happybirthday.json"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\icing-big.json",
+      "PackagePath": "staticwebassets\\models\\icing-big.json"
     },
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\icing-small.json",
@@ -1505,10 +1517,6 @@
       "PackagePath": "staticwebassets\\models\\newfruits.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\pinkmacaron.json",
-      "PackagePath": "staticwebassets\\models\\pinkmacaron.json"
-    },
-    {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\preset_VelvetMacaronCake.json",
       "PackagePath": "staticwebassets\\models\\preset_VelvetMacaronCake.json"
     },
@@ -1521,8 +1529,8 @@
       "PackagePath": "staticwebassets\\models\\scene.json"
     },
     {
-      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\strawberries-blueberries.json",
-      "PackagePath": "staticwebassets\\models\\strawberries-blueberries.json"
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\sprinkles.json",
+      "PackagePath": "staticwebassets\\models\\sprinkles.json"
     },
     {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\models\\textures\\lambert2_baseColor.png",

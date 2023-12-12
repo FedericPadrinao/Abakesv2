@@ -259,8 +259,8 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time, verif_exp) " +
-                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true', DATEADD(MINUTE, 3, GETDATE()))";
+                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time, verif_exp, birthdate, gender) " +
+                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true', DATEADD(MINUTE, 3, GETDATE())), '', ''";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {

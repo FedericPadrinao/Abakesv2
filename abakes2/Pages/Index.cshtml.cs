@@ -343,6 +343,8 @@ namespace abakes2.Pages
         public String accstatus = "";
         public String ordermax = "";
         public String ordermax3D = "";
+        public String birthdate = "";
+        public String gender = "";
     }
 
     public class NotificationInfo

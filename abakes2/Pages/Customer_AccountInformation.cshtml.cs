@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data.SqlClient;
 namespace abakes2.Pages
 {
@@ -9,6 +10,8 @@ namespace abakes2.Pages
         public CustomerInfo customerInfo = new CustomerInfo();
         public string userconfirm = "";
         public string username { get; set; }
+        public string birthdate { get; set; }
+        public string gender { get; set; }
         public String errorMessage = "";
         public String successMessage = "";
         public String imgconfirm = "";
@@ -21,6 +24,14 @@ namespace abakes2.Pages
         public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public List<SelectListItem> GenderOptions { get; } = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "Male", Text = "Male" },
+                new SelectListItem { Value = "Female", Text = "Female" },
+                new SelectListItem { Value = "NonBinary", Text = "Nonbinary" },
+                new SelectListItem { Value = "Others", Text = "Others" },
+                new SelectListItem { Value = "Unstated", Text = "Prefer not to state" },
+            };
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
@@ -46,7 +57,7 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM LoginCustomer WHERE username=@user" ;
+                    String sql = "SELECT * FROM LoginCustomer WHERE username=@user";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -57,14 +68,14 @@ namespace abakes2.Pages
                             {
 
                                 customerInfo.username = reader.GetString(1);
-                                
-                                
                                 customerInfo.email = reader.GetString(5);
                                 customerInfo.address = reader.GetString(6);
                                 customerInfo.phone = reader.GetString(7);
                                 customerInfo.city = reader.GetString(9);
                                 customerInfo.barangay = reader.GetString(10);
                                 customerInfo.img = reader.GetString(8);
+                                customerInfo.birthdate = reader["birthdate"] is DBNull ? string.Empty : reader.GetString(reader.GetOrdinal("birthdate"));
+                                customerInfo.gender = reader["gender"] is DBNull ? string.Empty : reader.GetString(reader.GetOrdinal("gender"));
 
 
                             }
@@ -181,14 +192,15 @@ namespace abakes2.Pages
             string address = Request.Form["address"];
             string city = Request.Form["city"];
             string barangay = Request.Form["barangay"];
+            string birthdate = Request.Form["birthdate"];
+            string gender = Request.Form["gender"];
 
             try
             {
-
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "UPDATE LoginCustomer SET username='" + username + "',phone='" + phone + "',email='" + email + "',address='" + address + "',city='" + city + "',barangay='" + barangay + "',first_time='" + false + "' where username='" + username + "'";
+                    String sql = "UPDATE LoginCustomer SET username='" + username + "',phone='" + phone + "',email='" + email + "',address='" + address + "',city='" + city + "',barangay='" + barangay + "',first_time='" + false + "',birthdate='" + birthdate + "',gender='" + gender + "' where username='" + username + "'";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
