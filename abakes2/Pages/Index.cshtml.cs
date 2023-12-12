@@ -133,6 +133,7 @@ namespace abakes2.Pages
         public IActionResult OnGetLogOut()
         {
             HttpContext.Session.Remove("username");
+            HttpContext.Session.Remove("useradmin");
             userconfirm = HttpContext.Session.GetString("username");
             return RedirectToPage("/Index");
         }
