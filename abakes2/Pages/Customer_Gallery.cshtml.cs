@@ -9,7 +9,7 @@ namespace abakes2.Pages
         public List<Products> listProduct = new List<Products>();
         public List<UserInfo> userInfo = new List<UserInfo>();
         public int pdID = 0;
-        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Server=tcp:eu-az-sql-serv6e425a9865434acc8b7d6d8badb306b5.database.windows.net,1433;Initial Catalog=d58anpzl3kll8nf;Persist Security Info=False;User ID=ufy99xlgudx1fh3;Password=%g2q&#dV&ECBX6Oyf0%QkXHe5;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
