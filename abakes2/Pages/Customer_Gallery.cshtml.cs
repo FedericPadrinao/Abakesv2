@@ -91,7 +91,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Gallery: " + e.ToString());
 
             }
         }
@@ -228,7 +228,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Gallery: " + e.ToString());
 
             }
 

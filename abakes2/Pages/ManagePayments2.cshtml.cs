@@ -96,7 +96,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Payments2: " + e.ToString());
 
             }
         }
@@ -104,6 +104,15 @@ namespace abakes2.Pages
         public void OnGet(string sortUser)
         {
             GetUsers(sortUser);
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             using (SqlConnection connection = new SqlConnection(connectionString)) //static
             {
                 connection.Open();

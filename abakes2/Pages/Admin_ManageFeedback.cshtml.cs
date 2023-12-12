@@ -151,8 +151,7 @@ namespace abakes2.Pages
         public void OnGet(string sortFeedback)
         {
 
-            userconfirm = HttpContext.Session.GetString("username");
-
+            userconfirm = HttpContext.Session.GetString("useradmin");
             if (userconfirm != null)
             {
 

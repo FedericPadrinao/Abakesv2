@@ -32,7 +32,15 @@ namespace abakes2.Pages
         public void OnGet()
         {
             MonthlySalesData = GetMonthlySalesData();
-            userconfirm = HttpContext.Session.GetString("username");
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             try
             {
 
@@ -254,7 +262,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.Message);
+                Console.WriteLine("Error Reading Dashboard: " + e.Message);
             }
         }
         public JsonResult OnGetGetFlavorData(int? selectedMonth)

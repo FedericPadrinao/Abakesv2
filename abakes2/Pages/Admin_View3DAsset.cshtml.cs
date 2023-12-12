@@ -15,6 +15,15 @@ namespace abakes2.Pages
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             String id = Request.Query["Id"];
 
             try

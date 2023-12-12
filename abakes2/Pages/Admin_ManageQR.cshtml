@@ -125,7 +125,8 @@
 
             <div class="admin-table">          
                 <form method="post" asp-page-handler="Generate">
-                    <input type="number" placeholder="Enter Discount(Input 0 if no discount)" name="DiscountCoupon" max="100"> 
+                    <label>Enter Discount (Default 0 = No Discount)</label> 
+                    <input type="number" placeholder="Enter Discount(Input 0 if no discount)" name="DiscountCoupon" value="0" max="100"> 
                      <button type="submit" class="btn" style="margin:1%;">Generate</button>
                 </form>
                 <a asp-page="/Admin_ManageQR" asp-route-sortProduct="Sort Name" class="btn" style="font-family:Poppins ExtraBold; border-color: #fbc1b4;background-color: #fbc1b4; color:black;margin-top:20px;margin-bottom:20px;"> ↓ ID</a>

@@ -75,7 +75,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Cakes: " + e.ToString());
 
             }
         }
@@ -148,8 +148,15 @@ namespace abakes2.Pages
         }
         public void OnGet(string sortProduct)
         {
-            userconfirm = HttpContext.Session.GetString("user");
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
 
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
 
 
             GetProducts(sortProduct);

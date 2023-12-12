@@ -26,7 +26,15 @@ namespace abakes2.Pages
         public void OnGet()
         {
             String id = Request.Query["Id"];
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
 
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             try
             {
 
@@ -52,6 +60,10 @@ namespace abakes2.Pages
                                 order3d.Color = reader.GetString(7);
                                 order3d.Color2 = reader.GetString(8);
                                 order3d.Color3 = reader.GetString(9);
+                                order3d.order3DPrice = reader.GetInt32(12);
+                                order3d.order3DShip = reader.GetInt32(14);
+                                order3d.order3DExpectedD = reader.GetString(17);
+                                order3d.order3DExpectedT = reader.GetString(18);
 
 
                             }

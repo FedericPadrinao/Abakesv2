@@ -19,7 +19,7 @@ namespace abakes2.Pages
        
         public void OnGet(string sortProduct)
         {
-            userconfirm = HttpContext.Session.GetString("username");
+            userconfirm = HttpContext.Session.GetString("useradmin");
             if (userconfirm != null)
             {
 
@@ -27,7 +27,6 @@ namespace abakes2.Pages
             else
             {
                 Response.Redirect("/index");
-
             }
 
             ReadCode(sortProduct);

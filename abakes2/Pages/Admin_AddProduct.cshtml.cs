@@ -118,15 +118,23 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Adding Products: " + e.ToString());
 
             }
             return count;
         }
         public void OnGet()
         {
-            userconfirm = HttpContext.Session.GetString("user");
-      
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
+
         }
     }
 }

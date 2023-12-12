@@ -97,8 +97,7 @@ namespace abakes2.Pages
         public void OnGet()
         {
 
-            userconfirm = HttpContext.Session.GetString("username");
-
+            userconfirm = HttpContext.Session.GetString("useradmin");
             if (userconfirm != null)
             {
 
@@ -107,7 +106,6 @@ namespace abakes2.Pages
             {
                 Response.Redirect("/index");
             }
-
             GetNotifications();
         }
     }

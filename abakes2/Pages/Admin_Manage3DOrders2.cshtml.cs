@@ -62,13 +62,22 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading 3D Orders2: " + e.ToString());
 
             }
         }
         public void OnGet()
         {
             GetOrders();
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
         }
 
         public IActionResult OnGetReject()

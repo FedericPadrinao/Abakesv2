@@ -11,9 +11,29 @@ namespace abakes2.Pages
         public string username { get; set; }
         public string userconfirm = "";
 
+        public void OnGet()
+        {
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
+        }
         public IActionResult OnPost()
         {
-            userconfirm = HttpContext.Session.GetString("username");
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             string currentPassword = Request.Form["currentPassword"];
             string newPassword = Request.Form["newPassword"];
             string confirmNewPassword = Request.Form["confirmNewPassword"];

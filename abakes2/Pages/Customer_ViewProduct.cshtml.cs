@@ -67,7 +67,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Viewing Products: " + e.ToString());
 
             }
         }

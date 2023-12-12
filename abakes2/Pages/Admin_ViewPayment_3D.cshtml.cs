@@ -26,7 +26,15 @@ namespace abakes2.Pages
         {
             String id = Request.Query["Id"];
             string user = Request.Query["User"];
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
 
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             try
             {
 

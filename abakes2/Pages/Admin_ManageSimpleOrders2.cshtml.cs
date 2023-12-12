@@ -87,13 +87,22 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Orders2: " + e.ToString());
 
             }
         }
         public void OnGet(string sortOrder)
         {
             GetOrders(sortOrder);
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
         }
 
         public IActionResult OnGetReject(string sortOrder)

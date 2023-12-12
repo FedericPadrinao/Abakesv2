@@ -15,6 +15,7 @@ namespace abakes2.Pages
         public string errorMessage = "";
         private readonly ILogger<IndexModel> _logger;
         public string username { get; set; }
+        public string adminname { get; set; }
         public string password { get; set; }
         public string pass = "";
         public string userimage { get; set; }
@@ -83,7 +84,7 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 x++;
-                                username = reader.GetString(1);
+                                adminname = reader.GetString(1);
                                 pass = reader.GetString(2);
                                 userimage = reader.GetString(4);
                                 userstatus = reader.GetString(5);
@@ -103,7 +104,7 @@ namespace abakes2.Pages
                 {
                     if (password.Equals(pass))
                     {
-                        HttpContext.Session.SetString("username", username);
+                        HttpContext.Session.SetString("useradmin", adminname);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
 
@@ -111,7 +112,7 @@ namespace abakes2.Pages
                     }
                     else if (BCrypt.Net.BCrypt.Verify(password, pass))
                     {
-                        HttpContext.Session.SetString("username", username);
+                        HttpContext.Session.SetString("useradmin", adminname);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
 

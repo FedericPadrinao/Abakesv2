@@ -19,7 +19,15 @@ namespace abakes2.Pages
         
         public async Task<IActionResult> OnPostAsync(IFormFile file)
         {
-            userconfirm = HttpContext.Session.GetString("username");
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             string successMessageProfile = "";
             string errorMessageProfile = "";
             string name = Request.Form["name"];
@@ -87,7 +95,15 @@ namespace abakes2.Pages
 
         public void OnGet()
         {
-            userconfirm = HttpContext.Session.GetString("user");
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
 
         }
     }

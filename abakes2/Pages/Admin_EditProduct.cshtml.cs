@@ -131,7 +131,15 @@ namespace abakes2.Pages
   
         public void OnGet()
         {
-            userconfirm = HttpContext.Session.GetString("user");
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
             string pdid = Request.Query["id"];
             try
             {
@@ -159,7 +167,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Editing Products: " + e.ToString());
 
             }
            

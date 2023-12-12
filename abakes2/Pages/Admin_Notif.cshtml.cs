@@ -15,10 +15,20 @@ namespace abakes2.Pages
     {
         public string successMessage = "";
         public string errorMessage = "";
+        public String userconfirm = "";
         public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public NotificationInfo notifInfo = new NotificationInfo();
         public void OnGet()
         {
+            userconfirm = HttpContext.Session.GetString("useradmin");
+            if (userconfirm != null)
+            {
+
+            }
+            else
+            {
+                Response.Redirect("/index");
+            }
         }
         public async Task<IActionResult> OnPostAsync(IFormFile file)
         {

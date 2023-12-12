@@ -172,7 +172,7 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Products: " + e.ToString());
+                Console.WriteLine("Error Reading Checkout3D: " + e.ToString());
                 Console.WriteLine("Exception cart: " + e.Message);
             }
 
