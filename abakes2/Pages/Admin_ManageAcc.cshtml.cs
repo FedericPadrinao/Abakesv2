@@ -64,8 +64,9 @@ namespace abakes2.Pages
                                 customer.accstatus = reader.GetFieldValue<string>(reader.GetOrdinal("accstatus"));
                                
                                 customerInfo.Add(customer);
+                                customer.birthdate = reader["birthdate"] is DBNull ? string.Empty : reader.GetString(reader.GetOrdinal("birthdate"));
+                                customer.gender = reader["gender"] is DBNull ? string.Empty : reader.GetString(reader.GetOrdinal("gender"));
 
-                               
 
 
 

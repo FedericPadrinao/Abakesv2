@@ -138,14 +138,15 @@
                     <thead>
 
                         <tr>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">ID</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Username</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">First Name</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Last Name</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:20%;">Email Address</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Phone Number</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:2%;">ID</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:8%;">Username</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:8%;">First Name</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:8%;">Last Name</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Email Address</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:8%;">Phone Number</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Address</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Picture</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Picture</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:5%;">Birthdate <br /> Gender</th>
                             <th style="color:rgb(159, 167, 189); font-family:Poppins;width:13%;">Action</th>
                         </tr>
                     </thead>
@@ -168,6 +169,9 @@
                                 </td>
                                 <td>
                                     <img src="@item.img">
+                                </td>
+                                <td><p>@item.birthdate</p>
+                                    <p>@item.gender</p>
                                 </td>
 
                                 <td style="align-content:center;">

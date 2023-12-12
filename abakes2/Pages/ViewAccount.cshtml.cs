@@ -14,6 +14,8 @@ namespace abakes2.Pages
 {
     public class ViewAccountModel : PageModel
     {
+        public string birthdate { get; set; }
+        public string gender { get; set; }
         public UserInfo userInfo = new UserInfo();
         public OrderSimpleInfo orderSimple = new OrderSimpleInfo();
         public CustomerInfo customerInfo = new CustomerInfo();
@@ -81,6 +83,8 @@ namespace abakes2.Pages
                                 customerInfo.phone = reader.GetString(7);
                                 customerInfo.city = reader.GetString(9);
                                 customerInfo.barangay = reader.GetString(10);
+                                customerInfo.birthdate = reader["birthdate"] is DBNull ? string.Empty : reader.GetString(reader.GetOrdinal("birthdate"));
+                                customerInfo.gender = reader["gender"] is DBNull ? string.Empty : reader.GetString(reader.GetOrdinal("gender"));
                             }
                         }
                     }

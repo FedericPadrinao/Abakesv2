@@ -973,6 +973,14 @@
       "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart4.js"
     },
     {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart5.js",
+      "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart5.js"
+    },
+    {
+      "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart6.js",
+      "PackagePath": "staticwebassets\\js\\AdminDashboardjs\\chart6.js"
+    },
+    {
       "Id": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\DragControls.js",
       "PackagePath": "staticwebassets\\js\\DragControls.js"
     },

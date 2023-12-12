@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "x/tC8tD9bkoASvVZ8GCL89hqEl3AIhIsTEfwCTex//g=",
+  "Hash": "JNHo/3nJNiInBEdcA331NdCAqu/gx025JYD6qkOD8RA=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -4163,6 +4163,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\AdminDashboardjs\\chart4.js"
+    },
+    {
+      "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart5.js",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "js/AdminDashboardjs/chart5.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AdminDashboardjs\\chart5.js"
+    },
+    {
+      "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\AdminDashboardjs\\chart6.js",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "js/AdminDashboardjs/chart6.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\AdminDashboardjs\\chart6.js"
     },
     {
       "Identity": "D:\\Library\\Desktop\\AbakesDef\\Abakesv2\\abakes2\\wwwroot\\js\\color-modes.js",

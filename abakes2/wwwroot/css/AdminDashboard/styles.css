@@ -343,6 +343,7 @@ img {
 .admin-table {
     overflow: auto;
     width: 100%;
+    overflow-x: scroll;
 }
 
     .admin-table .search {
@@ -452,8 +453,8 @@ img {
 
 .charts {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
     width: 100%;
     padding: 20px;
     padding-top: 0;

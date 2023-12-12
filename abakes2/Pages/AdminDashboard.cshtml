@@ -201,7 +201,7 @@
                     </div>
                 </div>
             </div>
-            <div class="charts">
+            <div class="charts" style="grid-template-rows: repeat(2, 1fr);">
                 <div class="chart doughnut-chart">
                     <h2>Cake Flavors</h2>
                     <div>
@@ -218,6 +218,18 @@
                     <h2>Occasions for Cakes</h2>
                     <div>
                         <canvas id="doughnut3" data-url="@Url.Page("AdminDashboard", "GetOccasionData")"></canvas>
+                    </div>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h2>Gender Distribution</h2>
+                    <div>
+                        <canvas id="doughnut4" data-url="@Url.Page("AdminDashboard", "GetGenderData")"></canvas>
+                    </div>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h2>Age Distribution</h2>
+                    <div>
+                        <canvas id="doughnut5" data-url="@Url.Page("AdminDashboard", "GetAgeData")"></canvas>
                     </div>
                 </div>
             </div>
@@ -271,6 +283,8 @@
     <script src="~/js/AdminDashboardjs/chart2.js"></script>
     <script src="~/js/AdminDashboardjs/chart3.js"></script>
     <script src="~/js/AdminDashboardjs/chart4.js"></script>
+    <script src="~/js/AdminDashboardjs/chart5.js"></script>
+    <script src="~/js/AdminDashboardjs/chart6.js"></script>
     <script>
         function updatePieCharts(selectedMonth) {
             window.location.href = `AdminDashboard?selectedMonth=${selectedMonth}`;

@@ -8,6 +8,7 @@ namespace abakes2.Pages
         public List<Products> listProduct = new List<Products>();
         public List<UserInfo> userInfo = new List<UserInfo>();
         public List<MonthlySales> MonthlySalesData { get; set; }
+        public string gender { get; set; }
         public String userconfirm = "";
         public String errorMessage = "";
         public String successMessage = "";
@@ -371,6 +372,78 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 labels.Add(reader.GetString(0));
+                                data.Add(reader.GetInt32(1));
+                            }
+
+                            return new JsonResult(new { labels, data });
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { error = e.Message });
+            }
+        }
+
+        public JsonResult OnGetGetGenderData()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "SELECT gender, COUNT(*) as gender FROM LoginCustomer WHERE is_verified = 1 GROUP BY gender";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            List<int> data = new List<int>();
+                            List<string> labels = new List<string>();
+
+                            while (reader.Read())
+                            {
+                                labels.Add(reader.GetString(0));
+                                data.Add(reader.GetInt32(1));
+                            }
+
+                            return new JsonResult(new { labels, data });
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { error = e.Message });
+            }
+        }
+
+        public JsonResult OnGetGetAgeData()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+
+                    string sql = "SELECT DATEDIFF(YEAR, birthdate, GETDATE()) AS age, COUNT(*) AS count " +
+                                 "FROM LoginCustomer " +
+                                 "WHERE is_verified = 1 " +
+                                 "GROUP BY DATEDIFF(YEAR, birthdate, GETDATE())";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            List<int> data = new List<int>();
+                            List<string> labels = new List<string>();
+
+                            while (reader.Read())
+                            {
+                                int age = reader.GetInt32(0);
+                                int ageGroup = (int)Math.Floor((double)age / 5) * 5;
+                                labels.Add($"{ageGroup}-{ageGroup + 4}");
                                 data.Add(reader.GetInt32(1));
                             }
 
