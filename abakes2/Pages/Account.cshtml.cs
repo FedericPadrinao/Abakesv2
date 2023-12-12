@@ -15,7 +15,6 @@ namespace abakes2.Pages
         public string errorMessage = "";
         private readonly ILogger<IndexModel> _logger;
         public string username { get; set; }
-        public string adminname { get; set; }
         public string password { get; set; }
         public string pass = "";
         public string userimage { get; set; }
@@ -25,8 +24,6 @@ namespace abakes2.Pages
         public string imgconfirm = "";
         public string statusconfirm = "";
         public string connectionProvider = "Server=tcp:eu-az-sql-serv6e425a9865434acc8b7d6d8badb306b5.database.windows.net,1433;Initial Catalog=d58anpzl3kll8nf;Persist Security Info=False;User ID=ufy99xlgudx1fh3;Password=%g2q&#dV&ECBX6Oyf0%QkXHe5;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        
-        
 
         public void OnGet()
         {
@@ -86,7 +83,7 @@ namespace abakes2.Pages
                             while (reader.Read())
                             {
                                 x++;
-                                adminname = reader.GetString(1);
+                                username = reader.GetString(1);
                                 pass = reader.GetString(2);
                                 userimage = reader.GetString(4);
                                 userstatus = reader.GetString(5);
@@ -106,7 +103,7 @@ namespace abakes2.Pages
                 {
                     if (password.Equals(pass))
                     {
-                        HttpContext.Session.SetString("useradmin", adminname);
+                        HttpContext.Session.SetString("useradmin", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
 
@@ -114,7 +111,7 @@ namespace abakes2.Pages
                     }
                     else if (BCrypt.Net.BCrypt.Verify(password, pass))
                     {
-                        HttpContext.Session.SetString("useradmin", adminname);
+                        HttpContext.Session.SetString("useradmin", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
 
