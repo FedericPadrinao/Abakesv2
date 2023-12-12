@@ -46,7 +46,7 @@ namespace abakes2.Pages
                                 order3DList.instructions = reader.GetFieldValue<string>(reader.GetOrdinal("instructions"));
                                 order3DList.order3DPreferredD = reader.GetFieldValue<string>(reader.GetOrdinal("PreferredDelivery"));
                                 order3DList.ModelType = reader.GetFieldValue<string>(reader.GetOrdinal("ModelType"));
-                                order3DList.picture = reader.GetFieldValue<string>(reader.GetOrdinal("picture"));
+                                order3DList.picture = reader.GetFieldValue<string>(reader.GetOrdinal("dedicationpic"));
                                 orderSimpleInfo.Add(os);
                                 order3DInfo.Add(order3DList);
 

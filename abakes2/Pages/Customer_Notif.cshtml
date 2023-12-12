@@ -78,7 +78,7 @@
                 else
                 {
                         <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                            <img src="@Model.imgconfirm"  width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
                         <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
@@ -194,10 +194,18 @@
                                 }
                             </p>
                             <p class="time">@item.DateCreated</p>
-
+                            @if (item.NotifImg == "")
+                            {
+                                
+                            }
+                            else
+                            {
                             <div class="col-1 profile-picture clickable-image">
-                                <img src="@item.NotifImg" alt="profile picture" class="img-fluid">
+                                <img src="@item.NotifImg"  class="img-fluid">
                             </div>
+
+                            }
+                            
                             <div class="private-message">
                                 @item.NotifText
                             </div>
