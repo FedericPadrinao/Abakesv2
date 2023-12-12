@@ -43,7 +43,7 @@ namespace abakes2.Pages
                         // Valid file format, proceed with upload
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
-                             string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                            string fileName = Path.GetFileName(file.FileName);
                             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "models", fileName);
 
                             using (var stream = new FileStream(filePath, FileMode.Create))

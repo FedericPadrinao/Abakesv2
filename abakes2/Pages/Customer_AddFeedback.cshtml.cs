@@ -180,7 +180,7 @@ namespace abakes2.Pages
                         if (checkSec > 0)
                         {
 
-                            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                            string fileName = Path.GetFileName(file.FileName);
 
 
                             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "feedback", fileName);

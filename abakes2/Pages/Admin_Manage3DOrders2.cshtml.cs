@@ -51,6 +51,7 @@ namespace abakes2.Pages
                                 order3DList.order3DExpectedD = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedDelivery"));
                                 order3DList.order3DExpectedT = reader.GetFieldValue<string>(reader.GetOrdinal("ExpectedTime"));
                                 order3DList.order3DDelivery = reader.GetFieldValue<string>(reader.GetOrdinal("OrderDelivery"));
+                                order3DList.dedicationpic = reader.GetFieldValue<string>(reader.GetOrdinal("dedicationpic"));
                                 orderSimpleInfo.Add(os);
                                 order3DInfo.Add(order3DList);
 
