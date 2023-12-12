@@ -41,7 +41,7 @@ namespace abakes2.Pages
 
             if (userconfirm != null)
             {
-                
+
 
             }
             else
@@ -81,7 +81,7 @@ namespace abakes2.Pages
                             }
                         }
                     }
-                }  
+                }
 
             }
             catch (Exception e)
@@ -213,6 +213,7 @@ namespace abakes2.Pages
                 errorMessage = ex.Message;
                 return;
             }
+            TempData["AlertMessage"] = "Account Information Updated Successfully!";
             Response.Redirect("/Index");
         }
 

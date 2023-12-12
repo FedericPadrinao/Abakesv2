@@ -18,29 +18,29 @@
 </head>
 
 <body>
-<div class="header">
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="65px"></a>
-            </div>
-            <nav>
-                <ul id="MenuItems" >
-                    <li><a href="/Index" class="active" >Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
-                            @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
-                            {
-                                <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
-                            }
-                            else
-                            {
-                                <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
-                            }
-                        </ul>
-                    </li>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/Index"><img src="~/img/logo/Logo.png" alt="logo" width="65px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="/Index" class="active">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Order</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Customer_Order3DForm" class="dropdown-item">Customize 3D</a></li>
+                                @if (Model.statusconfirm != null && Model.statusconfirm.Equals("true"))
+                                {
+                                    <li><a href="/Customer_OrderForm" class="dropdown-item">Order Form</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/Customer_FullCapacity_Prompt" class="dropdown-item">Order Form</a></li>
+                                }
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Feedback</a>
                             <ul class="dropdown-menu">
@@ -48,104 +48,108 @@
                                 <li><a href="/Customer_Feedback?page=1" class="dropdown-item">View Feedback</a></li>
                             </ul>
                         </li>
-                    <li><a href="/Customer_Gallery?page=1" >Gallery</a></li>
-                    <li><a href="/AboutUs">About us</a></li>
-                    <li><a href="/ContactUs">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="dropdown text-end">
-               
-                <!-- ACCOUNT IMAGE-->
-                @if (Model.userconfirm == null)
-                {
-                    <a class="signin" href="/Account">Sign in</a>
-                }
-                else
-                {
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
-                        <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
-                        <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
-                        <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
-                        <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                        <li><a href="/Customer_Gallery?page=1">Gallery</a></li>
+                        <li><a href="/AboutUs">About us</a></li>
+                        <li><a href="/ContactUs">Contact</a></li>
                     </ul>
+                </nav>
+
+                <div class="dropdown text-end">
+
+                    <!-- ACCOUNT IMAGE-->
+                    @if (Model.userconfirm == null)
+                    {
+                        <a class="signin" href="/Account">Sign in</a>
+                    }
+                    else
+                    {
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="@Model.imgconfirm" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="/Customer_OrderStatus">My Simple Order</a></li>
+                            <li><a class="dropdown-item" href="/Customer_OrderStatus3D">My 3D Order</a></li>
+                            <li><a class="dropdown-item" href="/Customer_CompleteOrders">Completed Orders</a></li>
+                            <li><a class="dropdown-item" href="/Customer_AccountSettings?user=@Model.userconfirm">Account Settings</a></li>
+                            <li><a class="dropdown-item" href="/Customer_AccountInformation?user=@Model.userconfirm">Account Information</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" asp-page="/index" asp-page-handler="LogOut">Sign out</a></li>
+                        </ul>
+                    }
+                    <!-- ACCOUNT IMAGE-->
+                </div>
+                @if (Model.userconfirm != null)
+                {
+                    <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
+                    <a href="/Cart" class="badge" data-badge="@Model.totalcartCount"><img src="img/cart.png" width="30px" height="30px"></a>
                 }
-                <!-- ACCOUNT IMAGE-->
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
-            @if (Model.userconfirm != null)
-            {
-                <a href="/Customer_Notif" class="badge" data-badge="@Model.totalnotifCount"><img src="~/img/navbar/notification.png" width="30px" height="30px"></a>
-                <a href="/Cart" class="badge" data-badge="@Model.totalcartCount"><img src="img/cart.png" width="30px" height="30px"></a>
-            }       
-            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-        </div>
-        <div class="row">
-            <div class="col-2">
-                <h1>Design <br> your <br> dream <br> cake </h1>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Design <br> your <br> dream <br> cake </h1>
                     <a href="Customer_Order3DForm" class="btn">CUSTOMIZE NOW  &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="~/img/homepage/cakehb.png">
+                </div>
             </div>
-            <div class="col-2">
-                <img src="~/img/homepage/cakehb.png">
-            </div>
+            @if (TempData["AlertMessage"] != null)
+            {
+                <div class="alert alert-success">@TempData["AlertMessage"]</div>
+            }
         </div>
     </div>
-</div>
 
-<!-- 3 circle icon -->
+    <!-- 3 circle icon -->
 
-<div class="container marketing">
+    <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-        <div class="col-lg-4">
-            <svg width="240" height="240">
-                <defs>
-                    <clipPath id="circleView">
-                        <circle cx="120" cy="120" r="110" />
-                    </clipPath>
-                </defs>
-                <image width="260" height="260" xlink:href="/img/homepage/icon2.png" clip-path="url(#circleView)" />
-            </svg>
-            <h2 class="fw-normal">Affordable</h2>
-            <p>
-                Celebrate your special occasion in style with our affordable custom cakes. Our skilled bakers will work with you to
-                create a cake that fits your budget without sacrificing on taste or design.
-            </p>
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <svg width="240" height="240">
+                    <defs>
+                        <clipPath id="circleView">
+                            <circle cx="120" cy="120" r="110" />
+                        </clipPath>
+                    </defs>
+                    <image width="260" height="260" xlink:href="/img/homepage/icon2.png" clip-path="url(#circleView)" />
+                </svg>
+                <h2 class="fw-normal">Affordable</h2>
+                <p>
+                    Celebrate your special occasion in style with our affordable custom cakes. Our skilled bakers will work with you to
+                    create a cake that fits your budget without sacrificing on taste or design.
+                </p>
 
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <svg width="240" height="240">
-                <defs>
-                    <clipPath id="circleView">
-                    </clipPath>
-                </defs>
-                <image width="240" height="240" xlink:href="/img/homepage/icon1.png" clip-path="url(#circleView)" />
-            </svg>
-            <h2 class="fw-normal">Handmade with Love</h2>
-            <p>Indulge in the sweet taste of love with our baked with love custom cakes, made with passion and care to make your celebration even more special.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg width="240" height="240">
+                    <defs>
+                        <clipPath id="circleView">
+                        </clipPath>
+                    </defs>
+                    <image width="240" height="240" xlink:href="/img/homepage/icon1.png" clip-path="url(#circleView)" />
+                </svg>
+                <h2 class="fw-normal">Handmade with Love</h2>
+                <p>Indulge in the sweet taste of love with our baked with love custom cakes, made with passion and care to make your celebration even more special.</p>
 
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <svg width="240" height="240">
-                <defs>
-                    <clipPath id="circleView">
-                    </clipPath>
-                </defs>
-                <image width="240" height="240" xlink:href="/img/homepage/icon3.png" clip-path="url(#circleView)" />
-            </svg>
-            <h2 class="fw-normal">Freshly Baked</h2>
-            <p>With a variety of flavors and designs to choose from, our skilled bakers use only the freshest ingredients to create a cake that's made just for you.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <svg width="240" height="240">
+                    <defs>
+                        <clipPath id="circleView">
+                        </clipPath>
+                    </defs>
+                    <image width="240" height="240" xlink:href="/img/homepage/icon3.png" clip-path="url(#circleView)" />
+                </svg>
+                <h2 class="fw-normal">Freshly Baked</h2>
+                <p>With a variety of flavors and designs to choose from, our skilled bakers use only the freshest ingredients to create a cake that's made just for you.</p>
 
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
 
-    <div></div>
+        <div></div>
     </div>
 
     <div></div>
@@ -159,34 +163,34 @@
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-            <div class="carousel-heading">
-                <h2>Birthday Cake</h2>
-            </div>
-            <img src="~/img/homepage/cakehb2.png" class="bd-placeholder-img img-fluid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                        </div>
+                <div class="carousel-heading">
+                    <h2>Birthday Cake</h2>
+                </div>
+                <img src="~/img/homepage/cakehb2.png" class="bd-placeholder-img img-fluid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="container">
+                    <div class="carousel-caption text-start">
                     </div>
+                </div>
             </div>
             <div class="carousel-item">
-            <div class="carousel-heading">
-                <h2>Wedding Cake</h2>
-            </div>
-            <img src="~/img/homepage/cakew.png" class="bd-placeholder-img img-fluid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption">
-                        </div>
+                <div class="carousel-heading">
+                    <h2>Wedding Cake</h2>
+                </div>
+                <img src="~/img/homepage/cakew.png" class="bd-placeholder-img img-fluid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="container">
+                    <div class="carousel-caption">
                     </div>
+                </div>
             </div>
             <div class="carousel-item">
-            <div class="carousel-heading">
-                <h2>Anniversary Cake</h2>
-            </div>
-            <img src="~/img/homepage/cakean.png" class="bd-placeholder-img img-fluid"  xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption text-end">
-                        </div>
+                <div class="carousel-heading">
+                    <h2>Anniversary Cake</h2>
+                </div>
+                <img src="~/img/homepage/cakean.png" class="bd-placeholder-img img-fluid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <div class="container">
+                    <div class="carousel-caption text-end">
                     </div>
+                </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -200,80 +204,80 @@
     </div>
 
 
-        <!-- FOOTER -->
-<div id="footerBottom" style="background-color: #f7fff8;">
-    <div class="container">
-        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
-            <!-- Division 1 -->
-            <div class="divisions col mb-3">
-                <div>
-                    <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+    <!-- FOOTER -->
+    <div id="footerBottom" style="background-color: #f7fff8;">
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-4 py-5 my- border-bottom">
+                <!-- Division 1 -->
+                <div class="divisions col mb-3">
+                    <div>
+                        <img class="img-fluid" src="~/img/logo/logofooter.png" style="width: 18rem;">
+                    </div>
+                    <p class="text-bottom" style="font-family: Poppins ExtraBold;">
+                        Serving you sweet treats made with love ❤️
+                        We accept customized cakes, cupcakes, & more! Order now!
+                    </p>
                 </div>
-                <p class="text-bottom" style="font-family: Poppins ExtraBold;">
-                    Serving you sweet treats made with love ❤️
-                    We accept customized cakes, cupcakes, & more! Order now!
-                </p>
-            </div>
 
-            <!-- Division 2 -->
-            <div class="divisions col mb-4">
-                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
-                    <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:abakes881@gmail.com">abakes881@gmail.com</a></li>
-                </ul>
-            </div>
+                <!-- Division 2 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Contact Us</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="phone" src="~/img/logo/phone.png">+63 09164656894</li>
+                        <li class="nav-item mb-2" style="font-family: Poppins ExtraBold;"><img class="mail" src="~/img/logo/mail.png"><a href="mailto:abakes881@gmail.com">abakes881@gmail.com</a></li>
+                    </ul>
+                </div>
 
-            <!-- Division 3 -->
-            <div class="divisions col mb-4">
-                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
-                <ul class="socials-pics nav flex-row img-fluid">
-                    <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
-                    <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
-                </ul>
-            </div>
+                <!-- Division 3 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Follow Us</h5>
+                    <ul class="socials-pics nav flex-row img-fluid">
+                        <li class="nav-item2 mb-2"><a href="https://www.facebook.com/a.bakesandsweets" target="_blank"><img class="socials img-fluid" src="~/img/logo/facebook.png"></a></li>
+                        <li class="nav-item5 mb-2"><a href="https://www.instagram.com/a_bakesandsweets/" target="_blank"><img class="socials img-fluid" src="~/img/logo/instagram.png"></a></li>
+                    </ul>
+                </div>
 
-            <!-- Division 4 -->
-            <div class="divisions col mb-4">
-                <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
+                <!-- Division 4 -->
+                <div class="divisions col mb-4">
+                    <h5 class="heading-bottom" style="font-family: Poppins ExtraBold;">Terms and Conditions</h5>
                     <button style="margin-bottom:-10px;" class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_TermsandCondition'">Read Terms</button>
                     <button style=" margin-bottom:-10px;width:185px;" class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_FAQS'">Help Me</button>
                     <button style="margin-bottom:-2px; width:185px;" class="btn btn-primary btn-sm read-terms-btn" onclick="window.location.href='/Customer_Privacy'">Privacy</button>
 
-            </div>
-        </footer>
+                </div>
+            </footer>
+        </div>
+        <div></div>
     </div>
-    <div></div>
-</div>
 
 
-<!-- javascript -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    var MenuItems = document.getElementById("MenuItems");
-    MenuItems.style.maxHeight = "0px";
-    function menutoggle() {
-        if (MenuItems.style.maxHeight == "0px") {
-            MenuItems.style.maxHeight = "300px"
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "300px"
+            }
+            else {
+                MenuItems.style.maxHeight = "0px"
+            }
         }
-        else {
-            MenuItems.style.maxHeight = "0px"
-        }
-    }
-   src="~/js/bootstrap.bundle.min.js"
-    const currentPage = window.location.pathname;
+        src = "~/js/bootstrap.bundle.min.js"
+        const currentPage = window.location.pathname;
 
-</script>
+    </script>
 
-  <script>
-    var hasVisited = localStorage.getItem('hasVisited');
+    <script>
+        var hasVisited = localStorage.getItem('hasVisited');
 
-    if (!hasVisited) {
+        if (!hasVisited) {
             alert('Welcome to our website! Before you proceed, we recommend checking our "Help Me" page located in the footer for assistance.');
 
-      localStorage.setItem('hasVisited', 'true');
-    }
-  </script>
+            localStorage.setItem('hasVisited', 'true');
+        }
+    </script>
 
 </body>
