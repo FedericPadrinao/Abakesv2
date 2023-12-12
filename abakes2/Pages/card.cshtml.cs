@@ -30,9 +30,9 @@ namespace abakes2.Pages
         }
         private void GenerateQRCode(string qrcode)
         {
-            string baseUrl = "https://localhost:7198/"; 
+           // string baseUrl = "https://localhost:7198/"; 
 
-            //string baseUrl = "https://abakesv2-2fb45d4c5e88.herokuapp.com/"; 
+            string baseUrl = "https://abakesv2-2fb45d4c5e88.herokuapp.com/"; 
             string relativeUrl = "Customer_AddFeedback"; 
 
             string fullContent = $"{baseUrl}{relativeUrl}?code={qrcode}";

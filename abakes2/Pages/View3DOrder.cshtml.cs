@@ -151,7 +151,7 @@ namespace abakes2.Pages
             string ExpectedDelivery = Request.Form["expectedD"];
             string ExpectedTime = Request.Form["expectedT"];
             string NotifTitle = "Review & Quotation for your 3D Order is done!";
-            string NotifText = "Your order comes with  the price of " + price + "! " + "\n Shipping Fee of" + ship + ". \n" + "Please pay either 50% DP or pay in full" + "\n Please expect your delivery to come at " + ExpectedDelivery + " " + ExpectedTime + ".";
+            string NotifText = "Your order comes with  the price of " + price + "! " + "\n Shipping Fee of " + ship + ". \n" + "Please pay either 50% DP or pay in full" + "\n Please expect your delivery to come at " + ExpectedDelivery + " " + ExpectedTime + ".";
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
             int ids = int.Parse(id);
 
@@ -216,7 +216,8 @@ namespace abakes2.Pages
 
 
             bodyBuilder.HtmlBody = $@"
-                <p>{notifText}</p>";
+                <p>{notifText}</p></br>
+                <p>Please pay exact amount to avoid any issues.</p>";
 
             email.Body = bodyBuilder.ToMessageBody();
 
