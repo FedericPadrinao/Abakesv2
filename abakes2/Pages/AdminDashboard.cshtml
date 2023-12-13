@@ -283,24 +283,33 @@
                 <div class="chart">
                     <h2>Monthly Sales</h2>
                     <div>
-                        <table class="charts-css line multiple show-data show-labels show-primary-axis show-1-secondary-axes ">
-                            <caption>Monthly Sales</caption>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Month</th>
-                                    <th scope="col">Sales</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var monthlySale in Model.MonthlySalesData)
-                                {
-                                    <tr>
-                                        <th scope="row">@monthlySale.Month</th>
-                                        <td style="--start: 0.1; --end: @(monthlySale.Sales / 40000.0 + 0.1);" class="border"><span class="data">@monthlySale.Sales</span></td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
+                        <table class="charts-css line multiple show-data show-labels show-primary-axis show-1-secondary-axes table-bordered">
+        <caption>Monthly Sales</caption>
+        <thead>
+            <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                double start = 0;
+                foreach (var monthlySale in Model.MonthlySalesData)
+                {
+                    var end = start + monthlySale.Sales / 40000.0;
+
+                    <tr>
+                        <th scope="row">@monthlySale.Month</th>
+                        <td style="--start: @start; --end: @end;" class="border">
+                            <span class="data">@monthlySale.Sales</span>
+                        </td>
+                    </tr>
+
+                    start = end; // Set the end as the start for the next iteration
+                }
+            }
+        </tbody>
+    </table>
                         <form id="monthForm" method="get" asp-page="AdminDashboard">
                             <label for="monthSelect">Select Month:</label>
                             <select id="monthSelect" name="selectedMonth" onchange="document.getElementById('monthForm').submit()">
