@@ -60,9 +60,9 @@ namespace abakes2.Pages
                                 command.Parameters.AddWithValue("@AssetName", name);
                                 command.Parameters.AddWithValue("@AssetPath", "models/" + fileName);
                                 command.Parameters.AddWithValue("@AssetScale", '1');
-                                command.Parameters.AddWithValue("@PositionX", '1');
-                                command.Parameters.AddWithValue("@PositionY", '1');
-                                command.Parameters.AddWithValue("@PositionZ", '1');
+                                command.Parameters.AddWithValue("@PositionX", '0');
+                                command.Parameters.AddWithValue("@PositionY", '0');
+                                command.Parameters.AddWithValue("@PositionZ", '0');
                         
                                 command.ExecuteNonQuery();
                             }

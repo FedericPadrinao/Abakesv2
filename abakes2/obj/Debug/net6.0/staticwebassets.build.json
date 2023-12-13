@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L+Rys6OqO8Qes/4SkUD2OXUnBC4+NnKCYqG8ShH3Bss=",
+  "Hash": "ZQuNpy5Lt1hD6X69AusMFIcvIq40XVFaRFgIh5q/CHw=",
   "Source": "abakes2",
   "BasePath": "_content/abakes2",
   "Mode": "Default",
@@ -5100,6 +5100,23 @@
       "OriginalItemSpec": "wwwroot\\models\\B_doublelayer.json"
     },
     {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\B_doublelayer-white.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/B_doublelayer-white.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\B_doublelayer-white.json"
+    },
+    {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\B_singlelayer.json",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -5117,6 +5134,23 @@
       "OriginalItemSpec": "wwwroot\\models\\B_singlelayer.json"
     },
     {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\B_singlelayer-white.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/B_singlelayer-white.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\B_singlelayer-white.json"
+    },
+    {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\B_triplelayer.json",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -5132,6 +5166,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\models\\B_triplelayer.json"
+    },
+    {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\B_triplelayer-white.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/B_triplelayer-white.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\B_triplelayer-white.json"
     },
     {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\cake2\\choco.json",
@@ -5593,6 +5644,23 @@
       "OriginalItemSpec": "wwwroot\\models\\chocolate_cake\\scene.json"
     },
     {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\cone-shaped-creamgltf.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/cone-shaped-creamgltf.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\cone-shaped-creamgltf.json"
+    },
+    {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\cranberries.json",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -5627,6 +5695,23 @@
       "OriginalItemSpec": "wwwroot\\models\\cream.json"
     },
     {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\creamdefense.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/creamdefense.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\creamdefense.json"
+    },
+    {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\CreamFilledCake.json",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -5642,6 +5727,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\models\\CreamFilledCake.json"
+    },
+    {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\cream-on-edges.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/cream-on-edges.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\cream-on-edges.json"
     },
     {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\doublelayer\\license.txt",
@@ -5797,6 +5899,23 @@
       "OriginalItemSpec": "wwwroot\\models\\happybirthday.json"
     },
     {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\happy-birthday.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/happy-birthday.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\happy-birthday.json"
+    },
+    {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\icing-big.json",
       "SourceId": "abakes2",
       "SourceType": "Discovered",
@@ -5931,6 +6050,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\models\\sprinkles.json"
+    },
+    {
+      "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\Strawberry-Jam.json",
+      "SourceId": "abakes2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\",
+      "BasePath": "_content/abakes2",
+      "RelativePath": "models/Strawberry-Jam.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\models\\Strawberry-Jam.json"
     },
     {
       "Identity": "C:\\Users\\Federic\\Documents\\UST\\CAPSTONE\\version 14\\version 14\\abakes2\\abakes2\\wwwroot\\models\\textures\\lambert2_baseColor.png",
