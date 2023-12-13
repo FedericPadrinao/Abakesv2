@@ -32,8 +32,8 @@ namespace abakes2.Pages
         {
            // string baseUrl = "https://localhost:7198/"; 
 
-           // string baseUrl = "https://abakesv2-2fb45d4c5e88.herokuapp.com/"; 
-            string baseUrl = Environment.GetEnvironmentVariable("https://abakesv2-2fb45d4c5e88.herokuapp.com/") ?? $"{Request.Scheme}://{Request.Host}/";
+           string baseUrl = "https://abakesv2-2fb45d4c5e88.herokuapp.com/"; 
+            
             string relativeUrl = "Customer_AddFeedback"; 
 
             string fullContent = $"{baseUrl}{relativeUrl}?code={qrcode}";
