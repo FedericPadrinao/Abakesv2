@@ -166,7 +166,7 @@ namespace abakes2.Pages
             using (var client = new SmtpClient())
             {
                 client.Connect("smtp.gmail.com", 465, true);
-                client.Authenticate("abakes881@gmail.com", "gvok rqua fsbr ufuz"); // Replace with your Mailtrap credentials
+                client.Authenticate("abakes881@gmail.com", "oclt owgw hcgf ttok"); // Replace with your Mailtrap credentials
 
                 client.Send(message);
                 client.Disconnect(true);

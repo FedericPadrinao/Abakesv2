@@ -3421,11 +3421,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Library\\Desktop\\Abakae\\Abakesv2\\abakes2\\abakes2.csproj",
+      "projectUniqueName": "D:\\Library\\Desktop\\AbakesPost\\Abakesv2\\abakes2\\abakes2.csproj",
       "projectName": "abakes2",
-      "projectPath": "D:\\Library\\Desktop\\Abakae\\Abakesv2\\abakes2\\abakes2.csproj",
+      "projectPath": "D:\\Library\\Desktop\\AbakesPost\\Abakesv2\\abakes2\\abakes2.csproj",
       "packagesPath": "C:\\Users\\kistral\\.nuget\\packages\\",
-      "outputPath": "D:\\Library\\Desktop\\Abakae\\Abakesv2\\abakes2\\obj\\",
+      "outputPath": "D:\\Library\\Desktop\\AbakesPost\\Abakesv2\\abakes2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kistral\\AppData\\Roaming\\NuGet\\NuGet.Config",
