@@ -69,7 +69,7 @@
                     <img src="~/img/Account/accountcake.png" width="100%">
                 </div>
                 <div class="col-2">
-                    <div class="form-container" style="height:500px;">
+                    <div class="form-container" style="height:600px;">
                         <div class="form-btn">
                             <span onclick="login()">Login</span>
                             <span onclick="register()">Register</span>
@@ -104,6 +104,16 @@
                     Include at least one upper case letter.
                     Include at least one number.
                     Include at least one special character." required>
+                            <label for="agreeTerms" style="font-size: 13px; display: inline-block; align-items: center;">
+                                <input style="width: 14px; height: 17px; margin-right: 5px;" type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                I agree to the <a href="/Customer_TermsandCondition" target="_blank">Terms and Conditions</a> 
+                            </label>
+
+                            <label for="agreePrivacy" style="font-size: 13px; display: inline-block; align-items: center;">
+                                <input style="width: 14px; height: 17px; margin-right: 5px;" type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
+                                I agree to the <a href="/Customer_Privacy" target="_blank">Privacy Policy</a>
+                            </label>
+
                             <button type="submit" class="btn" value="submit" asp-page-handler="Register">Register</button>
                         </form>
                     </div>
@@ -194,6 +204,29 @@
             }
 
 
+        </script>
+
+        <script>
+            function validateForm() {
+                // Check if the checkbox is checked
+                var agreeTermsCheckbox = document.getElementById("agreeTerms");
+                if (!agreeTermsCheckbox.checked) {
+                    alert("Please agree to the Terms and Conditions.");
+                    return false; // Prevent form submission
+                }
+                return true; // Allow form submission
+            }
+        </script>
+                <script>
+            function validateForm() {
+                // Check if the checkbox is checked
+                var agreeTermsCheckbox = document.getElementById("agreePrivacy");
+                if (!agreeTermsCheckbox.checked) {
+                    alert("Please agree to the Privacy Policy.");
+                    return false; // Prevent form submission
+                }
+                return true; // Allow form submission
+            }
         </script>
     </body>
 </body>
