@@ -20,7 +20,7 @@ namespace abakes2.Pages
         public int cartCount = 0;
         public int cartCount3D = 0;
         public int totalcartCount = 0;
-        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
         {

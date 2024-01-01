@@ -63,7 +63,9 @@
         margin-right: 20px; /* Adjust as needed */
     }
 
-  
+    .highlight {
+        background-color: yellow; /* You can change the color as per your preference */
+    }
 
 </style>
 
@@ -197,14 +199,14 @@
     <!--TOP BOX-->
     <div class="container-fluid">
     <div class="row">
-        <h2 style="margin-top:30px;">Preset / Base Layer</h2>
+        <h2 style="margin-top:30px;"><strong>Step 1: </strong> Preset / Base Layer</h2>
         <div class="col-lg-12">
             <div class="container-box-top">
                
                  
                     @foreach (var item in Model.order3DList)
                     {
-                        <button class="presetbtn" onclick="loadModel('@item.ModelName','@item.ModelType','@item.Scale','@item.TColor','@item.TColor2','@item.TColor3','@item.TotalTexture');">@item.ModelType</button>
+                        <button class="presetbtn" onclick="highlightButton(this); loadModel('@item.ModelName','@item.ModelType','@item.Scale','@item.TColor','@item.TColor2','@item.TColor3','@item.TotalTexture');">@item.ModelType</button>
 
                     }
 
@@ -220,7 +222,7 @@
         <div class="row" >
             <!-- Side Container Box - Left -->
             <div style="margin-top:15px;" class="col-md-3" >
-                <h2>Decoration</h2>
+                <h2> <strong>Step 2: </strong>Decoration</h2>
                 <div class="container-box" >
 
                     @foreach (var item in Model.asset3DList)
@@ -277,6 +279,30 @@
                             <label class="form-check-label" for="preferred">Preferred Delivery/Pickup</label>
                             <input style="height: 21px;" type="date" class="form-control" name="preferred" id="preferred" required>
                         </div>
+                        <script>
+                            // Get today's date and format it as YYYY-MM-DD
+                            var today = new Date();
+                            var dd = String(today.getDate()).padStart(2, '0');
+                            var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+                            var yyyy = today.getFullYear();
+
+                            today = yyyy + '-' + mm + '-' + dd;
+
+                            // Calculate the start date (7 days from today)
+                            var startDate = new Date();
+                            startDate.setDate(startDate.getDate() + 7);
+
+                            var startDay = String(startDate.getDate()).padStart(2, '0');
+                            var startMonth = String(startDate.getMonth() + 1).padStart(2, '0'); // January is 0!
+                            var startYear = startDate.getFullYear();
+
+                            startDate = startYear + '-' + startMonth + '-' + startDay;
+
+                            // Set the min attribute of the date input to the start date
+                            document.getElementById("preferred").setAttribute("min", startDate);
+                        </script>
+
+                        
                         <input type="hidden" name="modelname" id="modelname" value="">
                         <input type="hidden" name="modeltype" id="modeltype" value="">
                         <input type="hidden" name="scale" id="scale" value="">
@@ -480,6 +506,9 @@
                 new THREE.PlaneGeometry(100, 100),
                 new THREE.MeshBasicMaterial({ color: "aqua" })
             );
+            const grid = new THREE.GridHelper(100, 20);
+            grid.position.set(0, -29, 0);
+            scene.add(grid);
             plane1.position.set(0, -30, 0);
             plane1.rotateX(-Math.PI / 2);
             scene.add(plane1);
@@ -834,7 +863,16 @@
 
         }
 
+        function highlightButton(buttonElement) {
+        // Remove highlight from all buttons
+        var buttons = document.querySelectorAll('.presetbtn');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('highlight');
+        });
 
+        // Add highlight to the clicked button
+        buttonElement.classList.add('highlight');
+    }
         function activateButton() {
             // Get the button element
             var button = document.getElementById('loadModel1Button');
@@ -927,7 +965,28 @@
     });
 </script>
 
+<script>
+    // Get today's date and format it as YYYY-MM-DD
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var yyyy = today.getFullYear();
 
+    today = yyyy + '-' + mm + '-' + dd;
+
+    // Calculate the start date (7 days from today)
+    var startDate = new Date();
+    startDate.setDate(startDate.getDate() + 7);
+
+    var startDay = String(startDate.getDate()).padStart(2, '0');
+    var startMonth = String(startDate.getMonth() + 1).padStart(2, '0'); // January is 0!
+    var startYear = startDate.getFullYear();
+
+    startDate = startYear + '-' + startMonth + '-' + startDay;
+
+    // Set the min attribute of the date input to the start date
+    document.getElementById("preferred").setAttribute("min", startDate);
+</script>
 <script>
     var MenuItems = document.getElementById("MenuItems");
     MenuItems.style.maxHeight = "0px";

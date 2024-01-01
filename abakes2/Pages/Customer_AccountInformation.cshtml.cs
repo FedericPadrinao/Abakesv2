@@ -23,7 +23,7 @@ namespace abakes2.Pages
         public int cartCount3D = 0;
         public int totalcartCount = 0;
         public int totalnotifCount = 0;
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public List<SelectListItem> GenderOptions { get; } = new List<SelectListItem>
             {
                 new SelectListItem { Value = "Male", Text = "Male" },

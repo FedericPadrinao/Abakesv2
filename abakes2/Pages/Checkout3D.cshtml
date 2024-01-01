@@ -32,6 +32,15 @@
     .page-heading2 {
         margin-bottom: 40px; /* You can adjust the value to control the space between the banner and the container */
     }
+    .input-group {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to next line */
+        justify-content: start; /* Align items at the start of the container */
+    }
+
+    .input-group-append {
+        margin-right: 10px; /* Add some margin between images */
+    }
 </style>
 <body>
   
@@ -179,12 +188,16 @@
                             {
                                 <div class="alert alert-danger">@TempData["DiscountErrorMessage"]</div>
                             }
+                            @foreach(var item in Model.cartPayments)
+                            {
                             <div class="input-group">
-                                <div class="input-group-append">
-                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">
-                                </div>
+                            <div class="input-group-append">
+                                <img src="@item.PaymentImg" class="img-fluid" alt="QR Code" style="height: 397px;">
+                            </div>
                                 
                             </div>
+                            }
+                            
                             <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
                             
                             <div class="input-group">

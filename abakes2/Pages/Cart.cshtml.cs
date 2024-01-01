@@ -12,7 +12,7 @@ namespace abakes2.Pages
         public InvoiceInfo invoice = new InvoiceInfo();
         public Order3DForm order3D = new Order3DForm();
         public String userconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public String errorMessage = "";
         public String successMessage = "";
         public int TotalCart = 0;

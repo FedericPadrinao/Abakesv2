@@ -28,6 +28,7 @@ namespace abakes2.Pages
         public OrderSimpleInfo os = new OrderSimpleInfo();
         public Order3DForm order3D = new Order3DForm();
         public List<Asset3DForm> asset3DList = new List<Asset3DForm>();
+        public List<CartPayment> cartPayments = new List<CartPayment>();
         public String statusconfirm = "";
         public int discountCode = 0;
         public decimal discountedPrice = 0;
@@ -35,7 +36,7 @@ namespace abakes2.Pages
         public int remainingFee = 0;
         public int orderPrice = 0;
         public int TotalNetCost = 0;
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void GetProducts()
@@ -342,6 +343,26 @@ namespace abakes2.Pages
                                 customerInfo.barangay = reader.GetString(10);
 
 
+                            }
+                        }
+                    }
+                }
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM ShoppingCart";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CartPayment cart = new CartPayment();
+                                cart.CartID = reader.GetInt32(0);
+                                cart.PaymentImg = reader.GetString(1);
+                                cartPayments.Add(cart);
                             }
                         }
                     }

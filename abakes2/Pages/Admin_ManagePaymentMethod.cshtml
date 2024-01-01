@@ -1,5 +1,5 @@
 ﻿@page
-@model abakes2.Pages.ManagePaymentsModel
+@model abakes2.Pages.Admin_ManagePaymentMethodModel
 @{
     Layout = null;
 }
@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
     <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
+    <title>Manage Payment Method</title>
     <script src="https://kit.fontawesome.com/e91d01519e.js" crossorigin="anonymous"></script>
 
-    <title>Manage Accounts</title>
 </head>
 
 <body>
@@ -31,12 +31,12 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="/Admin_ManageCakes">
+                    <a href="/Admin_ManageCakes" >
                         <i class="fas fa-birthday-cake"></i>
                         <div>Manage Cake</div>
                     </a>
                 </li>
-                 <li>
+                <li>
                     <a href="/Admin_ManageIngredients">
                         <i class="fas fa-utensils"></i>
                         <div>Manage Ingredients</div>
@@ -47,7 +47,7 @@
                         <i class="fa-brands fa-unity"></i>
                         <div>Manage 3D Asset</div>
                     </a>
-                </li>     
+                </li>
                 <li>
                     <a href="/Admin_ManageOrders">
                         <i class="fas fa-receipt"></i>
@@ -55,13 +55,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/ManagePayments" class="active">
+                    <a href="/ManagePayments">
                         <i class="fas fa-money-check"></i>
                         <div>Manage Payments</div>
                     </a>
                 </li>
                 <li>
-                    <a href="/Admin_ManagePaymentMethod">
+                    <a href="/Admin_ManagePaymentMethod"  class="active">
                         <i class="fas fa-money-check"></i>
                         <div>Manage Payment Method</div>
                     </a>
@@ -84,8 +84,9 @@
                         <div>Manage QR Code</div>
                     </a>
                 </li>
+
                 <li>
-                    <a href="/Admin_ManageAcc" >
+                    <a href="/Admin_ManageAcc">
                         <i class="fas fa-user"></i>
                         <div>Account Manager</div>
                     </a>
@@ -119,7 +120,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-content">
-                                <h2>Manage Payments</h2>
+                                <h2>Manage Payment Method</h2>
                             </div>
                         </div>
                     </div>
@@ -128,109 +129,39 @@
             <!--Title Bar End-->
 
             <div class="admin-table">
-                <a href="/ManagePayments2" class="btn" style="margin:1%;">View Completed Orders</a>
-                <form method="get">
-                    <div class="search">
-                        <button type="submit" for="search"><i class="fas fa-search"></i></button>
-                        <input type="text" name="search" placeholder="Search for Payments">
 
-                    </div>
-                </form>
+
+                <a href="/Admin_UpdatePayment" type="submit" class="btn" style="margin:1%;">Add</a>
+               
+
+
 
                 <table class="table" style="margin:1%;">
                     <thead>
 
                         <tr>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Type</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Username</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Order Status</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">First Payment(Down Payment)</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:10%;">Last Payment(Full Payment)</th>
-                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:13%;">Action</th>
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">ID</th>                 
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:6%;">Image</th>         
+                            <th style="color:rgb(159, 167, 189); font-family:Poppins;width:3%;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model.invoiceList)
+                        @foreach (var item in Model.cartPayments)
                         {
-
-
-
                             <tr>
-                                <td><p>Simple Order</p></td>
-                                <td><p>@item.invoiceUsername</p></td>   
-                                <td>
-                                    <p>@item.orderStatus</p>
-                                </td>
-                                 @if (item.receipt == "")
-                                {
-                                     <td> </td>
-                                }
-                                else
-                                {
-                                 <td>
-                                        <img src="@item.receipt">
-                                </td>
-
-                                }
-                              @if (item.picture == "")
-                                {
-                                     <td> </td>
-                                }
-                                else
-                                {
-                                 <td>
-                                       <img src="@item.picture">
-                                </td>
-
-                                }
-                                <td style="align-content:center;">                              
-                                    <a href='/Admin_ViewPayment?user=@item.invoiceUsername' class="btn" style="background: #ffffb9; color: black;">
-                                        <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
-                                    </a>                        
+                                <td><p>@item.CartID</p></td>
+                                          
+                               <td><img src="@item.PaymentImg" alt="Product Image"></td>
+                                <td style="align-content:center;">
+                                   
+                                    <a class='btn ' style="background:#9a0009;" asp-page-handler="Delete" asp-route-id=@item.CartID>
+                                        <i class="fas fa-trash" style="font-size:30px;"></i> <div>Delete</div>
+                                    </a>
+                                   
                                 </td>
                             </tr>
                         }
-                        @foreach (var item in Model.order3DList)
-                        {
 
-
-
-                            <tr>
-                                <td><p>3D Order</p></td>
-                                <td><p>@item.username</p></td>   
-                                <td>
-                                    <p>@item.order3Dstatus</p>
-                                </td>
-                                @if (item.receipt == "")
-                                {
-                                     <td> </td>
-                                }
-                                else
-                                {
-                                 <td>
-                                        <img src="@item.receipt">
-                                </td>
-
-                                }
-                              @if (item.picture == "")
-                                {
-                                     <td> </td>
-                                }
-                                else
-                                {
-                                 <td>
-                                       <img src="@item.picture">
-                                </td>
-
-                                }
-                                
-                                <td style="align-content:end;">                              
-                                    <a href='/Admin_ViewPayment_3D?user=@item.username' class="btn" style="background: #ffffb9; color: black;">
-                                        <i class="fas fa-bell" style="font-size:30px;"></i> <div>View Payment</div>
-                                    </a>                        
-                                </td>
-                            </tr>
-                        }
                     </tbody>
                 </table>
             </div>

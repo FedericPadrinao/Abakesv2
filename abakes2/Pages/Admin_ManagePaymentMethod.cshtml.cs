@@ -4,38 +4,36 @@ using System.Data.SqlClient;
 
 namespace abakes2.Pages
 {
-    public class Admin_ManageNotifModel : PageModel
+    public class Admin_ManagePaymentMethodModel : PageModel
     {
-        public List<Feedbacks> listFeedback = new List<Feedbacks>();
-        public List<NotificationInfo> listNotification = new List<NotificationInfo>();
+        public List<Products> listProduct = new List<Products>();
         public List<UserInfo> userInfo = new List<UserInfo>();
-        public string userconfirm = "";
-
+        public List<CartPayment> cartPayments = new List<CartPayment>();
+        public String userconfirm = "";
+        public String errorMessage = "";
+        public String successMessage = "";
         public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
-        public void GetNotifications()
+        public void GetProducts(string sortProduct)
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString)) 
+                using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "select * from Notification order by NotificationID desc"; 
+                    string sql = "select * from ShoppingCart ORDER BY CartID DESC"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                NotificationInfo ni = new NotificationInfo();
-                                Feedbacks fb = new Feedbacks();
-                                ni.NotifID = reader.GetFieldValue<int>(reader.GetOrdinal("NotificationID"));
-                                ni.NotifTitle = reader.GetFieldValue<string>(reader.GetOrdinal("NotificationTitle"));
-                                ni.NotifText = reader.GetString(reader.GetOrdinal("NotificationText"));
-                                ni.NotifImg = reader.GetString(reader.GetOrdinal("NotificationImage"));
-                                ni.status = reader.GetString(reader.GetOrdinal("status"));
+                                CartPayment cart = new CartPayment();  
+                                cart.CartID = reader.GetFieldValue<int>(reader.GetOrdinal("CartID"));
+                                cart.PaymentImg = reader.GetFieldValue<string>(reader.GetOrdinal("Payment"));
+                        
+                                cartPayments.Add(cart);
 
-                                listNotification.Add(ni);
 
 
 
@@ -50,13 +48,11 @@ namespace abakes2.Pages
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error Reading Feedbacks: " + e.ToString());
+                Console.WriteLine("Error Reading PaymentPictures: " + e.ToString());
 
             }
         }
-
-
-        public IActionResult OnGetRemove()
+        public IActionResult OnGetDelete()
         {
             string id = Request.Query["id"];
             try
@@ -64,39 +60,35 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString)) //static
                 {
                     connection.Open();
-                    string sql = "delete from Notification where NotificationID='" + id + "'"; //getting the data based from the fbid variable
+                    string sql = "delete from ShoppingCart where CartID='" + id + "'"; //getting the data based from the pdid variable
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-
                                 command.ExecuteNonQuery();
-
-
-
-
-
 
                             }
                         }
+
+
+
+
                     }
                 }
-
-
             }
-            catch (Exception e)
+            catch (Exception err)
             {
-                Console.WriteLine("Error Removing Feedbacks: " + e.ToString());
 
             }
 
-            return Redirect("/Admin_ManageNotif");
+            return Redirect("/Admin_ManagePaymentMethod");
         }
-        public void OnGet()
-        {
 
+       
+        public void OnGet(string sortProduct)
+        {
             userconfirm = HttpContext.Session.GetString("useradmin");
             if (userconfirm != null)
             {
@@ -106,7 +98,9 @@ namespace abakes2.Pages
             {
                 Response.Redirect("/index");
             }
-            GetNotifications();
+
+
+            GetProducts(sortProduct);
         }
     }
 }

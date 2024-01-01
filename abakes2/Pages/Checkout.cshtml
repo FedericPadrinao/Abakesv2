@@ -180,13 +180,15 @@
                             {
                                 <div class="alert alert-danger">@TempData["DiscountErrorMessage"]</div>
                             }
+                            @foreach(var item in Model.cartPayments)
+                            {
                             <div class="input-group">
-                              
-                                <div class="input-group-append">
-                                   <img src="~/img/gcash/abakesqr.jpg" class="img-fluid" alt="QR Code" style="height: 397px;">
-                                </div>
+                            <div class="input-group-append">
+                                <img src="@item.PaymentImg" class="img-fluid" alt="QR Code" style="height: 397px;">
+                            </div>
                                 
                             </div>
+                            }
                             <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
                             
                             <div class="input-group">

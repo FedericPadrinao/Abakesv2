@@ -13,7 +13,7 @@ namespace abakes2.Pages
         public String successMessage = "";
         public int TotalCost = 0;
         public int TotalNetCost = 0;
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public string FormattedDateTime { get; set; }
         public InvoiceInfo invoiceInfo = new InvoiceInfo();
         public CustomerInfo customerInfo = new CustomerInfo();

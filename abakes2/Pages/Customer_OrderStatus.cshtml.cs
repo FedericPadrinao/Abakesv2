@@ -29,7 +29,7 @@ namespace abakes2.Pages
         public List<OrderSimpleInfo> listOrderSimple = new List<OrderSimpleInfo>();
         public String statusconfirm = "";
         public string imgconfirm = "";
-        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
         public void OnGet()

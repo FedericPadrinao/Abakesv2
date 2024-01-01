@@ -1,5 +1,5 @@
 ﻿@page
-@model abakes2.Pages.Admin_Add3DAssetModel
+@model abakes2.Pages.Admin_UpdatePaymentModel
 @{
     Layout = null;
 }
@@ -11,7 +11,7 @@
     <link href="~/css/AdminDashboard/styles.css" rel="stylesheet" asp-append-version="true">
     <script src="https://kit.fontawesome.com/e91d01519e.js" crossorigin="anonymous"></script>
 
-    <title>View Simple Order</title>
+    <title>Adding Payment Method</title>
 </head>
 
 <body>
@@ -54,19 +54,18 @@
                         <div>Manage Orders</div>
                     </a>
                 </li>
-                <li>
+                  <li>
                     <a href="/ManagePayments">
                         <i class="fas fa-money-check"></i>
                         <div>Manage Payments</div>
                     </a>
                 </li>
-                <li>
+                 <li>
                     <a href="/Admin_ManagePaymentMethod">
                         <i class="fas fa-money-check"></i>
                         <div>Manage Payment Method</div>
                     </a>
                 </li>
-
                 <li>
                     <a href="/Admin_ManageFeedback">
                         <i class="fas fa-comments"></i>
@@ -120,7 +119,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="text-content">
-                                <h2>Adding Asset</h2>
+                                <h2>Adding Payment Method</h2>
                             </div>
                         </div>
                     </div>
@@ -135,7 +134,7 @@
 
             <div class="account-page">
                 <div class="container" style="padding-top: 55px;">
-                    
+
                     <!-- CUSTOMER INFORMATION-->
                     <div class="row">
                         
@@ -148,26 +147,18 @@
                                     <div class="p-5 p-lg-5 border">
                                         <div class="form-group row">
                                             <div class="col-md-12">
-                                                <h2 style="text-align:center;">Add a Product</h2>
+                                                <h2 style="text-align:center;">Add a Payment Method</h2>
                                             </div>
                                         </div>
 
                                     <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <label for="c_hadd" class="text-black"><b>Asset Name:</b> </label>
-                                            <input type="text" class="form-control" id="name" name="name" required>
-                                        </div>
-    
+                                        
                                         <div class="form-group row">
                                             <div class="col-md-12">
-                                                <label for="c_hadd" class="text-black"><b>Asset Model:</b> </label>
+                                                <label for="c_hadd" class="text-black"><b>Payment Image:</b> </label>
+                                                <img src="" id="imgPreview" width="50%" />
                                                 <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
-                                            </div>                        
-                                            @if (TempData["InvalidJSONMessage"] != null)
-                            {
-                                <div class="alert alert-danger" style="background-color: #ff0000; color: #000000;">@TempData["InvalidJSONMessage"]</div>
-                                
-                            }
+                                            </div>                                     
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-lg-12">
