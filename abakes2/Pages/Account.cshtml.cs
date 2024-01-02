@@ -8,6 +8,7 @@ using MailKit.Net.Smtp;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
+using Org.BouncyCastle.Crypto;
 
 namespace abakes2.Pages
 {
@@ -24,6 +25,7 @@ namespace abakes2.Pages
         public string userimage { get; set; }
         public string email { get; set; }
         public string userstatus { get; set; }
+        public bool ShowOTPForm { get; set; } = false;
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
@@ -44,11 +46,12 @@ namespace abakes2.Pages
         {
             username = Request.Form["username"];
             password = Request.Form["password"];
+            HttpContext.Session.SetString("tempUsername", username);
             int x = 0;
 
             try
             {
-                IncrementInvalidAttemptCount(HttpContext.Connection.RemoteIpAddress.ToString());
+                
 
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
@@ -64,8 +67,6 @@ namespace abakes2.Pages
                             {
                                 username = reader.GetString(1);
                                 pass = reader.GetString(4);
-                                userimage = reader.GetString(8);
-                                userstatus = reader.GetString(11);
                             }
                         }
                     }
@@ -120,6 +121,7 @@ namespace abakes2.Pages
                     }
                     else
                     {
+                        IncrementInvalidAttemptCount(HttpContext.Connection.RemoteIpAddress.ToString());
                         TempData["FailMessage"] = "Invalid Credentials!";
                         errorMessage = "Invalid Credentials!";
                         return Page();
@@ -127,7 +129,6 @@ namespace abakes2.Pages
                 }
                 else
                 {
-                    bool isVerified = IsUserVerified(username);
 
                     if (!BCrypt.Net.BCrypt.Verify(password, pass))
                     {
@@ -135,37 +136,24 @@ namespace abakes2.Pages
                         errorMessage = "Invalid Credentials!";
                         return Page();
                     }
-                    else if (isVerified)
-                    {
-                        HttpContext.Session.SetString("username", username);
-                        HttpContext.Session.SetString("userimage", userimage);
-                        HttpContext.Session.SetString("userstatus", userstatus);
 
-                        if (IsFirstTimeLogin(username))
-                        {
-                            return RedirectToPage("/Customer_AccountInformation", new { user = username });
-                        }
-
-                        string returnUrl = HttpContext.Session.GetString("ReturnUrl");
-                        if (!string.IsNullOrEmpty(returnUrl))
-                        {
-                            HttpContext.Session.Remove("ReturnUrl");
-                            return Redirect(returnUrl);
-                        }
-
-                        return RedirectToPage("/Index");
-                    }
                     else
                     {
-                        UnlockTime = GetUnlockTime(username);  // Set the UnlockTime property
+                        // Set ShowOTPForm to true when credentials are correct
+                        string generatedOTP = GenerateOTP();
+                        SendOTPEmail(username, generatedOTP);
 
-                        TempData["FailMessage"] = "User is not verified. Please check your email for the verification code";
-                        return RedirectToPage("/Account_Verify", new { email = customerInfo.email });
+                        TempData["AlertMessage"] = "Login Successful. Please enter the OTP sent to you.";
+                        ShowOTPForm = true;
+
+                        return Page();
+
                     }
                 }
             }
             catch (Exception e)
             {
+                IncrementInvalidAttemptCount(HttpContext.Connection.RemoteIpAddress.ToString());
                 Console.WriteLine("Error : " + e.ToString());
                 TempData["FailMessage"] = "Invalid Credentials";
                 return RedirectToPage("/Account");
@@ -220,8 +208,12 @@ namespace abakes2.Pages
 
             if (attemptCount >= 5)
             {
+
+                // Set ShowOTPForm to true when credentials are correct
+                UnlockTime = GetUnlockTime(username);  // Set the UnlockTime property
                 if (IsIPBlocked(ipAddress, out DateTime? unlockTime))
                 {
+
                     // Display timeout message or take appropriate action
                     TempData["FailMessage"] = $"Too many invalid attempts. Please try again after {unlockTime?.ToString("yyyy-MM-dd HH:mm:ss")}";
                     TempData["EstimatedUnlockTime"] = unlockTime; // Set TempData["EstimatedUnlockTime"]
@@ -418,8 +410,8 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
-                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time, verif_exp) " +
-                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true', DATEADD(MINUTE, 3, GETDATE()))";
+                    String sql = "INSERT INTO LoginCustomer (username, lname, fname, password, email, address, phone, picture, city, barangay, status, accstatus, ordermax, ordermax3D, verification_code, is_verified, passcode, first_time, verif_exp,OTP) " +
+                        "VALUES (@username, @lname, @fname, @password, @email, '', '', '/img/Account/Default.jpg', '', '', 'true', 'true', 'false', 'false', @verificationCode, 'false', '', 'true', DATEADD(MINUTE, 3, GETDATE()),'')";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
@@ -479,6 +471,161 @@ namespace abakes2.Pages
                 .Select(s => s[random.Next(s.Length)]).ToArray());
             return verificationCode;
         }
+        private string GenerateOTP()
+        {
+            const string chars = "0123456789";
+            var random = new Random();
+            var otp = new string(Enumerable.Repeat(chars, 6)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+            return otp;
+        }
+        public IActionResult OnPostVerifyOTP()
+        {
+            string username = Request.Form["username"];
+
+            string enteredOTP = Request.Form["otp"];
+
+            if (IsOTPValid(enteredOTP, username))
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    String sql = "SELECT * FROM LoginCustomer WHERE username='" + username + "'";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@x", username);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                pass = reader.GetString(4);
+                                userimage = reader.GetString(8);
+                                userstatus = reader.GetString(11);
+                            }
+                        }
+                    }
+                }
+                bool isVerified = IsUserVerified(username);
+                if (isVerified)
+                {
+                    HttpContext.Session.SetString("username", username);
+                    HttpContext.Session.SetString("userimage", userimage);
+                    HttpContext.Session.SetString("userstatus", userstatus);
+
+                    if (IsFirstTimeLogin(username))
+                    {
+                        return RedirectToPage("/Customer_AccountInformation", new { user = username });
+                    }
+
+                    string returnUrl = HttpContext.Session.GetString("ReturnUrl");
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        // OTP is valid, perform actions
+                        TempData["AlertMessage"] = "OTP Verified Successfully!";
+                        HttpContext.Session.Remove("ReturnUrl");
+                        return Redirect(returnUrl);
+                    }
+
+                }
+                // OTP is valid, perform actions
+
+                TempData["FailMessage"] = "User is not verified. Please check your email for the verification code";
+                return RedirectToPage("/Account_Verify", new { email = customerInfo.email });
+            }
+            else
+            {
+                // OTP is invalid, display an error message and keep the OTP form visible
+                TempData["FailMessage"] = "Invalid OTP. Please try again.";
+                ShowOTPForm = true; // Keep the OTP form visible
+                return Page();
+            }
+        }
+
+        // Add a method to check if the entered OTP is valid
+        private bool IsOTPValid(string enteredOTP, string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT OTP FROM LoginCustomer WHERE username = @username";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        string storedOTP = result.ToString();
+
+                        // Compare the entered OTP with the stored OTP
+                        return enteredOTP == storedOTP;
+                    }
+                }
+            }
+
+            return false;
+        }
+        private void SendOTPEmail(string username, string otp)
+        {
+            string userEmail = GetUserEmail(username);
+            var email = new MimeMessage();
+
+            email.From.Add(new MailboxAddress("A-bakes", "abakes881@gmail.com"));
+            email.To.Add(new MailboxAddress(username, userEmail));
+
+            email.Subject = "A-Bakes OTP";
+            email.Body = new TextPart(MimeKit.Text.TextFormat.Plain)
+            {
+                Text = $"Hello {username}! Your OTP for A-Bakes login is: {otp}."
+            };
+
+            using (var smtp = new SmtpClient())
+            {
+                smtp.Connect("smtp.gmail.com", 465, true);
+                smtp.Authenticate("abakes881@gmail.com", "oclt owgw hcgf ttok");
+                smtp.Send(email);
+                smtp.Disconnect(true);
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                String sql = "UPDATE LoginCustomer SET OTP = @otp WHERE username = @username;";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);  // Use the correct parameter name
+                    command.Parameters.AddWithValue("@otp", otp);            // Use the correct parameter name
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // Method to retrieve the user's email from the LoginCustomer table
+        private string GetUserEmail(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT email FROM LoginCustomer WHERE username = @username";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+            return null;
+        }
+
     }
 }
+
 

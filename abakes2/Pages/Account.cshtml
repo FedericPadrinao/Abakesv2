@@ -70,11 +70,6 @@
                 </div>
                 <div class="col-2">
                     <div class="form-container" style="height:600px;">
-                        <div class="form-btn">
-                            <span onclick="login()">Login</span>
-                            <span onclick="register()">Register</span>
-                            <hr id="Indicator">
-                        </div>
 
                         @if (Model.IsIPBlocked(Request.HttpContext.Connection.RemoteIpAddress.ToString(), out DateTime? unlockTime))
                         {
@@ -104,6 +99,33 @@
                             {
                                 <div class="alert alert-success">@TempData["AlertMessage"]</div>
                             }
+                            @if (Model.ShowOTPForm)
+                            {
+                                @if (!string.IsNullOrEmpty(Model.errorMessage))
+                                {
+                                    <div class="alert alert-danger">
+                                        @Model.errorMessage
+                                    </div>
+                                }
+                                @if (TempData["LoginSuccess"] != null)
+                                {
+                                    <div class="alert alert-success">
+                                        @TempData["LoginSuccess"]
+                                    </div>
+                                }
+                                <form method="post" asp-page-handler="VerifyOTP">
+                                    <input type="hidden" name="username" value="@HttpContext.Session.GetString("tempUsername")" />
+                                    <input type="text" id="otp" name="otp" placeholder="OTP" required>
+                                    <button type="submit" class="btn btn-primary">Verify OTP</button>
+                                </form>
+                            }
+
+                            else{
+                                <div class="form-btn">
+                                    <span onclick="login()">Login</span>
+                                    <span onclick="register()">Register</span>
+                                    <hr id="Indicator">
+                                </div>
                             <!-- LOGIN FORM-->
                             <form id="LoginForm" method="post" style="padding:25px 20px">
                                 <input type="text" placeholder="Username" name="username" id="username" required>
@@ -137,6 +159,7 @@
 
                                 <button type="submit" class="btn" value="submit" asp-page-handler="Register">Register</button>
                             </form>
+                        }
                         }
                     </div>
                 </div>
