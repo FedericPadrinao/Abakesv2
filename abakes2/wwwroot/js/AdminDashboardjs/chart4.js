@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 data: {
                     labels: data.labels,
                     datasets: [{
-                        label: 'Cake Shapes',
+                        label: 'Cake Colors',
                         data: data.data,
                         backgroundColor: colors,
                         borderColor: colors,

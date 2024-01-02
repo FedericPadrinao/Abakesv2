@@ -539,6 +539,44 @@ namespace abakes2.Pages
 
             return monthlySalesData;
         }
+        public JsonResult OnGetGetTotalEarnings(int selectedMonth, int selectedYear)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionProvider))
+                {
+                    connection.Open();
+                    string sql = "SELECT ISNULL(SUM(OrderPrice), 0) AS TotalEarnings " +
+                                 "FROM (" +
+                                 "    SELECT OrderPrice, MONTH(ExpectedDelivery) AS SaleMonth, YEAR(ExpectedDelivery) AS SaleYear " +
+                                 "    FROM Invoice " +
+                                 "    WHERE orderstatus = 'Complete Order'" +
+                                 "          AND (@SelectedMonth = 0 OR MONTH(ExpectedDelivery) = @SelectedMonth)" +
+                                 "          AND (@SelectedYear = 0 OR YEAR(ExpectedDelivery) = @SelectedYear) " +
+                                 "    UNION ALL " +
+                                 "    SELECT OrderPrice, MONTH(ExpectedDelivery) AS SaleMonth, YEAR(ExpectedDelivery) AS SaleYear " +
+                                 "    FROM Order3DForm " +
+                                 "    WHERE orderstatus = 'Complete Order'" +
+                                 "          AND (@SelectedMonth = 0 OR MONTH(ExpectedDelivery) = @SelectedMonth)" +
+                                 "          AND (@SelectedYear = 0 OR YEAR(ExpectedDelivery) = @SelectedYear) " +
+                                 ") AS MonthlyData";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@SelectedMonth", selectedMonth);
+                        command.Parameters.AddWithValue("@SelectedYear", selectedYear);
+                        int totalEarnings = Convert.ToInt32(command.ExecuteScalar());
+
+                        return new JsonResult(new { totalEarnings });
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                return new JsonResult(new { error = e.Message });
+            }
+        }
+
 
         private string GetMonthName(int month)
         {
