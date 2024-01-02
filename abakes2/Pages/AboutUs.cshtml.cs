@@ -5,6 +5,7 @@ namespace abakes2.Pages
 {
     public class AboutUsModel : PageModel
     {
+
         public String userconfirm = "";
         public String imgconfirm = "";
         public String statusconfirm = "";
@@ -17,7 +18,7 @@ namespace abakes2.Pages
         public int totalcartCount = 0;
         public int totalnotifCount = 0;
         public int NotificationCount { get; set; }
-        public string connectionString = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionString = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
             userconfirm = HttpContext.Session.GetString("username");
@@ -44,7 +45,9 @@ namespace abakes2.Pages
 
 
                         }
+
                     }
+
                 }
 
                 using (SqlConnection connection = new SqlConnection(connectionString))

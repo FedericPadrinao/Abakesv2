@@ -62,7 +62,7 @@
                 </li>
                  <li>
                     <a href="/Admin_ManagePaymentMethod">
-                        <i class="fas fa-money-check"></i>
+                        <i class="fas fa-cash-register"></i>
                         <div>Manage Payment Method</div>
                     </a>
                 </li>
@@ -152,14 +152,14 @@
                                         </div>
 
                                     <div class="form-group row">
-                                        
-                                        <div class="form-group row">
-                                            <div class="col-md-12">
-                                                <label for="c_hadd" class="text-black"><b>Payment Image:</b> </label>
-                                                <img src="" id="imgPreview" width="50%" />
-                                                <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
-                                            </div>                                     
-                                        </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label for="c_hadd" class="text-black"><b>Payment Image:</b> </label>
+                                                    <img src="" id="imgPreview" style="display: none;" width="50%" />
+                                                    <input type="file" id="fileInput" name="file" required onchange="previewImage()" />
+                                                </div>
+                                            </div>
                                         <div class="form-group row">
                                             <div class="col-lg-12">
 
@@ -210,20 +210,23 @@
                     }
                 </script>
                 <script>
-                function previewImage() {
-                    var fileInput = document.getElementById('fileInput');
-                    var imgPreview = document.getElementById('imgPreview');
+                    function previewImage() {
+                        var fileInput = document.getElementById('fileInput');
+                        var imgPreview = document.getElementById('imgPreview');
 
-                    if (fileInput.files && fileInput.files[0]) {
-                        var reader = new FileReader();
+                        if (fileInput.files && fileInput.files[0]) {
+                            var reader = new FileReader();
 
-                        reader.onload = function (e) {
-                            imgPreview.src = e.target.result;
+                            reader.onload = function (e) {
+                                imgPreview.src = e.target.result;
+                                imgPreview.style.display = 'block'; // Show the image when there is a preview
+                            };
+
+                            reader.readAsDataURL(fileInput.files[0]);
+                        } else {
+                            imgPreview.src = '';
+                            imgPreview.style.display = 'none'; // Hide the image when there is no preview
                         }
-
-                        reader.readAsDataURL(fileInput.files[0]);
                     }
-                }
                 </script>
-
 </body>

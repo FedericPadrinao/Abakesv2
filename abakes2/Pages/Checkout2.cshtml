@@ -32,6 +32,37 @@
     .page-heading2 {
         margin-bottom: 40px; /* You can adjust the value to control the space between the banner and the container */
     }
+
+    .input-group {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to next line */
+        justify-content: start; /* Align items at the start of the container */
+    }
+
+    .input-group-append {
+        margin-right: 10px; /* Add some margin between images */
+    }
+
+    .tab-buttons {
+        display: inline-block;
+        justify-content: space-around;
+        margin-bottom: 35px;
+    }
+
+    .tab-button {
+        background-color: #6A2612;
+        color: #fff;
+        margin-top: 15px;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+    }
+
+        .tab-button:hover {
+            background-color: #0056b3;
+        }
 </style>
 <body>
 
@@ -173,23 +204,51 @@
             <div class="col-md-6">
                 <div class="row mb-5">
                     <div class="col-md-12">
-                        <h2 class="h3 mb-3 text-black">QR Code</h2>
-                        <div class="p-3 p-lg-5 border">
-                            @foreach(var item in Model.cartPayments)
+                        <h2 class="h3 mb-3 text-black">QR/Coupon Code</h2>
+
+                        <!-- Tab content -->
+                        @foreach (var (index, item) in Model.cartPayments.Select((value, i) => (i, value)))
+                        {
+                            <div class="tab-content" id="paymentTab-@index">
+                                <div class="p-3 p-lg-5 border" style="height: 685px;">
+                                    @if (TempData["DiscountErrorMessage"] != null)
+                                    {
+                                        <div class="alert alert-danger">@TempData["DiscountErrorMessage"]</div>
+                                    }
+
+                                    <div class="input-group">
+                                        <div class="input-group-append">
+                                            <img src="@item.PaymentImg" class="img-fluid" alt="QR Code" style="height: 397px;">
+                                        </div>
+                                    </div>
+
+                                    <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
+
+                                    <div class="input-group">
+                                        <form method="post" asp-page-handler="Discount">
+                                            <input type="text" name="coupon" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="submit" id="button-addon2">Apply</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                        <!-- Tab navigation -->
+                        <div class="tab-buttons">
+                            @foreach (var (index, item) in Model.cartPayments.Select((value, i) => (i, value)))
                             {
-                            <div class="input-group">
-                            <div class="input-group-append">
-                                <img src="@item.PaymentImg" class="img-fluid" alt="QR Code" style="height: 397px;">
-                            </div>
-                                
-                            </div>
-                            }                
-                        </div>
+                                <button class="tab-button" onclick="showTab(@index)">@($"Payment {index}")</button>
+                            }
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="row mb-5">
+
+            <div class="row mb-5">
                     <div class="col-md-12">
                         <h2 class="h3 mb-3 text-black">Your Order</h2>
                         <div class="p-3 p-lg-5 border">
@@ -361,3 +420,31 @@
         }
 
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initial setup: Show the first tab
+        showTab(0);
+
+        // Set up click event listeners for tab buttons
+        var tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(function (button, index) {
+            button.addEventListener('click', function () {
+                showTab(index);
+            });
+        });
+
+        function showTab(index) {
+            // Hide all tabs
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function (tab) {
+                tab.style.display = 'none';
+            });
+
+            // Show the selected tab
+            var selectedTab = document.getElementById('paymentTab-' + index);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+            }
+        }
+    });
+</script>

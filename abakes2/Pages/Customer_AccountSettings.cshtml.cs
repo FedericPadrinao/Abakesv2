@@ -20,7 +20,7 @@ namespace abakes2.Pages
         public int totalnotifCount = 0;
         public String errorMessage = "";
         public String successMessage = "";
-        public string connectionProvider = "Data Source=DESKTOP-ABF48JR\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
+        public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
 
 
@@ -204,8 +204,9 @@ namespace abakes2.Pages
                                 command.Parameters.AddWithValue("@image", "/img/Account/" + fileName + "?rnd=" + Guid.NewGuid().ToString());
                                 command.ExecuteNonQuery();
                             }
+                            HttpContext.Session.SetString("userimage", "/img/Account/" + fileName + "?rnd=" + Guid.NewGuid().ToString());
 
-                            successMessageProfile = "Profile picture changed successfully! Please log in again to take effect";
+                            successMessageProfile = "Profile picture changed successfully!";
 
 
                         }
