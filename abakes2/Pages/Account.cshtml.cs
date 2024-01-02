@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Data.SqlClient;
+using Microsoft.Extensions.Logging;
 using System;
-using MailKit.Net.Smtp;
-using MailKit;
+using System.Data.SqlClient;
 using MimeKit;
+using MailKit.Net.Smtp;
+using System.Linq;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 
 namespace abakes2.Pages
 {
@@ -24,6 +27,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
+        public DateTime? UnlockTime { get; set; }  // Added UnlockTime property
         public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
@@ -33,11 +37,6 @@ namespace abakes2.Pages
             if (userconfirm != null)
             {
                 Response.Redirect("/Index");
-
-            }
-            else
-            {
-
             }
         }
 
@@ -49,7 +48,8 @@ namespace abakes2.Pages
 
             try
             {
-                // CUSTOMER
+                IncrementInvalidAttemptCount(HttpContext.Connection.RemoteIpAddress.ToString());
+
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
@@ -70,7 +70,7 @@ namespace abakes2.Pages
                         }
                     }
                 }
-                // ADMIN
+
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
@@ -117,9 +117,7 @@ namespace abakes2.Pages
                         HttpContext.Session.SetString("userstatus", userstatus);
 
                         return RedirectToPage("/AdminDashboard");
-
                     }
-
                     else
                     {
                         TempData["FailMessage"] = "Invalid Credentials!";
@@ -142,17 +140,16 @@ namespace abakes2.Pages
                         HttpContext.Session.SetString("username", username);
                         HttpContext.Session.SetString("userimage", userimage);
                         HttpContext.Session.SetString("userstatus", userstatus);
-                        // Check if it's the first-time login
+
                         if (IsFirstTimeLogin(username))
                         {
-
-                            // Redirect to the specific page for first-time login
                             return RedirectToPage("/Customer_AccountInformation", new { user = username });
                         }
+
                         string returnUrl = HttpContext.Session.GetString("ReturnUrl");
                         if (!string.IsNullOrEmpty(returnUrl))
                         {
-                            HttpContext.Session.Remove("ReturnUrl"); // Remove the stored URL after using it
+                            HttpContext.Session.Remove("ReturnUrl");
                             return Redirect(returnUrl);
                         }
 
@@ -160,7 +157,8 @@ namespace abakes2.Pages
                     }
                     else
                     {
-                        // User is not verified, redirect to verification page
+                        UnlockTime = GetUnlockTime(username);  // Set the UnlockTime property
+
                         TempData["FailMessage"] = "User is not verified. Please check your email for the verification code";
                         return RedirectToPage("/Account_Verify", new { email = customerInfo.email });
                     }
@@ -169,12 +167,172 @@ namespace abakes2.Pages
             catch (Exception e)
             {
                 Console.WriteLine("Error : " + e.ToString());
-
-                // Redirect the user to the account page with an error message
                 TempData["FailMessage"] = "Invalid Credentials";
                 return RedirectToPage("/Account");
             }
         }
+
+        // Add a new method to get the unlock time
+        private DateTime? GetUnlockTime(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT TOP 1 attemptime FROM InvalidAttempt WHERE IPAddress = @username ORDER BY attemptime DESC";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToDateTime(result).AddMinutes(5); // Assuming the timeout period is 5 minutes
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        private void IncrementInvalidAttemptCount(string ipAddress)
+        {
+            DateTime? lastattemptime = GetLastInvalidattemptime(ipAddress);
+
+            if (lastattemptime.HasValue && DateTime.Now.Subtract(lastattemptime.Value).TotalMinutes > 3)
+            {
+                // Time gap is greater than 3 minutes, reset the attempt count
+                ResetInvalidAttemptCount(ipAddress);
+            }
+
+            int attemptCount;
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT ISNULL(attempt, 0) FROM InvalidAttempt WHERE IPAddress = @ipAddress";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ipAddress", ipAddress);
+                    attemptCount = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+
+            if (attemptCount >= 5)
+            {
+                if (IsIPBlocked(ipAddress, out DateTime? unlockTime))
+                {
+                    // Display timeout message or take appropriate action
+                    TempData["FailMessage"] = $"Too many invalid attempts. Please try again after {unlockTime?.ToString("yyyy-MM-dd HH:mm:ss")}";
+                    TempData["EstimatedUnlockTime"] = unlockTime; // Set TempData["EstimatedUnlockTime"]
+                    return;
+                }
+            }
+
+            // Increment the attempt count
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "IF NOT EXISTS (SELECT 1 FROM InvalidAttempt WHERE IPAddress = @ipAddress) " +
+                             "INSERT INTO InvalidAttempt (IPAddress, attempt, attemptime) VALUES (@ipAddress, 1, GETDATE()) " +
+                             "ELSE " +
+                             "UPDATE InvalidAttempt SET attempt = attempt + 1, attemptime = GETDATE() WHERE IPAddress = @ipAddress";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ipAddress", ipAddress);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        private void ResetInvalidAttemptCount(string ipAddress)
+        {
+            // Reset the attempt count, e.g., delete the row from the InvalidAttempt table
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "DELETE FROM InvalidAttempt WHERE IPAddress = @ipAddress";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ipAddress", ipAddress);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        private DateTime? GetLastInvalidattemptime(string ipAddress)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT TOP 1 attemptime FROM InvalidAttempt WHERE IPAddress = @ipAddress ORDER BY attemptime DESC";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ipAddress", ipAddress);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return Convert.ToDateTime(result);
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public bool IsIPBlocked(string ipAddress, out DateTime? unlockTime)
+        {
+            unlockTime = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionProvider))
+            {
+                connection.Open();
+                string sql = "SELECT attempt FROM InvalidAttempt WHERE IPAddress = @ipAddress";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ipAddress", ipAddress);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        int attemptCount = Convert.ToInt32(result);
+
+                        // Check if the attempt count exceeds the limit (e.g., 5)
+                        if (attemptCount >= 5)
+                        {
+                            // Check if the last attempt time is within the timeout period (e.g., 5 minutes)
+                            sql = "SELECT TOP 1 attemptime FROM InvalidAttempt WHERE IPAddress = @ipAddress ORDER BY attemptime DESC";
+
+                            using (SqlCommand timeoutCommand = new SqlCommand(sql, connection))
+                            {
+                                timeoutCommand.Parameters.AddWithValue("@ipAddress", ipAddress);
+                                object lastattemptime = timeoutCommand.ExecuteScalar();
+
+                                if (lastattemptime != null && lastattemptime != DBNull.Value)
+                                {
+                                    DateTime lastAttemptDateTime = Convert.ToDateTime(lastattemptime);
+                                    unlockTime = lastAttemptDateTime.AddMinutes(5);
+
+                                    if (DateTime.Now < unlockTime)
+                                    {
+                                        // IP is still in timeout period
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+
         private bool IsFirstTimeLogin(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -194,7 +352,8 @@ namespace abakes2.Pages
             }
             return false;
         }
-        bool IsUserVerified(string username)
+
+        private bool IsUserVerified(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
             {

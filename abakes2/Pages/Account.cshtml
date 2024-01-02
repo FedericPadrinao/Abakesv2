@@ -75,47 +75,69 @@
                             <span onclick="register()">Register</span>
                             <hr id="Indicator">
                         </div>
-                        @if (TempData["FailMessage"] != null)
-                        {
-                            <div class="alert alert-danger">@TempData["FailMessage"]</div>
-                        }
-                        @if (TempData["AlertMessage"] != null)
-                        {
-                            <div class="alert alert-success">@TempData["AlertMessage"]</div>
-                        }
-                        <!-- LOGIN FORM-->
-                        <form id="LoginForm" method="post" style="padding:25px 20px">
-                            <input type="text" placeholder="Username" name="username" id="username" required>
-                            <input type="password" placeholder="Password" name="password" id="password" required>
-                            <button type="submit" class="btn" value="submit" asp-page-handler="Login">Login</button>
-                            <a asp-page="/Account_Forgot_Pass">Forgot Password?</a>
-                        </form>
-                        <!-- REGISTRATION FORM-->
-                        <form id="RegForm" method="post" style="padding:25px 20px">
-                            <input type="text" placeholder="Given Name" name="fname" id="fname" value="@Model.customerInfo.fname" required>
-                            <input type="text" placeholder="Last Name" name="lname" id="lname" value="@Model.customerInfo.lname" required>
-                            <input type="text" placeholder="Username" name="username" id="lname" value="@Model.customerInfo.username" required>
-                            <input type="text" placeholder="Email" name="email" id="email" value="@Model.customerInfo.email" required>
 
-                            @*<input type="text" placeholder="Phone">*@
-                            <input type="password" placeholder="Password" name="password" id="password" 
-                               value="@Model.customerInfo.password" 
-                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must: Be at least 8 characters in length.
+                        @if (Model.IsIPBlocked(Request.HttpContext.Connection.RemoteIpAddress.ToString(), out DateTime? unlockTime))
+                        {
+                            <div class="alert alert-danger">
+                                @if (TempData["EstimatedUnlockTime"] != null)
+                                {
+                                    <p>Too many invalid login attempts. Please try again after @TempData["EstimatedUnlockTime"].</p>
+                                }
+                                else
+                                {
+                                    <p>Too many invalid login attempts. Please try again after 5 minutes.</p>
+                                }
+                                <!-- Display unlock time -->
+                                @if (unlockTime.HasValue)
+                                {
+                                    <p>Unlock Time: @unlockTime?.ToString("yyyy-MM-dd HH:mm:ss")</p>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            @if (TempData["FailMessage"] != null)
+                            {
+                                <div class="alert alert-danger">@TempData["FailMessage"]</div>
+                            }
+                            @if (TempData["AlertMessage"] != null)
+                            {
+                                <div class="alert alert-success">@TempData["AlertMessage"]</div>
+                            }
+                            <!-- LOGIN FORM-->
+                            <form id="LoginForm" method="post" style="padding:25px 20px">
+                                <input type="text" placeholder="Username" name="username" id="username" required>
+                                <input type="password" placeholder="Password" name="password" id="password" required>
+                                <button type="submit" class="btn" value="submit" asp-page-handler="Login">Login</button>
+                                <a asp-page="/Account_Forgot_Pass">Forgot Password?</a>
+                            </form>
+                            <!-- REGISTRATION FORM-->
+                            <form id="RegForm" method="post" style="padding:25px 20px">
+                                <input type="text" placeholder="Given Name" name="fname" id="fname" value="@Model.customerInfo.fname" required>
+                                <input type="text" placeholder="Last Name" name="lname" id="lname" value="@Model.customerInfo.lname" required>
+                                <input type="text" placeholder="Username" name="username" id="lname" value="@Model.customerInfo.username" required>
+                                <input type="text" placeholder="Email" name="email" id="email" value="@Model.customerInfo.email" required>
+
+                                @*<input type="text" placeholder="Phone">*@
+                                <input type="password" placeholder="Password" name="password" id="password"
+                                       value="@Model.customerInfo.password"
+                                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must: Be at least 8 characters in length.
                     Include at least one upper case letter.
                     Include at least one number.
                     Include at least one special character." required>
-                            <label for="agreeTerms" style="font-size: 13px; display: inline-block; align-items: center;">
-                                <input style="width: 14px; height: 17px; margin-right: 5px;" type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                                I agree to the <a href="/Customer_TermsandCondition" target="_blank">Terms and Conditions</a> 
-                            </label>
+                                <label for="agreeTerms" style="font-size: 13px; display: inline-block; align-items: center;">
+                                    <input style="width: 14px; height: 17px; margin-right: 5px;" type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                    I agree to the <a href="/Customer_TermsandCondition" target="_blank">Terms and Conditions</a>
+                                </label>
 
-                            <label for="agreePrivacy" style="font-size: 13px; display: inline-block; align-items: center;">
-                                <input style="width: 14px; height: 17px; margin-right: 5px;" type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
-                                I agree to the <a href="/Customer_Privacy" target="_blank">Privacy Policy</a>
-                            </label>
+                                <label for="agreePrivacy" style="font-size: 13px; display: inline-block; align-items: center;">
+                                    <input style="width: 14px; height: 17px; margin-right: 5px;" type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
+                                    I agree to the <a href="/Customer_Privacy" target="_blank">Privacy Policy</a>
+                                </label>
 
-                            <button type="submit" class="btn" value="submit" asp-page-handler="Register">Register</button>
-                        </form>
+                                <button type="submit" class="btn" value="submit" asp-page-handler="Register">Register</button>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>
