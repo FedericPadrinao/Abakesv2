@@ -132,6 +132,7 @@ namespace abakes2.Pages
 
                     if (!BCrypt.Net.BCrypt.Verify(password, pass))
                     {
+                        IncrementInvalidAttemptCount(HttpContext.Connection.RemoteIpAddress.ToString());
                         TempData["FailMessage"] = "Invalid Credentials!";
                         errorMessage = "Invalid Credentials!";
                         return Page();

@@ -345,22 +345,16 @@
             }
         </tbody>
     </table>
-                        <form id="monthForm" method="get" asp-page="AdminDashboard">
-                            <label for="monthSelect">Select Month:</label>
-                            <select id="monthSelect" name="selectedMonth" onchange="document.getElementById('monthForm').submit()">
-                                <option value="0">All Months</option>
-                                <option value="1">January</option>
-                                <option value="2">February</option>
-                                <option value="3">March</option>
-                                <option value="4">April</option>
-                                <option value="5">May</option>
-                                <option value="6">June</option>
-                                <option value="7">July</option>
-                                <option value="8">August</option>
-                                <option value="9">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
+                        <form id="tyearForm" method="get" asp-page="AdminDashboard">
+                            <label for="tyearSelect">Select Month:</label>
+                            <select class="form-control" id="tyearSelect" onchange="updateEarnings()">
+                                <option value="0">All Years</option>
+                                <!-- Add years dynamically based on your data -->
+                                <!-- Example: from the current year to 5 years back -->
+                                @for (int year = DateTime.Now.Year; year >= DateTime.Now.Year - 5; year--)
+                                {
+                                    <option value="@year">@year</option>
+                                }
                             </select>
                         </form>
                     </div>
@@ -369,7 +363,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-    <script src="~/js/AdminDashboardjs/chart1.js"></script>
     <script src="~/js/AdminDashboardjs/chart2.js"></script>
     <script src="~/js/AdminDashboardjs/chart3.js"></script>
     <script src="~/js/AdminDashboardjs/chart4.js"></script>
