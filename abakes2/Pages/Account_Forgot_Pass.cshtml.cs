@@ -24,7 +24,7 @@ namespace abakes2.Pages
             }
             else
             {
-                // Additional logic if needed
+
             }
         }
 
@@ -39,16 +39,10 @@ namespace abakes2.Pages
             }
 
             string newPasscode = GeneratePasscode();
-
-            // Update passcode and passcode expiration
             UpdatePasscode(email, newPasscode);
-
-            // Update passcode expiration
             UpdatePasscodeExpiration(email);
 
             string UserName = GetUserName(email);
-
-            // Send the email with the new password, passcode, and expiration date
             SendPasscodeByEmail(email, UserName, newPasscode, GetPasscodeExpiration(email));
 
             TempData["AlertMessage"] = "Verification code sent! Please check your email for the new code to change your password.";
@@ -179,7 +173,6 @@ namespace abakes2.Pages
                     }
                 }
             }
-            // Default to current time if no expiration time is found
             return DateTime.Now;
         }
     }

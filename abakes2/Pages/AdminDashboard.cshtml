@@ -163,8 +163,6 @@
                             <label for="yearSelect">Earnings:</label>
                             <select class="form-control" id="yearSelect" onchange="updateEarnings()">
                                 <option value="0">All Years</option>
-                                <!-- Add years dynamically based on your data -->
-                                <!-- Example: from the current year to 5 years back -->
                                 @for (int year = DateTime.Now.Year; year >= DateTime.Now.Year - 5; year--)
                                 {
                                     <option value="@year">@year</option>
@@ -319,38 +317,33 @@
                     <h2>Monthly Sales</h2>
                     <div>
                         <table class="charts-css line multiple show-data show-labels show-primary-axis show-1-secondary-axes table-bordered">
-        <caption>Monthly Sales</caption>
-        <thead>
-            <tr>
-                <th scope="col">Month</th>
-                <th scope="col">Sales</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                double start = 0;
-                foreach (var monthlySale in Model.MonthlySalesData)
-                {
-                    var end = start + monthlySale.Sales / 40000.0;
-
-                    <tr>
-                        <th scope="row">@monthlySale.Month</th>
-                        <td style="--start: @start; --end: @end;" class="border">
-                            <span class="data">@monthlySale.Sales</span>
-                        </td>
-                    </tr>
-
-                    start = end; // Set the end as the start for the next iteration
-                }
-            }
-        </tbody>
-    </table>
+                            <caption>Monthly Sales</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Month</th>
+                                    <th scope="col">Sales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    double start = 0;
+                                    foreach (var monthlySale in Model.MonthlySalesData)
+                                    {
+                                        var end = monthlySale.Sales / 40000.0;
+                                        <tr>
+                                            <th scope="row">@monthlySale.Month</th>
+                                            <td style="--start: @start; --end: @end;" class="border">
+                                                <span class="data">@monthlySale.Sales</span>
+                                            </td>
+                                        </tr>
+                                        start = end;
+                                    }
+                                }
+                            </tbody>
+                        </table>
                         <form id="tyearForm" method="get" asp-page="AdminDashboard">
-                            <label for="tyearSelect">Select Month:</label>
-                            <select class="form-control" id="tyearSelect" onchange="updateEarnings()">
-                                <option value="0">All Years</option>
-                                <!-- Add years dynamically based on your data -->
-                                <!-- Example: from the current year to 5 years back -->
+                            <label for="tyearSelect">Select Year:</label>
+                            <select class="form-control" id="tyearSelect" onchange="updateTableEarnings()">
                                 @for (int year = DateTime.Now.Year; year >= DateTime.Now.Year - 5; year--)
                                 {
                                     <option value="@year">@year</option>
@@ -369,42 +362,46 @@
     <script src="~/js/AdminDashboardjs/chart5.js"></script>
     <script src="~/js/AdminDashboardjs/chart6.js"></script>
     <script>
-        function updatePieCharts(selectedMonth) {
-            <script>
-                function updatePieCharts(selectedMonth) {
-                    // Send an AJAX request to the server for each pie chart
-                    updatePieChart('doughnut', 'GetFlavorData', selectedMonth);
-                    updatePieChart('doughnut2', 'GetShapeData', selectedMonth);
-                    updatePieChart('doughnut3', 'GetColorData', selectedMonth); // Assuming 'GetColorData' for cake colors
-                    updatePieChart('doughnut4', 'GetGenderData', selectedMonth);
-                    updatePieChart('doughnut5', 'GetAgeData', selectedMonth);
-                }
-
-            function updatePieChart(chartId, handler, selectedMonth) {
-                fetch(`/AdminDashboard?handler=${handler}&selectedMonth=${selectedMonth}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        // Update the pie chart with the new data
-                        updateChart(chartId, data.labels, data.data);
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
+        function updateTableEarnings() {
+            var selectedYear = document.getElementById("tyearSelect").value;
+            fetch(`/AdminDashboard?handler=GetMonthlySalesData&year=${selectedYear}`)
+                .then(response => response.json())
+                .then(data => updateTable(data))
+                .catch(error => console.error('Error:', error));
         }
-    </script>
-    <script>
+
+        function updateTable(data) {
+            var tableBody = document.querySelector('.charts-css tbody');
+            tableBody.innerHTML = '';
+
+            var start = 0; 
+
+            data.forEach(monthlySale => {
+                var row = document.createElement('tr');
+                var monthCell = document.createElement('th');
+                monthCell.textContent = monthlySale.month;
+                row.appendChild(monthCell);
+
+                var end = monthlySale.sales / 40000.0;
+
+                var salesCell = document.createElement('td');
+                salesCell.style = `--start: ${start}; --end: ${end};`;
+                salesCell.classList.add('border');
+                salesCell.innerHTML = `<span class="data">${monthlySale.sales}</span>`;
+                row.appendChild(salesCell);
+
+                tableBody.appendChild(row);
+
+                start = end; 
+            });
+        }
         function updateEarnings() {
-            // Get the selected month and year values
             var selectedMonth = document.getElementById("monthSelect").value;
             var selectedYear = document.getElementById("yearSelect").value;
-
-            // Disable the "All Years" option when a month is selected
             document.getElementById("yearSelect").options[0].disabled = selectedMonth !== "0";
-
-            // Make the AJAX request based on selected month and year
             fetch(`/AdminDashboard?handler=GetTotalEarnings&selectedMonth=${selectedMonth}&selectedYear=${selectedYear}`)
                 .then(response => response.json())
                 .then(data => {
-                    // Update the total earnings on the page
                     document.getElementById("earnings").innerText = `PHP ${data.totalEarnings}`;
                 })
                 .catch(error => console.error('Error:', error));

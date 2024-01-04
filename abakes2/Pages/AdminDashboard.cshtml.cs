@@ -34,7 +34,8 @@ namespace abakes2.Pages
         public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
         public void OnGet()
         {
-            MonthlySalesData = GetMonthlySalesData();
+            int defaultYear = DateTime.Now.Year;
+            MonthlySalesData = GetMonthlySalesData(defaultYear);
             userconfirm = HttpContext.Session.GetString("useradmin");
             if (userconfirm != null)
             {
@@ -492,7 +493,13 @@ namespace abakes2.Pages
                 return new JsonResult(new { error = e.Message });
             }
         }
-        private List<MonthlySales> GetMonthlySalesData()
+        public JsonResult OnGetGetMonthlySalesData(int year)
+        {
+            List<MonthlySales> monthlySalesData = GetMonthlySalesData(year);
+            return new JsonResult(monthlySalesData);
+        }
+
+        private List<MonthlySales> GetMonthlySalesData(int year)
         {
             List<MonthlySales> monthlySalesData = new List<MonthlySales>();
 
@@ -508,11 +515,11 @@ namespace abakes2.Pages
                                      $"FROM (" +
                                      $"    SELECT OrderPrice, MONTH(ExpectedDelivery) AS SaleMonth " +
                                      $"    FROM Invoice " +
-                                     $"    WHERE orderstatus = 'Complete Order' AND MONTH(ExpectedDelivery) = {month} " +
+                                     $"    WHERE orderstatus = 'Complete Order' AND MONTH(ExpectedDelivery) = {month} AND YEAR(ExpectedDelivery) = {year} " +
                                      $"    UNION ALL " +
                                      $"    SELECT OrderPrice, MONTH(ExpectedDelivery) AS SaleMonth " +
                                      $"    FROM Order3DForm " +
-                                     $"    WHERE orderstatus = 'Complete Order' AND MONTH(ExpectedDelivery) = {month} " +
+                                     $"    WHERE orderstatus = 'Complete Order' AND MONTH(ExpectedDelivery) = {month} AND YEAR(ExpectedDelivery) = {year} " +
                                      $") AS MonthlyData";
 
                         using (SqlCommand command = new SqlCommand(sql, connection))
@@ -539,6 +546,7 @@ namespace abakes2.Pages
 
             return monthlySalesData;
         }
+
         public JsonResult OnGetGetTotalEarnings(int selectedMonth, int selectedYear)
         {
             try

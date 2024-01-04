@@ -29,7 +29,7 @@ namespace abakes2.Pages
         public string userconfirm = "";
         public string imgconfirm = "";
         public string statusconfirm = "";
-        public DateTime? UnlockTime { get; set; }  // Added UnlockTime property
+        public DateTime? UnlockTime { get; set; } 
         public string connectionProvider = "Data Source=ROVIC\\SQLEXPRESS;Initial Catalog=Abakes;Integrated Security=True";
 
         public void OnGet()
@@ -140,7 +140,6 @@ namespace abakes2.Pages
 
                     else
                     {
-                        // Set ShowOTPForm to true when credentials are correct
                         string generatedOTP = GenerateOTP();
                         SendOTPEmail(username, generatedOTP);
 
@@ -161,7 +160,6 @@ namespace abakes2.Pages
             }
         }
 
-        // Add a new method to get the unlock time
         private DateTime? GetUnlockTime(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -176,7 +174,7 @@ namespace abakes2.Pages
 
                     if (result != null && result != DBNull.Value)
                     {
-                        return Convert.ToDateTime(result).AddMinutes(5); // Assuming the timeout period is 5 minutes
+                        return Convert.ToDateTime(result).AddMinutes(5); 
                     }
                 }
             }
@@ -190,7 +188,6 @@ namespace abakes2.Pages
 
             if (lastattemptime.HasValue && DateTime.Now.Subtract(lastattemptime.Value).TotalMinutes > 3)
             {
-                // Time gap is greater than 3 minutes, reset the attempt count
                 ResetInvalidAttemptCount(ipAddress);
             }
 
@@ -210,19 +207,17 @@ namespace abakes2.Pages
             if (attemptCount >= 5)
             {
 
-                // Set ShowOTPForm to true when credentials are correct
-                UnlockTime = GetUnlockTime(username);  // Set the UnlockTime property
+                UnlockTime = GetUnlockTime(username);  
                 if (IsIPBlocked(ipAddress, out DateTime? unlockTime))
                 {
 
-                    // Display timeout message or take appropriate action
                     TempData["FailMessage"] = $"Too many invalid attempts. Please try again after {unlockTime?.ToString("yyyy-MM-dd HH:mm:ss")}";
-                    TempData["EstimatedUnlockTime"] = unlockTime; // Set TempData["EstimatedUnlockTime"]
+                    TempData["EstimatedUnlockTime"] = unlockTime; 
                     return;
                 }
             }
 
-            // Increment the attempt count
+
             using (SqlConnection connection = new SqlConnection(connectionProvider))
             {
                 connection.Open();
@@ -242,7 +237,6 @@ namespace abakes2.Pages
 
         private void ResetInvalidAttemptCount(string ipAddress)
         {
-            // Reset the attempt count, e.g., delete the row from the InvalidAttempt table
             using (SqlConnection connection = new SqlConnection(connectionProvider))
             {
                 connection.Open();
@@ -294,11 +288,8 @@ namespace abakes2.Pages
                     if (result != null && result != DBNull.Value)
                     {
                         int attemptCount = Convert.ToInt32(result);
-
-                        // Check if the attempt count exceeds the limit (e.g., 5)
                         if (attemptCount >= 5)
                         {
-                            // Check if the last attempt time is within the timeout period (e.g., 5 minutes)
                             sql = "SELECT TOP 1 attemptime FROM InvalidAttempt WHERE IPAddress = @ipAddress ORDER BY attemptime DESC";
 
                             using (SqlCommand timeoutCommand = new SqlCommand(sql, connection))
@@ -313,7 +304,6 @@ namespace abakes2.Pages
 
                                     if (DateTime.Now < unlockTime)
                                     {
-                                        // IP is still in timeout period
                                         return true;
                                     }
                                 }
@@ -373,8 +363,6 @@ namespace abakes2.Pages
             customerInfo.password = Request.Form["password"];
             customerInfo.fname = Request.Form["fname"];
             customerInfo.lname = Request.Form["lname"];
-            //customerInfo.phone = Request.Form["phone"];
-            //customerInfo.address = Request.Form["address"];
             customerInfo.email = Request.Form["email"];
 
             try
@@ -407,7 +395,6 @@ namespace abakes2.Pages
                     smtp.Disconnect(true);
                 }
 
-                // Update database with verification code and set is_verified to false
                 using (SqlConnection connection = new SqlConnection(connectionProvider))
                 {
                     connection.Open();
@@ -427,11 +414,8 @@ namespace abakes2.Pages
                     }
                 }
 
-                // Create a default image file for the user
                 string defaultImageFileName = "Default.jpg";
-                string userImagePath = $"img/Account/{defaultImageFileName}"; // Adjust the path as needed
-
-                // Copy the default image file to the user's image path
+                string userImagePath = $"img/Account/{defaultImageFileName}"; 
                 System.IO.File.Copy("version 13\\version 13\\abakes2\\abakes2\\wwwroot\\img\\Account\\Default.jpg", userImagePath, true);
             }
             catch (Exception ex)
@@ -443,7 +427,6 @@ namespace abakes2.Pages
             return RedirectToPage("/Account_Reg_Succ");
         }
 
-        // Method to check if email or username already exists
         private bool IsEmailOrUsernameExists(string email, string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -456,14 +439,12 @@ namespace abakes2.Pages
                     command.Parameters.AddWithValue("@username", username);
 
                     int count = Convert.ToInt32(command.ExecuteScalar());
-
-                    // If count is greater than 0, the email or username already exists
                     return count > 0;
                 }
             }
         }
 
-        // Method to generate a random verification code
+       
         private string GenerateVerificationCode()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -522,28 +503,23 @@ namespace abakes2.Pages
                     string returnUrl = HttpContext.Session.GetString("ReturnUrl");
                     if (!string.IsNullOrEmpty(returnUrl))
                     {
-                        // OTP is valid, perform actions
                         TempData["AlertMessage"] = "OTP Verified Successfully!";
                         HttpContext.Session.Remove("ReturnUrl");
                         return Redirect(returnUrl);
                     }
 
                 }
-                // OTP is valid, perform actions
 
                 TempData["FailMessage"] = "User is not verified. Please check your email for the verification code";
                 return RedirectToPage("/Account_Verify", new { email = customerInfo.email });
             }
             else
             {
-                // OTP is invalid, display an error message and keep the OTP form visible
                 TempData["FailMessage"] = "Invalid OTP. Please try again.";
-                ShowOTPForm = true; // Keep the OTP form visible
+                ShowOTPForm = true; 
                 return Page();
             }
         }
-
-        // Add a method to check if the entered OTP is valid
         private bool IsOTPValid(string enteredOTP, string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -560,8 +536,6 @@ namespace abakes2.Pages
                     if (result != null && result != DBNull.Value)
                     {
                         string storedOTP = result.ToString();
-
-                        // Compare the entered OTP with the stored OTP
                         return enteredOTP == storedOTP;
                     }
                 }
@@ -598,14 +572,12 @@ namespace abakes2.Pages
 
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@username", username);  // Use the correct parameter name
-                    command.Parameters.AddWithValue("@otp", otp);            // Use the correct parameter name
+                    command.Parameters.AddWithValue("@username", username); 
+                    command.Parameters.AddWithValue("@otp", otp);            
                     command.ExecuteNonQuery();
                 }
             }
         }
-
-        // Method to retrieve the user's email from the LoginCustomer table
         private string GetUserEmail(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))

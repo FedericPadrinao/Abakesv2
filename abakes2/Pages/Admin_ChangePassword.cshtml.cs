@@ -37,28 +37,20 @@ namespace abakes2.Pages
             string currentPassword = Request.Form["currentPassword"];
             string newPassword = Request.Form["newPassword"];
             string confirmNewPassword = Request.Form["confirmNewPassword"];
-
-            // Ensure that the current password and stored password match
             if (!CheckCurrentPassword(userconfirm, currentPassword))
             {
                 TempData["FailMessage"] = "Invalid current password.";
                 return Page();
             }
-
-            // Check if the new password and confirm password match
             if (newPassword != confirmNewPassword)
             {
                 TempData["FailMessage"] = "New password and confirm password do not match!";
                 return Page();
             }
-
-            // If all conditions are met, change the password
             ChangePassword(currentPassword, newPassword);
 
             return RedirectToPage("/Admin_ChangePassSucc");
         }
-
-        // Method to check if the current password matches the stored password
         private bool CheckCurrentPassword(string username, string currentPassword)
         {
             try
@@ -83,8 +75,6 @@ namespace abakes2.Pages
                 return false;
             }
         }
-
-        // Method to change the admin's password in the database
         private void ChangePassword(string currentPassword, string newPassword)
         {
             try

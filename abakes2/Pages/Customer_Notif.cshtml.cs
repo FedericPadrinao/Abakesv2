@@ -8,7 +8,7 @@ namespace abakes2.Pages
     {
         public List<PrivateNotifInfo> listPrivateNotifInfo = new List<PrivateNotifInfo>();
         public List<NotificationInfo> listNotifications = new List<NotificationInfo>();
-        public int NotificationCount { get; set; } // Property to store notification count
+        public int NotificationCount { get; set; }
         public CustomerInfo customerInfo = new CustomerInfo();
         public bool IsRead { get; set; }
         public String userconfirm = "";
@@ -86,7 +86,7 @@ namespace abakes2.Pages
 
                                 if (!pni.IsRead)
                                 {
-                                    NotificationCount++; // Increment NotificationCount only for unread private notifications
+                                    NotificationCount++;
                                 }
 
                                 pni.NotifID = reader.GetFieldValue<int>(reader.GetOrdinal("NotificationID"));
@@ -97,14 +97,8 @@ namespace abakes2.Pages
                                 pni.DateCreated = reader.GetFieldValue<string>(reader.GetOrdinal("DateCreated"));
                                 listPrivateNotifInfo.Add(pni);
                             }
-
-                            // After reading all private notifications, update NotificationCount
                             int privateNotifCount = listPrivateNotifInfo.Count(pni => !pni.IsRead);
-
-                            // Subtract count for notifications meeting specific conditions
                             NotificationCount = listNotifications.Count + privateNotifCount;
-
-                            // Subtract count based on conditions in IsNotificationRead method
                             foreach (var notification in listNotifications.ToList())
                             {
                                 if (IsNotificationRead(notification.NotifID, notification.NotifTitle, userconfirm))
@@ -186,23 +180,17 @@ namespace abakes2.Pages
 
                 if (string.IsNullOrEmpty(currentUsername))
                 {
-                    // Handle the case where the username is not available
-                    // Redirect, log, or perform any other necessary action
                     return RedirectToPage("/Index");
                 }
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-                    // Retrieve notification details
                     string selectSql = "SELECT NotificationTitle FROM Notification WHERE NotificationID = @notificationId";
                     using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
                     {
                         selectCommand.Parameters.AddWithValue("@notificationId", notificationId);
                         string notificationTitle = selectCommand.ExecuteScalar()?.ToString();
-
-                        // Insert into ReadPublicNotif table
                         string insertSql = "INSERT INTO ReadPublicNotif (username, NotificationID, NotificationTitle) VALUES (@username, @notificationId, @notificationTitle)";
                         using (SqlCommand insertCommand = new SqlCommand(insertSql, connection))
                         {
@@ -218,7 +206,6 @@ namespace abakes2.Pages
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.Message);
-                // Handle the exception or log it as needed
             }
 
             return RedirectToPage("/Customer_Notif");
@@ -250,16 +237,12 @@ namespace abakes2.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-
-                    // Mark all private notifications as read
                     string privateSql = "UPDATE PrivateNotification SET isRead = 1 WHERE username = @username AND status = 'true' AND isRead = 0";
                     using (SqlCommand privateCommand = new SqlCommand(privateSql, connection))
                     {
                         privateCommand.Parameters.AddWithValue("@username", currentUsername);
                         privateCommand.ExecuteNonQuery();
                     }
-
-                    // Mark all public notifications as read
                     string publicSql = "INSERT INTO ReadPublicNotif (username, NotificationID, NotificationTitle) SELECT @username, NotificationID, NotificationTitle FROM Notification WHERE status = 'true' AND NOT EXISTS (SELECT 1 FROM ReadPublicNotif WHERE Username = @username AND NotificationID = Notification.NotificationID)";
                     using (SqlCommand publicCommand = new SqlCommand(publicSql, connection))
                     {
@@ -271,7 +254,6 @@ namespace abakes2.Pages
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.Message);
-                // Handle the exception or log it as needed
             }
 
             return RedirectToPage("/Customer_Notif");

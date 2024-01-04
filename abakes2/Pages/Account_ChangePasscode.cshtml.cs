@@ -24,29 +24,22 @@ namespace abakes2.Pages
             string passcode = Request.Form["passcode"];
             string newPassword = Request.Form["newPassword"];
             string confirmPassword = Request.Form["confirmPassword"];
-
-            // Check if the email and passcode match the credentials in the database
             if (!IsCredentialsValid(email, passcode))
             {
                 TempData["FailMessage"] = "Invalid email or passcode!";
                 return Page();
             }
 
-            // Check if the passcode is expired
             if (IsPasscodeExpired(email))
             {
                 TempData["FailMessage"] = "Passcode has expired. Please request a new one.";
                 return Page();
             }
-
-            // Check if the new password and confirm password match
             if (newPassword != confirmPassword)
             {
                 TempData["FailMessage"] = "New password and confirm password do not match!";
                 return Page();
             }
-
-            // Update the password and passcode expiration in the database
             try
             {
                 if (IsEmailExistsInTable(email, "LoginCustomer"))
@@ -84,7 +77,6 @@ namespace abakes2.Pages
             }
         }
 
-        // Method to check if the email and passcode are valid
         private bool IsCredentialsValid(string email, string passcode)
         {
             if (IsEmailExistsInTable(email, "LoginCustomer"))
@@ -99,7 +91,6 @@ namespace abakes2.Pages
             return false;
         }
 
-        // Method to check if the passcode is valid
         private bool CheckPasscode(string email, string passcode, string tableName)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -112,14 +103,11 @@ namespace abakes2.Pages
                     command.Parameters.AddWithValue("@passcode", passcode);
 
                     int count = Convert.ToInt32(command.ExecuteScalar());
-
-                    // If count is greater than 0, the email and passcode are valid
                     return count > 0;
                 }
             }
         }
 
-        // Method to check if the passcode is expired
         private bool IsPasscodeExpired(string email)
         {
             if (IsEmailExistsInTable(email, "LoginCustomer"))
@@ -128,15 +116,11 @@ namespace abakes2.Pages
             }
             else if (IsEmailExistsInTable(email, "LoginSample"))
             {
-                // Assume passcodes in LoginSample do not expire
                 return false;
             }
-
-            // Default to false if the email is not found in either table
             return false;
         }
 
-        // Method to check if the passcode is expired for LoginCustomer
         private bool CheckPasscodeExpiration(string email, string tableName)
         {
             if (tableName == "LoginCustomer")
@@ -157,16 +141,10 @@ namespace abakes2.Pages
                         }
                     }
                 }
-
-                // Default to false if no passcode expiration is found
                 return false;
             }
-
-            // For tables other than LoginCustomer, assume passcodes do not expire
             return false;
         }
-
-        // Method to update the password and passcode expiration in the database
         private void UpdatePasswordAndPasscodeExpiration(string email, string newPassword, string tableName)
         {
             using (SqlConnection connection = new SqlConnection(connectionProvider))
@@ -192,7 +170,7 @@ namespace abakes2.Pages
             }
             else
             {
-                // Additional logic if needed
+
             }
         }
     }
